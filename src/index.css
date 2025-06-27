@@ -12,6 +12,10 @@
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-a: fade-in 0.7s ease-out 0.3s forwards;
+  --animate-fade-in-delay-b: fade-in 0.7s ease-out 0.5s forwards;
+  --animate-fade-in-delay-c: fade-in 0.7s ease-out 0.7s forwards;
+  --animate-fade-in-delay-d: fade-in 0.7s ease-out 0.9s forwards;
 
   @keyframes float {
     0%,
@@ -37,22 +41,22 @@
 
 @layer base {
   :root {
-    --background: 180, 26%, 15%; /* rgb(28, 47, 47) */
-    --foreground: 180, 25%, 21%; /* rgb(41, 68, 68) */
-    --border: 0, 0%, 100%; /* rgb(255, 255, 255) */
-    --card: 0, 0%, 0%; /* rgb(0, 0, 0) */
-    --primary: 39, 100%, 50%; /* rgb(255, 165, 0) */
-    --primary-foreground: 0, 0%, 100%; /* rgb(255, 255, 255) */
+    --background: 180, 26%, 15%;
+    --foreground: 174, 72%, 56%;
+    --border: 0, 0%, 100%;
+    --card: 0, 0%, 0%;
+    --primary: 0, 0%, 100%;
+    --primary-foreground: 0, 0%, 100%;
     --background-image: none;
   }
 
   .light {
-    --background: 42, 100%, 89%; /* rgb(255, 240, 201) */
-    --foreground: 0, 0%, 0%; /* rgb(175, 162, 125) */
-    --border: 0, 0%, 0%; /* rgb(0, 0, 0) */
-    --card: 0, 0%, 100%; /* rgb(255, 255, 255) */
-    --primary: 39, 100%, 50%; /* rgb(255, 165, 0) */
-    --primary-foreground: 0, 0%, 100%; /* rgb(255, 255, 255) */
+    --background: 42, 100%, 89%;
+    --foreground: 0, 0%, 0%;
+    --border: 0, 0%, 0%;
+    --card: 0, 0%, 100%;
+    --primary: 0, 0%, 0%;
+    --primary-foreground: 0, 0%, 100%;
     --background-image: none;
   }
 
@@ -61,33 +65,25 @@
     padding: 0;
     box-sizing: border-box;
   }
-
-  html,
-  body,
-  #root {
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 }
 
-html:not(.light) body {
-  background-color: #010409;
+body {
+  @apply text-foreground transition-colors duration-300;
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+}
 
-  background-image: radial-gradient(
-      700px 500px at 85% 15%,
-      rgba(44, 83, 100, 0.25),
-      transparent 70%
-    ),
-    url('/src/assets/gradient.png');
+html {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 700px 500px, 700px 500px;
-  background-position: 85% 15%, 85% 15%;
+html.light body {
+  background-color: hsl(var(--background));
+  background-image: none;
 }
 
 @utility container {
@@ -130,4 +126,11 @@ html:not(.light) body {
 @utility general-button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,165,0,0.5)]
   hover:scale-105 active:scale-95;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
