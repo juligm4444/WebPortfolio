@@ -1,46 +1,25 @@
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
-// Import SVGs from src/assets
-import ReactIcon from '../assets/React.svg';
-import HTMLIcon from '../assets/HTML5.svg';
-import CSSIcon from '../assets/CSS3.svg';
-import JavaScriptIcon from '../assets/JavaScript.svg';
-import TailwindIcon from '../assets/Tailwind CSS.svg';
-import PythonIcon from '../assets/Python.svg';
-import JavaIcon from '../assets/Java.svg';
-import SQLIcon from '../assets/SQL Developer.svg';
-import MongoDBIcon from '../assets/MongoDB.svg';
-import FlutterIcon from '../assets/Flutter.svg';
-import AndroidStudioIcon from '../assets/Android Studio.svg';
-import GitIcon from '../assets/Git.svg';
-import VSCodeIcon from '../assets/Visual Studio Code (VS Code).svg';
-import FigmaIcon from '../assets/Figma.svg';
-import UnrealEngineIcon from '../assets/Unreal Engine.svg';
-import UnityIcon from '../assets/Unity.svg';
-import PhotoshopIcon from '../assets/Adobe Photoshop.svg';
-import IllustratorIcon from '../assets/Adobe Illustrator.svg';
-
-// Map icon names to imports
 const iconMap = {
-  'react.svg': ReactIcon,
-  'html.svg': HTMLIcon,
-  'css.svg': CSSIcon,
-  'javascript.svg': JavaScriptIcon,
-  'tailwindcss.svg': TailwindIcon,
-  'python.svg': PythonIcon,
-  'java.svg': JavaIcon,
-  'sqldeveloper.svg': SQLIcon,
-  'mongodb.svg': MongoDBIcon,
-  'flutter.svg': FlutterIcon,
-  'androidstudio.svg': AndroidStudioIcon,
-  'git.svg': GitIcon,
-  'vscode.svg': VSCodeIcon,
-  'figma.svg': FigmaIcon,
-  'unrealengine.svg': UnrealEngineIcon,
-  'unity.svg': UnityIcon,
-  'photoshop.svg': PhotoshopIcon,
-  'illustrator.svg': IllustratorIcon,
+  'react.svg': '/assets/react.svg',
+  'html.svg': '/assets/html.svg',
+  'css.svg': '/assets/css.svg',
+  'javascript.svg': '/assets/javascript.svg',
+  'tailwindcss.svg': '/assets/tailwindcss.svg',
+  'python.svg': '/assets/python.svg',
+  'java.svg': '/assets/java.svg',
+  'sqldeveloper.svg': '/assets/sqldeveloper.svg',
+  'mongodb.svg': '/assets/mongodb.svg',
+  'flutter.svg': '/assets/flutter.svg',
+  'androidstudio.svg': '/assets/androidstudio.svg',
+  'git.svg': '/assets/git.svg',
+  'vscode.svg': '/assets/vscode.svg',
+  'figma.svg': '/assets/figma.svg',
+  'unrealengine.svg': '/assets/unrealengine.svg',
+  'unity.svg': '/assets/unity.svg',
+  'photoshop.svg': '/assets/photoshop.svg',
+  'illustrator.svg': '/assets/illustrator.svg',
 };
 
 const skills = [
@@ -51,15 +30,15 @@ const skills = [
   { name: 'Tailwind CSS', level: 40, category: 'Frontend', icon: 'tailwindcss.svg' },
   { name: 'Python', level: 90, category: 'Backend', icon: 'python.svg' },
   { name: 'Java', level: 85, category: 'Backend', icon: 'java.svg' },
-  { name: 'SQL Dev.', level: 60, category: 'Backend', icon: 'sqldeveloper.svg' },
-  { name: 'Mongo DB.', level: 50, category: 'Backend', icon: 'mongodb.svg' },
+  { name: 'SQL Developer', level: 70, category: 'Backend', icon: 'sqldeveloper.svg' },
+  { name: 'Mongo DB', level: 50, category: 'Backend', icon: 'mongodb.svg' },
   { name: 'Flutter', level: 80, category: 'Mobile', icon: 'flutter.svg' },
-  { name: 'Android St.', level: 70, category: 'Mobile', icon: 'androidstudio.svg' },
+  { name: 'Android Studio', level: 70, category: 'Mobile', icon: 'androidstudio.svg' },
   { name: 'React Native', level: 50, category: 'Mobile', icon: 'react.svg' },
   { name: 'Git', level: 90, category: 'Tools', icon: 'git.svg' },
-  { name: 'VS. Code', level: 90, category: 'Tools', icon: 'vscode.svg' },
-  { name: 'Figma', level: 90, category: 'Tools', icon: 'figma.svg' },
-  { name: 'U. Engine 5', level: 70, category: 'Tools', icon: 'unrealengine.svg' },
+  { name: 'Visual Studio Code', level: 90, category: 'Tools', icon: 'vscode.svg' },
+  { name: 'Figma', level: 80, category: 'Tools', icon: 'figma.svg' },
+  { name: 'Unreal Engine', level: 70, category: 'Tools', icon: 'unrealengine.svg' },
   { name: 'Unity', level: 60, category: 'Tools', icon: 'unity.svg' },
   { name: 'Photoshop', level: 40, category: 'Tools', icon: 'photoshop.svg' },
   { name: 'Illustrator', level: 50, category: 'Tools', icon: 'illustrator.svg' },
