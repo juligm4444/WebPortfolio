@@ -37,14 +37,32 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: hsl(var(--primary));
+    }
+  }
 }
 
 @layer base {
   :root {
     --background: 180, 26%, 15%;
-    --foreground: 174, 72%, 56%;
+    --foreground: 174, 100%, 73%;
     --border: 0, 0%, 100%;
-    --card: 0, 0%, 0%;
+    --card: 173, 21%, 24%;
     --primary: 0, 0%, 100%;
     --primary-foreground: 0, 0%, 0%;
     --background-image: none;
@@ -126,6 +144,14 @@ html.light body {
 @utility general-button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,165,0,0.5)]
   hover:scale-105 active:scale-95;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  display: inline-block;
+  animation: typewriter 2.5s steps(30, end) forwards;
 }
 
 #root {
