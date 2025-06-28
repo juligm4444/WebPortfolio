@@ -20,6 +20,8 @@ const iconMap = {
   'Unity.svg': '/assets/Unity.svg',
   'Adobe Photoshop.svg': '/assets/Adobe Photoshop.svg',
   'Adobe Illustrator.svg': '/assets/Adobe Illustrator.svg',
+  'Angular.svg': 'assets/Angular.svg',
+  'Django.svg': 'assets/Django.svg',
 };
 
 // Update skills to use the correct icon file names:
@@ -43,6 +45,8 @@ const skills = [
   { name: 'Unity', level: 60, category: 'Tools', icon: 'Unity.svg' },
   { name: 'Photoshop', level: 40, category: 'Tools', icon: 'Adobe Photoshop.svg' },
   { name: 'Illustrator', level: 50, category: 'Tools', icon: 'Adobe Illustrator.svg' },
+  { name: 'Angular', level: 50, category: 'Frontend', icon: 'Angular.svg' },
+  { name: 'Django', level: 60, category: 'Frontend', icon: 'Django.svg' },
 ];
 
 const categories = ['all', 'Frontend', 'Backend', 'Mobile', 'Tools'];
