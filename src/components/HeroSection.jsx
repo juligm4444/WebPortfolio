@@ -10,14 +10,17 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center px-4">
-      <div className="conatiner max-w-4xl mx-auto text-center z-10">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center px-2 sm:px-4"
+    >
+      <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
-          <h1 className="typewriter inline-block text-4xl md:text-6xl font-bold tracking-tight">
+          <h1 className="typewriter inline-block text-2xl sm:text-4xl md:text-6xl font-bold tracking-tight break-words">
             Hi, I'm Julián Galindo Mora
           </h1>
           {showParagraph && (
-            <p className="text-lg md:text-xl text-muted-foreground max-2-2xl ax-auto opacity-0 animate-fade-in-delay-d">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-d">
               I design and develop digital experiences that flow from structure to aesthetics,
               blending backend logic with the intuition of human-centered design. Every line of code
               I write aims to unite functionality with creative expression.

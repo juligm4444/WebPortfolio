@@ -69,10 +69,10 @@
   }
 
   .light {
-    --background: 42, 100%, 89%;
-    --foreground: 0, 0%, 0%;
-    --border: 0, 0%, 0%;
-    --card: 0, 0%, 100%;
+    --background: 0, 17%, 92%;
+    --foreground: 86, 6%, 24%;
+    --border: 86, 4%, 32%;
+    --card: 9, 100%, 83%;
     --primary: 0, 0%, 0%;
     --primary-foreground: 0, 0%, 100%;
     --background-image: none;

@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { ThemeToggle } from './ThemeToggle';
 
 const navItems = [
   { name: 'Home', href: '#hero' },
@@ -23,6 +24,18 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
   return (
     <nav
       className={cn(
@@ -31,6 +44,7 @@ export const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between">
+        {/* Logo */}
         <a className="text-xl font-bold text-primary flex items-center" href="#hero">
           <span className="relative z-10">
             <span className="text-glow">juligm4 </span>
@@ -38,7 +52,8 @@ export const Navbar = () => {
           </span>
         </a>
 
-        <div className="hidden md:flex space-x-8">
+        {/* Desktop navigation */}
+        <div className="hidden md:flex space-x-8 items-center">
           {navItems.map((item, key) => (
             <a
               key={key}
@@ -48,37 +63,37 @@ export const Navbar = () => {
               {item.name}
             </a>
           ))}
+          <ThemeToggle />
         </div>
 
-        <button
-          onClick={() => setOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        <div
-          className={cn(
-            'fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center',
-            'transition-all duration-300 md:hidden',
-            open ? 'opacity-100 poiner-events-auto' : 'opacity-0 pointer-events-none'
-          )}
-        >
-          <div className="flex flex-col space-x-8 text-xl">
-            {navItems.map((item, key) => (
-              <a
-                key={key}
-                href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
+        {/* Mobile: Theme toggle and menu button */}
+        <div className="flex items-center md:hidden gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((prev) => !prev)}
+            className="p-2 text-foreground z-50"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="fixed inset-0 z-30 bg-background/95 flex flex-col items-center justify-center gap-8 md:hidden transition-all">
+          {navItems.map((item, key) => (
+            <a
+              key={key}
+              href={item.href}
+              className="text-2xl font-semibold text-foreground hover:text-primary transition-colors duration-300"
+              onClick={() => setOpen(false)}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };

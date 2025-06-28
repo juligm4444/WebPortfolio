@@ -26,11 +26,11 @@ export const ProjectsSection = () => {
           aspect included in these projects is a reflection of my passion for technology and design.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, key) => (
             <div
               key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover w-full max-w-sm"
             >
               <div className="h-48 overflow-hidden">
                 <img
@@ -42,13 +42,16 @@ export const ProjectsSection = () => {
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4 justify-center w-full">
                   {project.tags.map((tag, index) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/20 text-secondary-foreground">
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/20 text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1 text-center"> {project.title}</h3>
+                <h3 className="text-xl font-semibold mb-1 text-center">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4 text-center">
                   {project.description}
                 </p>
