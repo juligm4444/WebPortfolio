@@ -11,7 +11,9 @@ export const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">Innovative Designer & Creative Developer</h3>
+            <h3 className="text-primary text-2xl font-semibold">
+              Innovative Designer & Creative Developer
+            </h3>
             <p className="text-muted-foreground">
               As a designer and developer, I specialize in crafting intuitive, game-inspired
               interfaces with modern frontend technologies like React. My background in systems
@@ -44,7 +46,10 @@ export const AboutSection = () => {
                   <Code className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Mobile & Fullstack Development </h4>
+                  <h4 className="text-primary font-semibold text-lg">
+                    {' '}
+                    Mobile & Fullstack Development{' '}
+                  </h4>
                   <p className="text-muted-foreground">
                     Developing complete back-end & front-end applications with React Technology.{' '}
                   </p>
@@ -57,7 +62,7 @@ export const AboutSection = () => {
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> UI/UX & Videogame Design </h4>
+                  <h4 className="text-primary font-semibold text-lg"> UI/UX & Videogame Design </h4>
                   <p className="text-muted-foreground">
                     Creating interfaces and previews of mobile apps and videoagmes with high
                     prototyping tools
@@ -71,7 +76,7 @@ export const AboutSection = () => {
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Team & Project Management</h4>
+                  <h4 className="text-primary font-semibold text-lg"> Team & Project Management</h4>
                   <p className="text-muted-foreground">
                     {' '}
                     Planning and achieving projects through the application of agile metodologies

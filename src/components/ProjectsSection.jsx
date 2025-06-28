@@ -7,8 +7,8 @@ const projects = [
     description: 'A personal portfolio website showcasing my skills, projects and Certifications.',
     image: '/ProjectPreviews/web-portfolio.png',
     tags: ['CSS', 'JavaScript', 'React', 'Spline'],
-    demoUrl: '#',
-    sourceProjectUrl: '#',
+    demoUrl: 'https://web-portfolio-wheat-nine.vercel.app/',
+    sourceProjectUrl: 'https://github.com/juligm4444/WebPortfolio',
   },
 ];
 
@@ -17,7 +17,7 @@ export const ProjectsSection = () => {
     <section id="projects" className="py-24 px-4">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Featured <span className="text-primary">Projects</span>
+          <span className="text-primary"> Featured Projects</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -51,7 +51,9 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1 text-center">{project.title}</h3>
+                <h3 className="text-xl text-primary font-semibold mb-1 text-center">
+                  {project.title}
+                </h3>
                 <p className="text-muted-foreground text-sm mb-4 text-center">
                   {project.description}
                 </p>

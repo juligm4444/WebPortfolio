@@ -43,7 +43,9 @@ export const ContactSection = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6 text-center">Contact Information</h3>
+            <h3 className="text-2xl text-primary font-semibold mb-6 text-center">
+              Contact Information
+            </h3>
             <div className="flex flex-col items-center space-y-6 justify-center">
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 rounded-full bg-primary/10 mb-2">
@@ -80,7 +82,7 @@ export const ContactSection = () => {
               </div>
             </div>
             <div className="pt-8">
-              <h4 className="font-medium mb-4 text-center"> Follow Me</h4>
+              <h4 className="text-primary font-medium mb-4 text-center"> Follow Me</h4>
               <div className="flex space-x-4 justify-center">
                 <a
                   href="https://www.linkedin.com/in/juligm4/"
@@ -110,7 +112,7 @@ export const ContactSection = () => {
             </div>
           </div>
           <div className="bg-card p-8 rounded-lg shadow-xs">
-            <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+            <h3 className="text-primary text-2xl font-semibold mb-6">Send a Message</h3>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
