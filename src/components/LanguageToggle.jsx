@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const LANGUAGES = [
-  { code: 'en', icon: '/assets/icons/english.svg', label: 'English' },
-  { code: 'es', icon: '/assets/icons/spanish.svg', label: 'Español' },
+  { code: 'en', icon: '/assets/icons/spanish.svg', label: 'Spanish' },
+  { code: 'es', icon: '/assets/icons/english.svg', label: 'English' },
 ];
 
 export const LanguageToggle = () => {
