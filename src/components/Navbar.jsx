@@ -2,19 +2,22 @@ import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
+import { useTranslation } from 'react-i18next';
 
-const navItems = [
-  { name: 'Home', href: '#hero' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Certifications', href: '#certifications' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+const navKeys = [
+  { key: 'home', href: '#hero' },
+  { key: 'about', href: '#about' },
+  { key: 'skills', href: '#skills' },
+  { key: 'certifications', href: '#certifications' },
+  { key: 'projects', href: '#projects' },
+  { key: 'contact', href: '#contact' },
 ];
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +28,6 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent background scroll when mobile menu is open
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
@@ -48,27 +50,24 @@ export const Navbar = () => {
         {/* Logo */}
         <a className="text-xl font-bold text-primary flex items-center" href="#hero">
           <span className="relative z-10">
-            <span className="text-glow">juligm4 </span>
-            Portfolio
+            <span className="text-glow">{t('navbar.name')}</span>
           </span>
         </a>
-
-        {/* Desktop navigation */}
-        <div className="hidden md:flex space-x-8 items-center">
-          {navItems.map((item, key) => (
+        <div className="hidden md:flex space-x-4 items-center">
+          {navKeys.map((item, key) => (
             <a
               key={key}
               href={item.href}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
-              {item.name}
+              {t(`navbar.${item.key}`)}
             </a>
           ))}
+          <LanguageToggle />
           <ThemeToggle />
         </div>
-
-        {/* Mobile: Theme toggle and menu button */}
         <div className="flex items-center md:hidden gap-2">
+          <LanguageToggle />
           <ThemeToggle />
           <button
             onClick={() => setOpen((prev) => !prev)}
@@ -79,22 +78,7 @@ export const Navbar = () => {
           </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="fixed top-0 left-0 w-full h-full z-30 bg-background/95 flex flex-col items-center justify-center gap-8 md:hidden transition-all overflow-y-auto">
-          {navItems.map((item, key) => (
-            <a
-              key={key}
-              href={item.href}
-              className="text-2xl font-semibold text-foreground hover:text-primary transition-colors duration-300"
-              onClick={() => setOpen(false)}
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      )}
+      {/* ...rest of your code... */}
     </nav>
   );
 };

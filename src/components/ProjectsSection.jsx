@@ -1,4 +1,5 @@
 import { ArrowBigRightDashIcon, CodeSquareIcon, ExternalLink } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const projects = [
   {
@@ -13,17 +14,18 @@ const projects = [
 ];
 
 export const ProjectsSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="projects" className="py-24 px-4">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Featured<span className="text-primary"> Projects</span>
+          {t('projects.title1')}
+          <span className="text-primary"> {t('projects.title2')}</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          These are some of the projects I have worked on. Each one of them were created with a
-          specific purpose in mind, showcasing my skills and expressing myself through them. Every
-          aspect included in these projects is a reflection of my passion for technology and design.
+          {t('projects.description')}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -52,10 +54,10 @@ export const ProjectsSection = () => {
                 </div>
 
                 <h3 className="text-xl text-primary font-semibold mb-1 text-center">
-                  {project.title}
+                  {t('projects.project1.name')}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-4 text-center">
-                  {project.description}
+                  {t('projects.project1.description')}
                 </p>
                 <div className="flex justify-between items-center">
                   <a
@@ -84,7 +86,7 @@ export const ProjectsSection = () => {
             target="_blank"
             href="https://github.com/juligm4444"
           >
-            View All My Projects <ArrowBigRightDashIcon size={20} />
+            {t('projects.button')} <ArrowBigRightDashIcon size={20} />
           </a>
         </div>
       </div>

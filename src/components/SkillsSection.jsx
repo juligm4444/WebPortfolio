@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 const iconMap = {
   'React.svg': '/assets/icons/React.svg',
@@ -24,7 +25,6 @@ const iconMap = {
   'Django.svg': 'assets/icons/Django.svg',
 };
 
-// Update skills to use the correct icon file names:
 const skills = [
   { name: 'React', level: 60, category: 'Frontend', icon: 'React.svg' },
   { name: 'HTML', level: 60, category: 'Frontend', icon: 'HTML5.svg' },
@@ -40,19 +40,29 @@ const skills = [
   { name: 'React Native', level: 50, category: 'Mobile', icon: 'React.svg' },
   { name: 'Git', level: 90, category: 'Tools', icon: 'Git.svg' },
   { name: 'VS. Code', level: 90, category: 'Tools', icon: 'Visual Studio Code.svg' },
-  { name: 'Figma', level: 80, category: 'Tools', icon: 'Figma.svg' },
-  { name: 'U. Engine 5', level: 70, category: 'Tools', icon: 'Unreal Engine.svg' },
-  { name: 'Unity', level: 60, category: 'Tools', icon: 'Unity.svg' },
-  { name: 'Photoshop', level: 40, category: 'Tools', icon: 'Adobe Photoshop.svg' },
-  { name: 'Illustrator', level: 50, category: 'Tools', icon: 'Adobe Illustrator.svg' },
+  { name: 'Figma', level: 80, category: 'Design', icon: 'Figma.svg' },
+  { name: 'U. Engine 5', level: 70, category: 'Design', icon: 'Unreal Engine.svg' },
+  { name: 'Unity', level: 60, category: 'Design', icon: 'Unity.svg' },
+  { name: 'Photoshop', level: 40, category: 'Design', icon: 'Adobe Photoshop.svg' },
+  { name: 'Illustrator', level: 50, category: 'Design', icon: 'Adobe Illustrator.svg' },
   { name: 'Angular', level: 50, category: 'Frontend', icon: 'Angular.svg' },
   { name: 'Django', level: 60, category: 'Frontend', icon: 'Django.svg' },
 ];
 
-const categories = ['all', 'Frontend', 'Backend', 'Mobile', 'Tools'];
-
 export const SkillsSection = () => {
   const [activeCategory, setCategory] = useState('all');
+  const { t } = useTranslation();
+
+  // Map translation keys to categories
+  const categories = [
+    { key: 'all', label: t('skills.filter1') },
+    { key: 'Frontend', label: t('skills.filter2') },
+    { key: 'Backend', label: t('skills.filter3') },
+    { key: 'Mobile', label: t('skills.filter4') },
+    { key: 'Design', label: t('skills.filter5') },
+    { key: 'Tools', label: t('skills.filter6') },
+  ];
+
   const filteredSkills = skills
     .slice()
     .sort((a, b) => b.level - a.level)
@@ -62,22 +72,22 @@ export const SkillsSection = () => {
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills</span>
+          {t('skills.title1')} <span className="text-primary">{t('skills.title2')}</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category, key) => (
             <button
               key={key}
-              onClick={() => setCategory(category)}
+              onClick={() => setCategory(category.key)}
               className={cn(
                 'px-5 py-2 rounded-full transition-colors duration-300 capitalize',
-                activeCategory === category
+                activeCategory === category.key
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-secondary/70 text-foreground hover:bg-secondary'
               )}
             >
-              {category}
+              {category.label}
             </button>
           ))}
         </div>
@@ -87,7 +97,6 @@ export const SkillsSection = () => {
               key={key}
               className="bg-card p-6 rounded-lg shadow-xs card-hover flex flex-row items-center gap-4"
             >
-              {/* Left: Icon and Name */}
               <div className="flex flex-col items-center w-28 flex-shrink-0">
                 {skill.icon && (
                   <img
@@ -103,7 +112,6 @@ export const SkillsSection = () => {
                   {skill.name}
                 </h3>
               </div>
-              {/* Right: Progress Bar and Percentage */}
               <div className="flex-1 flex flex-col justify-center">
                 <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
                   <div

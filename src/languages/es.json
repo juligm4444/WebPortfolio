@@ -1,0 +1,77 @@
+{
+  "navbar": {
+    "name": "Portafolio de juligm4",
+    "home": "Inicio",
+    "about": "Perfil",
+    "skills": "Habilidades",
+    "certifications": "Certificaciones",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy Julián Galindo Mora",
+    "description": "Diseño y desarrollo experiencias digitales que fluyen desde la estructura hasta la estética, fusionando la lógica del backend con la intuición del diseño centrado en el usuario. Cada línea de código que escribo busca unir la funcionalidad con la expresión creativa.",
+    "button": "Mira mi Trabajo"
+  },
+  "about": {
+    "title1": "Acerca",
+    "title2": "de Mí",
+    "subtitle": "Diseñador Innovador & Desarrollador Creativo",
+    "parragraph1": "Como diseñador y desarrollador, me especializo en crear interfaces intuitivas inspiradas en videojuegos, utilizando tecnologías frontend modernas como React. Mi formación en ingeniería de sistemas y desarrollo móvil me permite construir experiencias que no solo son visualmente atractivas, sino también estructuralmente sólidas.",
+    "parragraph2": "Me apasiona fusionar la creatividad con la lógica, desde diseñar prototipos lúdicos en Figma hasta implementar funcionalidades dinámicas con herramientas de backend. Siempre curioso y en constante aprendizaje, prospero en la intersección entre el diseño y el código, creando experiencias digitales que conectan con las personas.",
+    "button1": "Contáctame",
+    "button2": "Descargar CV",
+    "desc1": "Desarrollo Móvil & Full-stack",
+    "idea1": "Desarrollo de aplicaciones completas tanto del lado del backend como del frontend con tecnología React.",
+    "desc2": "Diseño UI/UX & de Videojuegos",
+    "idea2": "Creación de interfaces y vistas previas de aplicaciones móviles y videojuegos con herramientas de prototipado de alta calidad.",
+    "desc3": "Gestión de Equipos & Proyectos",
+    "idea3": "Planificación y ejecución de proyectos mediante la aplicación de metodologías ágiles."
+  },
+  "skills": {
+    "title1": "Mis",
+    "title2": "Habilidades",
+    "filter1": "Todas",
+    "filter2": "Frontend",
+    "filter3": "Backend",
+    "filter4": "Móvil",
+    "filter5": "Diseño",
+    "filter6": "Herramientas"
+  },
+  "certifications": {
+    "title1": "Mis",
+    "title2": "Certificaciones",
+    "button": "Certificado"
+  },
+  "projects": {
+    "title1": "Proyectos",
+    "title2": "Destacados",
+    "description": "Estos son algunos de los proyectos en los que he trabajado. Cada uno de ellos fue creado con un propósito específico, mostrando mis habilidades y permitiéndome expresarme a través de ellos. Cada aspecto incluido en estos proyectos es un reflejo de mi pasión por la tecnología y el diseño.",
+    "project1": {
+      "name": "Portafolio Web",
+      "description": "Un sitio web de portafolio personal que muestra mis habilidades, proyectos y certificaciones."
+    },
+    "button": "Mira Todos Mis Proyectos"
+  },
+  "contact": {
+    "title1": "Comunícate",
+    "title2": "Conmigo",
+    "description": "¿Quieres colaborar o tienes una idea en mente? Ponte en contacto. Siempre son bienvenidas nuevas oportunidades y horizontes.",
+    "subtitle1": "Informadión de Contacto",
+    "item1": "Correo",
+    "item2": "Celular",
+    "item3": "Localización",
+    "end": "Sígueme",
+    "subtitle": "Envía un Mensaje",
+    "label1": "Tu Nombre",
+    "input1": "Pedro Pérez",
+    "label2": "Tu Correo",
+    "input2": "pedroPer@gmail.com",
+    "label3": "Tu Mensaje",
+    "input3": "Hola, estoy interesad@ en...",
+    "button": "Enviar Mensaje"
+  },
+  "footer": {
+    "text1": "Todos los derechos reservados."
+  }
+}

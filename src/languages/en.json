@@ -1,0 +1,77 @@
+{
+  "navbar": {
+    "name": "juligm4 Portfolio",
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "certifications": "Certifications",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Julián Galindo Mora",
+    "description": "I design and develop digital experiences that flow from structure to aesthetics, blending backend logic with the intuition of human-centered design. Every line of code I write aims to unite functionality with creative expression.",
+    "button": "View My Work"
+  },
+  "about": {
+    "title1": "About",
+    "title2": "Me",
+    "subtitle": "Innovative Designer & Creative Developer",
+    "parragraph1": "As a designer and developer, I specialize in crafting intuitive, game-inspired interfaces with modern frontend technologies like React. My background in systems engineering and mobile development allows me to build experiences that are not only visually engaging but also structurally solid.",
+    "parragraph2": "I'm passionate about blending creativity with logic, from designing playful prototypes in Figma to implementing dynamic functionality with backend tools. Always curious and learning, I thrive at the intersection of design and code, building digital experiences that connect with people.",
+    "button1": "Get in Touch",
+    "button2": "Download CV",
+    "desc1": "Mobile & Full-stack Development",
+    "idea1": "Developing complete back-end & front-end applications with React Technology.",
+    "desc2": "UI/UX & Videogame Design",
+    "idea2": "Creating interfaces and previews of mobile apps and videogames with high-quality prototyping tools.",
+    "desc3": "Team & Project Management",
+    "idea3": "Planning and achieving projects through the application of agile methodologies."
+  },
+  "skills": {
+    "title1": "My",
+    "title2": "Skills",
+    "filter1": "All",
+    "filter2": "Frontend",
+    "filter3": "Backend",
+    "filter4": "Mobile",
+    "filter5": "Design",
+    "filter6": "Tools"
+  },
+  "certifications": {
+    "title1": "My",
+    "title2": "Certifications",
+    "button": "Certificate"
+  },
+  "projects": {
+    "title1": "Featured",
+    "title2": "Projects",
+    "description": "These are some of the projects I have worked on. Each one of them was created with a specific purpose in mind, showcasing my skills and expressing myself through them. Every aspect included in these projects is a reflection of my passion for technology and design.",
+    "project1": {
+      "name": "Portfolio Website",
+      "description": "A personal portfolio website showcasing my skills, projects, and certifications."
+    },
+    "button": "View All My Projects"
+  },
+  "contact": {
+    "title1": "Contact",
+    "title2": "Me",
+    "description": "Want to collaborate or have an idea in mind? Get in touch. New opportunities and horizons are always welcomed.",
+    "subtitle1": "Contact Information",
+    "item1": "Email",
+    "item2": "Phone",
+    "item3": "Location",
+    "end": "Follow me",
+    "subtitle": "Send a Message",
+    "label1": "Your Name",
+    "input1": "Jack Stevenson",
+    "label2": "Your Email",
+    "input2": "jackStv@gmail.com",
+    "label3": "Your Message",
+    "input3": "Hello, I'm interested in...",
+    "button": "Send Message"
+  },
+  "footer": {
+    "text1": "All rights reserved."
+  }
+}
