@@ -64,30 +64,31 @@ export const CertificationsSection = () => {
           <span className="text-primary">{t('certifications.title2')}</span>
         </h2>
         <div className="flex flex-col gap-6">
-          {certifications.map((cert, idx) => (
-            <div
-              key={idx}
-              className="bg-card rounded-lg shadow-xs p-6 card-hover
-                 grid grid-cols-1 sm:grid-cols-3 items-center gap-6 text-center"
-            >
-              <div className="flex flex-col items-center justify-center sm:items-start sm:text-left sm:pl-0 sm:ml-[0.7rem]">
-                <h3 className="text-primary font-semibold text-lg">{cert.name}</h3>
-                <p className="text-muted-foreground text-sm">{cert.company}</p>
-                <p className="text-xs text-muted-foreground">{cert.date}</p>
-              </div>
-              <div className="flex items-center justify-center h-20">
-                {cert.badge ? (
-                  <img
-                    src={cert.badge}
-                    alt={`${cert.company} badge`}
-                    className="w-20 h-20 object-contain"
-                  />
-                ) : (
-                  <div className="w-20 h-20" />
-                )}
-              </div>
-              <div className="flex items-center justify-center h-20 sm:justify-end sm:pr-0 sm:mr-[0.7rem]">
-                {cert.pdf ? (
+          {certifications
+            .filter((cert) => cert.pdf)
+            .map((cert, idx) => (
+              <div
+                key={idx}
+                className="bg-card rounded-lg shadow-xs p-6 card-hover
+                   grid grid-cols-1 sm:grid-cols-3 items-center gap-6 text-center"
+              >
+                <div className="flex flex-col items-center justify-center sm:items-start sm:text-left sm:pl-0 sm:ml-[0.7rem]">
+                  <h3 className="text-primary font-semibold text-lg">{cert.name}</h3>
+                  <p className="text-muted-foreground text-sm">{cert.company}</p>
+                  <p className="text-xs text-muted-foreground">{cert.date}</p>
+                </div>
+                <div className="flex items-center justify-center h-20">
+                  {cert.badge ? (
+                    <img
+                      src={cert.badge}
+                      alt={`${cert.company} badge`}
+                      className="w-20 h-20 object-contain"
+                    />
+                  ) : (
+                    <div className="w-20 h-20" />
+                  )}
+                </div>
+                <div className="flex items-center justify-center h-20 sm:justify-end sm:pr-0 sm:mr-[0.7rem]">
                   <a
                     href={cert.pdf}
                     download
@@ -98,12 +99,9 @@ export const CertificationsSection = () => {
                     <Download size={20} />
                     <span className="hidden sm:inline">{t('certifications.button')}</span>
                   </a>
-                ) : (
-                  <div className="w-12 h-12" />
-                )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </section>
