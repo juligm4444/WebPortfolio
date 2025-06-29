@@ -7,6 +7,7 @@ const navItems = [
   { name: 'Home', href: '#hero' },
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
+  { name: 'Certifications', href: '#certifications' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -81,7 +82,7 @@ export const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="fixed inset-0 z-30 bg-background/95 flex flex-col items-center justify-center gap-8 md:hidden transition-all">
+        <div className="fixed top-0 left-0 w-full h-full z-30 bg-background/95 flex flex-col items-center justify-center gap-8 md:hidden transition-all overflow-y-auto">
           {navItems.map((item, key) => (
             <a
               key={key}

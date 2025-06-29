@@ -17,7 +17,7 @@ export const ProjectsSection = () => {
     <section id="projects" className="py-24 px-4">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          <span className="text-primary"> Featured Projects</span>
+          Featured<span className="text-primary"> Projects</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -61,14 +61,14 @@ export const ProjectsSection = () => {
                   <a
                     href={project.demoUrl}
                     target="_blank"
-                    className="text-foreground/80 hover:text-primary  transition-colors duration-300"
+                    className="text-primary hover:text-primary  transition-colors duration-300"
                   >
                     <ExternalLink size={20} />
                   </a>
                   <a
                     href={project.sourceProjectUrl}
                     target="_blank"
-                    className="text-foreground/80 hover:text-primary  transition-colors duration-300"
+                    className="text-primary hover:text-primary  transition-colors duration-300"
                   >
                     <CodeSquareIcon size={20} />
                   </a>

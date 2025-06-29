@@ -2,26 +2,26 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const iconMap = {
-  'React.svg': '/assets/React.svg',
-  'HTML5.svg': '/assets/HTML5.svg',
-  'CSS3.svg': '/assets/CSS3.svg',
-  'JavaScript.svg': '/assets/JavaScript.svg',
-  'Tailwind CSS.svg': '/assets/Tailwind CSS.svg',
-  'Python.svg': '/assets/Python.svg',
-  'Java.svg': '/assets/Java.svg',
-  'SQL Developer.svg': '/assets/SQL Developer.svg',
-  'MongoDB.svg': '/assets/MongoDB.svg',
-  'Flutter.svg': '/assets/Flutter.svg',
-  'Android Studio.svg': '/assets/Android Studio.svg',
-  'Git.svg': '/assets/Git.svg',
-  'Visual Studio Code.svg': '/assets/Visual Studio Code.svg',
-  'Figma.svg': '/assets/Figma.svg',
-  'Unreal Engine.svg': '/assets/Unreal Engine.svg',
-  'Unity.svg': '/assets/Unity.svg',
-  'Adobe Photoshop.svg': '/assets/Adobe Photoshop.svg',
-  'Adobe Illustrator.svg': '/assets/Adobe Illustrator.svg',
-  'Angular.svg': 'assets/Angular.svg',
-  'Django.svg': 'assets/Django.svg',
+  'React.svg': '/assets/icons/React.svg',
+  'HTML5.svg': '/assets/icons/HTML5.svg',
+  'CSS3.svg': '/assets/icons/CSS3.svg',
+  'JavaScript.svg': '/assets/icons/JavaScript.svg',
+  'Tailwind CSS.svg': '/assets/icons/Tailwind CSS.svg',
+  'Python.svg': '/assets/icons/Python.svg',
+  'Java.svg': '/assets/icons/Java.svg',
+  'SQL Developer.svg': '/assets/icons/SQL Developer.svg',
+  'MongoDB.svg': '/assets/icons/MongoDB.svg',
+  'Flutter.svg': '/assets/icons/Flutter.svg',
+  'Android Studio.svg': '/assets/icons/Android Studio.svg',
+  'Git.svg': '/assets/icons/Git.svg',
+  'Visual Studio Code.svg': '/assets/icons/Visual Studio Code.svg',
+  'Figma.svg': '/assets/icons/Figma.svg',
+  'Unreal Engine.svg': '/assets/icons/Unreal Engine.svg',
+  'Unity.svg': '/assets/icons/Unity.svg',
+  'Adobe Photoshop.svg': '/assets/icons/Adobe Photoshop.svg',
+  'Adobe Illustrator.svg': '/assets/icons/Adobe Illustrator.svg',
+  'Angular.svg': 'assets/icons/Angular.svg',
+  'Django.svg': 'assets/icons/Django.svg',
 };
 
 // Update skills to use the correct icon file names:
@@ -97,7 +97,7 @@ export const SkillsSection = () => {
                   />
                 )}
                 <h3
-                  className="font-semibold text-lg text-center truncate w-full"
+                  className="font-semibold text-primarytext-lg text-center truncate w-full"
                   title={skill.name}
                 >
                   {skill.name}
