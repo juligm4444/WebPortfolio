@@ -2,7 +2,7 @@ import { Briefcase, Code, User } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const AboutSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <section id="about" className="py-24 px-4 relative">
@@ -10,7 +10,6 @@ export const AboutSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           {t('about.title1')} <span className="text-primary">{t('about.title2')}</span>
         </h2>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-primary text-2xl font-semibold">{t('about.subtitle')}</h3>
@@ -22,7 +21,8 @@ export const AboutSection = () => {
                 {t('about.button1')}
               </a>
               <a
-                href=""
+                href={i18n.language === 'es' ? '/files/CV-Spanish.pdf' : '/files/CV-English.pdf'}
+                download
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 {t('about.button2')}
