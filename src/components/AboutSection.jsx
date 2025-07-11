@@ -21,7 +21,7 @@ export const AboutSection = () => {
                 {t('about.button1')}
               </a>
               <a
-                href={i18n.language === 'es' ? '/files/CV-Spanish.pdf' : '/files/CV-English.pdf'}
+                href={i18n.language === 'es' ? '/files/CV-Español.pdf' : '/files/CV-English.pdf'}
                 download
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
