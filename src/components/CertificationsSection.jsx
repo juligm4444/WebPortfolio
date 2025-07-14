@@ -17,6 +17,20 @@ const certifications = [
     pdf: '/files/PythonEssentials2.pdf',
   },
   {
+    name: 'JavaScript Essentials 1',
+    company: 'Cisco',
+    date: '13/07/2025',
+    badge: '/assets/badges/javascript-essentials-1.png',
+    pdf: '/files/JavaScriptEssentials1.pdf',
+  },
+  {
+    name: 'JavaScript Essentials 2',
+    company: 'Cisco',
+    date: '14/07/2025',
+    badge: '/assets/badges/javascript-essentials-2.png',
+    pdf: '/files/JavaScriptEssentials2.pdf',
+  },
+  {
     name: 'Google UX Design Professional',
     company: 'Google',
     date: '',
