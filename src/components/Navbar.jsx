@@ -49,7 +49,7 @@ export const Navbar = () => {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <a className="text-xl font-bold text-primary flex items-center" href="#hero">
-          <img src={'public/assets/icons/LOGO.svg'} alt="Logo" className="h-20 w-20 mr-2" />
+          <img src="/assets/icons/LOGO.svg" alt="Logo" className="h-20 w-20 mr-2" />
           <span className="relative z-10">
             <span className="text-glow">{t('navbar.name')}</span>
           </span>
