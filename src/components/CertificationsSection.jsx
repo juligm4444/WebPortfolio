@@ -105,14 +105,14 @@ export const CertificationsSection = () => {
           {t('certifications.title1')}{' '}
           <span className="text-primary">{t('certifications.title2')}</span>
         </h2>
+        {/* Cambia flex-col por grid para responsive */}
         <div className="flex flex-col gap-6">
           {certifications
             .filter((cert) => cert.pdf)
             .map((cert, idx) => (
               <div
                 key={idx}
-                className="bg-card rounded-lg shadow-xs p-6 card-hover
-                   grid grid-cols-1 sm:grid-cols-3 items-center gap-6 text-center"
+                className="bg-card rounded-lg shadow-xs p-6 card-hover grid grid-cols-1 sm:grid-cols-3 items-center gap-6 text-center"
               >
                 <div className="flex flex-col items-center justify-center sm:items-start sm:text-left sm:pl-0 sm:ml-[0.7rem]">
                   <h3 className="text-primary font-semibold text-lg">{cert.name}</h3>
