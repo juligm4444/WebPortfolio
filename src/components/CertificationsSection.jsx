@@ -3,6 +3,34 @@ import { useTranslation } from 'react-i18next';
 
 const certifications = [
   {
+    name: 'User Experience Design Fundamentals',
+    company: 'IBM',
+    date: '24/07/2025',
+    badge: '/assets/badges/ux-fundamentals.png',
+    pdf: '/files/UXD-Fundamentals.pdf',
+  },
+  {
+    name: 'Enterprise Design Thinking Practitioner',
+    company: 'IBM',
+    date: '29/07/2025',
+    badge: '/assets/badges/edt-practitioner.png',
+    pdf: '/files/EDT-Practitioner.pdf',
+  },
+  {
+    name: 'Agile Explorer',
+    company: 'IBM',
+    date: '30/07/2025',
+    badge: '/assets/badges/agile-explorer.png',
+    pdf: '/files/AgileExplorer.pdf',
+  },
+  {
+    name: 'Project Management Fundamentals',
+    company: 'IBM',
+    date: '29/07/2025',
+    badge: '/assets/badges/pm-fundamentals.png',
+    pdf: '/files/PM-Fundamentals.pdf',
+  },
+  {
     name: 'Python Essentials 1',
     company: 'Cisco',
     date: '02/06/2025',
