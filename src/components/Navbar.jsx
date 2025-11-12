@@ -49,8 +49,8 @@ export const Navbar = () => {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <a className="text-xl font-bold text-primary flex items-center" href="#hero">
-          <img src="/assets/icons/LOGO.svg" alt="Logo" className="h-20 w-20 mr-2" />
-          <span className="relative z-10">
+          <img src="/assets/icons/LOGO.svg" alt="Logo" className="h-16 w-16 mr-2" />
+          <span className="relative z-10 hidden sm:block">
             <span className="text-glow">{t('navbar.name')}</span>
           </span>
         </a>
@@ -79,7 +79,22 @@ export const Navbar = () => {
           </button>
         </div>
       </div>
-      {/* ...rest of your code... */}
+      
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden fixed top-0 left-0 w-full h-screen bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center space-y-8">
+          {navKeys.map((item, key) => (
+            <a
+              key={key}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className="text-foreground/80 hover:text-primary transition-colors duration-300 text-xl font-medium"
+            >
+              {t(`navbar.${item.key}`)}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };

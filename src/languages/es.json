@@ -41,7 +41,27 @@
   "certifications": {
     "title1": "Mis",
     "title2": "Certificaciones",
-    "button": "Certificado"
+    "button": "Certificado",
+    "skills": "Habilidades Clave:",
+    "certSkills": {
+      "UX": "UX",
+      "UI": "UI",
+      "User flows": "Flujos de Usuario",
+      "Wireframing": "Wireframing",
+      "UX Design": "Diseño UX",
+      "Iterative Design": "Diseño Iterativo",
+      "Teamwork": "Trabajo en Equipo",
+      "User Stories": "Historias de Usuario",
+      "Agile Methodologies": "Metodologías Ágiles",
+      "Project Management": "Gestión de Proyectos",
+      "Risk Management": "Gestión de Riesgos",
+      "Team Leadership": "Liderazgo de Equipos",
+      "Problem Solving": "Resolución de Problemas",
+      "Python": "Python",
+      "Data Structures": "Estructuras de Datos",
+      "OOP": "POO",
+      "JavaScript": "JavaScript"
+    }
   },
   "projects": {
     "title1": "Proyectos",

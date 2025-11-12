@@ -37,7 +37,7 @@ export const LanguageToggle = () => {
       aria-label="Toggle language"
       title={current.label}
     >
-      <img src={current.icon} alt={current.label} className="w-6 h-6" />
+      <img src={current.icon} alt={current.label} className="w-8 h-8" />
     </button>
   );
 };
