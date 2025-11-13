@@ -1,100 +1,240 @@
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Menu, X, ChevronDown, Linkedin, Instagram, Twitter, Youtube, Mail } from 'lucide-react';
+import { useState } from 'react';
+import React from 'react';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
 import { useTranslation } from 'react-i18next';
 
-const navKeys = [
-  { key: 'home', href: '#hero' },
-  { key: 'about', href: '#about' },
-  { key: 'skills', href: '#skills' },
-  { key: 'certifications', href: '#certifications' },
-  { key: 'projects', href: '#projects' },
-  { key: 'contact', href: '#contact' },
+const navGroups = [
+  {
+    title: 'about',
+    key: 'about',
+    items: [
+      { key: 'profile', href: '#about' },
+      { key: 'skills', href: '#skills' },
+      { key: 'certifications', href: '#certifications' },
+    ]
+  },
+  {
+    title: 'tech-interface',
+    key: 'tech',
+    items: [
+      { key: 'websites', href: '#projects' },
+      { key: 'mobile-apps', href: '#mobile-apps' }
+    ]
+  },
+  {
+    title: 'design-projects',
+    key: 'design',
+    items: [
+      { key: 'ui-designs', href: '#ui-designs' },
+      { key: 'prototypes', href: '#prototypes' },
+      { key: 'class-projects', href: '#class-projects' },
+    ]
+  }
 ];
 
 export const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
+  const [isLight, setIsLight] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+  // Check theme on mount and when it changes
+  React.useEffect(() => {
+    const checkTheme = () => {
+      setIsLight(document.documentElement.classList.contains('light'));
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    checkTheme();
+    
+    // Listen for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    
+    return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [open]);
-
-  return (
-    <nav
-      className={cn(
-        'fixed w-full z-40 transition-all duration-300',
-        scrolled ? 'py-3 bg-background/80 backdrop-blur-md shadow-xs' : 'py-5'
-      )}
-    >
-      <div className="container flex items-center justify-between">
-        {/* Logo */}
-        <a className="text-xl font-bold text-primary flex items-center" href="#hero">
-          <img src="/assets/icons/LOGO.svg" alt="Logo" className="h-16 w-16 mr-2" />
-          <span className="relative z-10 hidden sm:block">
-            <span className="text-glow">{t('navbar.name')}</span>
-          </span>
+  const sidebarContent = (
+    <div className="flex flex-col h-full">
+      {/* Logo */}
+      <div className={cn(
+        "p-6 border-b",
+        isLight ? "border-white/20" : "border-gray-400/50"
+      )}>
+        <a href="#hero" className="flex flex-col items-center space-y-2">
+          <img src="/assets/icons/LOGO.svg" alt="Logo" className="h-12 w-12" />
+          <span className={cn(
+            "text-sm font-medium transition-colors",
+            isLight 
+              ? "text-white hover:text-gray-100" 
+              : "text-gray-800 hover:text-black"
+          )}>{t('navbar.name')}</span>
         </a>
-        <div className="hidden md:flex space-x-4 items-center">
-          {navKeys.map((item, key) => (
+      </div>
+
+      {/* Navigation Groups */}
+      <nav className="flex-1 overflow-y-auto p-4 space-y-6">
+        {navGroups.map((group) => (
+          <div key={group.key} className="space-y-3">
+            <h4 className={cn(
+              "text-sm font-medium uppercase tracking-wider text-left transition-colors",
+              isLight 
+                ? "text-white hover:text-gray-100" 
+                : "text-gray-800 hover:text-black"
+            )}>
+              {t(`navbar.${group.title}`)}
+            </h4>
+            <div className={cn(
+              "pl-4 space-y-2 border-l",
+              isLight ? "border-white/20" : "border-gray-400/50"
+            )}>
+              {group.items.map((item) => (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  className={cn(
+                    "block py-2 text-sm transition-colors text-left",
+                    isLight 
+                      ? "text-gray-300 hover:text-white" 
+                      : "text-gray-600 hover:text-black"
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {t(`navbar.${item.key}`)}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </nav>
+
+      {/* Social Media - Follow me */}
+      <div className={cn(
+        "p-4 border-t space-y-3",
+        isLight ? "border-white/20" : "border-gray-400/50"
+      )}>
+        <h4 className={cn(
+          "text-sm font-medium uppercase tracking-wider text-left transition-colors",
+          isLight 
+            ? "text-white hover:text-gray-100" 
+            : "text-gray-800 hover:text-black"
+        )}>
+          {t('navbar.follow-me')}
+        </h4>
+        <div className={cn(
+          "pl-4 border-l",
+          isLight ? "border-white/20" : "border-gray-400/50"
+        )}>
+          <div className="flex space-x-3 justify-start">
             <a
-              key={key}
-              href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              href="https://www.linkedin.com/in/juligm4/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "p-2 transition-colors",
+                isLight 
+                  ? "text-gray-300 hover:text-white" 
+                  : "text-gray-600 hover:text-black"
+              )}
             >
-              {t(`navbar.${item.key}`)}
+              <Linkedin size={16} />
             </a>
-          ))}
-          <LanguageToggle />
-          <ThemeToggle />
-        </div>
-        <div className="flex items-center md:hidden gap-2">
-          <LanguageToggle />
-          <ThemeToggle />
-          <button
-            onClick={() => setOpen((prev) => !prev)}
-            className="p-2 text-foreground z-50"
-            aria-label={open ? 'Close menu' : 'Open menu'}
-          >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            <a
+              href="https://www.instagram.com/juligm4/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "p-2 transition-colors",
+                isLight 
+                  ? "text-gray-300 hover:text-white" 
+                  : "text-gray-600 hover:text-black"
+              )}
+            >
+              <Instagram size={16} />
+            </a>
+            <a
+              href="https://x.com/Xx_juligm4_xX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "p-2 transition-colors",
+                isLight 
+                  ? "text-gray-300 hover:text-white" 
+                  : "text-gray-600 hover:text-black"
+              )}
+            >
+              <Twitter size={16} />
+            </a>
+            <a
+              href="https://www.youtube.com/@juligm4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "p-2 transition-colors",
+                isLight 
+                  ? "text-gray-300 hover:text-white" 
+                  : "text-gray-600 hover:text-black"
+              )}
+            >
+              <Youtube size={16} />
+            </a>
+          </div>
         </div>
       </div>
-      
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden fixed top-0 left-0 w-full h-screen bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center space-y-8">
-          {navKeys.map((item, key) => (
-            <a
-              key={key}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300 text-xl font-medium"
-            >
-              {t(`navbar.${item.key}`)}
-            </a>
-          ))}
-        </div>
+    </div>
+  );
+
+  return (
+    <>
+      {/* Desktop Sidebar */}
+      <aside 
+        className="hidden lg:block fixed left-0 top-0 h-screen w-52 border-r border-white/20 z-40"
+        style={{
+          background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`
+        }}
+      >
+        {sidebarContent}
+      </aside>
+
+      {/* Theme and Language Toggles - Top Right */}
+      <div className="fixed top-4 right-4 z-50 flex items-center space-x-4">
+        <LanguageToggle />
+        <ThemeToggle />
+      </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-card border border-border rounded-md shadow-md"
+        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+      >
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Mobile Sidebar */}
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+            onClick={() => setIsOpen(false)}
+          />
+          
+          {/* Mobile Sidebar */}
+          <aside 
+            className="lg:hidden fixed left-0 top-0 h-screen w-72 border-r border-white/20 z-50 transform transition-transform duration-300"
+            style={{
+              background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`
+            }}
+          >
+            {sidebarContent}
+          </aside>
+        </>
       )}
-    </nav>
+    </>
   );
 };

@@ -2,11 +2,21 @@
   "navbar": {
     "name": "Portafolio de juligm4",
     "home": "Inicio",
-    "about": "Perfil",
+    "about": "Acerca de",
     "skills": "Habilidades",
     "certifications": "Certificaciones",
     "projects": "Proyectos",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "profile": "Perfil",
+    "tech-interface": "Interfaz Tecnológica",
+    "websites": "Sitios Web",
+    "mobile-apps": "Apps Móviles",
+    "web-projects": "Proyectos Web",
+    "design-projects": "Proyectos de Diseño",
+    "ui-designs": "Diseños UI",
+    "prototypes": "Prototipos",
+    "class-projects": "Proyectos de Clase",
+    "follow-me": "Sígueme"
   },
   "hero": {
     "greeting": "Hola, soy Julián Galindo Mora",

@@ -99,11 +99,13 @@ export const SkillsSection = () => {
             >
               <div className="flex flex-col items-center w-28 flex-shrink-0">
                 {skill.icon && (
-                  <img
-                    src={iconMap[skill.icon]}
-                    alt={skill.name}
-                    className="w-12 h-12 mb-2 object-contain"
-                  />
+                  <div className="w-16 h-16 mb-2 bg-white rounded-full flex items-center justify-center">
+                    <img
+                      src={iconMap[skill.icon]}
+                      alt={skill.name}
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
                 )}
                 <h3
                   className="font-semibold text-primarytext-lg text-center truncate w-full"

@@ -6,7 +6,17 @@
     "skills": "Skills",
     "certifications": "Certifications",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "profile": "Profile",
+    "tech-interface": "Tech Interface",
+    "websites": "Websites",
+    "mobile-apps": "Mobile Apps",
+    "web-projects": "Web Projects",
+    "design-projects": "Design Projects",
+    "ui-designs": "UI Designs",
+    "prototypes": "Prototypes",
+    "class-projects": "Class Projects",
+    "follow-me": "Follow me"
   },
   "hero": {
     "greeting": "Hi, I'm Julián Galindo Mora",

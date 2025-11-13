@@ -66,16 +66,24 @@
     --primary: 0, 0%, 100%;
     --primary-foreground: 0, 0%, 0%;
     --background-image: none;
+    --sidebar-from: #2b4242;
+    --sidebar-to: #6b8784;
+    --sidebar-inverted-from: #93A4AB;
+    --sidebar-inverted-to: #c3c6c3;
   }
 
   .light {
     --background: 0, 17%, 92%;
     --foreground: 86, 6%, 24%;
     --border: 86, 4%, 32%;
-    --card: 9, 100%, 83%;
+    --card: 169, 8%, 53%;
     --primary: 0, 0%, 0%;
     --primary-foreground: 0, 0%, 100%;
     --background-image: none;
+    --sidebar-from: #93A4AB;
+    --sidebar-to: #c3c6c3;
+    --sidebar-inverted-from: #2b4242;
+    --sidebar-inverted-to: #6b8784;
   }
 
   * {
