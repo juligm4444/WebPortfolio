@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
@@ -52,6 +53,25 @@ const skills = [
 export const SkillsSection = () => {
   const [activeCategory, setCategory] = useState('all');
   const { t } = useTranslation();
+  const [isLight, setIsLight] = useState(false);
+
+  // Check theme on mount and when it changes
+  React.useEffect(() => {
+    const checkTheme = () => {
+      setIsLight(document.documentElement.classList.contains('light'));
+    };
+
+    checkTheme();
+
+    // Listen for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   // Map translation keys to categories
   const categories = [
@@ -69,19 +89,19 @@ export const SkillsSection = () => {
     .filter((skill) => activeCategory === 'all' || skill.category === activeCategory);
 
   return (
-    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
+    <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-6xl font-bold mb-12 text-center">
           {t('skills.title1')} <span className="text-primary">{t('skills.title2')}</span>
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
           {categories.map((category, key) => (
             <button
               key={key}
               onClick={() => setCategory(category.key)}
               className={cn(
-                'px-5 py-2 rounded-full transition-colors duration-300 capitalize',
+                'px-3 sm:px-5 py-1.5 sm:py-2 rounded-full transition-colors duration-300 capitalize text-sm sm:text-base',
                 activeCategory === category.key
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-secondary/70 text-foreground hover:bg-secondary'
@@ -91,24 +111,24 @@ export const SkillsSection = () => {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover flex flex-row items-center gap-4"
+              className="bg-card p-4 md:p-6 rounded-lg shadow-xs card-hover flex flex-row items-center gap-3 md:gap-4"
             >
-              <div className="flex flex-col items-center w-28 flex-shrink-0">
+              <div className="flex flex-col items-center w-20 md:w-28 flex-shrink-0">
                 {skill.icon && (
-                  <div className="w-16 h-16 mb-2 bg-white rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 mb-2 bg-white rounded-full flex items-center justify-center">
                     <img
                       src={iconMap[skill.icon]}
                       alt={skill.name}
-                      className="w-10 h-10 object-contain"
+                      className="w-8 h-8 md:w-10 md:h-10 object-contain"
                     />
                   </div>
                 )}
                 <h3
-                  className="font-semibold text-primarytext-lg text-center truncate w-full"
+                  className="font-semibold text-primary text-sm md:text-lg text-center truncate w-full"
                   title={skill.name}
                 >
                   {skill.name}
@@ -122,7 +142,7 @@ export const SkillsSection = () => {
                   />
                 </div>
                 <div className="text-center mt-1">
-                  <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                  <span className="text-xs md:text-sm font-medium text-white">{skill.level}%</span>
                 </div>
               </div>
             </div>

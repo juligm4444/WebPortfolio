@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 export const HeroSection = () => {
   const [showParagraph, setShowParagraph] = useState(false);
@@ -55,39 +56,46 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-2 sm:px-4"
+      className="relative min-h-screen flex flex-col justify-center px-4 py-20 lg:py-32"
     >
-      <div className="absolute top-13 left-13 z-40">
-        <span className="text-xl font-bold text-muted-foreground">{getTimeGreeting()}</span>
-      </div>
-      <div className="absolute top-20 left-13 z-40">
-        <span className="text-xl font-bold text-muted-foreground">{formatDateTime()}</span>
+      {/* Time and Greeting Section - Top */}
+      <div className="absolute top-4 sm:top-8 left-4 sm:left-8 z-40 space-y-2">
+        <div className="text-base sm:text-lg lg:text-xl font-bold text-muted-foreground">
+          {getTimeGreeting()}
+        </div>
+        <div className="text-sm sm:text-base lg:text-lg font-bold text-muted-foreground">
+          {formatDateTime()}
+        </div>
       </div>
 
-      {isTranslationReady && (
-        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 max-w-10xl px-4 z-10">
-          <h1 className="text-primary text-justify text-2xl sm:text-4xl md:text-5xl font-light tracking-tight break-words">
-            {t('hero.greeting')}
-          </h1>
-        </div>
-      )}
-      <div className="container max-w-8xl mx-auto text-center z-10 mt-10">
-        <div className="space-y-10">
-          {showParagraph && (
-            <div className="max-w-8xl mx-auto">
-              <h1 className="typewriter text-lg sm:text-xl md:text-6xl font-bold text-muted-foreground">
-                {t('hero.description')}
-              </h1>
-            </div>
-          )}
-          {showParagraph && (
-            <div className="pt-4 opacity-0 animate-fade-in-delay-d">
-              <a href="#projects" className="general-button">
-                {t('hero.button')}
-              </a>
-            </div>
-          )}
-        </div>
+      {/* Main Content - Centered */}
+      <div className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-12 lg:space-y-16 max-w-6xl mx-auto">
+        {/* Main Name/Title */}
+        {isTranslationReady && (
+          <div className="w-full">
+            <h1 className="text-primary text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-tight">
+              {t('hero.greeting')}
+            </h1>
+          </div>
+        )}
+
+        {/* Description Text - Main Quote (Bigger) */}
+        {showParagraph && (
+          <div className="w-full max-w-5xl">
+            <h2 className="typewriter text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-muted-foreground leading-relaxed">
+              {t('hero.description')}
+            </h2>
+          </div>
+        )}
+
+        {/* CTA Button */}
+        {showParagraph && (
+          <div className="pt-4 opacity-0 animate-fade-in-delay-d">
+            <Link to="/technology" className="general-button">
+              {t('hero.button')}
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">

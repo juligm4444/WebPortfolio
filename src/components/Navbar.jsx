@@ -73,7 +73,7 @@ export const Navbar = () => {
           <img
             src="/assets/icons/LOGO.svg"
             alt="Home"
-            className="h-35 w-35 transition-transform duration-300 group-hover:scale-105"
+            className="h-16 w-16 lg:h-20 lg:w-20 xl:h-24 xl:w-24 transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
       </div>
@@ -85,7 +85,7 @@ export const Navbar = () => {
             <Link
               to={group.categoryHref}
               className={cn(
-                'text-sm font-medium uppercase tracking-wider text-left transition-colors cursor-pointer hover:underline block',
+                'text-xs lg:text-sm font-medium uppercase tracking-wider text-left transition-colors cursor-pointer hover:underline block',
                 isLight ? 'text-white hover:text-gray-100' : 'text-gray-800 hover:text-black'
               )}
               onClick={() => setIsOpen(false)}
@@ -103,7 +103,7 @@ export const Navbar = () => {
                   key={item.key}
                   to={item.href}
                   className={cn(
-                    'block py-2 text-sm transition-colors text-left',
+                    'block py-1 lg:py-2 text-xs lg:text-sm transition-colors text-left',
                     isLight ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-black'
                   )}
                   onClick={() => setIsOpen(false)}
@@ -184,7 +184,17 @@ export const Navbar = () => {
     <>
       {/* Desktop Sidebar */}
       <aside
-        className="hidden lg:block fixed left-0 top-0 h-screen w-52 border-r border-white/20 z-40"
+        className="hidden xl:block fixed left-0 top-0 h-screen w-52 border-r border-white/20 z-40"
+        style={{
+          background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`,
+        }}
+      >
+        {sidebarContent}
+      </aside>
+      
+      {/* Tablet Sidebar - Smaller */}
+      <aside
+        className="hidden lg:block xl:hidden fixed left-0 top-0 h-screen w-40 border-r border-white/20 z-40"
         style={{
           background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`,
         }}
@@ -193,7 +203,7 @@ export const Navbar = () => {
       </aside>
 
       {/* Theme and Language Toggles - Top Right */}
-      <div className="fixed top-4 right-4 z-50 flex items-center space-x-4">
+      <div className="fixed top-2 right-2 sm:top-4 sm:right-4 z-50 flex items-center space-x-2 sm:space-x-4">
         <LanguageToggle />
         <ThemeToggle />
       </div>
@@ -204,7 +214,7 @@ export const Navbar = () => {
         className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-card border border-border rounded-md shadow-md"
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
       >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
+        {isOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
 
       {/* Mobile Sidebar */}
@@ -218,7 +228,7 @@ export const Navbar = () => {
 
           {/* Mobile Sidebar */}
           <aside
-            className="lg:hidden fixed left-0 top-0 h-screen w-72 border-r border-white/20 z-50 transform transition-transform duration-300"
+            className="lg:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-white/20 z-50 transform transition-transform duration-300"
             style={{
               background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`,
             }}
