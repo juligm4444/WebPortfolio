@@ -47,7 +47,7 @@ export const Projects = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
               My <span className="text-primary">Projects</span>
             </h1>
-            <p className="text-lg text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+            <p className="text-lg font-light text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
               Explore my work across different categories - from web development to mobile apps and
               creative design projects.
             </p>
@@ -71,7 +71,7 @@ export const Projects = () => {
                         <h3 className="text-xl font-semibold mb-2 text-primary group-hover:text-primary/80">
                           {category.title}
                         </h3>
-                        <p className="text-muted-foreground">{category.description}</p>
+                        <p className="text-muted-foreground font-light">{category.description}</p>
                       </div>
                     </div>
                   </Link>

@@ -56,34 +56,34 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center px-4 py-20 lg:py-32"
+      className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-20 lg:py-32"
     >
       {/* Time and Greeting Section - Top */}
-      <div className="absolute top-4 sm:top-8 left-4 sm:left-8 z-40 space-y-2">
-        <div className="text-base sm:text-lg lg:text-xl font-bold text-muted-foreground">
+      <div className="absolute top-4 sm:top-8 left-4 sm:left-8 z-40 space-y-2 text-left">
+        <div className="text-base sm:text-lg lg:text-xl font-thin text-muted-foreground">
           {getTimeGreeting()}
         </div>
-        <div className="text-sm sm:text-base lg:text-lg font-bold text-muted-foreground">
+        <div className="text-sm sm:text-base lg:text-lg font-thin text-muted-foreground">
           {formatDateTime()}
         </div>
       </div>
 
       {/* Main Content - Centered */}
-      <div className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-12 lg:space-y-16 max-w-6xl mx-auto">
-        {/* Main Name/Title */}
-        {isTranslationReady && (
-          <div className="w-full">
-            <h1 className="text-primary text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-tight">
-              {t('hero.greeting')}
+      <div className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-12 lg:space-y-16 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        {/* Description Text - Main Quote (First, Bigger) */}
+        {showParagraph && (
+          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+            <h1 className="typewriter text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-muted-foreground leading-relaxed">
+              {t('hero.description')}
             </h1>
           </div>
         )}
 
-        {/* Description Text - Main Quote (Bigger) */}
-        {showParagraph && (
-          <div className="w-full max-w-5xl">
-            <h2 className="typewriter text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-muted-foreground leading-relaxed">
-              {t('hero.description')}
+        {/* Main Name/Title (Second, Smaller) */}
+        {isTranslationReady && (
+          <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+            <h2 className="text-primary text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-tight">
+              {t('hero.greeting')}
             </h2>
           </div>
         )}

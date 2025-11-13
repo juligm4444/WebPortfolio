@@ -1,11 +1,32 @@
 import { Download } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import React from 'react';
+import { cn } from '@/lib/utils';
 import { certifications } from '../data/certifications';
 
 const CertificationCard = ({ cert }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const { t } = useTranslation();
+  const [isLight, setIsLight] = useState(false);
+
+  // Check theme on mount and when it changes
+  React.useEffect(() => {
+    const checkTheme = () => {
+      setIsLight(document.documentElement.classList.contains('light'));
+    };
+
+    checkTheme();
+
+    // Listen for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleInteraction = () => {
     // For mobile, toggle on click
@@ -54,8 +75,14 @@ const CertificationCard = ({ cert }) => {
           </div>
           <div className="space-y-1">
             <h3 className="text-primary font-semibold text-xs sm:text-sm leading-tight">{cert.name}</h3>
-            <p className="text-foreground font-medium text-xs">{cert.company}</p>
-            <p className="text-muted-foreground text-xs">{cert.date}</p>
+            <p className={cn(
+              "text-xs",
+              isLight ? "font-medium text-emerald-100" : "font-bold text-teal-900"
+            )}>{cert.company}</p>
+            <p className={cn(
+              "text-xs",
+              isLight ? "font-medium text-emerald-100" : "font-bold text-teal-900"
+            )}>{cert.date}</p>
           </div>
         </div>
 
@@ -67,13 +94,23 @@ const CertificationCard = ({ cert }) => {
               {cert.skills?.slice(0, 4).map((skill, index) => (
                 <span
                   key={index}
-                  className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-primary/10 text-primary text-xs rounded border border-primary/20 inline-block"
+                  className={cn(
+                    "px-1.5 py-0.5 sm:px-2 sm:py-1 text-xs rounded inline-block font-medium",
+                    isLight 
+                      ? "bg-emerald-100 text-emerald-700 border border-emerald-200" 
+                      : "bg-teal-900/50 text-teal-200 border border-teal-700/50"
+                  )}
                 >
                   {t(`certifications.certSkills.${skill}`) || skill}
                 </span>
               ))}
               {cert.skills?.length > 4 && (
-                <span className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-primary/10 text-primary text-xs rounded border border-primary/20 inline-block">
+                <span className={cn(
+                  "px-1.5 py-0.5 sm:px-2 sm:py-1 text-xs rounded inline-block font-medium",
+                  isLight 
+                    ? "bg-amber-100 text-amber-700 border border-amber-200" 
+                    : "bg-orange-900/50 text-orange-200 border border-orange-700/50"
+                )}>
                   +{cert.skills.length - 4}
                 </span>
               )}

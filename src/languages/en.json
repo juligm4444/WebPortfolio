@@ -17,7 +17,7 @@
     "design-projects": "Design",
     "sketches": "Sketches",
     "other-projects": "Other Projects",
-    "follow-me": "Follow me",
+    "follow-me": "Contact Me",
     "cv": "CV",
     "all-projects": "All Projects",
     "main-pages": "Main Pages",
@@ -92,15 +92,95 @@
       "JavaScript": "JavaScript"
     }
   },
-  "websites": {
-    "title1": "Digital",
-    "title2": "Portfolio",
-    "description": "Here are some of the websites I have developed. Each one of them was created with a specific purpose in mind, showcasing my skills and expressing myself through them. Every aspect included in these websites is a reflection of my passion for technology and design.",
-    "website1": {
-      "name": "Portfolio Website",
-      "description": "A personal portfolio website showcasing my information, inspirations, skills, projects, and certifications."
+  "projects": {
+    "technology": {
+      "title1": "Technology",
+      "title2": "Projects",
+      "description": "Here are some of the technology projects I have developed. Each one of them was created with a specific purpose in mind, showcasing my skills and expressing myself through them. Every aspect included in these projects is a reflection of my passion for technology and innovation.",
+      "projects": [
+        {
+          "id": "portfolio",
+          "name": "Portfolio Website",
+          "description": "A personal portfolio website showcasing my information, inspirations, skills, projects, and certifications.",
+          "technologies": ["React", "Vite", "Tailwind CSS", "JavaScript"],
+          "category": "Web Development",
+          "status": "Completed",
+          "link": "/projects/portfolio",
+          "image": "/ProjectPreviews/web-portfolio.png",
+          "demoUrl": "https://web-portfolio-wheat-nine.vercel.app/",
+          "sourceUrl": "https://github.com/juligm4444/WebPortfolio"
+        },
+        {
+          "id": "candelaria",
+          "name": "Candelaria Solar Car",
+          "description": "Mobile application for the Candelaria Solar Car team monitoring and control system with real-time data visualization.",
+          "technologies": ["Flutter", "Mobile", "IoT", "Solar"],
+          "category": "Mobile Development",
+          "status": "Completed",
+          "link": "/projects/candelaria",
+          "image": "/ProjectPreviews/candelaria-preview.png",
+          "demoUrl": "",
+          "sourceUrl": ""
+        },
+        {
+          "id": "licorimetro",
+          "name": "Licorímetro App",
+          "description": "Mobile application for alcohol level measurement with precision sensors and user-friendly interface for health monitoring.",
+          "technologies": ["Flutter", "Mobile", "Sensors", "Health"],
+          "category": "Mobile Development", 
+          "status": "Completed",
+          "link": "/projects/licorimetro",
+          "image": "/ProjectPreviews/licorimetro-preview.png",
+          "demoUrl": "",
+          "sourceUrl": ""
+        }
+      ],
+      "button": "View Project Details"
     },
-    "button": "View all my Developer Projects"
+    "artsDesign": {
+      "title1": "Arts &",
+      "title2": "Design",
+      "description": "Explore my creative journey through various art and design projects. From digital illustrations to creative concepts, each piece represents my artistic vision and creative problem-solving approach.",
+      "projects": [
+        {
+          "id": "sketches",
+          "name": "Creative Sketches",
+          "description": "A collection of creative sketches and conceptual drawings showcasing artistic exploration and ideation processes.",
+          "medium": ["Digital", "Traditional"],
+          "category": "Illustration",
+          "status": "Ongoing",
+          "link": "/projects/sketches",
+          "image": "/ProjectPreviews/sketches-preview.png",
+          "icon": "brush",
+          "color": "text-purple-500"
+        },
+        {
+          "id": "drawings",
+          "name": "Digital Drawings",
+          "description": "Digital artwork and illustrations created using various design tools and techniques.",
+          "medium": ["Digital Art", "Illustration"],
+          "category": "Digital Art",
+          "status": "Ongoing",
+          "link": "/projects/drawings",
+          "image": "/ProjectPreviews/drawings-preview.png",
+          "icon": "palette",
+          "color": "text-pink-500"
+        },
+        {
+          "id": "creative-work",
+          "name": "Creative Projects",
+          "description": "Experimental and creative design projects exploring different artistic concepts and visual expressions.",
+          "medium": ["Mixed Media", "Digital"],
+          "category": "Experimental",
+          "status": "Ongoing",
+          "link": "/projects/creative",
+          "image": "/ProjectPreviews/tshirt-design.png",
+          "icon": "sparkles",
+          "color": "text-orange-500"
+        }
+      ],
+      "button": "View Artwork"
+    }
   },
   "cv": {
     "title1": "Curriculum",

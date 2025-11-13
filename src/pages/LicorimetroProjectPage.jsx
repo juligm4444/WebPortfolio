@@ -17,11 +17,11 @@ export const LicorimetroProjectPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-primary">Licorímetro</span> Mobile App
             </h1>
-            <p className="text-lg text-muted-foreground mb-16">
+            <p className="text-lg font-light text-muted-foreground mb-16">
               Mobile application for alcohol level measurement - Coming soon!
             </p>
             <div className="bg-card rounded-lg p-12">
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground font-light">
                 This mobile application provides a user-friendly interface for measuring and
                 tracking alcohol levels with precision and ease.
               </p>

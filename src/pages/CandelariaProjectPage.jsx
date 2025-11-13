@@ -17,11 +17,11 @@ export const CandelariaProjectPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-primary">Candelaria</span> Solar Car Project
             </h1>
-            <p className="text-lg text-muted-foreground mb-16">
+            <p className="text-lg font-light text-muted-foreground mb-16">
               Mobile application for the Candelaria Solar Car team - Coming soon!
             </p>
             <div className="bg-card rounded-lg p-12">
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground font-light">
                 This project involves developing a mobile application for monitoring and controlling
                 the Candelaria Solar Car during competitions and testing phases.
               </p>

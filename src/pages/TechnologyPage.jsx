@@ -7,38 +7,21 @@ import { Footer } from '../components/Footer';
 export const TechnologyPage = () => {
   const { t } = useTranslation();
 
-  const technologyProjects = [
-    {
-      id: 1,
-      title: t('navbar.portfolio'),
-      description: t('websites.website1.description'),
-      image: '/ProjectPreviews/web-portfolio.png',
-      tags: ['CSS', 'JavaScript', 'React', 'Spline'],
-      path: '/projects/portfolio',
-      demoUrl: 'https://web-portfolio-wheat-nine.vercel.app/',
-      sourceProjectUrl: 'https://github.com/juligm4444/WebPortfolio',
-    },
-    {
-      id: 2,
-      title: t('navbar.candelaria'),
-      description: 'Mobile application for the Candelaria Solar Car team monitoring and control.',
-      image: '/ProjectPreviews/candelaria-preview.png',
-      tags: ['Flutter', 'Mobile', 'IoT', 'Solar'],
-      path: '/projects/candelaria',
-      demoUrl: '',
-      sourceProjectUrl: '',
-    },
-    {
-      id: 3,
-      title: t('navbar.licorimetro'),
-      description: 'Mobile application for alcohol level measurement with precision and ease.',
-      image: '/ProjectPreviews/licorimetro-preview.png',
-      tags: ['Mobile', 'Sensors', 'Health', 'Flutter'],
-      path: '/projects/licorimetro',
-      demoUrl: '',
-      sourceProjectUrl: '',
-    },
-  ];
+  // Get all projects directly from JSON - completely data-driven
+  const projects = t('projects.technology.projects', { returnObjects: true });
+  
+  const technologyProjects = projects.map((project, index) => ({
+    id: index + 1,
+    title: project.name,
+    description: project.description,
+    image: project.image,
+    tags: project.technologies,
+    path: project.link,
+    demoUrl: project.demoUrl || '',
+    sourceProjectUrl: project.sourceUrl || '',
+    category: project.category,
+    status: project.status,
+  }));
 
   return (
     <div
@@ -51,11 +34,11 @@ export const TechnologyPage = () => {
           <section id="technology" className="py-24 px-4">
             <div className="container mx-auto max-w-8xl">
               <h2 className="text-3xl md:text-6xl font-bold mb-4 text-center">
-                <span className="text-primary">Technology</span> Projects
+                {t('projects.technology.title1')} <span className="text-primary">{t('projects.technology.title2')}</span>
               </h2>
 
               <p className="text-primary text-justify text-2xl sm:text-4xl md:text-4xl font-light tracking-tight break-words mt-30">
-                {t('websites.description')}
+                {t('projects.technology.description')}
               </p>
 
               <div className="text-center mt-12">
@@ -64,7 +47,7 @@ export const TechnologyPage = () => {
                   target="_blank"
                   href="https://github.com/juligm4444"
                 >
-                  {t('websites.button')} <ArrowBigRightDashIcon size={20} />
+                  {t('projects.technology.button')} <ArrowBigRightDashIcon size={20} />
                 </a>
               </div>
 
@@ -97,7 +80,7 @@ export const TechnologyPage = () => {
                       <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center">
                         {project.title}
                       </h3>
-                      <p className="text-muted-foreground text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
+                      <p className="text-muted-foreground font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
                         {project.description}
                       </p>
                       <div className="flex justify-center items-center gap-8">

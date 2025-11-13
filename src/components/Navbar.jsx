@@ -122,7 +122,7 @@ export const Navbar = () => {
       >
         <h4
           className={cn(
-            'text-sm font-medium uppercase tracking-wider text-left transition-colors',
+            'text-sm font-medium uppercase tracking-wider text-center transition-colors',
             isLight ? 'text-white hover:text-gray-100' : 'text-gray-800 hover:text-black'
           )}
         >

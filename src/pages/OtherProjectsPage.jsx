@@ -14,11 +14,11 @@ export const OtherProjectsPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-primary">Other</span> Projects
             </h1>
-            <p className="text-lg text-muted-foreground mb-16">
+            <p className="text-lg font-light text-muted-foreground mb-16">
               Additional projects and experimental work - Coming soon!
             </p>
             <div className="bg-card rounded-lg p-12">
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground font-light">
                 This section will showcase additional projects that don't fit into the main
                 categories, including experimental work and collaborative projects.
               </p>

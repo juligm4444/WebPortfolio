@@ -17,7 +17,7 @@ export const DrawingsPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-primary">Drawings</span> & Illustrations
             </h1>
-            <p className="text-lg text-muted-foreground mb-16">
+            <p className="text-lg font-light text-muted-foreground mb-16">
               Digital and traditional drawings exploring form, function, and artistic expression
             </p>
 
@@ -45,7 +45,7 @@ export const DrawingsPage = () => {
                   <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center">
                     Industrial Design Studies
                   </h3>
-                  <p className="text-muted-foreground text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
+                  <p className="text-muted-foreground font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
                     Collection of object studies exploring industrial design principles, form
                     language, and material considerations through detailed technical drawings.
                   </p>

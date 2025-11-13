@@ -17,7 +17,7 @@ export const CreativeWorkPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-primary">Creative</span> Work
             </h1>
-            <p className="text-lg text-muted-foreground mb-16">
+            <p className="text-lg font-light text-muted-foreground mb-16">
               Experimental projects, concept art, and innovative design explorations
             </p>
 
@@ -45,7 +45,7 @@ export const CreativeWorkPage = () => {
                   <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center">
                     HnO Investigation
                   </h3>
-                  <p className="text-muted-foreground text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
+                  <p className="text-muted-foreground font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
                     Architectural and futuristic design concept exploring innovative spatial
                     solutions and conceptual frameworks for future living environments.
                   </p>
@@ -75,7 +75,7 @@ export const CreativeWorkPage = () => {
                   <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center">
                     Technical T-Shirt Design
                   </h3>
-                  <p className="text-muted-foreground text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
+                  <p className="text-muted-foreground font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
                     Technical apparel design showcasing graphic design skills combined with
                     production specifications and material considerations.
                   </p>
@@ -105,7 +105,7 @@ export const CreativeWorkPage = () => {
                   <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center">
                     Airplane Mode UI Concept
                   </h3>
-                  <p className="text-muted-foreground text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
+                  <p className="text-muted-foreground font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
                     Digital interface concept exploring user experience design through creative
                     interpretation of familiar technology interactions.
                   </p>

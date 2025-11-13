@@ -13,10 +13,10 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-primary text-2xl font-semibold">{t('about.subtitle')}</h3>
-            <p className="sm:text-lg md:text-xl text-muted-foreground text-justify">
+            <p className="sm:text-lg md:text-xl font-light text-muted-foreground text-justify">
               {t('about.parragraph1')}
             </p>
-            <p className="sm:text-lg md:text-xl text-muted-foreground text-justify">
+            <p className="sm:text-lg md:text-xl font-light text-muted-foreground text-justify">
               {t('about.parragraph2')}
             </p>
           </div>
@@ -28,7 +28,7 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-primary font-semibold text-lg">{t('about.desc1')}</h4>
-                  <p className="text-muted-foreground text-justify">{t('about.idea1')}</p>
+                  <p className="text-muted-foreground font-light text-justify">{t('about.idea1')}</p>
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-primary font-semibold text-lg">{t('about.desc2')}</h4>
-                  <p className="text-muted-foreground text-justify">{t('about.idea2')}</p>
+                  <p className="text-muted-foreground font-light text-justify">{t('about.idea2')}</p>
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-primary font-semibold text-lg">{t('about.desc3')}</h4>
-                  <p className="text-muted-foreground text-justify">{t('about.idea3')}</p>
+                  <p className="text-muted-foreground font-light text-justify">{t('about.idea3')}</p>
                 </div>
               </div>
             </div>

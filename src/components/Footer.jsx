@@ -6,7 +6,7 @@ export const Footer = () => {
 
   return (
     <footer className="mt-auto py-12 px-4 bg-card relative border-t border-border pt-8 flex flex-wrap justify-between items-center">
-      <p className="text-sm text-muted-foreground">
+      <p className="text-sm font-light text-muted-foreground">
         &copy; {new Date().getFullYear()} juligm4.co. {t('footer.text1')}
       </p>
       <a

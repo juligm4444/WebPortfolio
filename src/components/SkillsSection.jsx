@@ -142,7 +142,10 @@ export const SkillsSection = () => {
                   />
                 </div>
                 <div className="text-center mt-1">
-                  <span className="text-xs md:text-sm font-medium text-white">{skill.level}%</span>
+                  <span className={cn(
+                    "text-xs md:text-sm font-medium",
+                    isLight ? "text-emerald-100" : "text-teal-900"
+                  )}>{skill.level}%</span>
                 </div>
               </div>
             </div>
