@@ -68,7 +68,7 @@
     --background-image: none;
     --sidebar-from: #2b4242;
     --sidebar-to: #6b8784;
-    --sidebar-inverted-from: #93A4AB;
+    --sidebar-inverted-from: #93a4ab;
     --sidebar-inverted-to: #c3c6c3;
   }
 
@@ -80,7 +80,7 @@
     --primary: 0, 0%, 0%;
     --primary-foreground: 0, 0%, 100%;
     --background-image: none;
-    --sidebar-from: #93A4AB;
+    --sidebar-from: #93a4ab;
     --sidebar-to: #c3c6c3;
     --sidebar-inverted-from: #2b4242;
     --sidebar-inverted-to: #6b8784;
@@ -155,11 +155,29 @@ html.light body {
 }
 
 .typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  display: inline-block;
-  animation: typewriter 2.5s steps(30, end) forwards;
+  position: relative;
+  display: block;
+  white-space: normal;
+}
+
+.typewriter::before {
+  content: '';
+  position: absolute;
+  top: -0.1em;
+  right: 0;
+  bottom: -0.2em;
+  left: 0;
+  background: hsl(var(--background));
+  animation: typewriter-reveal 3s steps(80, end) forwards;
+}
+
+@keyframes typewriter-reveal {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 #root {

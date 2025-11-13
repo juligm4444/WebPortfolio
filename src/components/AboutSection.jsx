@@ -2,7 +2,7 @@ import { Briefcase, Code, User } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const AboutSection = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section id="about" className="py-24 px-4 relative">
@@ -13,21 +13,12 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-primary text-2xl font-semibold">{t('about.subtitle')}</h3>
-            <p className="text-muted-foreground">{t('about.parragraph1')}</p>
-            <p className="text-muted-foreground">{t('about.parragraph2')}</p>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="#contact" className="general-button">
-                {t('about.button1')}
-              </a>
-              <a
-                href={i18n.language === 'es' ? '/files/CV-Español.pdf' : '/files/CV-English.pdf'}
-                download
-                className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
-              >
-                {t('about.button2')}
-              </a>
-            </div>
+            <p className="sm:text-lg md:text-xl text-muted-foreground text-justify">
+              {t('about.parragraph1')}
+            </p>
+            <p className="sm:text-lg md:text-xl text-muted-foreground text-justify">
+              {t('about.parragraph2')}
+            </p>
           </div>
           <div className="grid grid-cols-1 gap-6">
             <div className="gradient-border p-6 card-hover">
@@ -37,7 +28,7 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-primary font-semibold text-lg">{t('about.desc1')}</h4>
-                  <p className="text-muted-foreground">{t('about.idea1')}</p>
+                  <p className="text-muted-foreground text-justify">{t('about.idea1')}</p>
                 </div>
               </div>
             </div>
@@ -48,7 +39,7 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-primary font-semibold text-lg">{t('about.desc2')}</h4>
-                  <p className="text-muted-foreground">{t('about.idea2')}</p>
+                  <p className="text-muted-foreground text-justify">{t('about.idea2')}</p>
                 </div>
               </div>
             </div>
@@ -59,7 +50,7 @@ export const AboutSection = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-primary font-semibold text-lg">{t('about.desc3')}</h4>
-                  <p className="text-muted-foreground">{t('about.idea3')}</p>
+                  <p className="text-muted-foreground text-justify">{t('about.idea3')}</p>
                 </div>
               </div>
             </div>

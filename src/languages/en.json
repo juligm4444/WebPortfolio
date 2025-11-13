@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "name": "juligm4 Portfolio",
+    "name": "Castle of Glass",
     "home": "Home",
     "about": "About",
     "skills": "Skills",
@@ -8,20 +8,39 @@
     "projects": "Projects",
     "contact": "Contact",
     "profile": "Profile",
-    "tech-interface": "Tech Interface",
     "websites": "Websites",
+    "portfolio": "Digital Portfolio",
+    "candelaria": "Candelaria Solar Car",
+    "licorimetro": "Licorímetro App",
     "mobile-apps": "Mobile Apps",
     "web-projects": "Web Projects",
-    "design-projects": "Design Projects",
-    "ui-designs": "UI Designs",
-    "prototypes": "Prototypes",
-    "class-projects": "Class Projects",
-    "follow-me": "Follow me"
+    "design-projects": "Design",
+    "sketches": "Sketches",
+    "other-projects": "Other Projects",
+    "follow-me": "Follow me",
+    "cv": "CV",
+    "all-projects": "All Projects",
+    "main-pages": "Main Pages",
+    "technology": "Technology",
+    "tech": "Technology",
+    "arts": "Art & Design",
+    "arts-design": "Arts & Design",
+    "drawings": "Drawings",
+    "creative-work": "Creative Work"
   },
   "hero": {
-    "greeting": "Hi, I'm Julián Galindo Mora",
-    "description": "I design and develop digital experiences that flow from structure to aesthetics, blending backend logic with the intuition of human-centered design. Every line of code I write aims to unite functionality with creative expression.",
-    "button": "View My Work"
+    "greeting": "Julián Galindo is a designer and developer of digital experiences that flow from structure to aesthetics, blending backend logic with the intuition of human-centered design. ",
+    "description": "Every line of code I write aims to unite functionality with creative expression.",
+    "button": "View My Work",
+    "timeGreeting": {
+      "morning": "Good Morning!",
+      "afternoon": "Good Afternoon!",
+      "evening": "Good Evening!"
+    },
+    "dateTime": {
+      "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    }
   },
   "about": {
     "title1": "About",
@@ -73,15 +92,20 @@
       "JavaScript": "JavaScript"
     }
   },
-  "projects": {
+  "websites": {
     "title1": "Featured",
-    "title2": "Projects",
-    "description": "These are some of the projects I have worked on. Each one of them was created with a specific purpose in mind, showcasing my skills and expressing myself through them. Every aspect included in these projects is a reflection of my passion for technology and design.",
-    "project1": {
+    "title2": "Websites",
+    "description": "Here are some of the websites I have developed. Each one of them was created with a specific purpose in mind, showcasing my skills and expressing myself through them. Every aspect included in these websites is a reflection of my passion for technology and design.",
+    "website1": {
       "name": "Portfolio Website",
-      "description": "A personal portfolio website showcasing my skills, projects, and certifications."
+      "description": "A personal portfolio website showcasing my information, inspirations, skills, projects, and certifications."
     },
-    "button": "View All My Projects"
+    "button": "View all my Developer Projects"
+  },
+  "cv": {
+    "title1": "Curriculum",
+    "title2": "Vitae",
+    "preview-title": "CV Preview"
   },
   "contact": {
     "title1": "Contact",

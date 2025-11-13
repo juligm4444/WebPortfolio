@@ -10,18 +10,42 @@
     "profile": "Perfil",
     "tech-interface": "Interfaz Tecnológica",
     "websites": "Sitios Web",
+    "portfolio": "Portafolio Digital",
+    "candelaria": "Candelaria Solar Car",
+    "licorimetro": "App Licorímetro",
     "mobile-apps": "Apps Móviles",
     "web-projects": "Proyectos Web",
     "design-projects": "Proyectos de Diseño",
     "ui-designs": "Diseños UI",
     "prototypes": "Prototipos",
     "class-projects": "Proyectos de Clase",
-    "follow-me": "Sígueme"
+    "follow-me": "Sígueme",
+    "navigation": "Navegación",
+    "cv": "CV",
+    "all-projects": "Todos los Proyectos",
+    "sketches": "Bocetos",
+    "other-projects": "Otros Proyectos",
+    "main-pages": "Páginas Principales",
+    "technology": "Tecnología",
+    "tech": "Tecnología",
+    "arts": "Arte y Diseño",
+    "arts-design": "Arte y Diseño",
+    "drawings": "Dibujos",
+    "creative-work": "Trabajo Creativo"
   },
   "hero": {
-    "greeting": "Hola, soy Julián Galindo Mora",
-    "description": "Diseño y desarrollo experiencias digitales que fluyen desde la estructura hasta la estética, fusionando la lógica del backend con la intuición del diseño centrado en el usuario. Cada línea de código que escribo busca unir la funcionalidad con la expresión creativa.",
-    "button": "Mira mi Trabajo"
+    "greeting": "Julián Galindo es un diseñador y desarrollador de experiencias digitales que fluyen desde la estructura hasta la estética, fusionando la lógica del backend con la intuición del diseño centrado en el usuario.",
+    "description": "Cada línea de código que escribo busca unir la funcionalidad con la expresión creativa.",
+    "button": "Ver Mi Trabajo",
+    "timeGreeting": {
+      "morning": "¡Buenos Días!",
+      "afternoon": "¡Buenas Tardes!",
+      "evening": "¡Buenas Noches!"
+    },
+    "dateTime": {
+      "days": ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+      "months": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+    }
   },
   "about": {
     "title1": "Acerca",
@@ -73,15 +97,20 @@
       "JavaScript": "JavaScript"
     }
   },
-  "projects": {
-    "title1": "Proyectos",
+  "websites": {
+    "title1": "Sitios Web",
     "title2": "Destacados",
-    "description": "Estos son algunos de los proyectos en los que he trabajado. Cada uno de ellos fue creado con un propósito específico, mostrando mis habilidades y permitiéndome expresarme a través de ellos. Cada aspecto incluido en estos proyectos es un reflejo de mi pasión por la tecnología y el diseño.",
-    "project1": {
-      "name": "Portafolio Web",
+    "description": "Estos son algunos de los sitios web que he desarrollado. Cada uno de ellos fue creado con un propósito específico en mente, mostrando mis habilidades y expresándome a través de ellos. Cada aspecto incluido en estos sitios web es un reflejo de mi pasión por la tecnología y el diseño.",
+    "website1": {
+      "name": "Sitio Web Portafolio",
       "description": "Un sitio web de portafolio personal que muestra mis habilidades, proyectos y certificaciones."
     },
-    "button": "Mira Todos Mis Proyectos"
+    "button": "Ver todos mis Proyectos de Desarrollo"
+  },
+  "cv": {
+    "title1": "Mi",
+    "title2": "CV",
+    "preview-title": "Vista Previa del CV"
   },
   "contact": {
     "title1": "Comunícate",

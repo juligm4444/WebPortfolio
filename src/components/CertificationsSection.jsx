@@ -10,7 +10,7 @@ const CertificationCard = ({ cert }) => {
   const handleInteraction = () => {
     // For mobile, toggle on click
     if (window.innerWidth < 768) {
-      setIsFlipped(prev => !prev);
+      setIsFlipped((prev) => !prev);
     }
   };
 
@@ -50,24 +50,16 @@ const CertificationCard = ({ cert }) => {
             />
           </div>
           <div className="space-y-1">
-            <h3 className="text-primary font-semibold text-sm leading-tight">
-              {cert.name}
-            </h3>
-            <p className="text-foreground font-medium text-xs">
-              {cert.company}
-            </p>
-            <p className="text-muted-foreground text-xs">
-              {cert.date}
-            </p>
+            <h3 className="text-primary font-semibold text-sm leading-tight">{cert.name}</h3>
+            <p className="text-foreground font-medium text-xs">{cert.company}</p>
+            <p className="text-muted-foreground text-xs">{cert.date}</p>
           </div>
         </div>
 
         {/* Back of card - Skills and Download */}
         <div className="absolute inset-0 w-full h-full backface-hidden transform-[rotateY(180deg)] rounded-lg border border-border bg-card shadow-lg flex flex-col justify-between p-4 text-center">
           <div className="space-y-2 flex-1 flex flex-col justify-center">
-            <h4 className="text-primary font-semibold text-sm">
-              {t('certifications.skills')}
-            </h4>
+            <h4 className="text-primary font-semibold text-sm">{t('certifications.skills')}</h4>
             <div className="flex flex-col gap-1 items-center">
               {cert.skills?.map((skill, index) => (
                 <span
@@ -102,11 +94,11 @@ export const CertificationsSection = () => {
   return (
     <section id="certifications" className="py-24 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 className="text-3xl md:text-6xl font-bold mb-12 text-center">
           {t('certifications.title1')}{' '}
           <span className="text-primary">{t('certifications.title2')}</span>
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certifications
             .filter((cert) => cert.pdf)
