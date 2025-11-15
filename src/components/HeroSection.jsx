@@ -58,8 +58,8 @@ export const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-20 lg:py-32"
     >
-      {/* Time and Greeting Section - Top */}
-      <div className="absolute top-4 sm:top-8 left-4 sm:left-8 z-40 space-y-2 text-left">
+      {/* Time and Greeting Section - Centered on mobile, top left on larger screens */}
+      <div className="absolute top-4 sm:top-8 left-1/2 sm:left-8 transform -translate-x-1/2 sm:translate-x-0 z-40 space-y-2 text-center sm:text-left">
         <div className="text-base sm:text-lg lg:text-xl font-thin text-muted-foreground">
           {getTimeGreeting()}
         </div>

@@ -42,7 +42,7 @@ export const WebsiteSection = () => {
                 />
               </div>
               <div className="p-8">
-                <div className="flex flex-wrap gap-3 mb-6 justify-center w-full">
+                <div className="hidden sm:flex flex-wrap gap-3 mb-6 justify-center w-full">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
@@ -53,7 +53,7 @@ export const WebsiteSection = () => {
                   ))}
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center">
+                <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center sm:mt-0 mt-4">
                   {project.title}
                 </h3>
                 <p className="text-muted-foreground font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">

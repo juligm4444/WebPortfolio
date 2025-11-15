@@ -27,7 +27,7 @@ export const ThemeToggle = () => {
       aria-label="Toggle theme"
     >
       {isLight ? (
-        <Moon className="w-6 h-6 text-blue-900" />
+        <Moon className="w-6 h-6" style={{ color: '#93a4ab' }} />
       ) : (
         <Sun className="w-6 h-6 text-yellow-400" />
       )}

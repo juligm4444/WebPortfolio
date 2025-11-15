@@ -53,10 +53,11 @@ export const TechnologyPage = () => {
 
               <div className="grid grid-cols-1 gap-8 mt-50 place-items-center">
                 {technologyProjects.map((project, key) => (
-                  <div
+                  <Link
                     key={key}
+                    to={project.path}
                     id={`project-${project.id}`}
-                    className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover w-full max-w-4xl scroll-mt-24"
+                    className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover w-full max-w-4xl scroll-mt-24 cursor-pointer"
                   >
                     <div className="h-80 sm:h-96 overflow-hidden">
                       <img
@@ -66,7 +67,7 @@ export const TechnologyPage = () => {
                       />
                     </div>
                     <div className="p-8">
-                      <div className="flex flex-wrap gap-3 mb-6 justify-center w-full">
+                      <div className="hidden sm:flex flex-wrap gap-3 mb-6 justify-center w-full">
                         {project.tags.map((tag, index) => (
                           <span
                             key={index}
@@ -77,25 +78,20 @@ export const TechnologyPage = () => {
                         ))}
                       </div>
 
-                      <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center">
+                      <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center sm:mt-0 mt-4">
                         {project.title}
                       </h3>
                       <p className="text-muted-foreground font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
                         {project.description}
                       </p>
                       <div className="flex justify-center items-center gap-8">
-                        <Link
-                          to={project.path}
-                          className="text-primary hover:text-primary/80 transition-colors duration-300 text-lg font-semibold underline"
-                        >
-                          View Project Details
-                        </Link>
                         {project.demoUrl && (
                           <a
                             href={project.demoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-primary hover:text-primary transition-colors duration-300"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <ExternalLink size={20} />
                           </a>
@@ -106,13 +102,14 @@ export const TechnologyPage = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-primary hover:text-primary transition-colors duration-300"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <Github size={20} />
                           </a>
                         )}
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
