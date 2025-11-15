@@ -54,35 +54,19 @@ export const PortfolioProjectPage = () => {
           {/* Technology Bubbles */}
           <div className="flex flex-wrap gap-4 mb-8">
             <div className="flex items-center gap-3 px-4 py-3 bg-card rounded-full border border-border">
-              <img
-                src="/assets/icons/React.svg"
-                alt="React"
-                className="w-6 h-6"
-              />
+              <img src="/assets/icons/React.svg" alt="React" className="w-6 h-6" />
               <span className="font-medium">React</span>
             </div>
             <div className="flex items-center gap-3 px-4 py-3 bg-card rounded-full border border-border">
-              <img
-                src="/assets/icons/JavaScript.svg"
-                alt="JavaScript"
-                className="w-6 h-6"
-              />
+              <img src="/assets/icons/JavaScript.svg" alt="JavaScript" className="w-6 h-6" />
               <span className="font-medium">JavaScript</span>
             </div>
             <div className="flex items-center gap-3 px-4 py-3 bg-card rounded-full border border-border">
-              <img
-                src="/assets/icons/Tailwind CSS.svg"
-                alt="Tailwind CSS"
-                className="w-6 h-6"
-              />
+              <img src="/assets/icons/Tailwind CSS.svg" alt="Tailwind CSS" className="w-6 h-6" />
               <span className="font-medium">Tailwind CSS</span>
             </div>
             <div className="flex items-center gap-3 px-4 py-3 bg-card rounded-full border border-border">
-              <img
-                src="/assets/icons/Figma.svg"
-                alt="Figma"
-                className="w-6 h-6"
-              />
+              <img src="/assets/icons/Figma.svg" alt="Figma" className="w-6 h-6" />
               <span className="font-medium">Figma</span>
             </div>
           </div>
@@ -150,9 +134,7 @@ export const PortfolioProjectPage = () => {
 
           <div className="space-y-6">
             <div className="bg-card border-l-4 border-primary p-6 rounded-r-lg">
-              <h3 className="text-xl font-semibold mb-3">
-                Challenge 1: Information Architecture
-              </h3>
+              <h3 className="text-xl font-semibold mb-3">Challenge 1: Information Architecture</h3>
               <p className="text-muted-foreground font-light">
                 How to effectively organize diverse content types—projects, skills, certifications,
                 and personal information—in a way that's easy to navigate without overwhelming
@@ -178,8 +160,8 @@ export const PortfolioProjectPage = () => {
               <p className="text-muted-foreground font-light">
                 Implementing seamless language switching between English and Spanish without
                 breaking the user experience or requiring page reloads. The translation system
-                needed to maintain context, formatting, and design consistency across both
-                languages while being easy to maintain and update.
+                needed to maintain context, formatting, and design consistency across both languages
+                while being easy to maintain and update.
               </p>
             </div>
 
@@ -218,7 +200,9 @@ export const PortfolioProjectPage = () => {
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground font-light space-y-2">
                   <li>Analyzed successful portfolio structures and navigation patterns</li>
-                  <li>Created user personas representing recruiters, hiring managers, and clients</li>
+                  <li>
+                    Created user personas representing recruiters, hiring managers, and clients
+                  </li>
                   <li>Defined core features: project showcases, skills display, certifications</li>
                   <li>Established design principles: clarity, accessibility, personality</li>
                 </ul>
@@ -409,8 +393,8 @@ export const PortfolioProjectPage = () => {
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1">•</span>
                   <div>
-                    <span className="font-medium text-foreground">Tailwind CSS v4</span> - Utility-first
-                    styling with custom theme
+                    <span className="font-medium text-foreground">Tailwind CSS v4</span> -
+                    Utility-first styling with custom theme
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -423,8 +407,8 @@ export const PortfolioProjectPage = () => {
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1">•</span>
                   <div>
-                    <span className="font-medium text-foreground">i18next</span> - Internationalization
-                    framework
+                    <span className="font-medium text-foreground">i18next</span> -
+                    Internationalization framework
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -464,15 +448,15 @@ export const PortfolioProjectPage = () => {
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1">•</span>
                   <div>
-                    <span className="font-medium text-foreground">Vercel</span> - Seamless deployment
-                    and hosting
+                    <span className="font-medium text-foreground">Vercel</span> - Seamless
+                    deployment and hosting
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1">•</span>
                   <div>
-                    <span className="font-medium text-foreground">VS Code</span> - Primary development
-                    environment
+                    <span className="font-medium text-foreground">VS Code</span> - Primary
+                    development environment
                   </div>
                 </li>
               </ul>
@@ -902,9 +886,10 @@ export const PortfolioProjectPage = () => {
                 <li className="flex items-start gap-3">
                   <span className="text-green-500 mt-1 font-bold">✓</span>
                   <span>
-                    <strong className="text-foreground">Tailwind Integration:</strong> Using Tailwind
-                    CSS dramatically sped up the styling process. The utility-first approach made it
-                    easy to maintain design consistency while allowing for quick iterations.
+                    <strong className="text-foreground">Tailwind Integration:</strong> Using
+                    Tailwind CSS dramatically sped up the styling process. The utility-first
+                    approach made it easy to maintain design consistency while allowing for quick
+                    iterations.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -936,17 +921,15 @@ export const PortfolioProjectPage = () => {
 
             {/* Challenges & Learnings */}
             <div className="bg-card p-6 rounded-lg border-l-4 border-orange-500">
-              <h3 className="text-xl font-semibold mb-4 text-orange-500">
-                Challenges & Learnings
-              </h3>
+              <h3 className="text-xl font-semibold mb-4 text-orange-500">Challenges & Learnings</h3>
               <ul className="space-y-3 text-muted-foreground font-light">
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 mt-1 font-bold">!</span>
                   <span>
-                    <strong className="text-foreground">State Management:</strong> Managing theme and
-                    language preferences across page navigations required careful planning of React
-                    Router setup and localStorage implementation. Learned the importance of proper
-                    state persistence.
+                    <strong className="text-foreground">State Management:</strong> Managing theme
+                    and language preferences across page navigations required careful planning of
+                    React Router setup and localStorage implementation. Learned the importance of
+                    proper state persistence.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -960,18 +943,19 @@ export const PortfolioProjectPage = () => {
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 mt-1 font-bold">!</span>
                   <span>
-                    <strong className="text-foreground">Accessibility Testing:</strong> Ensuring full
-                    keyboard navigation and screen reader compatibility required constant testing and
-                    refinement. Accessibility can't be an afterthought—it needs to be built in from
-                    the start.
+                    <strong className="text-foreground">Accessibility Testing:</strong> Ensuring
+                    full keyboard navigation and screen reader compatibility required constant
+                    testing and refinement. Accessibility can't be an afterthought—it needs to be
+                    built in from the start.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 mt-1 font-bold">!</span>
                   <span>
                     <strong className="text-foreground">Content Updates:</strong> While the site
-                    structure is flexible, adding new projects still requires touching multiple files
-                    (translations, routes, components). A CMS integration could streamline this.
+                    structure is flexible, adding new projects still requires touching multiple
+                    files (translations, routes, components). A CMS integration could streamline
+                    this.
                   </span>
                 </li>
               </ul>
@@ -993,8 +977,8 @@ export const PortfolioProjectPage = () => {
                   <span className="text-blue-500 mt-1 font-bold">→</span>
                   <span>
                     <strong className="text-foreground">Project Filtering:</strong> Implement
-                    advanced filtering and search functionality for projects by technology, category,
-                    or date to help visitors find relevant work faster.
+                    advanced filtering and search functionality for projects by technology,
+                    category, or date to help visitors find relevant work faster.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -1008,9 +992,9 @@ export const PortfolioProjectPage = () => {
                 <li className="flex items-start gap-3">
                   <span className="text-blue-500 mt-1 font-bold">→</span>
                   <span>
-                    <strong className="text-foreground">Analytics Integration:</strong> Add analytics
-                    to understand visitor behavior, popular projects, and areas where users spend the
-                    most time. This data would inform future improvements.
+                    <strong className="text-foreground">Analytics Integration:</strong> Add
+                    analytics to understand visitor behavior, popular projects, and areas where
+                    users spend the most time. This data would inform future improvements.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -1069,13 +1053,13 @@ export const PortfolioProjectPage = () => {
               <p className="text-muted-foreground font-light leading-relaxed italic">
                 "Building this portfolio taught me that the best projects are never truly 'finished'
                 —they evolve. What started as a simple showcase has become a living document of my
-                growth as both a developer and designer. The technical challenges pushed me to deepen
-                my React knowledge, while the design decisions forced me to think critically about
-                user experience and accessibility. Most importantly, this project reminded me why I
-                love what I do: creating digital experiences that are both beautiful and functional,
-                that serve a real purpose while expressing creativity. It's not just a portfolio—it's
-                a reflection of my approach to problem-solving and my commitment to continuous
-                learning."
+                growth as both a developer and designer. The technical challenges pushed me to
+                deepen my React knowledge, while the design decisions forced me to think critically
+                about user experience and accessibility. Most importantly, this project reminded me
+                why I love what I do: creating digital experiences that are both beautiful and
+                functional, that serve a real purpose while expressing creativity. It's not just a
+                portfolio—it's a reflection of my approach to problem-solving and my commitment to
+                continuous learning."
               </p>
             </div>
           </div>
