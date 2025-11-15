@@ -25,7 +25,7 @@ export const CreativeWorkPage = () => {
               <div className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover w-full max-w-4xl scroll-mt-24">
                 <div className="h-80 sm:h-96 overflow-hidden">
                   <img
-                    src="/ProjectPreviews/hno-investigation.png"
+                    src="/ProjectPreviews/Design1.png"
                     alt="HnO Investigation Project"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -55,7 +55,7 @@ export const CreativeWorkPage = () => {
               <div className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover w-full max-w-4xl scroll-mt-24">
                 <div className="h-80 sm:h-96 overflow-hidden">
                   <img
-                    src="/ProjectPreviews/tshirt-design.png"
+                    src="/ProjectPreviews/Sketch2.png"
                     alt="T-Shirt Design with Technical Specs"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -85,7 +85,7 @@ export const CreativeWorkPage = () => {
               <div className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover w-full max-w-4xl scroll-mt-24">
                 <div className="h-80 sm:h-96 overflow-hidden">
                   <img
-                    src="/ProjectPreviews/airplane-mode.png"
+                    src="/ProjectPreviews/Sketch 3.png"
                     alt="Airplane Mode UI Concept"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />

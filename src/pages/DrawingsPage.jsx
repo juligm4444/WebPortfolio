@@ -25,7 +25,7 @@ export const DrawingsPage = () => {
               <div className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover w-full max-w-4xl scroll-mt-24">
                 <div className="h-80 sm:h-96 overflow-hidden">
                   <img
-                    src="/ProjectPreviews/industrial-studies.png"
+                    src="/ProjectPreviews/Draw1.png"
                     alt="Industrial Design Studies"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
