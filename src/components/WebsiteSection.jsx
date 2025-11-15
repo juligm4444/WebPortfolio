@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 export const WebsiteSection = () => {
   const { t } = useTranslation();
-  
+
   // Get projects from translation - easily extendable by adding more projects to JSON
   const projectsData = t('projects.technology.projects', { returnObjects: true });
-  
+
   const projects = projectsData.map((project, index) => ({
     id: index + 1,
     title: project.name,
