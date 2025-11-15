@@ -60,10 +60,10 @@ export const HeroSection = () => {
     >
       {/* Time and Greeting Section - Centered on mobile, top left on larger screens */}
       <div className="absolute top-4 sm:top-8 left-1/2 sm:left-8 transform -translate-x-1/2 sm:translate-x-0 z-40 space-y-2 text-center sm:text-left">
-        <div className="text-base sm:text-lg lg:text-xl font-thin text-muted-foreground">
+        <div className="text-[20px] lg:text-[22px] font-thin text-muted-foreground">
           {getTimeGreeting()}
         </div>
-        <div className="text-sm sm:text-base lg:text-lg font-thin text-muted-foreground">
+        <div className="text-[20px] lg:text-[22px] font-thin text-muted-foreground">
           {formatDateTime()}
         </div>
       </div>

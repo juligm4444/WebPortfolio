@@ -127,7 +127,7 @@
           "name": "Licorímetro App",
           "description": "Mobile application for alcohol level measurement with precision sensors and user-friendly interface for health monitoring.",
           "technologies": ["Flutter", "Mobile", "Sensors", "Health"],
-          "category": "Mobile Development", 
+          "category": "Mobile Development",
           "status": "Completed",
           "link": "/projects/licorimetro",
           "image": "/ProjectPreviews/licorimetro-preview.png",
@@ -207,5 +207,64 @@
   },
   "footer": {
     "text1": "All rights reserved."
+  },
+  "projectDetails": {
+    "sections": {
+      "overview": "Overview",
+      "context": "Context",
+      "problem": "Problem",
+      "solutionProcess": "Solution Process",
+      "developmentFlow": "Development Flow",
+      "visualDesign": "Visual Design",
+      "finalDesign": "Final Design",
+      "retrospective": "Retrospective"
+    },
+    "portfolio": {
+      "title": "Digital",
+      "titleHighlight": "Portfolio",
+      "myRole": {
+        "title": "My Role",
+        "description": "UX/UI Designer, Full-stack Developer"
+      },
+      "timeline": {
+        "title": "Timeline & Status",
+        "duration": "3 Months (Oct - Dec 2024)"
+      },
+      "status": {
+        "title": "Status",
+        "description": "Live & Continuously Evolving"
+      },
+      "description": {
+        "paragraph1": "This portfolio website serves as a comprehensive digital showcase of my professional work, technical skills, and design expertise. Built with modern web technologies, it provides visitors with an intuitive and engaging way to explore my projects, view my certifications, and understand my capabilities as both a developer and designer.",
+        "paragraph2": "The project emphasizes clean design, smooth interactions, and accessibility across all devices, demonstrating my commitment to creating user-centered digital experiences that balance aesthetics with functionality."
+      },
+      "buttons": {
+        "viewLive": "View Live Site",
+        "viewCode": "View Code"
+      },
+      "context": {
+        "paragraph1": "As a developer and designer actively seeking new opportunities and collaborations, I recognized the need for a digital platform that goes beyond traditional CVs and resumes. The goal was to create a living portfolio that not only displays my work but also serves as a testament to my technical abilities and design sensibilities.",
+        "paragraph2": "In today's digital landscape, potential employers and clients expect to see working examples of a candidate's skills. Static documents fail to capture the interactive nature of modern web development and the thoughtfulness behind user experience design.",
+        "paragraph3": "This project emerged from the need to bridge that gap—creating an immersive digital experience that showcases not just what I've built, but how I think about design, development, and problem-solving in general."
+      },
+      "problem": {
+        "challenge1": {
+          "title": "Challenge 1: Information Architecture",
+          "description": "How to effectively organize diverse content types—projects, skills, certifications, and personal information—in a way that's easy to navigate without overwhelming visitors? The challenge was creating clear pathways that allow users to quickly find what they're interested in while maintaining a cohesive narrative."
+        },
+        "challenge2": {
+          "title": "Challenge 2: Performance & Accessibility",
+          "description": "Balancing rich visual elements, smooth animations, and interactive features while maintaining fast load times and ensuring accessibility across all devices and screen sizes. The site needed to perform well on slower connections and older devices without sacrificing the modern, polished aesthetic."
+        },
+        "challenge3": {
+          "title": "Challenge 3: Bilingual Experience",
+          "description": "Implementing seamless language switching between English and Spanish without breaking the user experience or requiring page reloads. The translation system needed to maintain context, formatting, and design consistency across both languages while being easy to maintain and update."
+        },
+        "challenge4": {
+          "title": "Challenge 4: Showcasing Versatility",
+          "description": "Demonstrating breadth across both technical development and creative design work while maintaining a unified brand identity. The site needed to reflect my dual strengths in engineering and design without feeling disjointed or unfocused."
+        }
+      }
+    }
   }
 }

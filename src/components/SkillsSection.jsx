@@ -91,8 +91,9 @@ export const SkillsSection = () => {
   return (
     <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-6xl font-bold mb-12 text-center">
-          {t('skills.title1')} <span className="text-primary">{t('skills.title2')}</span>
+        <h2 className="text-4xl md:text-6xl font-bold mb-12 text-center">
+          {t('skills.title1')}{' '}
+          <span className="text-4xl md:text-6xl text-primary">{t('skills.title2')}</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
@@ -101,7 +102,7 @@ export const SkillsSection = () => {
               key={key}
               onClick={() => setCategory(category.key)}
               className={cn(
-                'px-3 sm:px-5 py-1.5 sm:py-2 rounded-full transition-colors duration-300 capitalize text-sm sm:text-base',
+                'px-3 sm:px-5 py-1.5 sm:py-2 rounded-full transition-colors duration-300 capitalize text-[20px]',
                 activeCategory === category.key
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-secondary/70 text-foreground hover:bg-secondary'
@@ -128,7 +129,7 @@ export const SkillsSection = () => {
                   </div>
                 )}
                 <h3
-                  className="font-semibold text-primary text-sm md:text-lg text-center truncate w-full"
+                  className="font-semibold text-primary text-[20px] text-center truncate w-full"
                   title={skill.name}
                 >
                   {skill.name}
@@ -142,10 +143,14 @@ export const SkillsSection = () => {
                   />
                 </div>
                 <div className="text-center mt-1">
-                  <span className={cn(
-                    "text-xs md:text-sm font-medium",
-                    isLight ? "text-emerald-100" : "text-teal-900"
-                  )}>{skill.level}%</span>
+                  <span
+                    className={cn(
+                      'text-xs md:text-sm font-medium',
+                      isLight ? 'text-emerald-100' : 'text-teal-900'
+                    )}
+                  >
+                    {skill.level}%
+                  </span>
                 </div>
               </div>
             </div>

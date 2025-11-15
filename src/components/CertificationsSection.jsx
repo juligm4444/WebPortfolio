@@ -65,7 +65,10 @@ const CertificationCard = ({ cert }) => {
         }}
       >
         {/* Front of card - Badge Image, Name, Company, and Date */}
-        <div className="absolute inset-0 w-full h-full rounded-lg border border-border bg-card shadow-lg flex flex-col items-center justify-center p-3 sm:p-4 text-center space-y-2 sm:space-y-3" style={{ backfaceVisibility: 'hidden' }}>
+        <div
+          className="absolute inset-0 w-full h-full rounded-lg border border-border bg-card shadow-lg flex flex-col items-center justify-center p-3 sm:p-4 text-center space-y-2 sm:space-y-3"
+          style={{ backfaceVisibility: 'hidden' }}
+        >
           <div className="h-20 sm:h-28 w-full flex items-center justify-center">
             <img
               src={cert.badge}
@@ -74,43 +77,56 @@ const CertificationCard = ({ cert }) => {
             />
           </div>
           <div className="space-y-1">
-            <h3 className="text-primary font-semibold text-xs sm:text-sm leading-tight">{cert.name}</h3>
-            <p className={cn(
-              "text-xs",
-              isLight ? "font-medium text-emerald-100" : "font-bold text-teal-900"
-            )}>{cert.company}</p>
-            <p className={cn(
-              "text-xs",
-              isLight ? "font-medium text-emerald-100" : "font-bold text-teal-900"
-            )}>{cert.date}</p>
+            <h3 className="text-primary font-semibold text-[20px] leading-tight">{cert.name}</h3>
+            <p
+              className={cn(
+                'text-[20px]',
+                isLight ? 'font-medium text-emerald-100' : 'font-bold text-teal-900'
+              )}
+            >
+              {cert.company}
+            </p>
+            <p
+              className={cn(
+                'text-[20px]',
+                isLight ? 'font-medium text-emerald-100' : 'font-bold text-teal-900'
+              )}
+            >
+              {cert.date}
+            </p>
           </div>
         </div>
 
         {/* Back of card - Skills and Download */}
-        <div className="absolute inset-0 w-full h-full rounded-lg border border-border bg-card shadow-lg flex flex-col justify-between p-3 sm:p-4 text-center" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+        <div
+          className="absolute inset-0 w-full h-full rounded-lg border border-border bg-card shadow-lg flex flex-col justify-between p-3 sm:p-4 text-center"
+          style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+        >
           <div className="space-y-2 flex-1 flex flex-col justify-center">
-            <h4 className="text-primary font-semibold text-xs sm:text-sm">{t('certifications.skills')}</h4>
+            <h4 className="text-primary font-semibold text-[20px]">{t('certifications.skills')}</h4>
             <div className="flex flex-wrap gap-1 justify-center">
               {cert.skills?.slice(0, 4).map((skill, index) => (
                 <span
                   key={index}
                   className={cn(
-                    "px-1.5 py-0.5 sm:px-2 sm:py-1 text-xs rounded inline-block font-medium",
-                    isLight 
-                      ? "bg-emerald-100 text-emerald-700 border border-emerald-200" 
-                      : "bg-teal-900/50 text-teal-200 border border-teal-700/50"
+                    'px-1.5 py-0.5 sm:px-2 sm:py-1 text-[20px] rounded inline-block font-medium',
+                    isLight
+                      ? 'bg-emerald-100 text-emerald-700 border border-emerald-200'
+                      : 'bg-teal-900/50 text-teal-200 border border-teal-700/50'
                   )}
                 >
                   {t(`certifications.certSkills.${skill}`) || skill}
                 </span>
               ))}
               {cert.skills?.length > 4 && (
-                <span className={cn(
-                  "px-1.5 py-0.5 sm:px-2 sm:py-1 text-xs rounded inline-block font-medium",
-                  isLight 
-                    ? "bg-amber-100 text-amber-700 border border-amber-200" 
-                    : "bg-orange-900/50 text-orange-200 border border-orange-700/50"
-                )}>
+                <span
+                  className={cn(
+                    'px-1.5 py-0.5 sm:px-2 sm:py-1 text-[20px] rounded inline-block font-medium',
+                    isLight
+                      ? 'bg-amber-100 text-amber-700 border border-amber-200'
+                      : 'bg-orange-900/50 text-orange-200 border border-orange-700/50'
+                  )}
+                >
                   +{cert.skills.length - 4}
                 </span>
               )}
@@ -119,7 +135,7 @@ const CertificationCard = ({ cert }) => {
           <a
             href={cert.pdf}
             download
-            className="general-button flex items-center gap-1 sm:gap-2 justify-center mx-auto text-xs px-3 sm:px-4 py-1 mt-2"
+            className="general-button flex items-center gap-1 sm:gap-2 justify-center mx-auto text-[20px] px-3 sm:px-4 py-1 mt-2"
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -139,9 +155,9 @@ export const CertificationsSection = () => {
   return (
     <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-6xl font-bold mb-12 text-center">
+        <h2 className="text-4xl md:text-6xl font-bold mb-12 text-center">
           {t('certifications.title1')}{' '}
-          <span className="text-primary">{t('certifications.title2')}</span>
+          <span className="text-4xl md:text-6xl text-primary">{t('certifications.title2')}</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8">

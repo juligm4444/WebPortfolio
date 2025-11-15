@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import { Menu, X, ChevronDown, Linkedin, Instagram, Twitter, Youtube, Mail } from 'lucide-react';
 import { useState } from 'react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
 import { useTranslation } from 'react-i18next';
@@ -46,6 +46,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   const [isLight, setIsLight] = useState(false);
+  const location = useLocation();
 
   // Check theme on mount and when it changes
   React.useEffect(() => {
@@ -85,8 +86,14 @@ export const Navbar = () => {
             <Link
               to={group.categoryHref}
               className={cn(
-                'text-xs lg:text-sm font-medium uppercase tracking-wider text-left transition-colors cursor-pointer hover:underline block',
-                isLight ? 'text-white hover:text-gray-100' : 'text-gray-800 hover:text-black'
+                'text-[20px] lg:text-[22px] font-medium uppercase tracking-wider text-left transition-all duration-300 cursor-pointer block',
+                location.pathname === group.categoryHref
+                  ? isLight
+                    ? 'text-white font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]'
+                    : 'text-black font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]'
+                  : isLight
+                  ? 'text-white hover:text-gray-100 hover:translate-x-1'
+                  : 'text-gray-800 hover:text-black hover:translate-x-1'
               )}
               onClick={() => setIsOpen(false)}
             >
@@ -103,8 +110,14 @@ export const Navbar = () => {
                   key={item.key}
                   to={item.href}
                   className={cn(
-                    'block py-1 lg:py-2 text-xs lg:text-sm transition-colors text-left',
-                    isLight ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-black'
+                    'block py-1 lg:py-2 text-[20px] lg:text-[22px] transition-all duration-300 text-left',
+                    location.pathname === item.href
+                      ? isLight
+                        ? 'text-white font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]'
+                        : 'text-black font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]'
+                      : isLight
+                      ? 'text-gray-300 hover:text-white hover:translate-x-1'
+                      : 'text-gray-600 hover:text-black hover:translate-x-1'
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -191,7 +204,7 @@ export const Navbar = () => {
       >
         {sidebarContent}
       </aside>
-      
+
       {/* Tablet Sidebar - Smaller */}
       <aside
         className="hidden lg:block xl:hidden fixed left-0 top-0 h-screen w-40 border-r border-white/20 z-40"

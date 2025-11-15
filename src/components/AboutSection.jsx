@@ -7,16 +7,17 @@ export const AboutSection = () => {
   return (
     <section id="about" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          {t('about.title1')} <span className="text-primary">{t('about.title2')}</span>
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          {t('about.title1')}{' '}
+          <span className="text-4xl md:text-5xl text-primary">{t('about.title2')}</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-primary text-2xl font-semibold">{t('about.subtitle')}</h3>
-            <p className="sm:text-lg md:text-xl font-light text-muted-foreground text-justify">
+            <p className="text-[20px] font-light text-muted-foreground text-justify">
               {t('about.parragraph1')}
             </p>
-            <p className="sm:text-lg md:text-xl font-light text-muted-foreground text-justify">
+            <p className="text-[20px] font-light text-muted-foreground text-justify">
               {t('about.parragraph2')}
             </p>
           </div>
@@ -27,8 +28,10 @@ export const AboutSection = () => {
                   <Code className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-primary font-semibold text-lg">{t('about.desc1')}</h4>
-                  <p className="text-muted-foreground font-light text-justify">{t('about.idea1')}</p>
+                  <h4 className="text-primary font-semibold text-[20px]">{t('about.desc1')}</h4>
+                  <p className="text-muted-foreground font-light text-[20px] text-justify">
+                    {t('about.idea1')}
+                  </p>
                 </div>
               </div>
             </div>
@@ -38,8 +41,10 @@ export const AboutSection = () => {
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-primary font-semibold text-lg">{t('about.desc2')}</h4>
-                  <p className="text-muted-foreground font-light text-justify">{t('about.idea2')}</p>
+                  <h4 className="text-primary font-semibold text-[20px]">{t('about.desc2')}</h4>
+                  <p className="text-muted-foreground font-light text-[20px] text-justify">
+                    {t('about.idea2')}
+                  </p>
                 </div>
               </div>
             </div>
@@ -49,8 +54,10 @@ export const AboutSection = () => {
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-primary font-semibold text-lg">{t('about.desc3')}</h4>
-                  <p className="text-muted-foreground font-light text-justify">{t('about.idea3')}</p>
+                  <h4 className="text-primary font-semibold text-[20px]">{t('about.desc3')}</h4>
+                  <p className="text-muted-foreground font-light text-[20px] text-justify">
+                    {t('about.idea3')}
+                  </p>
                 </div>
               </div>
             </div>

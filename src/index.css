@@ -91,6 +91,22 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  /* Minimum text size for all text elements - at least 20px */
+  @media (min-width: 1024px) {
+    body,
+    p,
+    span,
+    a,
+    button,
+    li,
+    div:not(.text-4xl):not(.text-5xl):not(.text-6xl),
+    label,
+    input,
+    textarea {
+      font-size: max(1.25rem, 20px) !important;
+    }
+  }
 }
 
 body {

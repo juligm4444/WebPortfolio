@@ -9,11 +9,12 @@ export const ProjectPageLayout = ({ children, sections }) => {
   useEffect(() => {
     const handleScroll = () => {
       const sectionElements = sections.map((section) => document.getElementById(section.id));
+      const viewportCenter = window.innerHeight / 2;
 
       const current = sectionElements.find((element) => {
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 150 && rect.bottom >= 150;
+          return rect.top <= viewportCenter && rect.bottom >= viewportCenter;
         }
         return false;
       });
@@ -48,21 +49,21 @@ export const ProjectPageLayout = ({ children, sections }) => {
       <Navbar />
 
       {/* Desktop Navigation Menu - Right Side (Hidden on mobile and tablet) */}
-      <aside className="hidden xl:block fixed right-8 top-1/2 transform -translate-y-1/2 z-40 w-48">
-        <div className="bg-card/80 backdrop-blur-sm rounded-lg border border-border p-4 shadow-lg">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+      <aside className="hidden xl:block fixed right-8 top-1/2 transform -translate-y-1/2 z-40 w-64">
+        <div className="p-6">
+          <h3 className="text-[20px] font-semibold uppercase tracking-wider text-muted-foreground mb-6">
             Contents
           </h3>
-          <nav className="space-y-2">
+          <nav className="space-y-1">
             {sections.map((section) => (
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
                 className={cn(
-                  'block w-full text-left text-sm py-2 px-3 rounded-md transition-all duration-200',
+                  'block w-full text-left text-[20px] py-2 transition-all duration-300',
                   activeSection === section.id
-                    ? 'bg-primary/10 text-primary font-medium'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                    ? 'text-primary font-medium -translate-x-4'
+                    : 'text-muted-foreground hover:text-foreground hover:font-semibold hover:scale-105'
                 )}
               >
                 {section.label}

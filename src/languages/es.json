@@ -105,7 +105,7 @@
       "projects": [
         {
           "id": "portfolio",
-          "name": "Sitio Web Portafolio", 
+          "name": "Sitio Web Portafolio",
           "description": "Un sitio web de portafolio personal que muestra mi información, inspiraciones, habilidades, proyectos y certificaciones.",
           "technologies": ["React", "Vite", "Tailwind CSS", "JavaScript"],
           "category": "Desarrollo Web",
@@ -121,7 +121,7 @@
           "description": "Aplicación móvil para el equipo Candelaria Solar Car con sistema de monitoreo y control con visualización de datos en tiempo real.",
           "technologies": ["Flutter", "Móvil", "IoT", "Solar"],
           "category": "Desarrollo Móvil",
-          "status": "Completado", 
+          "status": "Completado",
           "link": "/projects/candelaria",
           "image": "/ProjectPreviews/candelaria-preview.png",
           "demoUrl": "",
@@ -134,7 +134,7 @@
           "technologies": ["Flutter", "Móvil", "Sensores", "Salud"],
           "category": "Desarrollo Móvil",
           "status": "Completado",
-          "link": "/projects/licorimetro", 
+          "link": "/projects/licorimetro",
           "image": "/ProjectPreviews/licorimetro-preview.png",
           "demoUrl": "",
           "sourceUrl": ""
@@ -212,5 +212,64 @@
   },
   "footer": {
     "text1": "Todos los derechos reservados."
+  },
+  "projectDetails": {
+    "sections": {
+      "overview": "Resumen",
+      "context": "Contexto",
+      "problem": "Problema",
+      "solutionProcess": "Proceso de Solución",
+      "developmentFlow": "Flujo de Desarrollo",
+      "visualDesign": "Diseño Visual",
+      "finalDesign": "Diseño Final",
+      "retrospective": "Retrospectiva"
+    },
+    "portfolio": {
+      "title": "Portafolio",
+      "titleHighlight": "Digital",
+      "myRole": {
+        "title": "Mi Rol",
+        "description": "Diseñador UX/UI, Desarrollador Full-stack"
+      },
+      "timeline": {
+        "title": "Cronología y Estado",
+        "duration": "3 Meses (Oct - Dic 2024)"
+      },
+      "status": {
+        "title": "Estado",
+        "description": "En Vivo y en Evolución Continua"
+      },
+      "description": {
+        "paragraph1": "Este sitio web de portafolio sirve como un escaparate digital integral de mi trabajo profesional, habilidades técnicas y experiencia en diseño. Construido con tecnologías web modernas, proporciona a los visitantes una forma intuitiva y atractiva de explorar mis proyectos, ver mis certificaciones y entender mis capacidades como desarrollador y diseñador.",
+        "paragraph2": "El proyecto enfatiza un diseño limpio, interacciones fluidas y accesibilidad en todos los dispositivos, demostrando mi compromiso con la creación de experiencias digitales centradas en el usuario que equilibran la estética con la funcionalidad."
+      },
+      "buttons": {
+        "viewLive": "Ver Sitio en Vivo",
+        "viewCode": "Ver Código"
+      },
+      "context": {
+        "paragraph1": "Como desarrollador y diseñador que busca activamente nuevas oportunidades y colaboraciones, reconocí la necesidad de una plataforma digital que vaya más allá de los CV y currículos tradicionales. El objetivo era crear un portafolio vivo que no solo muestre mi trabajo, sino que también sirva como testimonio de mis habilidades técnicas y sensibilidades de diseño.",
+        "paragraph2": "En el panorama digital actual, los empleadores y clientes potenciales esperan ver ejemplos funcionales de las habilidades de un candidato. Los documentos estáticos no logran capturar la naturaleza interactiva del desarrollo web moderno y la reflexión detrás del diseño de experiencia de usuario.",
+        "paragraph3": "Este proyecto surgió de la necesidad de cerrar esa brecha: crear una experiencia digital inmersiva que muestre no solo lo que he construido, sino cómo pienso sobre diseño, desarrollo y resolución de problemas en general."
+      },
+      "problem": {
+        "challenge1": {
+          "title": "Desafío 1: Arquitectura de Información",
+          "description": "¿Cómo organizar efectivamente diversos tipos de contenido (proyectos, habilidades, certificaciones e información personal) de una manera fácil de navegar sin abrumar a los visitantes? El desafío era crear rutas claras que permitan a los usuarios encontrar rápidamente lo que les interesa mientras se mantiene una narrativa cohesiva."
+        },
+        "challenge2": {
+          "title": "Desafío 2: Rendimiento y Accesibilidad",
+          "description": "Equilibrar elementos visuales ricos, animaciones suaves y funciones interactivas mientras se mantienen tiempos de carga rápidos y se asegura la accesibilidad en todos los dispositivos y tamaños de pantalla. El sitio necesitaba funcionar bien en conexiones lentas y dispositivos antiguos sin sacrificar la estética moderna y pulida."
+        },
+        "challenge3": {
+          "title": "Desafío 3: Experiencia Bilingüe",
+          "description": "Implementar cambio de idioma fluido entre inglés y español sin romper la experiencia del usuario o requerir recargas de página. El sistema de traducción necesitaba mantener el contexto, formato y consistencia de diseño en ambos idiomas mientras es fácil de mantener y actualizar."
+        },
+        "challenge4": {
+          "title": "Desafío 4: Mostrar Versatilidad",
+          "description": "Demostrar amplitud tanto en desarrollo técnico como en trabajo creativo de diseño mientras se mantiene una identidad de marca unificada. El sitio necesitaba reflejar mis fortalezas duales en ingeniería y diseño sin sentirse desarticulado o desenfocado."
+        }
+      }
+    }
   }
 }

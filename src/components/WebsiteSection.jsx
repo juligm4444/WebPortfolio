@@ -24,7 +24,10 @@ export const WebsiteSection = () => {
       <div className="container mx-auto max-w-8xl">
         <h2 className="text-3xl md:text-6xl font-bold mb-4 text-center">
           {t('projects.technology.title1')}
-          <span className="text-primary"> {t('projects.technology.title2')}</span>
+          <span className="text-4xl md:text-6xl text-primary">
+            {' '}
+            {t('projects.technology.title2')}
+          </span>
         </h2>
 
         <div className="grid grid-cols-1 gap-8 mt-16 place-items-center">
