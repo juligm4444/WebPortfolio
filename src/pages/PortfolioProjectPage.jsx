@@ -446,16 +446,12 @@ export const PortfolioProjectPage = () => {
               <div className="bg-card p-6 rounded-lg border border-border text-center">
                 <p className="text-4xl font-bold text-primary mb-2">&lt;1s</p>
                 <p className="text-sm text-black mb-1">Initial Load Time</p>
-                <p className="text-xs text-black">
-                  On average, across all devices and networks
-                </p>
+                <p className="text-xs text-black">On average, across all devices and networks</p>
               </div>
               <div className="bg-card p-6 rounded-lg border border-border text-center">
                 <p className="text-4xl font-bold text-primary mb-2">100%</p>
                 <p className="text-sm text-black mb-1">Mobile Responsive</p>
-                <p className="text-xs text-black">
-                  Optimized for all screen sizes 320px+
-                </p>
+                <p className="text-xs text-black">Optimized for all screen sizes 320px+</p>
               </div>
             </div>
           </div>
