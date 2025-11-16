@@ -91,9 +91,8 @@ export const SkillsSection = () => {
   return (
     <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-4xl md:text-6xl font-bold mb-12 text-center">
-          {t('skills.title1')}{' '}
-          <span className="text-4xl md:text-6xl text-primary">{t('skills.title2')}</span>
+        <h2 className="text-h1 font-bold mb-12 text-center">
+          {t('skills.title1')} {t('skills.title2')}
         </h2>
 
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
@@ -129,7 +128,7 @@ export const SkillsSection = () => {
                   </div>
                 )}
                 <h3
-                  className="font-semibold text-primary text-[20px] text-center truncate w-full"
+                  className="font-semibold text-primary text-h3 text-center truncate w-full"
                   title={skill.name}
                 >
                   {skill.name}
@@ -146,7 +145,7 @@ export const SkillsSection = () => {
                   <span
                     className={cn(
                       'text-xs md:text-sm font-medium',
-                      isLight ? 'text-emerald-100' : 'text-teal-900'
+                      isLight ? 'text-gray-700' : 'text-teal-900'
                     )}
                   >
                     {skill.level}%

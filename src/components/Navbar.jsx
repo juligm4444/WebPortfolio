@@ -89,10 +89,10 @@ export const Navbar = () => {
                 'text-[20px] lg:text-[22px] font-medium uppercase tracking-wider text-left transition-all duration-300 cursor-pointer block',
                 location.pathname === group.categoryHref
                   ? isLight
-                    ? 'text-white font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]'
+                    ? 'text-black font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
                     : 'text-black font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]'
                   : isLight
-                  ? 'text-white hover:text-gray-100 hover:translate-x-1'
+                  ? 'text-gray-700 hover:text-black hover:translate-x-1'
                   : 'text-gray-800 hover:text-black hover:translate-x-1'
               )}
               onClick={() => setIsOpen(false)}
@@ -113,10 +113,10 @@ export const Navbar = () => {
                     'block py-1 lg:py-2 text-[20px] lg:text-[22px] transition-all duration-300 text-left',
                     location.pathname === item.href
                       ? isLight
-                        ? 'text-white font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]'
+                        ? 'text-black font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
                         : 'text-black font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]'
                       : isLight
-                      ? 'text-gray-300 hover:text-white hover:translate-x-1'
+                      ? 'text-gray-600 hover:text-black hover:translate-x-1'
                       : 'text-gray-600 hover:text-black hover:translate-x-1'
                   )}
                   onClick={() => setIsOpen(false)}
@@ -131,63 +131,61 @@ export const Navbar = () => {
 
       {/* Social Media - Follow me */}
       <div
-        className={cn('p-4 border-t space-y-3', isLight ? 'border-white/20' : 'border-gray-400/50')}
+        className={cn('p-4 border-t space-y-4', isLight ? 'border-white/20' : 'border-gray-400/50')}
       >
         <h4
           className={cn(
-            'text-sm font-medium uppercase tracking-wider text-center transition-colors',
-            isLight ? 'text-white hover:text-gray-100' : 'text-gray-800 hover:text-black'
+            'text-[20px] lg:text-[22px] font-medium uppercase tracking-wider text-center transition-colors',
+            isLight ? 'text-gray-700 hover:text-black' : 'text-gray-800 hover:text-black'
           )}
         >
           {t('navbar.follow-me')}
         </h4>
-        <div className={cn('pl-4 border-l', isLight ? 'border-white/20' : 'border-gray-400/50')}>
-          <div className="flex space-x-3 justify-start">
-            <a
-              href="https://www.linkedin.com/in/juligm4/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'p-2 transition-colors',
-                isLight ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-black'
-              )}
-            >
-              <Linkedin size={16} />
-            </a>
-            <a
-              href="https://www.instagram.com/juligm4/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'p-2 transition-colors',
-                isLight ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-black'
-              )}
-            >
-              <Instagram size={16} />
-            </a>
-            <a
-              href="https://x.com/Xx_juligm4_xX"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'p-2 transition-colors',
-                isLight ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-black'
-              )}
-            >
-              <Twitter size={16} />
-            </a>
-            <a
-              href="https://www.youtube.com/@juligm4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'p-2 transition-colors',
-                isLight ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-black'
-              )}
-            >
-              <Youtube size={16} />
-            </a>
-          </div>
+        <div className="flex space-x-4 justify-center">
+          <a
+            href="https://www.linkedin.com/in/juligm4/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              'p-2 transition-colors',
+              isLight ? 'text-gray-600 hover:text-black' : 'text-gray-600 hover:text-black'
+            )}
+          >
+            <Linkedin size={24} />
+          </a>
+          <a
+            href="https://www.instagram.com/juligm4/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              'p-2 transition-colors',
+              isLight ? 'text-gray-600 hover:text-black' : 'text-gray-600 hover:text-black'
+            )}
+          >
+            <Instagram size={24} />
+          </a>
+          <a
+            href="https://x.com/Xx_juligm4_xX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              'p-2 transition-colors',
+              isLight ? 'text-gray-600 hover:text-black' : 'text-gray-600 hover:text-black'
+            )}
+          >
+            <Twitter size={24} />
+          </a>
+          <a
+            href="https://www.youtube.com/@juligm4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              'p-2 transition-colors',
+              isLight ? 'text-gray-600 hover:text-black' : 'text-gray-600 hover:text-black'
+            )}
+          >
+            <Youtube size={24} />
+          </a>
         </div>
       </div>
     </div>

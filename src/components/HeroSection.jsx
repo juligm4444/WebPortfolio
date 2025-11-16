@@ -73,7 +73,7 @@ export const HeroSection = () => {
         {/* Description Text - Main Quote (First, Bigger) */}
         {showParagraph && (
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 className="typewriter text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-muted-foreground leading-relaxed">
+            <h1 className="typewriter text-h1 font-bold text-muted-foreground leading-relaxed">
               {t('hero.description')}
             </h1>
           </div>
@@ -82,7 +82,7 @@ export const HeroSection = () => {
         {/* Main Name/Title (Second, Smaller) */}
         {isTranslationReady && (
           <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
-            <h2 className="text-primary text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-tight">
+            <h2 className="text-primary text-h2 font-light tracking-tight leading-tight">
               {t('hero.greeting')}
             </h2>
           </div>

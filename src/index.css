@@ -74,38 +74,22 @@
 
   .light {
     --background: 0, 17%, 92%;
-    --foreground: 86, 6%, 24%;
-    --border: 86, 4%, 32%;
-    --card: 169, 8%, 53%;
+    --foreground: 0, 0%, 20%;
+    --border: 0, 0%, 75%;
+    --card: 0, 0%, 85%;
     --primary: 0, 0%, 0%;
     --primary-foreground: 0, 0%, 100%;
     --background-image: none;
-    --sidebar-from: #93a4ab;
-    --sidebar-to: #c3c6c3;
-    --sidebar-inverted-from: #2b4242;
-    --sidebar-inverted-to: #6b8784;
+    --sidebar-from: #dadada;
+    --sidebar-to: #fafafa;
+    --sidebar-inverted-from: #dadada;
+    --sidebar-inverted-to: #fafafa;
   }
 
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-
-  /* Minimum text size for all text elements - at least 20px */
-  @media (min-width: 1024px) {
-    body,
-    p,
-    span,
-    a,
-    button,
-    li,
-    div:not(.text-4xl):not(.text-5xl):not(.text-6xl),
-    label,
-    input,
-    textarea {
-      font-size: max(1.25rem, 20px) !important;
-    }
   }
 }
 
@@ -126,6 +110,27 @@ html {
 html.light body {
   background-color: hsl(var(--background));
   background-image: none;
+}
+
+/* Typography System - 4 levels */
+@utility text-h1 {
+  font-size: 3rem; /* 48px */
+  line-height: 1.2;
+}
+
+@utility text-h2 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.3;
+}
+
+@utility text-h3 {
+  font-size: 1.5625rem; /* 25px */
+  line-height: 1.4;
+}
+
+@utility text-body {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.6;
 }
 
 @utility container {

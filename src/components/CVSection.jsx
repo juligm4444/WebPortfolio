@@ -9,9 +9,8 @@ export const CVSection = () => {
   return (
     <section id="cv" className="py-24 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          {t('cv.title1')}{' '}
-          <span className="text-4xl md:text-6xl text-primary">{t('cv.title2')}</span>
+        <h2 className="text-h1 font-bold mb-12 text-center">
+          {t('cv.title1')} {t('cv.title2')}
         </h2>
 
         {/* CV Preview */}

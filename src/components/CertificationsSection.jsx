@@ -77,19 +77,19 @@ const CertificationCard = ({ cert }) => {
             />
           </div>
           <div className="space-y-1">
-            <h3 className="text-primary font-semibold text-[20px] leading-tight">{cert.name}</h3>
+            <h3 className="text-primary font-semibold text-lg leading-tight">{cert.name}</h3>
             <p
               className={cn(
-                'text-[20px]',
-                isLight ? 'font-medium text-emerald-100' : 'font-bold text-teal-900'
+                'text-[8px]',
+                isLight ? 'font-medium text-gray-700' : 'font-bold text-teal-900'
               )}
             >
               {cert.company}
             </p>
             <p
               className={cn(
-                'text-[20px]',
-                isLight ? 'font-medium text-emerald-100' : 'font-bold text-teal-900'
+                'text-[8px]',
+                isLight ? 'font-medium text-gray-700' : 'font-bold text-teal-900'
               )}
             >
               {cert.date}
@@ -103,15 +103,15 @@ const CertificationCard = ({ cert }) => {
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
           <div className="space-y-2 flex-1 flex flex-col justify-center">
-            <h4 className="text-primary font-semibold text-[20px]">{t('certifications.skills')}</h4>
+            <h4 className="text-primary font-semibold text-sm">{t('certifications.skills')}</h4>
             <div className="flex flex-wrap gap-1 justify-center">
               {cert.skills?.slice(0, 4).map((skill, index) => (
                 <span
                   key={index}
                   className={cn(
-                    'px-1.5 py-0.5 sm:px-2 sm:py-1 text-[20px] rounded inline-block font-medium',
+                    'px-1.5 py-0.5 sm:px-2 sm:py-1 text-xs rounded inline-block font-medium',
                     isLight
-                      ? 'bg-emerald-100 text-emerald-700 border border-emerald-200'
+                      ? 'bg-gray-200 text-gray-800 border border-gray-300'
                       : 'bg-teal-900/50 text-teal-200 border border-teal-700/50'
                   )}
                 >
@@ -121,9 +121,9 @@ const CertificationCard = ({ cert }) => {
               {cert.skills?.length > 4 && (
                 <span
                   className={cn(
-                    'px-1.5 py-0.5 sm:px-2 sm:py-1 text-[20px] rounded inline-block font-medium',
+                    'px-1.5 py-0.5 sm:px-2 sm:py-1 text-xs rounded inline-block font-medium',
                     isLight
-                      ? 'bg-amber-100 text-amber-700 border border-amber-200'
+                      ? 'bg-gray-300 text-gray-800 border border-gray-400'
                       : 'bg-orange-900/50 text-orange-200 border border-orange-700/50'
                   )}
                 >
@@ -135,7 +135,7 @@ const CertificationCard = ({ cert }) => {
           <a
             href={cert.pdf}
             download
-            className="general-button flex items-center gap-1 sm:gap-2 justify-center mx-auto text-[20px] px-3 sm:px-4 py-1 mt-2"
+            className="general-button flex items-center gap-1 sm:gap-2 justify-center mx-auto text-sm px-3 sm:px-4 py-1 mt-2"
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -155,9 +155,8 @@ export const CertificationsSection = () => {
   return (
     <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-6xl font-bold mb-12 text-center">
-          {t('certifications.title1')}{' '}
-          <span className="text-4xl md:text-6xl text-primary">{t('certifications.title2')}</span>
+        <h2 className="text-h1 font-bold mb-12 text-center">
+          {t('certifications.title1')} {t('certifications.title2')}
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8">
