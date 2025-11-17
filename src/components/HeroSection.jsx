@@ -73,7 +73,7 @@ export const HeroSection = () => {
         {/* Description Text - Main Quote (First, Bigger) */}
         {showParagraph && (
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 className="typewriter text-h1 font-bold text-muted-foreground leading-relaxed">
+            <h1 className="typewriter text-2xl sm:text-3xl md:text-4xl lg:text-h1 font-bold text-muted-foreground leading-relaxed">
               {t('hero.description')}
             </h1>
           </div>

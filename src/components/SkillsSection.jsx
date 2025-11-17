@@ -123,19 +123,20 @@ export const SkillsSection = () => {
                     <img
                       src={iconMap[skill.icon]}
                       alt={skill.name}
+                      loading="lazy"
                       className="w-8 h-8 md:w-10 md:h-10 object-contain"
                     />
                   </div>
                 )}
                 <h3
-                  className="font-semibold text-primary text-h3 text-center truncate w-full"
+                  className="font-semibold text-primary text-sm md:text-base lg:text-h3 text-center truncate w-full"
                   title={skill.name}
                 >
                   {skill.name}
                 </h3>
               </div>
               <div className="flex-1 flex flex-col justify-center">
-                <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
+                <div className="w-3/4 md:w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
                   <div
                     className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
                     style={{ width: skill.level + '%' }}
@@ -144,7 +145,7 @@ export const SkillsSection = () => {
                 <div className="text-center mt-1">
                   <span
                     className={cn(
-                      'text-xs md:text-sm font-medium',
+                      'text-base md:text-lg font-medium',
                       isLight ? 'text-gray-700' : 'text-teal-900'
                     )}
                   >

@@ -57,6 +57,7 @@ export const ImageSlider = ({ images, title, description }) => {
                 <img
                   src={images[(currentIndex - 1 + images.length) % images.length].src}
                   alt="Previous"
+                  loading="lazy"
                   className="w-full h-full object-cover transition-all duration-700"
                 />
               </div>
@@ -76,6 +77,7 @@ export const ImageSlider = ({ images, title, description }) => {
                   key={currentIndex}
                   src={images[currentIndex].src}
                   alt={images[currentIndex].alt}
+                  loading="lazy"
                   className={`w-full h-full object-cover transition-all duration-700 ease-in-out ${
                     direction === 'right' ? 'animate-slide-in-right' : 'animate-slide-in-left'
                   }`}
@@ -101,6 +103,7 @@ export const ImageSlider = ({ images, title, description }) => {
                 <img
                   src={images[(currentIndex + 1) % images.length].src}
                   alt="Next"
+                  loading="lazy"
                   className="w-full h-full object-cover transition-all duration-700"
                 />
               </div>

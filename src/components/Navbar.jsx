@@ -69,24 +69,27 @@ export const Navbar = () => {
   const sidebarContent = (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className={cn('p-6 border-b', isLight ? 'border-white/20' : 'border-gray-400/50')}>
+      <div
+        className={cn('p-4 lg:p-5 border-b', isLight ? 'border-white/20' : 'border-gray-400/50')}
+      >
         <Link to="/" className="flex flex-col items-center space-y-2 group">
           <img
             src="/assets/icons/LOGO.svg"
             alt="Home"
-            className="h-16 w-16 lg:h-20 lg:w-20 xl:h-24 xl:w-24 transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+            className="h-16 w-16 lg:h-18 lg:w-18 xl:h-20 xl:w-20 transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
       </div>
 
       {/* Navigation Groups */}
-      <nav className="flex-1 overflow-y-auto p-4 space-y-6">
+      <nav className="flex-1 overflow-y-auto p-3 lg:p-4 space-y-3 lg:space-y-5">
         {navGroups.map((group) => (
-          <div key={group.key} className="space-y-3">
+          <div key={group.key} className="space-y-2 lg:space-y-3">
             <Link
               to={group.categoryHref}
               className={cn(
-                'text-[20px] lg:text-[22px] font-medium uppercase tracking-wider text-left transition-all duration-300 cursor-pointer block',
+                'text-sm lg:text-base xl:text-[15px] font-medium uppercase tracking-wider text-left transition-all duration-300 cursor-pointer block',
                 location.pathname === group.categoryHref
                   ? isLight
                     ? 'text-black font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
@@ -110,7 +113,7 @@ export const Navbar = () => {
                   key={item.key}
                   to={item.href}
                   className={cn(
-                    'block py-1 lg:py-2 text-[20px] lg:text-[22px] transition-all duration-300 text-left',
+                    'block py-1 lg:py-2 text-sm lg:text-base xl:text-[15px] transition-all duration-300 text-left',
                     location.pathname === item.href
                       ? isLight
                         ? 'text-black font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
@@ -131,17 +134,20 @@ export const Navbar = () => {
 
       {/* Social Media - Follow me */}
       <div
-        className={cn('p-4 border-t space-y-4', isLight ? 'border-white/20' : 'border-gray-400/50')}
+        className={cn(
+          'p-3 lg:p-4 border-t space-y-2 lg:space-y-3',
+          isLight ? 'border-white/20' : 'border-gray-400/50'
+        )}
       >
         <h4
           className={cn(
-            'text-[20px] lg:text-[22px] font-medium uppercase tracking-wider text-center transition-colors',
+            'text-sm lg:text-base xl:text-[15px] font-medium uppercase tracking-wider text-center transition-colors',
             isLight ? 'text-gray-700 hover:text-black' : 'text-gray-800 hover:text-black'
           )}
         >
           {t('navbar.follow-me')}
         </h4>
-        <div className="flex space-x-4 justify-center">
+        <div className="flex space-x-3 lg:space-x-4 justify-center">
           <a
             href="https://www.linkedin.com/in/juligm4/"
             target="_blank"
@@ -195,7 +201,7 @@ export const Navbar = () => {
     <>
       {/* Desktop Sidebar */}
       <aside
-        className="hidden xl:block fixed left-0 top-0 h-screen w-52 border-r border-white/20 z-40"
+        className="hidden xl:block fixed left-0 top-0 h-screen w-64 border-r border-white/20 z-40"
         style={{
           background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`,
         }}
@@ -205,7 +211,7 @@ export const Navbar = () => {
 
       {/* Tablet Sidebar - Smaller */}
       <aside
-        className="hidden lg:block xl:hidden fixed left-0 top-0 h-screen w-40 border-r border-white/20 z-40"
+        className="hidden lg:block xl:hidden fixed left-0 top-0 h-screen w-52 border-r border-white/20 z-40"
         style={{
           background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`,
         }}

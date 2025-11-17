@@ -51,7 +51,7 @@ const CertificationCard = ({ cert }) => {
 
   return (
     <div
-      className="w-full h-56 sm:h-64 cursor-pointer"
+      className="w-full h-64 sm:h-72 cursor-pointer"
       style={{ perspective: '1000px' }}
       onClick={handleInteraction}
       onMouseEnter={handleMouseEnter}
@@ -73,6 +73,7 @@ const CertificationCard = ({ cert }) => {
             <img
               src={cert.badge}
               alt={`${cert.name} badge`}
+              loading="lazy"
               className="max-h-full max-w-full object-contain"
             />
           </div>
@@ -80,7 +81,7 @@ const CertificationCard = ({ cert }) => {
             <h3 className="text-primary font-semibold text-lg leading-tight">{cert.name}</h3>
             <p
               className={cn(
-                'text-[8px]',
+                'text-base md:text-sm',
                 isLight ? 'font-medium text-gray-700' : 'font-bold text-teal-900'
               )}
             >
@@ -88,7 +89,7 @@ const CertificationCard = ({ cert }) => {
             </p>
             <p
               className={cn(
-                'text-[8px]',
+                'text-base md:text-sm',
                 isLight ? 'font-medium text-gray-700' : 'font-bold text-teal-900'
               )}
             >
