@@ -23,7 +23,7 @@ export const ArtsDesignPage = () => {
       className="min-h-screen bg-background text-foreground overflow-x-hidden flex flex-col"
     >
       <Navbar />
-      <main className="lg:ml-52 flex-1 flex flex-col">
+      <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
         <div className="pt-20 py-24 px-4 flex-1">
           <div className="container mx-auto max-w-6xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">

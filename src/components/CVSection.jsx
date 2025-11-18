@@ -14,7 +14,7 @@ export const CVSection = () => {
         </h2>
 
         {/* CV Preview */}
-        <div className="bg-card rounded-lg overflow-hidden shadow-lg mb-8">
+        <div className="bg-card rounded-lg overflow-hidden shadow-lg mb-12">
           <div className="aspect-[8.5/11] w-full">
             <iframe src={cvPath} className="w-full h-full border-0" title={t('cv.preview-title')} />
           </div>

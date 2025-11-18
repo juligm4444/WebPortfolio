@@ -34,7 +34,7 @@ export const SketchesPage = () => {
       className="min-h-screen bg-background text-foreground overflow-x-hidden flex flex-col"
     >
       <Navbar />
-      <main className="lg:ml-52 flex-1 flex flex-col">
+      <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
         <div className="pt-20 py-24 px-4 flex-1">
           <ImageSlider
             images={sketchImages}

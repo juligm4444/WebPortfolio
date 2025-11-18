@@ -129,7 +129,7 @@ export const SkillsSection = () => {
                   </div>
                 )}
                 <h3
-                  className="font-semibold text-primary text-sm md:text-base lg:text-h3 text-center truncate w-full"
+                  className="font-semibold text-primary text-xs md:text-sm lg:text-base text-center truncate w-full overflow-hidden text-ellipsis"
                   title={skill.name}
                 >
                   {skill.name}
@@ -146,7 +146,7 @@ export const SkillsSection = () => {
                   <span
                     className={cn(
                       'text-base md:text-lg font-medium',
-                      isLight ? 'text-gray-700' : 'text-teal-900'
+                      isLight ? 'text-gray-700' : 'text-gray-300'
                     )}
                   >
                     {skill.level}%

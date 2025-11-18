@@ -59,10 +59,10 @@
 
 @layer base {
   :root {
-    --background: 180, 26%, 15%;
-    --foreground: 174, 100%, 73%;
-    --border: 0, 0%, 100%;
-    --card: 173, 21%, 24%;
+    --background: 0, 0%, 5%;
+    --foreground: 0, 0%, 100%;
+    --border: 0, 0%, 20%;
+    --card: 0, 0%, 9%;
     --primary: 0, 0%, 100%;
     --primary-foreground: 0, 0%, 0%;
     --background-image: none;
@@ -70,6 +70,11 @@
     --sidebar-to: #6b8784;
     --sidebar-inverted-from: #93a4ab;
     --sidebar-inverted-to: #c3c6c3;
+    /* New global gradient + navbar tokens (dark theme defaults) */
+    --bg-base: #0c0c0c;
+    --bg-gradient: linear-gradient(to bottom, #0c0c0c 0%, #0f0f0f 100%);
+    --navbar-bg: #171717;
+    --contact-footer-min-h: 7rem;
   }
 
   .light {
@@ -84,6 +89,16 @@
     --sidebar-to: #fafafa;
     --sidebar-inverted-from: #dadada;
     --sidebar-inverted-to: #fafafa;
+    /* New gradient + navbar tokens for light theme */
+    --bg-base: #f5f4f3;
+    --bg-gradient: radial-gradient(
+      circle at 40% 30%,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(240, 239, 239, 0.6) 55%,
+      rgba(232, 231, 231, 0.9) 100%
+    );
+    --navbar-bg: #dadada;
+    --contact-footer-min-h: 7rem;
   }
 
   * {
@@ -107,9 +122,18 @@ html {
   overflow-x: hidden;
 }
 
+/* Apply subtle gradient backgrounds per theme */
 html.light body {
-  background-color: hsl(var(--background));
-  background-image: none;
+  background: var(--bg-base);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+}
+html:not(.light) body {
+  background: var(--bg-base);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /* Typography System - 4 levels */

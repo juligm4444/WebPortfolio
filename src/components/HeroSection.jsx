@@ -56,10 +56,10 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-20 lg:py-32"
+      className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
     >
-      {/* Time and Greeting Section - Centered on mobile, top left on larger screens */}
-      <div className="absolute top-4 sm:top-8 left-1/2 sm:left-8 transform -translate-x-1/2 sm:translate-x-0 z-40 space-y-2 text-center sm:text-left">
+      {/* Greeting and Date - Fixed top left, with left margin matching toggles */}
+      <div className="fixed top-2 left-2 sm:top-4 sm:left-4 z-50 flex flex-col items-start space-y-1 lg:left-[14rem] xl:left-[17rem] xl:right-auto">
         <div className="text-[20px] lg:text-[22px] font-thin text-muted-foreground">
           {getTimeGreeting()}
         </div>

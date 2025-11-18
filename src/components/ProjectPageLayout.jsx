@@ -8,23 +8,30 @@ export const ProjectPageLayout = ({ children, sections }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sectionElements = sections.map((section) => document.getElementById(section.id));
-      const viewportCenter = window.innerHeight / 2;
+      const sectionElements = sections
+        .map((section) => document.getElementById(section.id))
+        .filter(Boolean);
 
-      const current = sectionElements.find((element) => {
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= viewportCenter && rect.bottom >= viewportCenter;
+      // Choose the last section whose top is above a small offset from the top.
+      // This avoids jumping to a far section when the viewport center is lower.
+      const OFFSET = 120; // matches scroll-mt-24 (~96px) + small padding
+      let currentId = sections[0]?.id;
+
+      for (const el of sectionElements) {
+        const top = el.getBoundingClientRect().top;
+        if (top - OFFSET <= 0) {
+          currentId = el.id;
+        } else {
+          break;
         }
-        return false;
-      });
+      }
 
-      if (current) {
-        setActiveSection(current.id);
+      if (currentId) {
+        setActiveSection(currentId);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -33,9 +40,9 @@ export const ProjectPageLayout = ({ children, sections }) => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 100;
+      const OFFSET = 120; // keep consistent with scroll spy
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      const offsetPosition = elementPosition + window.pageYOffset - OFFSET;
 
       window.scrollTo({
         top: offsetPosition,
@@ -73,10 +80,10 @@ export const ProjectPageLayout = ({ children, sections }) => {
         </div>
       </aside>
 
-      <main className="lg:ml-52 xl:mr-64 flex-1 flex flex-col">
-        <div className="pt-20 flex-1">{children}</div>
-        <Footer />
+      <main className="lg:ml-52 xl:ml-64 xl:mr-64 flex-1 flex flex-col" style={{ paddingBottom: 'var(--contact-footer-min-h)' }}>
+        <div className="flex-1">{children}</div>
       </main>
+      <Footer />
     </div>
   );
 };

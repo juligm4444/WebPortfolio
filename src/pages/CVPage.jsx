@@ -14,7 +14,7 @@ export const CV = () => {
       className="min-h-screen bg-background text-foreground overflow-x-hidden flex flex-col"
     >
       <Navbar />
-      <main className="lg:ml-52 flex-1 flex flex-col">
+      <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
         <div className="pt-20 py-24 px-4 flex-1">
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -30,7 +30,7 @@ export const CV = () => {
                 />
               </div>
             </div>
-            <div className="text-center mb-8">
+            <div className="text-center mt-8 mb-8">
               <a href={cvPath} download className="general-button inline-flex items-center gap-2">
                 <Download size={20} />
                 {t('about.button2')}

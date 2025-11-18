@@ -66,6 +66,17 @@ export const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  React.useEffect(() => {
+    if (isOpen) {
+      const original = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = original;
+      };
+    }
+  }, [isOpen]);
+
   const sidebarContent = (
     <div className="flex flex-col h-full">
       {/* Logo */}
@@ -83,7 +94,7 @@ export const Navbar = () => {
       </div>
 
       {/* Navigation Groups */}
-      <nav className="flex-1 overflow-y-auto p-3 lg:p-4 space-y-3 lg:space-y-5">
+      <nav className="flex-1 lg:overflow-y-auto p-3 lg:p-4 space-y-3 lg:space-y-5">
         {navGroups.map((group) => (
           <div key={group.key} className="space-y-2 lg:space-y-3">
             <Link
@@ -93,10 +104,10 @@ export const Navbar = () => {
                 location.pathname === group.categoryHref
                   ? isLight
                     ? 'text-black font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
-                    : 'text-black font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]'
+                    : 'text-white font-bold translate-x-2 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]'
                   : isLight
                   ? 'text-gray-700 hover:text-black hover:translate-x-1'
-                  : 'text-gray-800 hover:text-black hover:translate-x-1'
+                  : 'text-gray-300 hover:text-white hover:translate-x-1 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
               )}
               onClick={() => setIsOpen(false)}
             >
@@ -117,10 +128,10 @@ export const Navbar = () => {
                     location.pathname === item.href
                       ? isLight
                         ? 'text-black font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
-                        : 'text-black font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]'
+                        : 'text-white font-semibold translate-x-2 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]'
                       : isLight
                       ? 'text-gray-600 hover:text-black hover:translate-x-1'
-                      : 'text-gray-600 hover:text-black hover:translate-x-1'
+                      : 'text-gray-400 hover:text-white hover:translate-x-1 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -138,11 +149,14 @@ export const Navbar = () => {
           'p-3 lg:p-4 border-t space-y-2 lg:space-y-3',
           isLight ? 'border-white/20' : 'border-gray-400/50'
         )}
+        style={{ minHeight: 'var(--contact-footer-min-h)' }}
       >
         <h4
           className={cn(
             'text-sm lg:text-base xl:text-[15px] font-medium uppercase tracking-wider text-center transition-colors',
-            isLight ? 'text-gray-700 hover:text-black' : 'text-gray-800 hover:text-black'
+            isLight
+              ? 'text-gray-700 hover:text-black'
+              : 'text-gray-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
           )}
         >
           {t('navbar.follow-me')}
@@ -154,7 +168,9 @@ export const Navbar = () => {
             rel="noopener noreferrer"
             className={cn(
               'p-2 transition-colors',
-              isLight ? 'text-gray-600 hover:text-black' : 'text-gray-600 hover:text-black'
+              isLight
+                ? 'text-gray-600 hover:text-black'
+                : 'text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
             )}
           >
             <Linkedin size={24} />
@@ -165,7 +181,9 @@ export const Navbar = () => {
             rel="noopener noreferrer"
             className={cn(
               'p-2 transition-colors',
-              isLight ? 'text-gray-600 hover:text-black' : 'text-gray-600 hover:text-black'
+              isLight
+                ? 'text-gray-600 hover:text-black'
+                : 'text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
             )}
           >
             <Instagram size={24} />
@@ -176,7 +194,9 @@ export const Navbar = () => {
             rel="noopener noreferrer"
             className={cn(
               'p-2 transition-colors',
-              isLight ? 'text-gray-600 hover:text-black' : 'text-gray-600 hover:text-black'
+              isLight
+                ? 'text-gray-600 hover:text-black'
+                : 'text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
             )}
           >
             <Twitter size={24} />
@@ -187,7 +207,9 @@ export const Navbar = () => {
             rel="noopener noreferrer"
             className={cn(
               'p-2 transition-colors',
-              isLight ? 'text-gray-600 hover:text-black' : 'text-gray-600 hover:text-black'
+              isLight
+                ? 'text-gray-600 hover:text-black'
+                : 'text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
             )}
           >
             <Youtube size={24} />
@@ -203,7 +225,7 @@ export const Navbar = () => {
       <aside
         className="hidden xl:block fixed left-0 top-0 h-screen w-64 border-r border-white/20 z-40"
         style={{
-          background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`,
+          background: 'var(--navbar-bg)',
         }}
       >
         {sidebarContent}
@@ -213,7 +235,7 @@ export const Navbar = () => {
       <aside
         className="hidden lg:block xl:hidden fixed left-0 top-0 h-screen w-52 border-r border-white/20 z-40"
         style={{
-          background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`,
+          background: 'var(--navbar-bg)',
         }}
       >
         {sidebarContent}
@@ -247,7 +269,7 @@ export const Navbar = () => {
           <aside
             className="lg:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-white/20 z-50 transform transition-transform duration-300"
             style={{
-              background: `linear-gradient(to bottom, var(--sidebar-inverted-from), var(--sidebar-inverted-to))`,
+              background: 'var(--navbar-bg)',
             }}
           >
             {sidebarContent}

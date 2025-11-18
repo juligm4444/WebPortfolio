@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const LANGUAGES = [
-  { code: 'en', icon: '/assets/icons/spanish.svg', label: 'Spanish' },
-  { code: 'es', icon: '/assets/icons/english.svg', label: 'English' },
+  { code: 'en', label: 'English' },
+  { code: 'es', label: 'Español' },
 ];
 
 export const LanguageToggle = () => {
@@ -32,12 +32,12 @@ export const LanguageToggle = () => {
     <button
       onClick={handleToggle}
       className={cn(
-        'p-2 rounded-full transition-colors duration-300 focus:outline-none flex items-center justify-center'
+        'px-3 py-1.5 rounded-full transition-colors duration-300 focus:outline-none text-sm font-medium bg-card border border-border hover:bg-secondary/60'
       )}
       aria-label="Toggle language"
       title={current.label}
     >
-      <img src={current.icon} alt={current.label} className="w-8 h-8" />
+      {current.label}
     </button>
   );
 };

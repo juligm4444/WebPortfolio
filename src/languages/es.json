@@ -26,8 +26,8 @@
     "sketches": "Bocetos",
     "other-projects": "Otros Proyectos",
     "main-pages": "Páginas Principales",
-    "technology": "Tecnología",
-    "tech": "Tecnología",
+    "technology": "Proyectos",
+    "tech": "Proyectos",
     "arts": "Arte y Diseño",
     "arts-design": "Arte y Diseño",
     "drawings": "Dibujos",
@@ -247,29 +247,8 @@
         "viewLive": "Ver Sitio en Vivo",
         "viewCode": "Ver Código"
       },
-      "context": {
-        "paragraph1": "Como desarrollador y diseñador que busca activamente nuevas oportunidades y colaboraciones, reconocí la necesidad de una plataforma digital que vaya más allá de los CV y currículos tradicionales. El objetivo era crear un portafolio vivo que no solo muestre mi trabajo, sino que también sirva como testimonio de mis habilidades técnicas y sensibilidades de diseño.",
-        "paragraph2": "En el panorama digital actual, los empleadores y clientes potenciales esperan ver ejemplos funcionales de las habilidades de un candidato. Los documentos estáticos no logran capturar la naturaleza interactiva del desarrollo web moderno y la reflexión detrás del diseño de experiencia de usuario.",
-        "paragraph3": "Este proyecto surgió de la necesidad de cerrar esa brecha: crear una experiencia digital inmersiva que muestre no solo lo que he construido, sino cómo pienso sobre diseño, desarrollo y resolución de problemas en general."
-      },
-      "problem": {
-        "challenge1": {
-          "title": "Desafío 1: Arquitectura de Información",
-          "description": "¿Cómo organizar efectivamente diversos tipos de contenido (proyectos, habilidades, certificaciones e información personal) de una manera fácil de navegar sin abrumar a los visitantes? El desafío era crear rutas claras que permitan a los usuarios encontrar rápidamente lo que les interesa mientras se mantiene una narrativa cohesiva."
-        },
-        "challenge2": {
-          "title": "Desafío 2: Rendimiento y Accesibilidad",
-          "description": "Equilibrar elementos visuales ricos, animaciones suaves y funciones interactivas mientras se mantienen tiempos de carga rápidos y se asegura la accesibilidad en todos los dispositivos y tamaños de pantalla. El sitio necesitaba funcionar bien en conexiones lentas y dispositivos antiguos sin sacrificar la estética moderna y pulida."
-        },
-        "challenge3": {
-          "title": "Desafío 3: Experiencia Bilingüe",
-          "description": "Implementar cambio de idioma fluido entre inglés y español sin romper la experiencia del usuario o requerir recargas de página. El sistema de traducción necesitaba mantener el contexto, formato y consistencia de diseño en ambos idiomas mientras es fácil de mantener y actualizar."
-        },
-        "challenge4": {
-          "title": "Desafío 4: Mostrar Versatilidad",
-          "description": "Demostrar amplitud tanto en desarrollo técnico como en trabajo creativo de diseño mientras se mantiene una identidad de marca unificada. El sitio necesitaba reflejar mis fortalezas duales en ingeniería y diseño sin sentirse desarticulado o desenfocado."
-        }
-      }
+      "context": "En la actualidad, los empleadores y clientes potenciales esperan ver ejemplos funcionales de las habilidades de un candidato. Por ello, crear un portafolio digital se vuelve esencial para demostrar de forma efectiva las capacidades.",
+      "problem": "Por lo general, diseñadores y desarrolladores crean portafolios muy diferentes para mostrar su trabajo, lo que dificulta equilibrar las habilidades de diseño y de desarrollo. Muchos portafolios se enfocan únicamente en el atractivo visual o en lo técnico, dejando de lado la integración fluida de ambos aspectos. Este proyecto busca resolverlo con una plataforma unificada que resalte mi doble experiencia en diseño y desarrollo."
     }
   }
 }

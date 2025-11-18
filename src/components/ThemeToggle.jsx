@@ -29,7 +29,10 @@ export const ThemeToggle = () => {
       {isLight ? (
         <Moon className="w-6 h-6" style={{ color: '#93a4ab' }} />
       ) : (
-        <Sun className="w-6 h-6 text-yellow-400" />
+        <Sun
+          className="w-6 h-6 text-white"
+          style={{ filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.9))' }}
+        />
       )}
     </button>
   );

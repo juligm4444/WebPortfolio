@@ -82,7 +82,7 @@ const CertificationCard = ({ cert }) => {
             <p
               className={cn(
                 'text-base md:text-sm',
-                isLight ? 'font-medium text-gray-700' : 'font-bold text-teal-900'
+                isLight ? 'font-medium text-gray-700' : 'font-medium text-gray-300'
               )}
             >
               {cert.company}
@@ -90,7 +90,7 @@ const CertificationCard = ({ cert }) => {
             <p
               className={cn(
                 'text-base md:text-sm',
-                isLight ? 'font-medium text-gray-700' : 'font-bold text-teal-900'
+                isLight ? 'font-medium text-gray-700' : 'font-medium text-gray-300'
               )}
             >
               {cert.date}

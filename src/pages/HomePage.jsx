@@ -12,7 +12,7 @@ export const Home = () => {
     >
       <Navbar />
       {/* Main content with responsive left margin for sidebar */}
-      <main className="lg:ml-40 xl:ml-52 flex-1 flex flex-col min-h-screen">
+      <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col min-h-screen">
         <HeroSection />
         <SkillsSection />
         <CertificationsSection />
