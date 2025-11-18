@@ -80,7 +80,10 @@ export const ProjectPageLayout = ({ children, sections }) => {
         </div>
       </aside>
 
-      <main className="lg:ml-52 xl:ml-64 xl:mr-64 flex-1 flex flex-col" style={{ paddingBottom: 'var(--contact-footer-min-h)' }}>
+      <main
+        className="lg:ml-52 xl:ml-64 xl:mr-64 flex-1 flex flex-col"
+        style={{ paddingBottom: 'var(--contact-footer-min-h)' }}
+      >
         <div className="flex-1">{children}</div>
       </main>
       <Footer />

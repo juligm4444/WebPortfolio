@@ -9,12 +9,12 @@ export const ArtsDesignPage = () => {
 
   // Get arts & design projects from JSON - matching TechnologyPage pattern
   const projects = t('projects.artsDesign.projects', { returnObjects: true }) || [];
-  
+
   // Icon mapping for JSON-driven approach
   const iconMap = {
     brush: Brush,
     palette: Palette,
-    sparkles: Sparkles
+    sparkles: Sparkles,
   };
 
   return (
@@ -27,7 +27,8 @@ export const ArtsDesignPage = () => {
         <div className="pt-20 py-24 px-4 flex-1">
           <div className="container mx-auto max-w-6xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-              {t('projects.artsDesign.title1')} <span className="text-primary">{t('projects.artsDesign.title2')}</span>
+              {t('projects.artsDesign.title1')}{' '}
+              <span className="text-primary">{t('projects.artsDesign.title2')}</span>
             </h1>
             <p className="text-lg font-light text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
               {t('projects.artsDesign.description')}
