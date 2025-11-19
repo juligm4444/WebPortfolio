@@ -80,9 +80,7 @@ export const Navbar = () => {
   const sidebarContent = (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div
-        className={cn('p-4 lg:p-5 border-b', isLight ? 'border-white/20' : 'border-gray-400/50')}
-      >
+      <div className="p-4 lg:p-5 border-b border-border">
         <Link to="/" className="flex flex-col items-center space-y-2 group">
           <img
             src="/assets/icons/LOGO.svg"
@@ -113,12 +111,7 @@ export const Navbar = () => {
             >
               {t(`navbar.${group.title}`)}
             </Link>
-            <div
-              className={cn(
-                'pl-4 space-y-2 border-l',
-                isLight ? 'border-white/20' : 'border-gray-400/50'
-              )}
-            >
+            <div className="pl-4 space-y-2 border-l border-border">
               {group.items.map((item) => (
                 <Link
                   key={item.key}
@@ -145,10 +138,7 @@ export const Navbar = () => {
 
       {/* Social Media - Follow me */}
       <div
-        className={cn(
-          'p-3 lg:p-4 border-t space-y-2 lg:space-y-3',
-          isLight ? 'border-white/20' : 'border-gray-400/50'
-        )}
+        className="p-3 lg:p-4 border-t border-border space-y-2 lg:space-y-3"
         style={{ minHeight: 'var(--contact-footer-min-h)' }}
       >
         <h4
@@ -223,7 +213,7 @@ export const Navbar = () => {
     <>
       {/* Desktop Sidebar */}
       <aside
-        className="hidden xl:block fixed left-0 top-0 h-screen w-64 border-r border-white/20 z-40"
+        className="hidden xl:block fixed left-0 top-0 h-screen w-64 border-r border-border z-40"
         style={{
           background: 'var(--navbar-bg)',
         }}
@@ -233,7 +223,7 @@ export const Navbar = () => {
 
       {/* Tablet Sidebar - Smaller */}
       <aside
-        className="hidden lg:block xl:hidden fixed left-0 top-0 h-screen w-52 border-r border-white/20 z-40"
+        className="hidden lg:block xl:hidden fixed left-0 top-0 h-screen w-52 border-r border-border z-40"
         style={{
           background: 'var(--navbar-bg)',
         }}
@@ -267,7 +257,7 @@ export const Navbar = () => {
 
           {/* Mobile Sidebar */}
           <aside
-            className="lg:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-white/20 z-50 transform transition-transform duration-300"
+            className="lg:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-border z-50 transform transition-transform duration-300"
             style={{
               background: 'var(--navbar-bg)',
             }}

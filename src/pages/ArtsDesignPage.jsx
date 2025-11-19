@@ -41,7 +41,7 @@ export const ArtsDesignPage = () => {
                   <Link
                     key={project.id}
                     to={project.link}
-                    className="group bg-card rounded-lg overflow-hidden shadow-lg card-hover transition-all duration-300"
+                    className="group bg-card border border-border shadow-lg rounded-lg overflow-hidden card-hover transition-all duration-300"
                   >
                     <div className="h-48 overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                       {project.image ? (
