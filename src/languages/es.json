@@ -62,6 +62,38 @@
     "desc3": "Gestión de Equipos & Proyectos",
     "idea3": "Planificación y ejecución de proyectos mediante la aplicación de metodologías ágiles."
   },
+  "aboutPage": {
+    "sections": {
+      "me": "Yo",
+      "information": "Información",
+      "education": "Educación",
+      "inspirations": "Inspiraciones",
+      "hobbies": "Pasatiempos",
+      "foccus": "Enfoque"
+    },
+    "subtitles": {
+      "me": "Identidad y Presencia",
+      "information": "Resumen Central",
+      "education": "Formación Académica",
+      "inspirations": "Motores Creativos",
+      "hobbies": "Prácticas Personales",
+      "foccus": "Enfoque Profesional"
+    },
+    "information": {
+      "text": "Diseño, ingeniería y pensamiento de producto convergen en mi práctica diaria—creando experiencias estructuradas y expresivas."
+    },
+    "inspirations": {
+      "text": "Me inspiro en medios interactivos, composición arquitectónica y sistemas minimalistas de interfaces."
+    },
+    "hobbies": {
+      "text": "Bocetar conceptos, prototipar interfaces, refinar bases de código y explorar investigación en computación visual."
+    },
+    "education": {
+      "years": "2021-2028",
+      "degree1": "Pregrado en Diseño - Tesis de Grado",
+      "degree2": "Opción en Computación Visual"
+    }
+  },
   "skills": {
     "title1": "Mis",
     "title2": "Habilidades",

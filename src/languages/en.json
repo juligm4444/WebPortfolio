@@ -57,6 +57,38 @@
     "desc3": "Team & Project Management",
     "idea3": "Planning and achieving projects through the application of agile methodologies."
   },
+  "aboutPage": {
+    "sections": {
+      "me": "Me",
+      "information": "Information",
+      "education": "Education",
+      "inspirations": "Inspirations",
+      "hobbies": "Hobbies",
+      "foccus": "Focus"
+    },
+    "subtitles": {
+      "me": "Identity & Presence",
+      "information": "Core Overview",
+      "education": "Academic Formation",
+      "inspirations": "Creative Drivers",
+      "hobbies": "Personal Practices",
+      "foccus": "Professional Focus"
+    },
+    "information": {
+      "text": "Design, engineering, and product thinking converge in my daily practice—building expressive, structured experiences."
+    },
+    "inspirations": {
+      "text": "I draw inspiration from interactive media, architectural composition, and minimalist interface systems."
+    },
+    "hobbies": {
+      "text": "Sketching concepts, prototyping interfaces, refining code bases, and exploring visual computation research."
+    },
+    "education": {
+      "years": "2021-2028",
+      "degree1": "Bachelor’s Degree in Design - Undergraduate Thesis",
+      "degree2": "Minor Degree in Visual Computation"
+    }
+  },
   "skills": {
     "title1": "My",
     "title2": "Skills",

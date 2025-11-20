@@ -80,9 +80,7 @@ export const Navbar = () => {
   const sidebarContent = (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div
-        className={cn('p-4 lg:p-5 border-b', isLight ? 'border-white/20' : 'border-gray-400/50')}
-      >
+      <div className={cn('p-4 lg:p-5 border-b border-border')}>
         <Link to="/" className="flex flex-col items-center space-y-2 group">
           <img
             src="/assets/icons/LOGO.svg"
@@ -95,60 +93,58 @@ export const Navbar = () => {
 
       {/* Navigation Groups */}
       <nav className="flex-1 lg:overflow-y-auto p-3 lg:p-4 space-y-3 lg:space-y-5">
-        {navGroups.map((group) => (
-          <div key={group.key} className="space-y-2 lg:space-y-3">
-            <Link
-              to={group.categoryHref}
-              className={cn(
-                'text-sm lg:text-base xl:text-[15px] font-medium uppercase tracking-wider text-left transition-all duration-300 cursor-pointer block',
-                location.pathname === group.categoryHref
-                  ? isLight
-                    ? 'text-black font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
-                    : 'text-white font-bold translate-x-2 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]'
-                  : isLight
-                  ? 'text-gray-700 hover:text-black hover:translate-x-1'
-                  : 'text-gray-300 hover:text-white hover:translate-x-1 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
-              )}
-              onClick={() => setIsOpen(false)}
-            >
-              {t(`navbar.${group.title}`)}
-            </Link>
-            <div
-              className={cn(
-                'pl-4 space-y-2 border-l',
-                isLight ? 'border-white/20' : 'border-gray-400/50'
-              )}
-            >
-              {group.items.map((item) => (
-                <Link
-                  key={item.key}
-                  to={item.href}
-                  className={cn(
-                    'block py-1 lg:py-2 text-sm lg:text-base xl:text-[15px] transition-all duration-300 text-left',
-                    location.pathname === item.href
-                      ? isLight
-                        ? 'text-black font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
-                        : 'text-white font-semibold translate-x-2 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]'
-                      : isLight
-                      ? 'text-gray-600 hover:text-black hover:translate-x-1'
-                      : 'text-gray-400 hover:text-white hover:translate-x-1 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {t(`navbar.${item.key}`)}
-                </Link>
-              ))}
+        {navGroups.map((group, idx) => (
+          <React.Fragment key={group.key}>
+            <div className="space-y-2 lg:space-y-3">
+              <Link
+                to={group.categoryHref}
+                className={cn(
+                  'text-sm lg:text-base xl:text-[15px] font-medium uppercase tracking-wider text-left transition-all duration-300 cursor-pointer block',
+                  location.pathname === group.categoryHref
+                    ? isLight
+                      ? 'text-black font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
+                      : 'text-white font-bold translate-x-2 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]'
+                    : isLight
+                    ? 'text-gray-700 hover:text-black hover:translate-x-1'
+                    : 'text-gray-300 hover:text-white hover:translate-x-1 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
+                )}
+                onClick={() => setIsOpen(false)}
+              >
+                {t(`navbar.${group.title}`)}
+              </Link>
+              <div className={cn('pl-4 space-y-2 border-l border-border')}>
+                {group.items.map((item) => (
+                  <Link
+                    key={item.key}
+                    to={item.href}
+                    className={cn(
+                      'block py-1 lg:py-2 text-sm lg:text-base xl:text-[15px] transition-all duration-300 text-left',
+                      location.pathname === item.href
+                        ? isLight
+                          ? 'text-black font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]'
+                          : 'text-white font-semibold translate-x-2 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]'
+                        : isLight
+                        ? 'text-gray-600 hover:text-black hover:translate-x-1'
+                        : 'text-gray-400 hover:text-white hover:translate-x-1 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t(`navbar.${item.key}`)}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
+            {/* Additional separators after specific groups */}
+            {(group.key === 'cv' || group.key === 'tech') && (
+              <div className="border-t border-border" />
+            )}
+          </React.Fragment>
         ))}
       </nav>
 
       {/* Social Media - Follow me */}
       <div
-        className={cn(
-          'p-3 lg:p-4 border-t space-y-2 lg:space-y-3',
-          isLight ? 'border-white/20' : 'border-gray-400/50'
-        )}
+        className={cn('p-3 lg:p-4 border-t border-border space-y-2 lg:space-y-3')}
         style={{ minHeight: 'var(--contact-footer-min-h)' }}
       >
         <h4
@@ -223,7 +219,7 @@ export const Navbar = () => {
     <>
       {/* Desktop Sidebar */}
       <aside
-        className="hidden xl:block fixed left-0 top-0 h-screen w-64 border-r border-white/20 z-40"
+        className="hidden xl:block fixed left-0 top-0 h-screen w-64 border-r border-border z-40"
         style={{
           background: 'var(--navbar-bg)',
         }}
@@ -233,7 +229,7 @@ export const Navbar = () => {
 
       {/* Tablet Sidebar - Smaller */}
       <aside
-        className="hidden lg:block xl:hidden fixed left-0 top-0 h-screen w-52 border-r border-white/20 z-40"
+        className="hidden lg:block xl:hidden fixed left-0 top-0 h-screen w-52 border-r border-border z-40"
         style={{
           background: 'var(--navbar-bg)',
         }}
@@ -267,7 +263,7 @@ export const Navbar = () => {
 
           {/* Mobile Sidebar */}
           <aside
-            className="lg:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-white/20 z-50 transform transition-transform duration-300"
+            className="lg:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-border z-50 transform transition-transform duration-300"
             style={{
               background: 'var(--navbar-bg)',
             }}
