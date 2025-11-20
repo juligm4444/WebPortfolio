@@ -115,7 +115,7 @@ export const SkillsSection = () => {
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-4 md:p-6 rounded-lg shadow-xs card-hover flex flex-row items-center gap-3 md:gap-4"
+              className="bg-card border border-border shadow-lg p-4 md:p-6 rounded-lg card-hover flex flex-row items-center gap-3 md:gap-4"
             >
               <div className="flex flex-col items-center w-20 md:w-28 flex-shrink-0">
                 {skill.icon && (

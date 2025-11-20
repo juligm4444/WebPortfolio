@@ -154,13 +154,13 @@ export const CertificationsSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30">
+    <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30 mb-8">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-h1 font-bold mb-12 text-center">
           {t('certifications.title1')} {t('certifications.title2')}
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 mb-8">
           {certifications
             .filter((cert) => cert.pdf)
             .map((cert, idx) => (

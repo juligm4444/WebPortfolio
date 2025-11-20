@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 export const HeroSection = () => {
   const [showParagraph, setShowParagraph] = useState(false);
-  const [currentTime, setCurrentTime] = useState(new Date());
   const [isTranslationReady, setIsTranslationReady] = useState(false);
   const { t, ready } = useTranslation();
 
@@ -18,71 +17,26 @@ export const HeroSection = () => {
     }
   }, [ready]);
 
-  // Update time every minute
-  useEffect(() => {
-    const timeInterval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 60000); // Update every minute
-
-    return () => clearInterval(timeInterval);
-  }, []);
-
-  // Helper function to get greeting based on time
-  const getTimeGreeting = () => {
-    const hour = currentTime.getHours();
-    if (hour >= 0 && hour <= 12) {
-      return t('hero.timeGreeting.morning');
-    } else if (hour >= 12 && hour <= 18) {
-      return t('hero.timeGreeting.afternoon');
-    } else {
-      return t('hero.timeGreeting.evening');
-    }
-  };
-
-  // Helper function to format date and time
-  const formatDateTime = () => {
-    const days = t('hero.dateTime.days', { returnObjects: true });
-    const months = t('hero.dateTime.months', { returnObjects: true });
-
-    const dayName = days[currentTime.getDay()];
-    const monthName = months[currentTime.getMonth()];
-    const dayNumber = currentTime.getDate();
-    const hour = currentTime.getHours().toString().padStart(2, '0');
-    const minute = currentTime.getMinutes().toString().padStart(2, '0');
-
-    return `${dayName}, ${monthName} ${dayNumber} - ${hour}:${minute}`;
-  };
-
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
     >
-      {/* Greeting and Date - Fixed top left, with left margin matching toggles */}
-      <div className="fixed top-2 left-2 sm:top-4 sm:left-4 z-50 flex flex-col items-start space-y-1 lg:left-[14rem] xl:left-[17rem] xl:right-auto">
-        <div className="text-[20px] lg:text-[22px] font-thin text-muted-foreground">
-          {getTimeGreeting()}
-        </div>
-        <div className="text-[20px] lg:text-[22px] font-thin text-muted-foreground">
-          {formatDateTime()}
-        </div>
-      </div>
-
       {/* Main Content - Centered */}
       <div className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-12 lg:space-y-16 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-        {/* Description Text - Main Quote (First, Bigger) */}
+        {/* Description Text - Main Quote (First, Bigger on mobile) */}
         {showParagraph && (
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 className="typewriter text-2xl sm:text-3xl md:text-4xl lg:text-h1 font-bold text-muted-foreground leading-relaxed">
+            <h1 className="typewriter text-3xl sm:text-3xl md:text-4xl lg:text-h1 font-bold text-muted-foreground leading-relaxed">
               {t('hero.description')}
             </h1>
           </div>
         )}
 
-        {/* Main Name/Title (Second, Smaller) */}
+        {/* Main Name/Title (Second, Smaller on mobile) */}
         {isTranslationReady && (
           <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
-            <h2 className="text-primary text-h2 font-light tracking-tight leading-tight">
+            <h2 className="text-primary text-lg sm:text-h2 font-light tracking-tight leading-tight">
               {t('hero.greeting')}
             </h2>
           </div>

@@ -58,7 +58,7 @@ export const TechnologyPage = () => {
                     key={key}
                     to={project.path}
                     id={`project-${project.id}`}
-                    className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover w-full max-w-4xl scroll-mt-24 cursor-pointer"
+                    className="group bg-card border border-border shadow-lg rounded-lg overflow-hidden card-hover w-full max-w-4xl scroll-mt-24 cursor-pointer"
                   >
                     <div className="h-80 sm:h-96 overflow-hidden">
                       <img

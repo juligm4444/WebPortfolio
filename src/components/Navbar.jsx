@@ -80,7 +80,7 @@ export const Navbar = () => {
   const sidebarContent = (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className={cn('p-4 lg:p-5 border-b border-border')}>
+      <div className="p-4 lg:p-5 border-b border-border">
         <Link to="/" className="flex flex-col items-center space-y-2 group">
           <img
             src="/assets/icons/LOGO.svg"
@@ -112,7 +112,7 @@ export const Navbar = () => {
               >
                 {t(`navbar.${group.title}`)}
               </Link>
-              <div className={cn('pl-4 space-y-2 border-l border-border')}>
+              <div className="pl-4 space-y-2 border-l border-border">
                 {group.items.map((item) => (
                   <Link
                     key={item.key}
@@ -144,7 +144,7 @@ export const Navbar = () => {
 
       {/* Social Media - Follow me */}
       <div
-        className={cn('p-3 lg:p-4 border-t border-border space-y-2 lg:space-y-3')}
+        className="p-3 lg:p-4 border-t border-border space-y-2 lg:space-y-3"
         style={{ minHeight: 'var(--contact-footer-min-h)' }}
       >
         <h4
