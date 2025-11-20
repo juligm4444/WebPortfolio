@@ -91,7 +91,7 @@ export const SkillsSection = () => {
   return (
     <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-h1 font-bold mb-12 text-center">
+        <h2 className="text-h1 font-bold mb-12 text-center text-primary">
           {t('skills.title1')} {t('skills.title2')}
         </h2>
 

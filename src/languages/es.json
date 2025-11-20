@@ -80,7 +80,12 @@
       "foccus": "Enfoque Profesional"
     },
     "information": {
-      "text": "Diseño, ingeniería y pensamiento de producto convergen en mi práctica diaria—creando experiencias estructuradas y expresivas."
+      "text": "Diseño, ingeniería y pensamiento de producto convergen en mi práctica diaria—creando experiencias estructuradas y expresivas.",
+      "paragraphs": [
+        "Soy Julián Galindo, estudiante de Diseño en la Universidad de los Andes, enfocado en videojuegos, interfaces y experiencias digitales. Me graduaré en 2028 y disfruto todo lo que implique crear, explorar y entender cómo las personas interactúan con lo que usan.",
+        "Me gusta observar, cuestionar y analizar por qué algo funciona como lo hace. Disfruto pensar en sistemas, en cómo las cosas se conectan y en cómo un buen diseño puede hacer una experiencia más clara, agradable y humana. Soy una mezcla de lo técnico y lo sensible: me gusta la estructura, pero también la estética; la lógica, pero también la emoción.",
+        "El cine, los videojuegos y la música moldean cómo veo el diseño: como una forma de contar algo, construir atmósferas y crear momentos que se sientan genuinos. Estoy constantemente interesado en aprender, afinar mi criterio visual y encontrar nuevas maneras de convertir ideas en experiencias que realmente tengan sentido."
+      ]
     },
     "inspirations": {
       "text": "Me inspiro en medios interactivos, composición arquitectónica y sistemas minimalistas de interfaces."
@@ -130,6 +135,12 @@
     }
   },
   "projects": {
+    "sketches": {
+      "description": "Bocetos dibujados a mano explorando diseño de productos, ergonomía y arte conceptual a través de varios proyectos académicos y personales"
+    },
+    "drawings": {
+      "description": "Trabajo de diseño de indumentaria y gráfico que muestra identidad de marca, composición visual y dirección creativa"
+    },
     "technology": {
       "title1": "Proyectos de",
       "title2": "Tecnología",
@@ -280,7 +291,148 @@
         "viewCode": "Ver Código"
       },
       "context": "En la actualidad, los empleadores y clientes potenciales esperan ver ejemplos funcionales de las habilidades de un candidato. Por ello, crear un portafolio digital se vuelve esencial para demostrar de forma efectiva las capacidades.",
-      "problem": "Por lo general, diseñadores y desarrolladores crean portafolios muy diferentes para mostrar su trabajo, lo que dificulta equilibrar las habilidades de diseño y de desarrollo. Muchos portafolios se enfocan únicamente en el atractivo visual o en lo técnico, dejando de lado la integración fluida de ambos aspectos. Este proyecto busca resolverlo con una plataforma unificada que resalte mi doble experiencia en diseño y desarrollo."
+      "problem": "Por lo general, diseñadores y desarrolladores crean portafolios muy diferentes para mostrar su trabajo, lo que dificulta equilibrar las habilidades de diseño y de desarrollo. Muchos portafolios se enfocan únicamente en el atractivo visual o en lo técnico, dejando de lado la integración fluida de ambos aspectos. Este proyecto busca resolverlo con una plataforma unificada que resalte mi doble experiencia en diseño y desarrollo.",
+      "solutionProcess": {
+        "phases": [
+          {
+            "title": "Investigación y Descubrimiento",
+            "description": "Comencé analizando más de 30 portafolios de desarrolladores y diseñadores, identificando patrones comunes, características destacadas y áreas donde la mayoría de los portafolios se quedaban cortos. Esta fase de investigación me ayudó a comprender qué hace que un portafolio sea memorable y efectivo.",
+            "bullets": [
+              "Analicé estructuras exitosas de portafolios y patrones de navegación",
+              "Creé personas de usuario representando reclutadores, gerentes de contratación y clientes",
+              "Definí características principales: exhibición de proyectos, muestra de habilidades, certificaciones",
+              "Establecí principios de diseño: claridad, accesibilidad, personalidad"
+            ]
+          },
+          {
+            "title": "Arquitectura de la Información",
+            "description": "Mapeé la estructura del sitio, organizando el contenido en categorías lógicas que tendrían sentido para diferentes tipos de visitantes según sus objetivos e intereses.",
+            "bullets": [
+              "Creé un mapa del sitio con jerarquías y relaciones claras",
+              "Diseñé un sistema de navegación con tipos de proyectos categorizados",
+              "Planifiqué el flujo de contenido desde el hero hasta los proyectos y el contacto",
+              "Estructuré los datos para una fácil internacionalización"
+            ]
+          },
+          {
+            "title": "Diseño y Prototipado",
+            "description": "Creé wireframes y prototipos de alta fidelidad en Figma, iterando sobre layouts, esquemas de colores y patrones de interacción. Me enfoqué en crear un sistema de diseño que fuera consistente, escalable y mantenible.",
+            "bullets": [
+              "Diseñé un sistema de componentes modular con patrones reutilizables",
+              "Establecí una paleta de colores que soporta temas oscuros y claros",
+              "Creé layouts responsivos para móviles, tabletas y escritorio",
+              "Prototipos de interacciones clave y secuencias de animación"
+            ]
+          },
+          {
+            "title": "Desarrollo",
+            "description": "Construí el sitio usando React, Vite y Tailwind CSS, priorizando código limpio, reutilización de componentes y rendimiento óptimo desde el inicio.",
+            "bullets": [
+              "Implementé arquitectura basada en componentes con React 19",
+              "Integré i18next para soporte bilingüe fluido",
+              "Creé animaciones personalizadas usando Tailwind y CSS",
+              "Optimicé imágenes y assets para tiempos de carga rápidos",
+              "Implementé lazy loading para mejorar el rendimiento"
+            ]
+          },
+          {
+            "title": "Pruebas y Refinamiento",
+            "description": "Realicé pruebas exhaustivas en dispositivos, navegadores y condiciones de red. Recopilé comentarios de colegas, mentores y usuarios potenciales para refinar la experiencia.",
+            "bullets": [
+              "Probado en dispositivos iOS, Android, Windows y macOS",
+              "Verifiqué accesibilidad con lectores de pantalla y navegación por teclado",
+              "Optimicé el rendimiento usando Lighthouse y Chrome DevTools",
+              "Implementé correcciones basadas en comentarios de usuarios reales",
+              "Realicé pruebas A/B en interacciones clave"
+            ]
+          }
+        ]
+      },
+      "developmentFlow": {
+        "description": "La arquitectura técnica fue diseñada pensando en escalabilidad, mantenibilidad y rendimiento. Así es como las diferentes piezas trabajan juntas para crear una experiencia de usuario fluida:"
+      },
+      "visualDesign": {
+        "description": "El sistema de diseño visual fue creado para reflejar mi identidad dual como desarrollador y diseñador, equilibrando precisión técnica con expresión creativa. Cada color, tipografía y decisión de espaciado se tomó con intencionalidad para crear una experiencia cohesiva y memorable.",
+        "colorSystem": {
+          "title": "Sistema de Color",
+          "description": "La paleta de colores soporta temas oscuros y claros con tokens de color semánticos que se adaptan según la preferencia del usuario.",
+          "colors": [
+            {
+              "name": "Fondo",
+              "description": "Color base del canvas"
+            },
+            {
+              "name": "Primario",
+              "description": "Marca y énfasis"
+            },
+            {
+              "name": "Tarjeta",
+              "description": "Elementos de superficie"
+            },
+            {
+              "name": "Secundario",
+              "description": "Acentos sutiles"
+            }
+          ]
+        },
+        "typography": {
+          "title": "Sistema de Tipografía",
+          "description": "El sistema de tipografía usa cuatro tamaños principales para mantener jerarquía y legibilidad en todo el portafolio.",
+          "levels": [
+            {
+              "name": "Encabezado 1 - Display",
+              "description": "48px negrita - Usado para títulos de página principales y titulares hero"
+            },
+            {
+              "name": "Encabezado 2 - Encabezados de Sección",
+              "description": "32px seminegrita - Usado para encabezados de sección y subsecciones principales"
+            },
+            {
+              "name": "Encabezado 3 - Subsecciones",
+              "description": "25px media - Usado para títulos de tarjetas y encabezados de subsección"
+            },
+            {
+              "name": "Texto de Cuerpo",
+              "description": "20px ligera - Texto de cuerpo estándar para todo el contenido y descripciones"
+            }
+          ]
+        }
+      },
+      "finalDesign": {
+        "description": "La implementación final reúne todas las decisiones de diseño y técnicas en una experiencia de usuario cohesiva, eficiente y agradable. Estas son las características y páginas clave que componen el portafolio:",
+        "homepage": {
+          "title": "Experiencia de la Página Principal",
+          "description": "La página principal presenta una sección hero animada con un saludo personalizado que cambia según la hora del día y muestra la fecha actual. El efecto de máquina de escribir introduce a los visitantes a mi filosofía de trabajo, seguido de secciones que muestran habilidades y certificaciones."
+        },
+        "projects": {
+          "title": "Organización de Proyectos",
+          "description": "Los proyectos están organizados en dos categorías principales: Tecnología y Arte y Diseño. Cada categoría tiene su propia página de inicio con tarjetas de proyectos que enlazan a páginas de proyectos detalladas."
+        }
+      },
+      "retrospective": {
+        "description": "Construir este portafolio fue tanto un desafío técnico como un viaje creativo. Al mirar hacia atrás en el proceso, hay lecciones valiosas aprendidas y oportunidades de mejora futura.",
+        "impact": {
+          "title": "Impacto y Métricas",
+          "description": "Desde el lanzamiento, el portafolio ha logrado con éxito sus objetivos de mostrar mi trabajo y atraer oportunidades. Estas son algunas métricas clave:",
+          "metrics": [
+            {
+              "value": "95+",
+              "label": "Puntuación Lighthouse",
+              "description": "Rendimiento, Accesibilidad, Mejores Prácticas, SEO"
+            },
+            {
+              "value": "<1s",
+              "label": "Tiempo de Carga Inicial",
+              "description": "En promedio, en todos los dispositivos y redes"
+            },
+            {
+              "value": "100%",
+              "label": "Responsive Móvil",
+              "description": "Optimizado para todos los tamaños de pantalla de 320px+"
+            }
+          ]
+        }
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
@@ -6,35 +6,58 @@ import { Footer } from './Footer';
 export const ProjectPageLayout = ({ children, sections }) => {
   const [activeSection, setActiveSection] = useState('');
 
+  const observerRef = useRef(null);
+
   useEffect(() => {
-    const handleScroll = () => {
-      const sectionElements = sections
-        .map((section) => document.getElementById(section.id))
-        .filter(Boolean);
+    // Use IntersectionObserver for smooth, low-cost section detection
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
 
-      // Choose the last section whose top is above a small offset from the top.
-      // This avoids jumping to a far section when the viewport center is lower.
-      const OFFSET = 120; // matches scroll-mt-24 (~96px) + small padding
-      let currentId = sections[0]?.id;
+    const options = {
+      root: null,
+      // Root margin pushes trigger zone toward center of viewport
+      rootMargin: '-35% 0px -50% 0px',
+      threshold: [0, 0.25, 0.5, 0.75, 1],
+    };
 
-      for (const el of sectionElements) {
-        const top = el.getBoundingClientRect().top;
-        if (top - OFFSET <= 0) {
-          currentId = el.id;
-        } else {
-          break;
-        }
-      }
+    let currentActive = activeSection;
+    const rafState = { ticking: false };
 
-      if (currentId) {
-        setActiveSection(currentId);
+    const processEntries = (entries) => {
+      // Pick the entry with highest intersection ratio currently visible
+      const visible = entries.filter((e) => e.isIntersecting);
+      if (visible.length === 0) return;
+      visible.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      const topEntry = visible[0];
+      if (topEntry && topEntry.target.id !== currentActive) {
+        currentActive = topEntry.target.id;
+        setActiveSection(currentActive);
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    const callback = (entries) => {
+      if (!rafState.ticking) {
+        rafState.ticking = true;
+        requestAnimationFrame(() => {
+          processEntries(entries);
+          rafState.ticking = false;
+        });
+      }
+    };
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(callback, options);
+    observerRef.current = observer;
+
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+
+    // Fallback initial value
+    if (!currentActive && sections[0]) setActiveSection(sections[0].id);
+
+    return () => observer.disconnect();
   }, [sections]);
 
   const scrollToSection = (sectionId) => {
@@ -58,9 +81,6 @@ export const ProjectPageLayout = ({ children, sections }) => {
       {/* Desktop Navigation Menu - Right Side (Hidden on mobile and tablet) */}
       <aside className="hidden xl:block fixed right-8 top-1/2 transform -translate-y-1/2 z-40 w-64">
         <div className="p-6">
-          <h3 className="text-[20px] font-semibold uppercase tracking-wider text-muted-foreground mb-6">
-            Contents
-          </h3>
           <nav className="space-y-1">
             {sections.map((section) => (
               <button

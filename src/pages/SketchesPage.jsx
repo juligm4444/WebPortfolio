@@ -38,8 +38,8 @@ export const SketchesPage = () => {
         <div className="pt-20 py-24 px-4 flex-1">
           <ImageSlider
             images={sketchImages}
-            title="Sketches Collection"
-            description="Hand-drawn sketches exploring product design, ergonomics, and conceptual artwork through various academic and personal projects"
+            title={t('navbar.sketches')}
+            description={t('projects.sketches.description')}
           />
         </div>
         <Footer />

@@ -33,7 +33,7 @@ export const TechnologyPage = () => {
         <div className="pt-20">
           <section id="technology" className="py-24 px-4">
             <div className="container mx-auto max-w-8xl">
-              <h2 className="text-3xl md:text-6xl font-bold mb-4 text-center">
+              <h2 className="text-h1 font-bold mb-4 text-center text-primary">
                 {t('projects.technology.title1')}{' '}
                 <span className="text-primary">{t('projects.technology.title2')}</span>
               </h2>

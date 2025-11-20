@@ -156,7 +156,7 @@ export const CertificationsSection = () => {
   return (
     <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30 mb-8">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-h1 font-bold mb-12 text-center">
+        <h2 className="text-h1 font-bold mb-12 text-center text-primary">
           {t('certifications.title1')} {t('certifications.title2')}
         </h2>
 

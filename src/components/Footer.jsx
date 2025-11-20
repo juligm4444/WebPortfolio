@@ -9,7 +9,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="mt-auto py-12 px-4 bg-card border-t border-border">
+    <footer className="mt-auto py-12 px-4 bg-card border-t border-border lg:ml-52 xl:ml-64">
       <div className="w-full flex items-center justify-between">
         <p className="text-sm font-light text-muted-foreground">
           &copy; {new Date().getFullYear()} juligm4.co. {t('footer.text1')}

@@ -75,7 +75,12 @@
       "foccus": "Professional Focus"
     },
     "information": {
-      "text": "Design, engineering, and product thinking converge in my daily practice—building expressive, structured experiences."
+      "text": "Design, engineering, and product thinking converge in my daily practice—building expressive, structured experiences.",
+      "paragraphs": [
+        "I’m Julián Galindo, a Design student at Universidad de los Andes, focused on video games, interfaces, and digital experiences. I’m graduating in 2028, and I enjoy anything that involves creating, exploring, and understanding how people interact with what they use.",
+        "I like observing, questioning, and analyzing why something works the way it does. I enjoy thinking in systems, how things connect, and how good design can make an experience clearer, more pleasant, and more human. I’m a mix of the technical and the sensitive: I like structure, but also aesthetics; logic, but also emotion.",
+        "Film, video games, and music shape how I see design: as a way to tell something, to build atmospheres, and to create moments that feel genuine. I’m constantly interested in learning, refining my visual judgment, and finding new ways to turn ideas into experiences that truly make sense."
+      ]
     },
     "inspirations": {
       "text": "I draw inspiration from interactive media, architectural composition, and minimalist interface systems."
@@ -125,6 +130,12 @@
     }
   },
   "projects": {
+    "sketches": {
+      "description": "Hand-drawn sketches exploring product design, ergonomics, and conceptual artwork through various academic and personal projects"
+    },
+    "drawings": {
+      "description": "Apparel and graphic design work showcasing brand identity, visual composition, and creative direction"
+    },
     "technology": {
       "title1": "Technology",
       "title2": "Projects",
@@ -275,7 +286,148 @@
         "viewCode": "View Code"
       },
       "context": "Nowadays, potential employers and clients expect to see working examples of a candidate's skills. Then, the creation of a digital portfolio becomes essential to effectively demonstrate one's abilities.",
-      "problem": "Usually, designers and developers create very different portfolios for showcasing their work, making it hard to find a balance between design and development skills. Many portfolios focus solely on visual appeal or technical prowess, neglecting the importance of integrating both aspects seamlessly. This project aims to solve that problem by creating a unified platform that highlights my dual expertise in design and development."
+      "problem": "Usually, designers and developers create very different portfolios for showcasing their work, making it hard to find a balance between design and development skills. Many portfolios focus solely on visual appeal or technical prowess, neglecting the importance of integrating both aspects seamlessly. This project aims to solve that problem by creating a unified platform that highlights my dual expertise in design and development.",
+      "solutionProcess": {
+        "phases": [
+          {
+            "title": "Research & Discovery",
+            "description": "I began by analyzing 30+ developer and designer portfolios, identifying common patterns, standout features, and areas where most portfolios fell short. This research phase helped me understand what makes a portfolio memorable and effective.",
+            "bullets": [
+              "Analyzed successful portfolio structures and navigation patterns",
+              "Created user personas representing recruiters, hiring managers, and clients",
+              "Defined core features: project showcases, skills display, certifications",
+              "Established design principles: clarity, accessibility, personality"
+            ]
+          },
+          {
+            "title": "Information Architecture",
+            "description": "Mapped out the site structure, organizing content into logical categories that would make sense to different types of visitors based on their goals and interests.",
+            "bullets": [
+              "Created site map with clear hierarchies and relationships",
+              "Designed navigation system with categorized project types",
+              "Planned content flow from hero to projects to contact",
+              "Structured data for easy internationalization"
+            ]
+          },
+          {
+            "title": "Design & Prototyping",
+            "description": "Created wireframes and high-fidelity prototypes in Figma, iterating on layouts, color schemes, and interaction patterns. Focused on creating a design system that would be consistent, scalable, and maintainable.",
+            "bullets": [
+              "Designed modular component system with reusable patterns",
+              "Established color palette supporting both dark and light themes",
+              "Created responsive layouts for mobile, tablet, and desktop breakpoints",
+              "Prototyped key interactions and animation sequences"
+            ]
+          },
+          {
+            "title": "Development",
+            "description": "Built the site using React, Vite, and Tailwind CSS, prioritizing clean code, component reusability, and optimal performance from the start.",
+            "bullets": [
+              "Implemented component-based architecture with React 19",
+              "Integrated i18next for seamless bilingual support",
+              "Created custom animations using Tailwind and CSS",
+              "Optimized images and assets for fast loading times",
+              "Implemented lazy loading for improved performance"
+            ]
+          },
+          {
+            "title": "Testing & Refinement",
+            "description": "Conducted comprehensive testing across devices, browsers, and network conditions. Gathered feedback from peers, mentors, and potential users to refine the experience.",
+            "bullets": [
+              "Tested on iOS, Android, Windows, and macOS devices",
+              "Verified accessibility with screen readers and keyboard navigation",
+              "Optimized performance using Lighthouse and Chrome DevTools",
+              "Implemented fixes based on real user feedback",
+              "Conducted A/B testing on key interactions"
+            ]
+          }
+        ]
+      },
+      "developmentFlow": {
+        "description": "The technical architecture was designed with scalability, maintainability, and performance in mind. Here's how the different pieces work together to create a seamless user experience:"
+      },
+      "visualDesign": {
+        "description": "The visual design system was crafted to reflect my dual identity as both a developer and designer—balancing technical precision with creative expression. Every color, typeface, and spacing decision was made with intentionality to create a cohesive and memorable experience.",
+        "colorSystem": {
+          "title": "Color System",
+          "description": "The color palette supports both dark and light themes with semantic color tokens that adapt based on user preference.",
+          "colors": [
+            {
+              "name": "Background",
+              "description": "Base canvas color"
+            },
+            {
+              "name": "Primary",
+              "description": "Brand & emphasis"
+            },
+            {
+              "name": "Card",
+              "description": "Surface elements"
+            },
+            {
+              "name": "Secondary",
+              "description": "Subtle accents"
+            }
+          ]
+        },
+        "typography": {
+          "title": "Typography System",
+          "description": "The typography system uses four main sizes to maintain hierarchy and readability across the entire portfolio.",
+          "levels": [
+            {
+              "name": "Heading 1 - Display",
+              "description": "48px bold - Used for main page titles and hero headlines"
+            },
+            {
+              "name": "Heading 2 - Section Headers",
+              "description": "32px semibold - Used for section headers and major subsections"
+            },
+            {
+              "name": "Heading 3 - Subsections",
+              "description": "25px medium - Used for card titles and subsection headers"
+            },
+            {
+              "name": "Body Text",
+              "description": "20px light - Standard body text for all content and descriptions"
+            }
+          ]
+        }
+      },
+      "finalDesign": {
+        "description": "The final implementation brings together all design and technical decisions into a cohesive, performant, and delightful user experience. Here are the key features and pages that make up the portfolio:",
+        "homepage": {
+          "title": "Homepage Experience",
+          "description": "The homepage features an animated hero section with a personalized greeting that changes based on time of day and displays the current date. The typewriter effect introduces visitors to my work philosophy, followed by sections showcasing skills and certifications."
+        },
+        "projects": {
+          "title": "Project Organization",
+          "description": "Projects are organized into two main categories: Technology and Arts & Design. Each category has its own landing page with project cards that link to detailed project pages."
+        }
+      },
+      "retrospective": {
+        "description": "Building this portfolio was both a technical challenge and a creative journey. Looking back at the process, there are valuable lessons learned and opportunities for future improvement.",
+        "impact": {
+          "title": "Impact & Metrics",
+          "description": "Since launch, the portfolio has successfully achieved its goals of showcasing my work and attracting opportunities. Here are some key metrics:",
+          "metrics": [
+            {
+              "value": "95+",
+              "label": "Lighthouse Score",
+              "description": "Performance, Accessibility, Best Practices, SEO"
+            },
+            {
+              "value": "<1s",
+              "label": "Initial Load Time",
+              "description": "On average, across all devices and networks"
+            },
+            {
+              "value": "100%",
+              "label": "Mobile Responsive",
+              "description": "Optimized for all screen sizes 320px+"
+            }
+          ]
+        }
+      }
     }
   }
 }

@@ -11,7 +11,7 @@ export const DesignPage = () => {
       <main className="lg:ml-52">
         <div className="pt-20 py-24 px-4">
           <div className="container mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-h1 font-bold mb-6 text-primary">
               <span className="text-primary">Design</span> Projects
             </h1>
             <p className="text-lg font-light text-muted-foreground mb-16">
@@ -38,7 +38,9 @@ export const DesignPage = () => {
               </div>
               <div className="bg-card rounded-lg p-8">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Videos</h3>
-                <p className="text-muted-foreground font-light">Motion graphics and video content.</p>
+                <p className="text-muted-foreground font-light">
+                  Motion graphics and video content.
+                </p>
               </div>
             </div>
           </div>

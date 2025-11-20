@@ -1,38 +1,41 @@
 import { useTranslation } from 'react-i18next';
+import { useMemo } from 'react';
 import { ProjectPageLayout } from '../components/ProjectPageLayout';
 import { AboutSection } from '../components/AboutSection';
 
 export const About = () => {
   const { t } = useTranslation();
 
-  const sections = [
-    { id: 'me', label: t('aboutPage.sections.me') },
-    { id: 'information', label: t('aboutPage.sections.information') },
-    { id: 'education', label: t('aboutPage.sections.education') },
-    { id: 'inspirations', label: t('aboutPage.sections.inspirations') },
-    { id: 'hobbies', label: t('aboutPage.sections.hobbies') },
-    { id: 'foccus', label: t('aboutPage.sections.foccus') },
-  ];
+  // Memoize sections to avoid recreating array on each render (reduces scroll-spy recalculations)
+  const sections = useMemo(
+    () => [
+      { id: 'me', label: t('aboutPage.sections.me') },
+      { id: 'information', label: t('aboutPage.sections.information') },
+      { id: 'education', label: t('aboutPage.sections.education') },
+      { id: 'inspirations', label: t('aboutPage.sections.inspirations') },
+      { id: 'hobbies', label: t('aboutPage.sections.hobbies') },
+      { id: 'foccus', label: t('aboutPage.sections.foccus') },
+    ],
+    [t]
+  );
 
   return (
     <ProjectPageLayout sections={sections}>
       {/* ME Section */}
       <section id="me" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-12" />
-          <div className="mb-12 text-left">
-            <h2 className="text-h2 font-bold">{t('aboutPage.sections.me')}</h2>
-          </div>
+          {/* Heading removed as requested; anchor retained for navigation */}
           <div className="flex flex-col md:flex-row items-start gap-12">
             {/* Name and Tagline (left, right-aligned) */}
             <div className="flex-1 flex flex-col justify-center items-end text-right order-2 md:order-1">
-              <h1 className="font-bold leading-none flex flex-col tracking-tight">
-                <span className="text-[7rem] md:text-[9rem] xl:text-[10rem]">{'Julián'}</span>
+              <h1 className="font-bold leading-none flex flex-col">
+                <span className="text-[8rem] md:text-[10.5rem] xl:text-[12rem]">{'Julián'}</span>
                 <span className="text-[6rem] md:text-[8rem] xl:text-[9rem]">{'Galindo'}</span>
               </h1>
               <p className="mt-6 text-[3rem] md:text-[3.5rem] xl:text-[4rem] font-bold text-black dark:text-black">
                 {'juligm4'}
               </p>
+              {/* Restored subtitle quote */}
               <p className="mt-8 text-[2.25rem] md:text-[2.75rem] xl:text-[3rem] font-semibold max-w-2xl text-muted-foreground text-right">
                 {t('about.subtitle')}
               </p>
@@ -53,24 +56,46 @@ export const About = () => {
       </section>
 
       {/* INFORMATION Section */}
-      <section id="information" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
+      <section id="information" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-12" />
-          <div className="mb-12 text-left">
-            <h2 className="text-h2 font-bold">{t('aboutPage.sections.information')}</h2>
+          <div className="border-t border-border mb-6" />
+          <div className="mb-6 text-left">
+            <h3 className="text-h2 font-semibold text-primary">
+              {t('aboutPage.sections.information')}
+            </h3>
           </div>
-          <p className="text-body font-light leading-relaxed text-left max-w-4xl">
-            {t('aboutPage.information.text')}
-          </p>
+          <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-12">
+            {/* Image Left */}
+            <div className="order-1 md:order-1 w-full md:w-5/12 xl:w-4/12 flex-shrink-0">
+              <div className="h-full rounded-lg overflow-hidden border border-border shadow-lg flex">
+                <img
+                  src="/photos/info.jpeg"
+                  alt="Informative portrait"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            {/* Paragraphs Right */}
+            <div className="order-2 md:order-2 flex-1 flex flex-col justify-between space-y-6">
+              {t('aboutPage.information.paragraphs', { returnObjects: true }).map((para, idx) => (
+                <p key={idx} className="text-body font-light leading-relaxed text-left">
+                  {para}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* EDUCATION Section */}
       <section id="education" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-12" />
-          <div className="mb-12 text-left">
-            <h2 className="text-h2 font-bold">{t('aboutPage.sections.education')}</h2>
+          <div className="border-t border-border mb-6" />
+          <div className="mb-6 text-left">
+            <h3 className="text-h2 font-semibold text-primary">
+              {t('aboutPage.sections.education')}
+            </h3>
           </div>
           <div className="flex flex-col md:flex-row items-center md:items-center gap-12">
             <div className="w-full md:w-1/2 max-w-xl">
@@ -100,11 +125,13 @@ export const About = () => {
       </section>
 
       {/* INSPIRATIONS Section */}
-      <section id="inspirations" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
+      <section id="inspirations" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-12" />
-          <div className="mb-12 text-left">
-            <h2 className="text-h2 font-bold">{t('aboutPage.sections.inspirations')}</h2>
+          <div className="border-t border-border mb-6" />
+          <div className="mb-6 text-left">
+            <h3 className="text-h2 font-semibold text-primary">
+              {t('aboutPage.sections.inspirations')}
+            </h3>
           </div>
           <p className="text-body font-light leading-relaxed text-left max-w-4xl">
             {t('aboutPage.inspirations.text')}
@@ -115,9 +142,11 @@ export const About = () => {
       {/* HOBBIES Section */}
       <section id="hobbies" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-12" />
-          <div className="mb-12 text-left">
-            <h2 className="text-h2 font-bold">{t('aboutPage.sections.hobbies')}</h2>
+          <div className="border-t border-border mb-6" />
+          <div className="mb-6 text-left">
+            <h3 className="text-h2 font-semibold text-primary">
+              {t('aboutPage.sections.hobbies')}
+            </h3>
           </div>
           <p className="text-body font-light leading-relaxed text-left max-w-4xl">
             {t('aboutPage.hobbies.text')}
@@ -126,11 +155,11 @@ export const About = () => {
       </section>
 
       {/* FOCCUS (Focus) Section - reuse existing About content minus title */}
-      <section id="foccus" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
+      <section id="foccus" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-12" />
-          <div className="mb-12 text-left">
-            <h2 className="text-h2 font-bold">{t('aboutPage.sections.foccus')}</h2>
+          <div className="border-t border-border mb-6" />
+          <div className="mb-6 text-left">
+            <h3 className="text-h2 font-semibold text-primary">{t('aboutPage.sections.foccus')}</h3>
           </div>
           <AboutSection hideTitle />
         </div>

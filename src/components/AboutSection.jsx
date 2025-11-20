@@ -8,7 +8,7 @@ export const AboutSection = ({ hideTitle = false }) => {
     <section id="about" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         {!hideTitle && (
-          <h2 className="text-h1 font-bold mb-12 text-center">
+          <h2 className="text-h1 font-bold mb-12 text-center text-primary">
             {t('about.title1')} {t('about.title2')}
           </h2>
         )}

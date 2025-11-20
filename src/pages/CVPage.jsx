@@ -17,7 +17,7 @@ export const CV = () => {
       <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
         <div className="pt-20 py-24 px-4 flex-1">
           <div className="container mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-h1 font-bold mb-6 text-primary">
               {t('cv.title1')} <span className="text-primary">{t('cv.title2')}</span>
             </h1>
 

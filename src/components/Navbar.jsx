@@ -134,9 +134,9 @@ export const Navbar = () => {
                 ))}
               </div>
             </div>
-            {/* Additional separators after specific groups */}
+            {/* Additional separators after specific groups - positioned outside nav padding */}
             {(group.key === 'cv' || group.key === 'tech') && (
-              <div className="border-t border-border" />
+              <div className="-mx-3 lg:-mx-4 border-t border-border" />
             )}
           </React.Fragment>
         ))}
