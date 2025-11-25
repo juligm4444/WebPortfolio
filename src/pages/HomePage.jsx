@@ -12,7 +12,10 @@ export const Home = () => {
     >
       <Navbar />
       {/* Main content with responsive left margin for sidebar */}
-      <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col min-h-screen" style={{ paddingBottom: 'var(--contact-footer-min-h)' }}>
+      <main
+        className="lg:ml-52 xl:ml-64 flex-1 flex flex-col min-h-screen"
+        style={{ paddingBottom: 'var(--contact-footer-min-h)' }}
+      >
         <HeroSection />
         <SkillsSection />
         <CertificationsSection />

@@ -29,8 +29,12 @@ export const About = () => {
             {/* Name Block */}
             <div className="flex-1 flex flex-col justify-center items-center md:items-end text-center md:text-right order-2 md:order-1">
               <h1 className="font-bold leading-tight flex flex-col">
-                <span className="text-[3.25rem] sm:text-[3.75rem] md:text-[6.5rem] xl:text-[8rem]">{'Julián'}</span>
-                <span className="text-[2.75rem] sm:text-[3.25rem] md:text-[5.25rem] xl:text-[6.5rem]">{'Galindo'}</span>
+                <span className="text-[3.25rem] sm:text-[3.75rem] md:text-[6.5rem] xl:text-[8rem]">
+                  {'Julián'}
+                </span>
+                <span className="text-[2.75rem] sm:text-[3.25rem] md:text-[5.25rem] xl:text-[6.5rem]">
+                  {'Galindo'}
+                </span>
               </h1>
               <p className="mt-6 text-[2.25rem] sm:text-[2.5rem] md:text-[3.25rem] xl:text-[3.75rem] font-bold text-black dark:text-black">
                 {'juligm4'}
