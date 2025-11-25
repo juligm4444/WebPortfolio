@@ -111,21 +111,23 @@ export const ImageSlider = ({ images, title, description }) => {
           </div>
         </div>
 
-        {/* Navigation Arrows */}
-        <button
-          onClick={goToPrevious}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border p-3 rounded-full hover:bg-card transition-all duration-300 shadow-lg z-10"
-          aria-label="Previous image"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button
-          onClick={goToNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border border-border p-3 rounded-full hover:bg-card transition-all duration-300 shadow-lg z-10"
-          aria-label="Next image"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
+        {/* Navigation Arrows moved below slider */}
+        <div className="mt-8 flex items-center justify-center gap-6">
+          <button
+            onClick={goToPrevious}
+            className="bg-background/80 backdrop-blur-sm border border-border p-3 rounded-full hover:bg-card transition-all duration-300 shadow-lg"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="bg-background/80 backdrop-blur-sm border border-border p-3 rounded-full hover:bg-card transition-all duration-300 shadow-lg"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
       </div>
     </div>
   );

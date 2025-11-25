@@ -168,23 +168,19 @@ export const PortfolioProjectPage = () => {
           <div className="space-y-10">
             {t('projectDetails.portfolio.solutionProcess.phases', { returnObjects: true }).map(
               (phase, index) => (
-                <div key={index} className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                      {index + 1}
-                    </div>
+                <div key={index} className="flex flex-col gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg mx-0">
+                    {index + 1}
                   </div>
-                  <div>
-                    <h3 className="text-h2 font-semibold mb-3">{phase.title}</h3>
-                    <p className="text-body text-foreground font-light mb-4 leading-relaxed text-left">
-                      {phase.description}
-                    </p>
-                    <ul className="list-disc list-inside text-body text-foreground font-light space-y-2">
-                      {phase.bullets.map((bullet, bulletIndex) => (
-                        <li key={bulletIndex}>{bullet}</li>
-                      ))}
-                    </ul>
-                  </div>
+                  <h3 className="text-h2 font-semibold">{phase.title}</h3>
+                  <p className="text-body text-foreground font-light leading-relaxed text-left">
+                    {phase.description}
+                  </p>
+                  <ul className="list-disc list-inside text-body text-foreground font-light space-y-2">
+                    {phase.bullets.map((bullet, bulletIndex) => (
+                      <li key={bulletIndex}>{bullet}</li>
+                    ))}
+                  </ul>
                 </div>
               )
             )}

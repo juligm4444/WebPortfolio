@@ -24,23 +24,22 @@ export const About = () => {
       {/* ME Section */}
       <section id="me" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          {/* Heading removed as requested; anchor retained for navigation */}
-          <div className="flex flex-col md:flex-row items-start gap-12">
-            {/* Name and Tagline (left, right-aligned) */}
-            <div className="flex-1 flex flex-col justify-center items-end text-right order-2 md:order-1">
-              <h1 className="font-bold leading-none flex flex-col">
-                <span className="text-[8rem] md:text-[10.5rem] xl:text-[12rem]">{'Julián'}</span>
-                <span className="text-[6rem] md:text-[8rem] xl:text-[9rem]">{'Galindo'}</span>
+          {/* Mobile-friendly centered layout; desktop keeps split */}
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
+            {/* Name Block */}
+            <div className="flex-1 flex flex-col justify-center items-center md:items-end text-center md:text-right order-2 md:order-1">
+              <h1 className="font-bold leading-tight flex flex-col">
+                <span className="text-[3.25rem] sm:text-[3.75rem] md:text-[6.5rem] xl:text-[8rem]">{'Julián'}</span>
+                <span className="text-[2.75rem] sm:text-[3.25rem] md:text-[5.25rem] xl:text-[6.5rem]">{'Galindo'}</span>
               </h1>
-              <p className="mt-6 text-[3rem] md:text-[3.5rem] xl:text-[4rem] font-bold text-black dark:text-black">
+              <p className="mt-6 text-[2.25rem] sm:text-[2.5rem] md:text-[3.25rem] xl:text-[3.75rem] font-bold text-black dark:text-black">
                 {'juligm4'}
               </p>
-              {/* Restored subtitle quote */}
-              <p className="mt-8 text-[2.25rem] md:text-[2.75rem] xl:text-[3rem] font-semibold max-w-2xl text-muted-foreground text-right">
+              <p className="mt-8 text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] xl:text-[2.5rem] font-semibold max-w-2xl text-muted-foreground text-center md:text-right">
                 {t('about.subtitle')}
               </p>
             </div>
-            {/* Image (right) */}
+            {/* Image */}
             <div className="w-full md:w-1/2 max-w-xl order-1 md:order-2">
               <div className="rounded-lg overflow-hidden border border-border shadow-lg">
                 <img
