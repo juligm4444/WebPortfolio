@@ -17,8 +17,13 @@ export const About = () => {
       { id: 'foccus', label: t('aboutPage.sections.foccus') },
     ];
     // Keep code for inspirations/hobbies but exclude from content bar when flags are false
-    if (showInspirations) base.splice(3, 0, { id: 'inspirations', label: t('aboutPage.sections.inspirations') });
-    if (showHobbies) base.splice(showInspirations ? 4 : 3, 0, { id: 'hobbies', label: t('aboutPage.sections.hobbies') });
+    if (showInspirations)
+      base.splice(3, 0, { id: 'inspirations', label: t('aboutPage.sections.inspirations') });
+    if (showHobbies)
+      base.splice(showInspirations ? 4 : 3, 0, {
+        id: 'hobbies',
+        label: t('aboutPage.sections.hobbies'),
+      });
     return base;
   }, [t, showInspirations, showHobbies]);
 

@@ -44,13 +44,13 @@ export const DrawingsPage = () => {
       className="min-h-screen bg-background text-foreground overflow-x-hidden flex flex-col"
     >
       <Navbar />
-         <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
+      <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
         <div className="pt-20 py-24 px-4 flex-1">
           <CSSImageSlider
             images={drawingImages}
             title={t('navbar.drawings')}
             description={t('projects.drawings.description')}
-               orientation="landscape"
+            orientation="landscape"
           />
         </div>
       </main>
