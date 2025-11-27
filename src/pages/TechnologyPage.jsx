@@ -116,8 +116,8 @@ export const TechnologyPage = () => {
             </div>
           </section>
         </div>
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

@@ -22,14 +22,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/cv" element={<CV />} />
-          <Route path="/technology" element={<TechnologyPage />} />
+          <Route path="/projects" element={<TechnologyPage />} />
           <Route path="/arts-design" element={<ArtsDesignPage />} />
           <Route path="/projects/portfolio" element={<PortfolioProjectPage />} />
           <Route path="/projects/candelaria" element={<CandelariaProjectPage />} />
           <Route path="/projects/licorimetro" element={<LicorimetroProjectPage />} />
-          <Route path="/projects/sketches" element={<SketchesPage />} />
-          <Route path="/projects/drawings" element={<DrawingsPage />} />
-          <Route path="/projects/creative" element={<CreativeWorkPage />} />
+          <Route path="/arts-design/sketches" element={<SketchesPage />} />
+          <Route path="/arts-design/drawings" element={<DrawingsPage />} />
+          <Route path="/arts-design/creative" element={<CreativeWorkPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -11,25 +11,24 @@ export const LicorimetroProjectPage = () => {
       className="min-h-screen bg-background text-foreground overflow-x-hidden flex flex-col"
     >
       <Navbar />
-      <main className="lg:ml-52 flex-1 flex flex-col">
+      <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
         <div className="pt-20 py-24 px-4 flex-1">
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-h1 font-bold mb-6 text-primary">
-              <span className="text-primary">Licorímetro</span> Mobile App
+              {t('projects.licorimetro.title')}
             </h1>
             <p className="text-lg font-light text-muted-foreground mb-16">
-              Mobile application for alcohol level measurement - Coming soon!
+              {t('projects.licorimetro.subtitle')}
             </p>
             <div className="bg-card rounded-lg p-12">
               <p className="text-muted-foreground font-light">
-                This mobile application provides a user-friendly interface for measuring and
-                tracking alcohol levels with precision and ease.
+                {t('projects.licorimetro.description')}
               </p>
             </div>
           </div>
         </div>
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

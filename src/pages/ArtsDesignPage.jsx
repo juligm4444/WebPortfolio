@@ -10,21 +10,14 @@ export const ArtsDesignPage = () => {
   // Get arts & design projects from JSON - matching TechnologyPage pattern
   const projects = t('projects.artsDesign.projects', { returnObjects: true }) || [];
 
-  // Icon mapping for JSON-driven approach
-  const iconMap = {
-    brush: Brush,
-    palette: Palette,
-    sparkles: Sparkles,
-  };
-
   return (
     <div
       id="root"
       className="min-h-screen bg-background text-foreground overflow-x-hidden flex flex-col"
     >
       <Navbar />
-      <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
-        <div className="pt-20 py-24 px-4 flex-1">
+      <main className="lg:ml-52 xl:ml-64 flex-1">
+        <div className="pt-20 py-24 px-4">
           <div className="container mx-auto max-w-6xl">
             <h1 className="text-h1 font-bold mb-6 text-center text-primary">
               {t('projects.artsDesign.title1')}{' '}
@@ -35,58 +28,34 @@ export const ArtsDesignPage = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => {
-                const IconComponent = iconMap[project.icon] || Palette;
-                return (
-                  <Link
-                    key={project.id}
-                    to={project.link}
-                    className="group bg-card border border-border shadow-lg rounded-lg overflow-hidden card-hover transition-all duration-300"
-                  >
-                    <div className="h-48 overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                      {project.image ? (
-                        <img
-                          src={project.image}
-                          alt={project.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                      ) : (
-                        <IconComponent className={`w-16 h-16 ${project.color}`} />
-                      )}
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className={`p-2 rounded-full bg-primary/10 ${project.color}`}>
-                          <IconComponent size={20} />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-semibold mb-2 text-primary group-hover:text-primary/80">
-                            {project.name}
-                          </h3>
-                          <p className="text-muted-foreground font-light text-sm mb-4">
-                            {project.description}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {project.medium?.map((tag, tagIndex) => (
-                          <span
-                            key={tagIndex}
-                            className="px-2 py-1 bg-primary/10 text-primary text-xs rounded border border-primary/20"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
+              {projects.map((project) => (
+                <Link
+                  key={project.id}
+                  to={project.link}
+                  className="group bg-card border border-border shadow-lg rounded-lg overflow-hidden card-hover transition-all duration-300"
+                >
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 text-primary group-hover:text-primary/80">
+                      {project.name}
+                    </h3>
+                    <p className="text-muted-foreground font-light text-sm">
+                      {project.description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

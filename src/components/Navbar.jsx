@@ -23,7 +23,7 @@ const navGroups = [
   {
     title: 'technology',
     key: 'tech',
-    categoryHref: '/technology',
+    categoryHref: '/projects',
     items: [
       { key: 'portfolio', href: '/projects/portfolio' },
       { key: 'candelaria', href: '/projects/candelaria' },
@@ -35,9 +35,9 @@ const navGroups = [
     key: 'arts',
     categoryHref: '/arts-design',
     items: [
-      { key: 'sketches', href: '/projects/sketches' },
-      { key: 'drawings', href: '/projects/drawings' },
-      { key: 'creative-work', href: '/projects/creative' },
+      { key: 'sketches', href: '/arts-design/sketches' },
+      { key: 'drawings', href: '/arts-design/drawings' },
+      { key: 'creative-work', href: '/arts-design/creative' },
     ],
   },
 ];

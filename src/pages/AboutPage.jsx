@@ -5,19 +5,22 @@ import { AboutSection } from '../components/AboutSection';
 
 export const About = () => {
   const { t } = useTranslation();
+  const showInspirations = false;
+  const showHobbies = false;
 
   // Memoize sections to avoid recreating array on each render (reduces scroll-spy recalculations)
-  const sections = useMemo(
-    () => [
+  const sections = useMemo(() => {
+    const base = [
       { id: 'me', label: t('aboutPage.sections.me') },
       { id: 'information', label: t('aboutPage.sections.information') },
       { id: 'education', label: t('aboutPage.sections.education') },
-      { id: 'inspirations', label: t('aboutPage.sections.inspirations') },
-      { id: 'hobbies', label: t('aboutPage.sections.hobbies') },
       { id: 'foccus', label: t('aboutPage.sections.foccus') },
-    ],
-    [t]
-  );
+    ];
+    // Keep code for inspirations/hobbies but exclude from content bar when flags are false
+    if (showInspirations) base.splice(3, 0, { id: 'inspirations', label: t('aboutPage.sections.inspirations') });
+    if (showHobbies) base.splice(showInspirations ? 4 : 3, 0, { id: 'hobbies', label: t('aboutPage.sections.hobbies') });
+    return base;
+  }, [t, showInspirations, showHobbies]);
 
   return (
     <ProjectPageLayout sections={sections}>
@@ -127,35 +130,39 @@ export const About = () => {
         </div>
       </section>
 
-      {/* INSPIRATIONS Section */}
-      <section id="inspirations" className="py-24 px-4 scroll-mt-24">
-        <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-6" />
-          <div className="mb-6 text-left">
-            <h3 className="text-h2 font-semibold text-primary">
-              {t('aboutPage.sections.inspirations')}
-            </h3>
+      {/* INSPIRATIONS Section (temporarily hidden) */}
+      {showInspirations && (
+        <section id="inspirations" className="py-24 px-4 scroll-mt-24">
+          <div className="container mx-auto max-w-6xl">
+            <div className="border-t border-border mb-6" />
+            <div className="mb-6 text-left">
+              <h3 className="text-h2 font-semibold text-primary">
+                {t('aboutPage.sections.inspirations')}
+              </h3>
+            </div>
+            <p className="text-body font-light leading-relaxed text-left max-w-4xl">
+              {t('aboutPage.inspirations.text')}
+            </p>
           </div>
-          <p className="text-body font-light leading-relaxed text-left max-w-4xl">
-            {t('aboutPage.inspirations.text')}
-          </p>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* HOBBIES Section */}
-      <section id="hobbies" className="py-24 px-4 scroll-mt-24">
-        <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-6" />
-          <div className="mb-6 text-left">
-            <h3 className="text-h2 font-semibold text-primary">
-              {t('aboutPage.sections.hobbies')}
-            </h3>
+      {/* HOBBIES Section (temporarily hidden) */}
+      {showHobbies && (
+        <section id="hobbies" className="py-24 px-4 scroll-mt-24">
+          <div className="container mx-auto max-w-6xl">
+            <div className="border-t border-border mb-6" />
+            <div className="mb-6 text-left">
+              <h3 className="text-h2 font-semibold text-primary">
+                {t('aboutPage.sections.hobbies')}
+              </h3>
+            </div>
+            <p className="text-body font-light leading-relaxed text-left max-w-4xl">
+              {t('aboutPage.hobbies.text')}
+            </p>
           </div>
-          <p className="text-body font-light leading-relaxed text-left max-w-4xl">
-            {t('aboutPage.hobbies.text')}
-          </p>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FOCCUS (Focus) Section - reuse existing About content minus title */}
       <section id="foccus" className="py-24 px-4 scroll-mt-24">

@@ -11,25 +11,24 @@ export const CandelariaProjectPage = () => {
       className="min-h-screen bg-background text-foreground overflow-x-hidden flex flex-col"
     >
       <Navbar />
-      <main className="lg:ml-52 flex-1 flex flex-col">
+      <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
         <div className="pt-20 py-24 px-4 flex-1">
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-h1 font-bold mb-6 text-primary">
-              <span className="text-primary">Candelaria</span> Solar Car Project
+              {t('projects.candelaria.title')}
             </h1>
             <p className="text-lg font-light text-muted-foreground mb-16">
-              Mobile application for the Candelaria Solar Car team - Coming soon!
+              {t('projects.candelaria.subtitle')}
             </p>
             <div className="bg-card rounded-lg p-12">
               <p className="text-muted-foreground font-light">
-                This project involves developing a mobile application for monitoring and controlling
-                the Candelaria Solar Car during competitions and testing phases.
+                {t('projects.candelaria.description')}
               </p>
             </div>
           </div>
         </div>
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

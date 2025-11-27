@@ -58,7 +58,7 @@ export const ImageSlider = ({ images, title, description }) => {
                   src={images[(currentIndex - 1 + images.length) % images.length].src}
                   alt="Previous"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-all duration-700"
+                  className="w-full h-full object-contain transition-all duration-700 p-2 bg-card"
                 />
               </div>
             </div>
@@ -78,7 +78,7 @@ export const ImageSlider = ({ images, title, description }) => {
                   src={images[currentIndex].src}
                   alt={images[currentIndex].alt}
                   loading="lazy"
-                  className={`w-full h-full object-cover transition-all duration-700 ease-in-out ${
+                  className={`w-full h-full object-contain transition-all duration-700 ease-in-out p-2 bg-card ${
                     direction === 'right' ? 'animate-slide-in-right' : 'animate-slide-in-left'
                   }`}
                 />
@@ -104,7 +104,7 @@ export const ImageSlider = ({ images, title, description }) => {
                   src={images[(currentIndex + 1) % images.length].src}
                   alt="Next"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-all duration-700"
+                  className="w-full h-full object-contain transition-all duration-700 p-2 bg-card"
                 />
               </div>
             </div>

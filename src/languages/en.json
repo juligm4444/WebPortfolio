@@ -130,11 +130,67 @@
     }
   },
   "projects": {
+    "candelaria": {
+      "title": "Candelaria Solar Car Project",
+      "subtitle": "Mobile application for the Candelaria Solar Car team - Coming soon!",
+      "description": "This project involves developing a mobile application for monitoring and controlling the Candelaria Solar Car during competitions and testing phases."
+    },
+    "licorimetro": {
+      "title": "Licorímetro Mobile App",
+      "subtitle": "Mobile application for alcohol level measurement - Coming soon!",
+      "description": "This mobile application provides a user-friendly interface for measuring and tracking alcohol levels with precision and ease."
+    },
     "sketches": {
-      "description": "Hand-drawn sketches exploring product design, ergonomics, and conceptual artwork through various academic and personal projects"
+      "title": "Creative",
+      "titleHighlight": "Sketches",
+      "description": "Hand-drawn sketches exploring product design, ergonomics, and conceptual artwork through various academic and personal projects",
+      "imageTitles": {
+        "Sketch1": "Sketch 1",
+        "Sketch2": "Sketch 2",
+        "Sketch3": "Sketch 3",
+        "Sketch4": "Sketch 4"
+      },
+      "imageDescriptions": {
+        "Sketch1": "Initial exploratory form study outlining core silhouette.",
+        "Sketch2": "Perspective refinement focusing on proportions and volume.",
+        "Sketch3": "Functional layout sketch highlighting ergonomic zones.",
+        "Sketch4": "Alternative concept sheet experimenting with feature variations."
+      }
     },
     "drawings": {
-      "description": "Apparel and graphic design work showcasing brand identity, visual composition, and creative direction"
+      "title": "Digital",
+      "titleHighlight": "Drawings",
+      "description": "Apparel and graphic design work showcasing brand identity, visual composition, and creative direction",
+      "imageTitles": {
+        "Draw1": "Drawing 1",
+        "Draw2": "Drawing 2",
+        "Draw3": "Drawing 3",
+        "Draw4": "Drawing 4"
+      },
+      "imageDescriptions": {
+        "Draw1": "Structured line drawing emphasizing clean contour definition.",
+        "Draw2": "Rendered study exploring light, shadow, and depth.",
+        "Draw3": "Geometric breakdown analyzing intersecting forms.",
+        "Draw4": "Concept illustration blending tonal and line accents."
+      }
+    },
+    "creative": {
+      "title": "Creative",
+      "titleHighlight": "Work",
+      "descriptionVertical": "TCV concept visuals: experimental framing, thematic exploration, and visual narrative development.",
+      "descriptionHorizontal": "TCH horizontal concepts: wide-format experimentation focusing on structural composition and spatial flow.",
+      "imageTitles": {
+        "TCV1": "TCV Concept 1",
+        "TCV2": "TCV Concept 2",
+        "TCV3": "TCV Concept 3",
+        "TCH1": "TCH Concept 1"
+      },
+      "imageDescriptions": {
+        "TCV1": "Vertical composition exploring narrative focal hierarchy.",
+        "TCV2": "Iterative refinement adjusting spatial balance and flow.",
+        "TCV3": "Polished vertical layout emphasizing usability and clarity.",
+        "TCH1": "Wide-format concept emphasizing lateral distribution and rhythm."
+      }
     },
     "technology": {
       "title1": "Technology",
@@ -189,37 +245,28 @@
           "id": "sketches",
           "name": "Creative Sketches",
           "description": "A collection of creative sketches and conceptual drawings showcasing artistic exploration and ideation processes.",
-          "medium": ["Digital", "Traditional"],
           "category": "Illustration",
           "status": "Ongoing",
-          "link": "/projects/sketches",
-          "image": "/ProjectPreviews/sketches-preview.png",
-          "icon": "brush",
-          "color": "text-purple-500"
+          "link": "/arts-design/sketches",
+          "image": "/ProjectPreviews/Sketch1.jpg"
         },
         {
           "id": "drawings",
           "name": "Digital Drawings",
           "description": "Digital artwork and illustrations created using various design tools and techniques.",
-          "medium": ["Digital Art", "Illustration"],
           "category": "Digital Art",
           "status": "Ongoing",
-          "link": "/projects/drawings",
-          "image": "/ProjectPreviews/drawings-preview.png",
-          "icon": "palette",
-          "color": "text-pink-500"
+          "link": "/arts-design/drawings",
+          "image": "/ProjectPreviews/Draw1.png"
         },
         {
           "id": "creative-work",
           "name": "Creative Projects",
           "description": "Experimental and creative design projects exploring different artistic concepts and visual expressions.",
-          "medium": ["Mixed Media", "Digital"],
           "category": "Experimental",
           "status": "Ongoing",
-          "link": "/projects/creative",
-          "image": "/ProjectPreviews/tshirt-design.png",
-          "icon": "sparkles",
-          "color": "text-orange-500"
+          "link": "/arts-design/creative",
+          "image": "/ProjectPreviews/TCH1.png"
         }
       ],
       "button": "View Artwork"

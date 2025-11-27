@@ -169,14 +169,14 @@ export const PortfolioProjectPage = () => {
             {t('projectDetails.portfolio.solutionProcess.phases', { returnObjects: true }).map(
               (phase, index) => (
                 <div key={index} className="flex flex-col gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg mx-0">
+                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg mx-auto">
                     {index + 1}
                   </div>
                   <h3 className="text-h2 font-semibold">{phase.title}</h3>
-                  <p className="text-body text-foreground font-light leading-relaxed text-left">
+                  <p className="text-body text-foreground font-light leading-relaxed text-justify md:text-left">
                     {phase.description}
                   </p>
-                  <ul className="list-disc list-inside text-body text-foreground font-light space-y-2">
+                  <ul className="list-disc list-inside text-body text-foreground font-light space-y-2 text-left">
                     {phase.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex}>{bullet}</li>
                     ))}

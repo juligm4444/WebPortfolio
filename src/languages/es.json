@@ -99,6 +99,149 @@
       "degree2": "Opción en Computación Visual"
     }
   },
+  "projects": {
+    "candelaria": {
+      "title": "Proyecto Candelaria Solar Car",
+      "subtitle": "Aplicación móvil para el equipo Candelaria Solar Car - ¡Próximamente!",
+      "description": "Este proyecto consiste en desarrollar una aplicación móvil para el monitoreo y control del Candelaria Solar Car durante competencias y fases de prueba."
+    },
+    "licorimetro": {
+      "title": "App Licorímetro",
+      "subtitle": "Aplicación móvil para medición de nivel de alcohol - ¡Próximamente!",
+      "description": "Esta aplicación móvil ofrece una interfaz amigable para medir y rastrear los niveles de alcohol con precisión y facilidad."
+    },
+    "sketches": {
+      "title": "Bocetos",
+      "titleHighlight": "Creativos",
+      "description": "Bocetos a mano alzada explorando diseño de producto, ergonomía y arte conceptual a través de varios proyectos académicos y personales",
+      "imageTitles": {
+        "Sketch1": "Boceto 1",
+        "Sketch2": "Boceto 2",
+        "Sketch3": "Boceto 3",
+        "Sketch4": "Boceto 4"
+      },
+      "imageDescriptions": {
+        "Sketch1": "Estudio de forma exploratorio inicial que delinea la silueta principal.",
+        "Sketch2": "Refinamiento de perspectiva enfocado en proporciones y volumen.",
+        "Sketch3": "Boceto de diseño funcional destacando zonas ergonómicas.",
+        "Sketch4": "Hoja de conceptos alternativos experimentando con variaciones de características."
+      }
+    },
+    "drawings": {
+      "title": "Dibujos",
+      "titleHighlight": "Digitales",
+      "description": "Trabajo de diseño de vestuario y gráfico que muestra identidad de marca, composición visual y dirección creativa",
+      "imageTitles": {
+        "Draw1": "Dibujo 1",
+        "Draw2": "Dibujo 2",
+        "Draw3": "Dibujo 3",
+        "Draw4": "Dibujo 4"
+      },
+      "imageDescriptions": {
+        "Draw1": "Dibujo de líneas estructurado enfatizando definición limpia de contornos.",
+        "Draw2": "Estudio renderizado explorando luz, sombra y profundidad.",
+        "Draw3": "Desglose geométrico analizando formas intersectadas.",
+        "Draw4": "Ilustración conceptual mezclando acentos tonales y de línea."
+      }
+    },
+    "creative": {
+      "title": "Trabajo",
+      "titleHighlight": "Creativo",
+      "descriptionVertical": "Conceptos visuales TCV: encuadre experimental, exploración temática y desarrollo de narrativa visual.",
+      "descriptionHorizontal": "Conceptos horizontales TCH: experimentación de formato amplio enfocándose en composición estructural y flujo espacial.",
+      "imageTitles": {
+        "TCV1": "Concepto TCV 1",
+        "TCV2": "Concepto TCV 2",
+        "TCV3": "Concepto TCV 3",
+        "TCH1": "Concepto TCH 1"
+      },
+      "imageDescriptions": {
+        "TCV1": "Composición vertical explorando jerarquía focal narrativa.",
+        "TCV2": "Refinamiento iterativo ajustando balance espacial y flujo.",
+        "TCV3": "Diseño vertical pulido enfatizando usabilidad y claridad.",
+        "TCH1": "Concepto de formato amplio enfatizando distribución lateral y ritmo."
+      }
+    },
+    "technology": {
+      "title1": "Proyectos",
+      "title2": "Tecnológicos",
+      "description": "Aquí hay algunos de los proyectos tecnológicos que he desarrollado. Cada uno de ellos fue creado con un propósito específico en mente, mostrando mis habilidades y expresándome a través de ellos. Cada aspecto incluido en estos proyectos es un reflejo de mi pasión por la tecnología y la innovación.",
+      "projects": [
+        {
+          "id": "portfolio",
+          "name": "Sitio Web de Portafolio",
+          "description": "Un sitio web de portafolio personal que muestra mi información, inspiraciones, habilidades, proyectos y certificaciones.",
+          "technologies": ["React", "Vite", "Tailwind CSS", "JavaScript"],
+          "category": "Desarrollo Web",
+          "status": "Completado",
+          "link": "/projects/portfolio",
+          "image": "/ProjectPreviews/web-portfolio.png",
+          "demoUrl": "https://web-portfolio-wheat-nine.vercel.app/",
+          "sourceUrl": "https://github.com/juligm4444/WebPortfolio"
+        },
+        {
+          "id": "candelaria",
+          "name": "Candelaria Solar Car",
+          "description": "Aplicación móvil para el sistema de monitoreo y control del equipo Candelaria Solar Car con visualización de datos en tiempo real.",
+          "technologies": ["Flutter", "Móvil", "IoT", "Solar"],
+          "category": "Desarrollo Móvil",
+          "status": "Completado",
+          "link": "/projects/candelaria",
+          "image": "/ProjectPreviews/candelaria-preview.png",
+          "demoUrl": "",
+          "sourceUrl": ""
+        },
+        {
+          "id": "licorimetro",
+          "name": "App Licorímetro",
+          "description": "Aplicación móvil para medición de nivel de alcohol con sensores de precisión e interfaz amigable para monitoreo de salud.",
+          "technologies": ["Flutter", "Móvil", "Sensores", "Salud"],
+          "category": "Desarrollo Móvil",
+          "status": "Completado",
+          "link": "/projects/licorimetro",
+          "image": "/ProjectPreviews/licorimetro-preview.png",
+          "demoUrl": "",
+          "sourceUrl": ""
+        }
+      ],
+      "button": "Ver Detalles del Proyecto"
+    },
+    "artsDesign": {
+      "title1": "Arte y",
+      "title2": "Diseño",
+      "description": "Explora mi viaje creativo a través de varios proyectos de arte y diseño. Desde ilustraciones digitales hasta conceptos creativos, cada pieza representa mi visión artística y enfoque para resolver problemas creativos.",
+      "projects": [
+        {
+          "id": "sketches",
+          "name": "Bocetos Creativos",
+          "description": "Una colección de bocetos creativos y dibujos conceptuales que muestran exploración artística y procesos de ideación.",
+          "category": "Ilustración",
+          "status": "En curso",
+          "link": "/arts-design/sketches",
+          "image": "/ProjectPreviews/Sketch1.jpg"
+        },
+        {
+          "id": "drawings",
+          "name": "Dibujos Digitales",
+          "description": "Arte digital e ilustraciones creadas usando varias herramientas y técnicas de diseño.",
+          "category": "Arte Digital",
+          "status": "En curso",
+          "link": "/arts-design/drawings",
+          "image": "/ProjectPreviews/Draw1.png"
+        },
+        {
+          "id": "creative-work",
+          "name": "Proyectos Creativos",
+          "description": "Proyectos de diseño experimentales y creativos que exploran diferentes conceptos artísticos y expresiones visuales.",
+          "category": "Experimental",
+          "status": "En curso",
+          "link": "/arts-design/creative",
+          "image": "/ProjectPreviews/TCH1.png"
+        }
+      ],
+      "button": "Ver Obra de Arte"
+    }
+  },
   "skills": {
     "title1": "Mis",
     "title2": "Habilidades",
@@ -132,102 +275,6 @@
       "Data Structures": "Estructuras de Datos",
       "OOP": "POO",
       "JavaScript": "JavaScript"
-    }
-  },
-  "projects": {
-    "sketches": {
-      "description": "Bocetos dibujados a mano explorando diseño de productos, ergonomía y arte conceptual a través de varios proyectos académicos y personales"
-    },
-    "drawings": {
-      "description": "Trabajo de diseño de indumentaria y gráfico que muestra identidad de marca, composición visual y dirección creativa"
-    },
-    "technology": {
-      "title1": "Proyectos de",
-      "title2": "Tecnología",
-      "description": "Estos son algunos de los proyectos tecnológicos que he desarrollado. Cada uno de ellos fue creado con un propósito específico en mente, mostrando mis habilidades y expresándome a través de ellos. Cada aspecto incluido en estos proyectos es un reflejo de mi pasión por la tecnología y la innovación.",
-      "projects": [
-        {
-          "id": "portfolio",
-          "name": "Sitio Web Portafolio",
-          "description": "Un sitio web de portafolio personal que muestra mi información, inspiraciones, habilidades, proyectos y certificaciones.",
-          "technologies": ["React", "Vite", "Tailwind CSS", "JavaScript"],
-          "category": "Desarrollo Web",
-          "status": "Completado",
-          "link": "/projects/portfolio",
-          "image": "/ProjectPreviews/web-portfolio.png",
-          "demoUrl": "https://web-portfolio-wheat-nine.vercel.app/",
-          "sourceUrl": "https://github.com/juligm4444/WebPortfolio"
-        },
-        {
-          "id": "candelaria",
-          "name": "Candelaria Solar Car",
-          "description": "Aplicación móvil para el equipo Candelaria Solar Car con sistema de monitoreo y control con visualización de datos en tiempo real.",
-          "technologies": ["Flutter", "Móvil", "IoT", "Solar"],
-          "category": "Desarrollo Móvil",
-          "status": "Completado",
-          "link": "/projects/candelaria",
-          "image": "/ProjectPreviews/candelaria-preview.png",
-          "demoUrl": "",
-          "sourceUrl": ""
-        },
-        {
-          "id": "licorimetro",
-          "name": "App Licorímetro",
-          "description": "Aplicación móvil para medición de niveles de alcohol con sensores de precisión e interfaz amigable para monitoreo de salud.",
-          "technologies": ["Flutter", "Móvil", "Sensores", "Salud"],
-          "category": "Desarrollo Móvil",
-          "status": "Completado",
-          "link": "/projects/licorimetro",
-          "image": "/ProjectPreviews/licorimetro-preview.png",
-          "demoUrl": "",
-          "sourceUrl": ""
-        }
-      ],
-      "button": "Ver Detalles del Proyecto"
-    },
-    "artsDesign": {
-      "title1": "Arte y",
-      "title2": "Diseño",
-      "description": "Explora mi viaje creativo a través de varios proyectos de arte y diseño. Desde ilustraciones digitales hasta conceptos creativos, cada pieza representa mi visión artística y mi enfoque de resolución creativa de problemas.",
-      "projects": [
-        {
-          "id": "sketches",
-          "name": "Bocetos Creativos",
-          "description": "Una colección de bocetos creativos y dibujos conceptuales que muestran la exploración artística y los procesos de ideación.",
-          "medium": ["Digital", "Tradicional"],
-          "category": "Ilustración",
-          "status": "En progreso",
-          "link": "/projects/sketches",
-          "image": "/ProjectPreviews/sketches-preview.png",
-          "icon": "brush",
-          "color": "text-purple-500"
-        },
-        {
-          "id": "drawings",
-          "name": "Dibujos Digitales",
-          "description": "Obras de arte digital e ilustraciones creadas usando varias herramientas y técnicas de diseño.",
-          "medium": ["Arte Digital", "Ilustración"],
-          "category": "Arte Digital",
-          "status": "En progreso",
-          "link": "/projects/drawings",
-          "image": "/ProjectPreviews/drawings-preview.png",
-          "icon": "palette",
-          "color": "text-pink-500"
-        },
-        {
-          "id": "creative-work",
-          "name": "Proyectos Creativos",
-          "description": "Proyectos de diseño experimentales y creativos que exploran diferentes conceptos artísticos y expresiones visuales.",
-          "medium": ["Medios Mixtos", "Digital"],
-          "category": "Experimental",
-          "status": "En progreso",
-          "link": "/projects/creative",
-          "image": "/ProjectPreviews/tshirt-design.png",
-          "icon": "sparkles",
-          "color": "text-orange-500"
-        }
-      ],
-      "button": "Ver Obra de Arte"
     }
   },
   "cv": {

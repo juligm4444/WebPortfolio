@@ -38,8 +38,8 @@ export const CV = () => {
             </div>
           </div>
         </div>
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };
