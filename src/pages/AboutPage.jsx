@@ -179,7 +179,7 @@ export const About = () => {
           <div className="mb-6 text-left">
             <h3 className="text-h2 font-semibold text-primary">{t('aboutPage.sections.foccus')}</h3>
           </div>
-          <AboutSection hideTitle />
+          <AboutSection hideTitle maxWidthClass="max-w-6xl" />
         </div>
       </section>
     </ProjectPageLayout>

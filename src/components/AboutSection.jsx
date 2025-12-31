@@ -1,12 +1,12 @@
 import { Briefcase, Code, User } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-export const AboutSection = ({ hideTitle = false }) => {
+export const AboutSection = ({ hideTitle = false, maxWidthClass = 'max-w-5xl' }) => {
   const { t } = useTranslation();
 
   return (
     <section id="about" className="py-24 px-4 relative">
-      <div className="container mx-auto max-w-5xl">
+      <div className={`container mx-auto ${maxWidthClass}`}>
         {!hideTitle && (
           <h2 className="text-h1 font-bold mb-12 text-center text-primary">
             {t('about.title1')} {t('about.title2')}

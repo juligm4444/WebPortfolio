@@ -5,6 +5,8 @@ export const CSSImageSlider = ({ images, title, description, orientation = 'port
   const [currentIndex, setCurrentIndex] = useState(
     images.length === 1 ? 0 : Math.floor(images.length / 2)
   );
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
@@ -16,6 +18,29 @@ export const CSSImageSlider = ({ images, title, description, orientation = 'port
 
   const goToSlide = (index) => {
     setCurrentIndex(index);
+  };
+
+  // Touch handlers for swipe navigation (mobile)
+  const onTouchStart = (e) => {
+    setTouchStartX(e.changedTouches[0].clientX);
+    setTouchEndX(null);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEndX(e.changedTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (touchStartX === null || touchEndX === null) return;
+    const delta = touchEndX - touchStartX;
+    const threshold = 40; // px
+    if (delta > threshold) {
+      goToPrevious();
+    } else if (delta < -threshold) {
+      goToNext();
+    }
+    setTouchStartX(null);
+    setTouchEndX(null);
   };
 
   // Calculate position relative to current index with infinite wrapping
@@ -85,6 +110,9 @@ export const CSSImageSlider = ({ images, title, description, orientation = 'port
             ? 'h-[360px] sm:h-[420px] md:h-[560px] lg:h-[620px] xl:h-[650px]'
             : 'h-[420px] sm:h-[500px] md:h-[640px] lg:h-[700px] xl:h-[720px]'
         }`}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
         {/* Perspective container */}
         <div
@@ -147,7 +175,7 @@ export const CSSImageSlider = ({ images, title, description, orientation = 'port
       </div>
 
       {/* Dots Navigation */}
-      <div className="flex items-center justify-center gap-3 mb-8">
+      <div className="hidden md:flex items-center justify-center gap-3 mb-8">
         {images.map((_, index) => (
           <button
             key={index}
@@ -163,7 +191,7 @@ export const CSSImageSlider = ({ images, title, description, orientation = 'port
       </div>
 
       {/* Navigation Arrows */}
-      <div className="flex items-center justify-center gap-6">
+      <div className="hidden md:flex items-center justify-center gap-6">
         <button
           onClick={goToPrevious}
           className="bg-background/80 backdrop-blur-sm border border-border p-3 rounded-full hover:bg-card transition-all duration-300 shadow-lg"

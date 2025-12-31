@@ -22,8 +22,17 @@ export const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
     >
-      {/* Spline 3D model - Full screen interactive */}
-      <div className="absolute right-[-10%] top-[45%] transform -translate-y-1/2 w-[50%] h-[80%] z-10">
+      {/* Mobile Spline - shown first and smaller */}
+      <div className="block md:hidden w-full flex justify-center pt-6">
+        <spline-viewer
+          url="https://prod.spline.design/8M4AUjTdmnH8plii/scene.splinecode"
+          style={{ width: '75%', maxWidth: '320px', height: '220px', background: 'transparent' }}
+          events-target="global"
+        ></spline-viewer>
+      </div>
+
+      {/* Desktop Spline 3D model - hidden on mobile */}
+      <div className="hidden md:block absolute right-[-10%] top-[45%] transform -translate-y-1/2 w-[50%] h-[80%] z-10">
         <spline-viewer
           url="https://prod.spline.design/8M4AUjTdmnH8plii/scene.splinecode"
           style={{ width: '100%', height: '100%', background: 'transparent' }}
@@ -36,7 +45,7 @@ export const HeroSection = () => {
         {/* Description Text - Main Quote (First, Bigger on mobile) */}
         {showParagraph && (
           <div className="w-full px-4 sm:px-6 md:px-8">
-            <h1 className="typewriter text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-muted-foreground leading-tight text-left">
+            <h1 className="typewriter text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-muted-foreground leading-tight text-left">
               {t('hero.description')}
             </h1>
           </div>
