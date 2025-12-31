@@ -86,7 +86,7 @@ export const Navbar = () => {
             src="/assets/icons/LOGO.svg"
             alt="Home"
             loading="lazy"
-            className="h-16 w-16 lg:h-18 lg:w-18 xl:h-20 xl:w-20 transition-transform duration-300 group-hover:scale-105"
+            className="h-24 w-24 lg:h-28 lg:w-28 xl:h-32 xl:w-32 transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
       </div>

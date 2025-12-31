@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import { Code, ExternalLink, Github, ArrowBigRightDashIcon } from 'lucide-react';
+import { ArrowBigRightDashIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
+import { ProjectSquareCard } from '../components/ProjectSquareCard';
 
 export const TechnologyPage = () => {
   const { t } = useTranslation();
@@ -52,65 +52,9 @@ export const TechnologyPage = () => {
                 </a>
               </div>
 
-              <div className="grid grid-cols-1 gap-8 mt-50 place-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-7xl mx-auto">
                 {technologyProjects.map((project, key) => (
-                  <Link
-                    key={key}
-                    to={project.path}
-                    id={`project-${project.id}`}
-                    className="group bg-card border border-border shadow-lg rounded-lg overflow-hidden card-hover w-full max-w-4xl scroll-mt-24 cursor-pointer"
-                  >
-                    <div className="h-80 sm:h-96 overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    </div>
-                    <div className="p-8">
-                      <div className="hidden sm:flex flex-wrap gap-3 mb-6 justify-center w-full">
-                        {project.tags.map((tag, index) => (
-                          <span
-                            key={index}
-                            className="px-4 py-2 text-sm font-medium border rounded-full bg-primary/20 text-secondary-foreground"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center sm:mt-0 mt-4">
-                        {project.title}
-                      </h3>
-                      <p className="text-muted-foreground font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
-                        {project.description}
-                      </p>
-                      <div className="flex justify-center items-center gap-8">
-                        {project.demoUrl && (
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary hover:text-primary transition-colors duration-300"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <ExternalLink size={20} />
-                          </a>
-                        )}
-                        {project.sourceProjectUrl && (
-                          <a
-                            href={project.sourceProjectUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary hover:text-primary transition-colors duration-300"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <Github size={20} />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </Link>
+                  <ProjectSquareCard key={key} project={project} />
                 ))}
               </div>
             </div>

@@ -171,7 +171,7 @@
           "id": "portfolio",
           "name": "Sitio Web de Portafolio",
           "description": "Un sitio web de portafolio personal que muestra mi información, inspiraciones, habilidades, proyectos y certificaciones.",
-          "technologies": ["React", "Vite", "Tailwind CSS", "JavaScript"],
+          "technologies": ["React", "Tailwind CSS", "JavaScript", "Figma"],
           "category": "Desarrollo Web",
           "status": "Completado",
           "link": "/projects/portfolio",
@@ -323,7 +323,7 @@
       },
       "timeline": {
         "title": "Cronología y Estado",
-        "duration": "3 Meses (Oct - Dic 2024)"
+        "duration": "Oct 2025 - Actualidad"
       },
       "status": {
         "title": "Estado",

@@ -22,12 +22,21 @@ export const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
     >
-      {/* Main Content - Centered */}
-      <div className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-12 lg:space-y-16 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      {/* Spline 3D model - Full screen interactive */}
+      <div className="absolute right-[-10%] top-[45%] transform -translate-y-1/2 w-[50%] h-[80%] z-10">
+        <spline-viewer
+          url="https://prod.spline.design/8M4AUjTdmnH8plii/scene.splinecode"
+          style={{ width: '100%', height: '100%', background: 'transparent' }}
+          events-target="global"
+        ></spline-viewer>
+      </div>
+
+      {/* Main Content - Left Aligned */}
+      <div className="flex flex-col items-start justify-center text-left space-y-8 sm:space-y-12 lg:space-y-16 max-w-6xl ml-4 sm:ml-8 md:ml-12 lg:ml-16 px-6 sm:px-8 md:px-12">
         {/* Description Text - Main Quote (First, Bigger on mobile) */}
         {showParagraph && (
-          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 className="typewriter text-3xl sm:text-3xl md:text-4xl lg:text-h1 font-bold text-muted-foreground leading-relaxed">
+          <div className="w-full px-4 sm:px-6 md:px-8">
+            <h1 className="typewriter text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-muted-foreground leading-tight text-left">
               {t('hero.description')}
             </h1>
           </div>
@@ -35,22 +44,22 @@ export const HeroSection = () => {
 
         {/* Main Name/Title (Second, Smaller on mobile) */}
         {isTranslationReady && (
-          <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
-            <h2 className="text-primary text-lg sm:text-h2 font-light tracking-tight leading-tight">
+          <div className="w-full px-4 sm:px-6 md:px-8">
+            <h2 className="text-primary text-lg sm:text-h2 font-light tracking-tight leading-tight text-left">
               {t('hero.greeting')}
             </h2>
           </div>
         )}
-
-        {/* CTA Button */}
-        {showParagraph && (
-          <div className="pt-4 opacity-0 animate-fade-in-delay-d">
-            <Link to="/technology" className="general-button">
-              {t('hero.button')}
-            </Link>
-          </div>
-        )}
       </div>
+
+      {/* CTA Button - Above scroll down */}
+      {showParagraph && (
+        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in-delay-d">
+          <Link to="/projects" className="general-button">
+            {t('hero.button')}
+          </Link>
+        </div>
+      )}
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
         <span className="text-sm text-muted-foreground mb-2">

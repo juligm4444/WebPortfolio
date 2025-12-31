@@ -79,7 +79,7 @@
       "paragraphs": [
         "I’m Julián Galindo, a Design student at Universidad de los Andes, focused on video games, interfaces, and digital experiences. I’m graduating in 2028, and I enjoy anything that involves creating, exploring, and understanding how people interact with what they use.",
         "I like observing, questioning, and analyzing why something works the way it does. I enjoy thinking in systems, how things connect, and how good design can make an experience clearer, more pleasant, and more human. I’m a mix of the technical and the sensitive: I like structure, but also aesthetics; logic, but also emotion.",
-        "Film, video games, and music shape how I see design: as a way to tell something, to build atmospheres, and to create moments that feel genuine. I’m constantly interested in learning, refining my visual judgment, and finding new ways to turn ideas into experiences that truly make sense."
+        "Films, video games, and music shape how I see design: as a way to tell something, to build atmospheres, and to create moments that feel genuine. I’m constantly interested in learning, refining my visual judgment, and finding new ways to turn ideas into experiences that truly make sense."
       ]
     },
     "inspirations": {
@@ -201,7 +201,7 @@
           "id": "portfolio",
           "name": "Portfolio Website",
           "description": "A personal portfolio website showcasing my information, inspirations, skills, projects, and certifications.",
-          "technologies": ["React", "Vite", "Tailwind CSS", "JavaScript"],
+          "technologies": ["React", "Tailwind CSS", "JavaScript", "Figma"],
           "category": "Web Development",
           "status": "Completed",
           "link": "/projects/portfolio",
@@ -318,7 +318,7 @@
       },
       "timeline": {
         "title": "Timeline & Status",
-        "duration": "3 Months (Oct - Dec 2025)"
+        "duration": "Oct 2025 - Nowadays"
       },
       "status": {
         "title": "Status",

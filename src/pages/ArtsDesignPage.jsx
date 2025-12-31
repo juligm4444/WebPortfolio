@@ -1,14 +1,21 @@
-import { Link } from 'react-router-dom';
-import { Palette, Brush, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
+import { ProjectSquareCard } from '../components/ProjectSquareCard';
 
 export const ArtsDesignPage = () => {
   const { t } = useTranslation();
 
   // Get arts & design projects from JSON - matching TechnologyPage pattern
   const projects = t('projects.artsDesign.projects', { returnObjects: true }) || [];
+
+  // Transform projects to match ProjectSquareCard expected format
+  const artsProjects = projects.map((project) => ({
+    title: project.name,
+    image: project.image,
+    path: project.link,
+    tags: [project.category, project.status], // Use category and status as tags
+  }));
 
   return (
     <div
@@ -27,29 +34,9 @@ export const ArtsDesignPage = () => {
               {t('projects.artsDesign.description')}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project) => (
-                <Link
-                  key={project.id}
-                  to={project.link}
-                  className="group bg-card border border-border shadow-lg rounded-lg overflow-hidden card-hover transition-all duration-300"
-                >
-                  <div className="h-48 overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2 text-primary group-hover:text-primary/80">
-                      {project.name}
-                    </h3>
-                    <p className="text-muted-foreground font-light text-sm">
-                      {project.description}
-                    </p>
-                  </div>
-                </Link>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+              {artsProjects.map((project, index) => (
+                <ProjectSquareCard key={index} project={project} />
               ))}
             </div>
           </div>

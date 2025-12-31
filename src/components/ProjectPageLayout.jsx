@@ -16,9 +16,9 @@ export const ProjectPageLayout = ({ children, sections }) => {
 
     const options = {
       root: null,
-      // Root margin pushes trigger zone toward center of viewport
-      rootMargin: '-35% 0px -50% 0px',
-      threshold: [0, 0.25, 0.5, 0.75, 1],
+      // Target middle of screen for section detection
+      rootMargin: '-45% 0px -45% 0px',
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
     };
 
     let currentActive = activeSection;
@@ -89,8 +89,8 @@ export const ProjectPageLayout = ({ children, sections }) => {
                 className={cn(
                   'block w-full text-left text-[20px] py-2 transition-all duration-300',
                   activeSection === section.id
-                    ? 'text-primary font-medium -translate-x-4'
-                    : 'text-muted-foreground hover:text-foreground hover:font-semibold hover:scale-105'
+                    ? 'text-primary font-semibold -translate-x-4 brightness-125'
+                    : 'text-muted-foreground hover:text-primary hover:font-semibold hover:scale-105 hover:brightness-125'
                 )}
               >
                 {section.label}

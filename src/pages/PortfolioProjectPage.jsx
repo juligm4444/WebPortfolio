@@ -1,3 +1,4 @@
+import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { ProjectPageLayout } from '../components/ProjectPageLayout';
 import { useTranslation } from 'react-i18next';
@@ -5,12 +6,17 @@ import { useTranslation } from 'react-i18next';
 export const PortfolioProjectPage = () => {
   const { t } = useTranslation();
 
+  // Match skills with the project card data used in /projects
+  const portfolioProject =
+    t('projects.technology.projects', { returnObjects: true }).find((p) => p.id === 'portfolio') ||
+    {};
+  const technologies = portfolioProject.technologies || [];
+
   const sections = [
     { id: 'overview', label: t('projectDetails.sections.overview') },
     { id: 'context', label: t('projectDetails.sections.context') },
     { id: 'problem', label: t('projectDetails.sections.problem') },
     { id: 'solution-process', label: t('projectDetails.sections.solutionProcess') },
-    { id: 'development-flow', label: t('projectDetails.sections.developmentFlow') },
     { id: 'visual-design', label: t('projectDetails.sections.visualDesign') },
     { id: 'final-design', label: t('projectDetails.sections.finalDesign') },
     { id: 'retrospective', label: t('projectDetails.sections.retrospective') },
@@ -18,17 +24,34 @@ export const PortfolioProjectPage = () => {
 
   return (
     <ProjectPageLayout sections={sections}>
-      {/* Project Title */}
-      <div className="py-16 px-4">
+      {/* Project Header */}
+      <div className="pt-12 pb-8 px-4">
         <div className="container mx-auto max-w-5xl">
-          <h1 className="text-h1 font-bold text-center text-primary">
-            {t('projectDetails.portfolio.title')} {t('projectDetails.portfolio.titleHighlight')}
+          <h1 className="text-5xl lg:text-6xl font-bold text-left text-foreground mb-6">
+            {t('projectDetails.portfolio.title')}{' '}
+            <span className="text-primary">{t('projectDetails.portfolio.titleHighlight')}</span>
           </h1>
+          <p className="text-2xl lg:text-3xl font-light text-foreground leading-relaxed text-left max-w-3xl mb-6">
+            Showcasing creativity and technical excellence through a unified digital presence.
+          </p>
+          <div className="h-1 w-12 bg-primary mb-4" />
+          {technologies.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+              {technologies.map((tech, idx) => (
+                <React.Fragment key={tech}>
+                  <span>{tech}</span>
+                  {idx < technologies.length - 1 && (
+                    <span className="text-muted-foreground">/</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
       {/* Overview Section */}
-      <section id="overview" className="py-24 px-4 scroll-mt-24">
+      <section id="overview" className="pt-12 pb-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
           {/* Project Image */}
           <div className="mb-12 rounded-lg overflow-hidden border border-border">
@@ -188,15 +211,6 @@ export const PortfolioProjectPage = () => {
         </div>
       </section>
 
-      {/* Development Flow Section */}
-      <section id="development-flow" className="py-24 px-4 scroll-mt-24">
-        <div className="container mx-auto max-w-5xl">
-          <p className="text-body text-foreground font-light leading-relaxed mb-8 text-left">
-            {t('projectDetails.portfolio.developmentFlow.description')}
-          </p>
-        </div>
-      </section>
-
       {/* Visual Design Section */}
       <section id="visual-design" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
@@ -230,38 +244,6 @@ export const PortfolioProjectPage = () => {
                   ></div>
                   <p className="text-h3 font-medium">{color.name}</p>
                   <p className="text-body text-foreground">{color.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Typography */}
-          <div className="mb-10">
-            <h3 className="text-h2 font-semibold mb-4">
-              {t('projectDetails.portfolio.visualDesign.typography.title')}
-            </h3>
-            <p className="text-body text-foreground font-light mb-6 text-left">
-              {t('projectDetails.portfolio.visualDesign.typography.description')}
-            </p>
-            <div className="bg-card p-6 rounded-lg border border-border space-y-6">
-              {t('projectDetails.portfolio.visualDesign.typography.levels', {
-                returnObjects: true,
-              }).map((level, index) => (
-                <div key={index}>
-                  <p
-                    className={`${
-                      index === 0
-                        ? 'text-h1 font-bold'
-                        : index === 1
-                        ? 'text-h2 font-semibold'
-                        : index === 2
-                        ? 'text-h3 font-medium'
-                        : 'text-body font-light'
-                    } mb-2`}
-                  >
-                    {level.name}
-                  </p>
-                  <p className="text-body text-foreground">{level.description}</p>
                 </div>
               ))}
             </div>
