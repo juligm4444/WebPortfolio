@@ -26,7 +26,7 @@ export const HeroSection = () => {
       <div className="block md:hidden w-full flex justify-center pt-6">
         <spline-viewer
           url="https://prod.spline.design/8M4AUjTdmnH8plii/scene.splinecode"
-          style={{ width: '75%', maxWidth: '320px', height: '220px', background: 'transparent' }}
+          style={{ width: '70vw', maxWidth: '260px', height: '30vh', maxHeight: '200px', background: 'transparent' }}
           events-target="global"
         ></spline-viewer>
       </div>
@@ -61,16 +61,16 @@ export const HeroSection = () => {
         )}
       </div>
 
-      {/* CTA Button - Above scroll down */}
+      {/* CTA Button - below text */}
       {showParagraph && (
-        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in-delay-d">
+        <div className="w-full px-4 sm:px-6 md:px-8 mt-6">
           <Link to="/projects" className="general-button">
             {t('hero.button')}
           </Link>
         </div>
       )}
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+      <div className="hidden md:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 flex-col items-center animate-bounce">
         <span className="text-sm text-muted-foreground mb-2">
           {t('hero.scroll', { defaultValue: 'Scroll Down' })}
         </span>

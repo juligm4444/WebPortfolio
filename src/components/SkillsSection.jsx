@@ -111,7 +111,33 @@ export const SkillsSection = () => {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
+        {/* Mobile: square cards, 3 per row */}
+        <div className="grid grid-cols-3 gap-3 md:hidden">
+          {filteredSkills.map((skill, key) => (
+            <div
+              key={key}
+              className="aspect-square bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center p-3"
+            >
+              {skill.icon && (
+                <div className="w-12 h-12 mb-2 bg-white rounded-md flex items-center justify-center">
+                  <img
+                    src={iconMap[skill.icon]}
+                    alt={skill.name}
+                    loading="lazy"
+                    className="w-8 h-8 object-contain"
+                  />
+                </div>
+              )}
+              <span className="sr-only">{skill.name}</span>
+              <span className={cn('text-sm font-semibold', isLight ? 'text-gray-800' : 'text-gray-200')}>
+                {skill.level}%
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop/Tablet: original layout */}
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
