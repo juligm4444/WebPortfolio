@@ -45,7 +45,7 @@ export const HeroSection = () => {
         {/* Main Name/Title (Second, Smaller on mobile) */}
         {isTranslationReady && (
           <div className="w-full px-4 sm:px-6 md:px-8">
-            <h2 className="text-primary text-lg sm:text-h2 font-light tracking-tight leading-tight text-left">
+            <h2 className="heading-default text-foreground text-lg sm:text-h2 font-light tracking-tight leading-tight text-left">
               {t('hero.greeting')}
             </h2>
           </div>

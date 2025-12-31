@@ -155,9 +155,9 @@ export const PortfolioProjectPage = () => {
       {/* Context Section */}
       <section id="context" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-h2 font-semibold mb-8 text-center">{`{${t(
+          <h2 className="text-h2 font-semibold mb-8 text-center">{`<${t(
             'projectDetails.sections.context'
-          )}}`}</h2>
+          )}>`}</h2>
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Image on the left */}
             <div className="w-full md:w-2/5 flex-shrink-0">
@@ -182,9 +182,9 @@ export const PortfolioProjectPage = () => {
       {/* Problem Section */}
       <section id="problem" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-h2 font-semibold mb-8 text-center">{`{${t(
+          <h2 className="text-h2 font-semibold mb-8 text-center">{`<${t(
             'projectDetails.sections.problem'
-          )}}`}</h2>
+          )}>`}</h2>
           <p className="text-body text-foreground font-light leading-relaxed text-left">
             {t('projectDetails.portfolio.problem')}
           </p>
@@ -194,9 +194,9 @@ export const PortfolioProjectPage = () => {
       {/* Solution Process Section */}
       <section id="solution-process" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-h1 font-semibold mb-8 text-center">{`{${t(
+          <h2 className="text-h2 font-semibold mb-8 text-center">{`<${t(
             'projectDetails.sections.solutionProcess'
-          )}}`}</h2>
+          )}>`}</h2>
           <div className="space-y-10">
             {t('projectDetails.portfolio.solutionProcess.phases', { returnObjects: true }).map(
               (phase, index) => (
@@ -228,9 +228,9 @@ export const PortfolioProjectPage = () => {
       {/* Visual Design Section */}
       <section id="visual-design" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-h1 font-semibold mb-8 text-center">{`{${t(
+          <h2 className="text-h2 font-semibold mb-8 text-center">{`<${t(
             'projectDetails.sections.visualDesign'
-          )}}`}</h2>
+          )}>`}</h2>
           <p className="text-body text-foreground font-light leading-relaxed mb-10 text-left">
             {t('projectDetails.portfolio.visualDesign.description')}
           </p>
@@ -294,9 +294,9 @@ export const PortfolioProjectPage = () => {
       {/* Final Design Section */}
       <section id="final-design" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-h1 font-semibold mb-8 text-center">{`{${t(
+          <h2 className="text-h2 font-semibold mb-8 text-center">{`<${t(
             'projectDetails.sections.finalDesign'
-          )}}`}</h2>
+          )}>`}</h2>
           <p className="text-body text-foreground font-light leading-relaxed mb-10 text-left">
             {t('projectDetails.portfolio.finalDesign.description')}
           </p>
@@ -336,9 +336,9 @@ export const PortfolioProjectPage = () => {
       {/* Retrospective Section */}
       <section id="retrospective" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-h1 font-semibold mb-8 text-center">{`{${t(
+          <h2 className="text-h2 font-semibold mb-8 text-center">{`<${t(
             'projectDetails.sections.retrospective'
-          )}}`}</h2>
+          )}>`}</h2>
           <p className="text-body text-foreground font-light leading-relaxed text-left mb-10">
             {t('projectDetails.portfolio.retrospective.description')}
           </p>

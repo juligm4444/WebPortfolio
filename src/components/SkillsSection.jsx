@@ -157,7 +157,7 @@ export const SkillsSection = () => {
                   </div>
                 )}
                 <h3
-                  className="font-semibold text-primary text-xs md:text-sm lg:text-base text-center truncate w-full overflow-hidden text-ellipsis"
+                  className="font-semibold heading-default text-foreground text-xs md:text-sm lg:text-base text-center truncate w-full overflow-hidden text-ellipsis"
                   title={skill.name}
                 >
                   {skill.name}

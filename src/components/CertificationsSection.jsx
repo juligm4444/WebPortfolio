@@ -78,7 +78,9 @@ const CertificationCard = ({ cert }) => {
             />
           </div>
           <div className="space-y-1">
-            <h3 className="text-primary font-semibold text-lg leading-tight">{cert.name}</h3>
+            <h3 className="heading-default text-foreground font-semibold text-lg leading-tight">
+              {cert.name}
+            </h3>
             <p
               className={cn(
                 'text-base md:text-sm',

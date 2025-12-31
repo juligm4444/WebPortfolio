@@ -16,8 +16,8 @@ export const ProjectPageLayout = ({ children, sections }) => {
 
     const options = {
       root: null,
-      // Target middle of screen for section detection
-      rootMargin: '-45% 0px -45% 0px',
+      // Target top third of screen for better section detection
+      rootMargin: '-20% 0px -60% 0px',
       threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
     };
 

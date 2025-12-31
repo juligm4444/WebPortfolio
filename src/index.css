@@ -249,6 +249,11 @@ html.light h4 span {
   text-stroke: 0.3px #000;
 }
 
+/* Utility to revert headings to default foreground color when needed */
+.heading-default {
+  color: hsl(var(--foreground)) !important;
+}
+
 @utility general-button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,165,0,0.5)]
   hover:scale-105 active:scale-95;
