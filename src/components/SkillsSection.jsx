@@ -129,7 +129,9 @@ export const SkillsSection = () => {
                 </div>
               )}
               <span className="sr-only">{skill.name}</span>
-              <span className={cn('text-sm font-semibold', isLight ? 'text-gray-800' : 'text-gray-200')}>
+              <span
+                className={cn('text-sm font-semibold', isLight ? 'text-gray-800' : 'text-gray-200')}
+              >
                 {skill.level}%
               </span>
             </div>

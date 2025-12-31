@@ -26,7 +26,13 @@ export const HeroSection = () => {
       <div className="block md:hidden w-full flex justify-center pt-6">
         <spline-viewer
           url="https://prod.spline.design/8M4AUjTdmnH8plii/scene.splinecode"
-          style={{ width: '70vw', maxWidth: '260px', height: '30vh', maxHeight: '200px', background: 'transparent' }}
+          style={{
+            width: '70vw',
+            maxWidth: '260px',
+            height: '30vh',
+            maxHeight: '200px',
+            background: 'transparent',
+          }}
           events-target="global"
         ></spline-viewer>
       </div>
