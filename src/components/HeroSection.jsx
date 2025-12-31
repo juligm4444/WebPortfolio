@@ -22,23 +22,8 @@ export const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
     >
-      {/* Mobile Spline - shown first and smaller */}
-      <div className="block md:hidden w-full flex justify-center pt-6">
-        <spline-viewer
-          url="https://prod.spline.design/8M4AUjTdmnH8plii/scene.splinecode"
-          style={{
-            width: '70vw',
-            maxWidth: '260px',
-            height: '30vh',
-            maxHeight: '200px',
-            background: 'transparent',
-          }}
-          events-target="global"
-        ></spline-viewer>
-      </div>
-
-      {/* Desktop Spline 3D model - hidden on mobile */}
-      <div className="hidden md:block absolute right-[-10%] top-[45%] transform -translate-y-1/2 w-[50%] h-[80%] z-10">
+      {/* Desktop Spline 3D model - hidden on mobile and tablets */}
+      <div className="hidden lg:block absolute right-[-10%] top-[45%] transform -translate-y-1/2 w-[50%] h-[80%] z-10">
         <spline-viewer
           url="https://prod.spline.design/8M4AUjTdmnH8plii/scene.splinecode"
           style={{ width: '100%', height: '100%', background: 'transparent' }}

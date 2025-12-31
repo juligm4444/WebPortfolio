@@ -32,9 +32,9 @@ export const PortfolioProjectPage = () => {
             <span className="text-primary">{t('projectDetails.portfolio.titleHighlight')}</span>
           </h1>
           <p className="text-2xl lg:text-3xl font-light text-foreground leading-relaxed text-left max-w-3xl mb-6">
-            Showcasing creativity and technical excellence through a unified digital presence.
+            {t('projectDetails.portfolio.quote')}
           </p>
-          <div className="h-1 w-12 bg-primary mb-4" />
+          <div className="h-1 w-12 mb-4" style={{ backgroundColor: '#60eba4' }} />
           {technologies.length > 0 && (
             <div className="flex flex-wrap items-center gap-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
               {technologies.map((tech, idx) => (
@@ -155,6 +155,9 @@ export const PortfolioProjectPage = () => {
       {/* Context Section */}
       <section id="context" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
+          <h2 className="text-h2 font-semibold mb-8 text-center">{`{${t(
+            'projectDetails.sections.context'
+          )}}`}</h2>
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Image on the left */}
             <div className="w-full md:w-2/5 flex-shrink-0">
@@ -179,6 +182,9 @@ export const PortfolioProjectPage = () => {
       {/* Problem Section */}
       <section id="problem" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
+          <h2 className="text-h2 font-semibold mb-8 text-center">{`{${t(
+            'projectDetails.sections.problem'
+          )}}`}</h2>
           <p className="text-body text-foreground font-light leading-relaxed text-left">
             {t('projectDetails.portfolio.problem')}
           </p>
@@ -188,14 +194,22 @@ export const PortfolioProjectPage = () => {
       {/* Solution Process Section */}
       <section id="solution-process" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
+          <h2 className="text-h1 font-semibold mb-8 text-center">{`{${t(
+            'projectDetails.sections.solutionProcess'
+          )}}`}</h2>
           <div className="space-y-10">
             {t('projectDetails.portfolio.solutionProcess.phases', { returnObjects: true }).map(
               (phase, index) => (
                 <div key={index} className="flex flex-col gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg mx-auto">
-                    {index + 1}
+                  <div className="flex items-center gap-4 text-left">
+                    <div
+                      className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0"
+                      style={{ backgroundColor: '#60eba4', color: '#000' }}
+                    >
+                      {index + 1}
+                    </div>
+                    <h3 className="text-h3 font-semibold">{phase.title}</h3>
                   </div>
-                  <h3 className="text-h2 font-semibold">{phase.title}</h3>
                   <p className="text-body text-foreground font-light leading-relaxed text-justify md:text-left">
                     {phase.description}
                   </p>
@@ -214,38 +228,64 @@ export const PortfolioProjectPage = () => {
       {/* Visual Design Section */}
       <section id="visual-design" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
+          <h2 className="text-h1 font-semibold mb-8 text-center">{`{${t(
+            'projectDetails.sections.visualDesign'
+          )}}`}</h2>
           <p className="text-body text-foreground font-light leading-relaxed mb-10 text-left">
             {t('projectDetails.portfolio.visualDesign.description')}
           </p>
 
           {/* Color System */}
           <div className="mb-10">
-            <h3 className="text-h2 font-semibold mb-4">
+            <h3 className="text-h3 font-semibold mb-4 text-left">
               {t('projectDetails.portfolio.visualDesign.colorSystem.title')}
             </h3>
             <p className="text-body text-foreground font-light mb-6 text-left">
               {t('projectDetails.portfolio.visualDesign.colorSystem.description')}
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {t('projectDetails.portfolio.visualDesign.colorSystem.colors', {
-                returnObjects: true,
-              }).map((color, index) => (
-                <div key={index} className="space-y-2">
-                  <div
-                    className={`h-24 rounded-lg ${
-                      index === 0
-                        ? 'bg-background border border-border'
-                        : index === 1
-                        ? 'bg-primary'
-                        : index === 2
-                        ? 'bg-card border border-border'
-                        : 'bg-secondary'
-                    }`}
-                  ></div>
-                  <p className="text-h3 font-medium">{color.name}</p>
-                  <p className="text-body text-foreground">{color.description}</p>
-                </div>
-              ))}
+
+            {/* Dark Theme Colors */}
+            <div className="mb-8">
+              <h4 className="text-body font-semibold mb-4 text-left">
+                {t('projectDetails.portfolio.visualDesign.colorSystem.darkTheme.title')}
+              </h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {t('projectDetails.portfolio.visualDesign.colorSystem.darkTheme.colors', {
+                  returnObjects: true,
+                }).map((color, index) => (
+                  <div key={index} className="space-y-2">
+                    <div
+                      className="h-24 rounded-lg border border-border"
+                      style={{ backgroundColor: color.hex }}
+                    ></div>
+                    <p className="font-semibold text-foreground">{color.name}</p>
+                    <p className="text-sm text-muted-foreground">{color.hex}</p>
+                    <p className="text-sm text-foreground">{color.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Light Theme Colors */}
+            <div>
+              <h4 className="text-body font-semibold mb-4 text-left">
+                {t('projectDetails.portfolio.visualDesign.colorSystem.lightTheme.title')}
+              </h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {t('projectDetails.portfolio.visualDesign.colorSystem.lightTheme.colors', {
+                  returnObjects: true,
+                }).map((color, index) => (
+                  <div key={index} className="space-y-2">
+                    <div
+                      className="h-24 rounded-lg border border-border"
+                      style={{ backgroundColor: color.hex }}
+                    ></div>
+                    <p className="font-semibold text-foreground">{color.name}</p>
+                    <p className="text-sm text-muted-foreground">{color.hex}</p>
+                    <p className="text-sm text-foreground">{color.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -254,6 +294,9 @@ export const PortfolioProjectPage = () => {
       {/* Final Design Section */}
       <section id="final-design" className="py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
+          <h2 className="text-h1 font-semibold mb-8 text-center">{`{${t(
+            'projectDetails.sections.finalDesign'
+          )}}`}</h2>
           <p className="text-body text-foreground font-light leading-relaxed mb-10 text-left">
             {t('projectDetails.portfolio.finalDesign.description')}
           </p>
@@ -262,7 +305,7 @@ export const PortfolioProjectPage = () => {
           <div className="space-y-10">
             {/* Homepage */}
             <div>
-              <h3 className="text-h2 font-semibold mb-4">
+              <h3 className="text-h3 font-semibold mb-4 text-left">
                 {t('projectDetails.portfolio.finalDesign.homepage.title')}
               </h3>
               <div className="bg-card rounded-lg overflow-hidden border border-border mb-4">
@@ -279,7 +322,7 @@ export const PortfolioProjectPage = () => {
 
             {/* Project Pages */}
             <div>
-              <h3 className="text-h2 font-semibold mb-4">
+              <h3 className="text-h3 font-semibold mb-4 text-left">
                 {t('projectDetails.portfolio.finalDesign.projects.title')}
               </h3>
               <p className="text-body text-foreground font-light text-left">
@@ -293,13 +336,16 @@ export const PortfolioProjectPage = () => {
       {/* Retrospective Section */}
       <section id="retrospective" className="py-24 px-4 bg-secondary/20 scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
+          <h2 className="text-h1 font-semibold mb-8 text-center">{`{${t(
+            'projectDetails.sections.retrospective'
+          )}}`}</h2>
           <p className="text-body text-foreground font-light leading-relaxed text-left mb-10">
             {t('projectDetails.portfolio.retrospective.description')}
           </p>
 
           {/* Impact Metrics */}
           <div>
-            <h3 className="text-h2 font-semibold mb-6">
+            <h3 className="text-h3 font-semibold mb-6 text-left">
               {t('projectDetails.portfolio.retrospective.impact.title')}
             </h3>
             <p className="text-body text-foreground font-light mb-6 text-left">

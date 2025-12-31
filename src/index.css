@@ -219,6 +219,36 @@ html:not(.light) body {
   border: 1px solid transparent;
 }
 
+/* Title color override for both light and dark modes */
+h1,
+h2,
+h3,
+h4,
+h1 span,
+h2 span,
+h3 span,
+h4 span {
+  color: #60eba4 !important;
+}
+
+/* Add thin black stroke to titles in light mode for better contrast */
+html.light h1,
+html.light h2,
+html.light h1 span,
+html.light h2 span {
+  -webkit-text-stroke: 0.5px #000;
+  text-stroke: 0.5px #000;
+}
+
+/* Thinner stroke for subtitles */
+html.light h3,
+html.light h4,
+html.light h3 span,
+html.light h4 span {
+  -webkit-text-stroke: 0.3px #000;
+  text-stroke: 0.3px #000;
+}
+
 @utility general-button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,165,0,0.5)]
   hover:scale-105 active:scale-95;

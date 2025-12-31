@@ -317,6 +317,7 @@
     "portfolio": {
       "title": "Portafolio",
       "titleHighlight": "Digital",
+      "quote": "Mostrando creatividad y excelencia técnica a través de una presencia digital unificada.",
       "myRole": {
         "title": "Mi Rol",
         "description": "Diseñador UX/UI, Desarrollador Full-stack"
@@ -377,6 +378,7 @@
             "bullets": [
               "Implementé arquitectura basada en componentes con React 19",
               "Integré i18next para soporte bilingüe fluido",
+              "Incorporé modelos 3D interactivos de Spline para experiencias visuales atractivas",
               "Creé animaciones personalizadas usando Tailwind y CSS",
               "Optimicé imágenes y assets para tiempos de carga rápidos",
               "Implementé lazy loading para mejorar el rendimiento"
@@ -402,25 +404,57 @@
         "description": "El sistema de diseño visual fue creado para reflejar mi identidad dual como desarrollador y diseñador, equilibrando precisión técnica con expresión creativa. Cada color, tipografía y decisión de espaciado se tomó con intencionalidad para crear una experiencia cohesiva y memorable.",
         "colorSystem": {
           "title": "Sistema de Color",
-          "description": "La paleta de colores soporta temas oscuros y claros con tokens de color semánticos que se adaptan según la preferencia del usuario.",
-          "colors": [
-            {
-              "name": "Fondo",
-              "description": "Color base del canvas"
-            },
-            {
-              "name": "Primario",
-              "description": "Marca y énfasis"
-            },
-            {
-              "name": "Tarjeta",
-              "description": "Elementos de superficie"
-            },
-            {
-              "name": "Secundario",
-              "description": "Acentos sutiles"
-            }
-          ]
+          "description": "La paleta de colores soporta temas oscuros y claros con tokens de color semánticos que se adaptan según la preferencia del usuario. El color de acento #60eba4 proporciona conexión visual con el logo y mantiene la consistencia en todo el sitio.",
+          "darkTheme": {
+            "title": "Tema Oscuro",
+            "colors": [
+              {
+                "name": "Fondo",
+                "hex": "#0c0c0c",
+                "description": "Canvas negro profundo"
+              },
+              {
+                "name": "Texto",
+                "hex": "#ffffff",
+                "description": "Texto blanco"
+              },
+              {
+                "name": "Acento",
+                "hex": "#60eba4",
+                "description": "Verde menta para títulos y énfasis"
+              },
+              {
+                "name": "Tarjeta",
+                "hex": "#171717",
+                "description": "Elementos de superficie elevados"
+              }
+            ]
+          },
+          "lightTheme": {
+            "title": "Tema Claro",
+            "colors": [
+              {
+                "name": "Fondo",
+                "hex": "#ebebeb",
+                "description": "Canvas gris claro"
+              },
+              {
+                "name": "Texto",
+                "hex": "#333333",
+                "description": "Texto gris oscuro"
+              },
+              {
+                "name": "Acento",
+                "hex": "#60eba4",
+                "description": "Verde menta con trazo negro para contraste"
+              },
+              {
+                "name": "Tarjeta",
+                "hex": "#d9d9d9",
+                "description": "Elementos de superficie sutiles"
+              }
+            ]
+          }
         },
         "typography": {
           "title": "Sistema de Tipografía",

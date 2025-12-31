@@ -312,6 +312,7 @@
     "portfolio": {
       "title": "Digital",
       "titleHighlight": "Portfolio",
+      "quote": "Showcasing creativity and technical excellence through a unified digital presence.",
       "myRole": {
         "title": "My Role",
         "description": "UX/UI Designer, Full-stack Developer"
@@ -372,6 +373,7 @@
             "bullets": [
               "Implemented component-based architecture with React 19",
               "Integrated i18next for seamless bilingual support",
+              "Incorporated interactive Spline 3D models for engaging visual experiences",
               "Created custom animations using Tailwind and CSS",
               "Optimized images and assets for fast loading times",
               "Implemented lazy loading for improved performance"
@@ -397,25 +399,57 @@
         "description": "The visual design system was crafted to reflect my dual identity as both a developer and designer—balancing technical precision with creative expression. Every color, typeface, and spacing decision was made with intentionality to create a cohesive and memorable experience.",
         "colorSystem": {
           "title": "Color System",
-          "description": "The color palette supports both dark and light themes with semantic color tokens that adapt based on user preference.",
-          "colors": [
-            {
-              "name": "Background",
-              "description": "Base canvas color"
-            },
-            {
-              "name": "Primary",
-              "description": "Brand & emphasis"
-            },
-            {
-              "name": "Card",
-              "description": "Surface elements"
-            },
-            {
-              "name": "Secondary",
-              "description": "Subtle accents"
-            }
-          ]
+          "description": "The color palette supports both dark and light themes with semantic color tokens that adapt based on user preference. The accent color #60eba4 provides visual connection to the logo and maintains consistency across the entire site.",
+          "darkTheme": {
+            "title": "Dark Theme",
+            "colors": [
+              {
+                "name": "Background",
+                "hex": "#0c0c0c",
+                "description": "Deep black canvas"
+              },
+              {
+                "name": "Foreground",
+                "hex": "#ffffff",
+                "description": "White text"
+              },
+              {
+                "name": "Accent",
+                "hex": "#60eba4",
+                "description": "Mint green for titles and emphasis"
+              },
+              {
+                "name": "Card",
+                "hex": "#171717",
+                "description": "Elevated surface elements"
+              }
+            ]
+          },
+          "lightTheme": {
+            "title": "Light Theme",
+            "colors": [
+              {
+                "name": "Background",
+                "hex": "#ebebeb",
+                "description": "Light gray canvas"
+              },
+              {
+                "name": "Foreground",
+                "hex": "#333333",
+                "description": "Dark gray text"
+              },
+              {
+                "name": "Accent",
+                "hex": "#60eba4",
+                "description": "Mint green with black stroke for contrast"
+              },
+              {
+                "name": "Card",
+                "hex": "#d9d9d9",
+                "description": "Subtle surface elements"
+              }
+            ]
+          }
         },
         "typography": {
           "title": "Typography System",
