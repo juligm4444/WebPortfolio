@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 import { ProjectPageLayout } from '../components/ProjectPageLayout';
-import { AboutSection } from '../components/AboutSection';
 
 export const About = () => {
   const { t } = useTranslation();
@@ -29,109 +28,98 @@ export const About = () => {
 
   return (
     <ProjectPageLayout sections={sections}>
-      {/* ME Section */}
-      <section id="me" className="py-24 px-4 scroll-mt-24">
+      {/* ME Section — image left, identity text right, always 2-col */}
+      <section id="me" className="py-16 md:py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          {/* Mobile-friendly centered layout; desktop keeps split */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
-            {/* Name Block */}
-            <div className="flex-1 flex flex-col justify-center items-center md:items-end text-center md:text-right order-2 md:order-1">
-              <h1 className="font-bold leading-tight flex flex-col">
-                <span className="text-[3.25rem] sm:text-[3.75rem] md:text-[6.5rem] xl:text-[8rem]">
-                  {'Julián'}
-                </span>
-                <span className="text-[2.75rem] sm:text-[3.25rem] md:text-[5.25rem] xl:text-[6.5rem]">
-                  {'Galindo'}
-                </span>
-              </h1>
-              <p className="mt-6 text-[2.25rem] sm:text-[2.5rem] md:text-[3.25rem] xl:text-[3.75rem] font-bold text-foreground">
-                {'juligm4'}
+          <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
+            {/* Image — Left */}
+            <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg">
+              <img
+                src="/photos/profile.jpeg"
+                alt="Profile"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Identity — Right */}
+            <div className="flex flex-col justify-center text-left space-y-4 md:space-y-6">
+              <p className="text-[2rem] sm:text-[3rem] md:text-[4.5rem] xl:text-[5.5rem] font-bold text-primary leading-none">
+                juligm4
               </p>
-              <p className="mt-8 text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] xl:text-[2.5rem] font-semibold max-w-2xl text-muted-foreground text-center md:text-right">
+              <h1 className="text-[1.25rem] sm:text-[1.75rem] md:text-[2.5rem] xl:text-[3rem] font-bold text-foreground leading-tight">
+                Julián Galindo
+              </h1>
+              <p className="text-[0.75rem] sm:text-[0.9rem] md:text-[1.1rem] xl:text-[1.3rem] font-semibold text-foreground leading-snug">
                 {t('about.subtitle')}
               </p>
-            </div>
-            {/* Image */}
-            <div className="w-full md:w-1/2 max-w-xl order-1 md:order-2">
-              <div className="rounded-lg overflow-hidden border border-border shadow-lg">
-                <img
-                  src="/photos/profile.jpg"
-                  alt="Profile"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* INFORMATION Section */}
-      <section id="information" className="py-24 px-4 scroll-mt-24">
+      {/* INFORMATION Section — title top-left, text left, image right */}
+      <section id="information" className="pt-0 pb-16 md:pb-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-6" />
-          <div className="mb-6 text-left">
-            <h3 className="text-h2 font-semibold text-primary">
-              {t('aboutPage.sections.information')}
-            </h3>
-          </div>
-          <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-12">
-            {/* Image Left */}
-            <div className="order-1 md:order-1 w-full md:w-5/12 xl:w-4/12 flex-shrink-0">
-              <div className="rounded-lg overflow-hidden border border-border shadow-lg flex">
-                <img
-                  src="/photos/info.jpeg"
-                  alt="Informative portrait"
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            {/* Paragraphs Right */}
-            <div className="order-2 md:order-2 flex-1 flex flex-col justify-between space-y-6">
+          <div className="border-t border-border my-0 mb-16" />
+          <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center">
+            {/* Paragraphs — Left */}
+            <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-left">
+              <h3 className="text-h2 font-semibold text-primary mb-2">
+                {t('aboutPage.sections.information')}
+              </h3>
               {t('aboutPage.information.paragraphs', { returnObjects: true }).map((para, idx) => (
                 <p
                   key={idx}
-                  className="text-body font-light leading-relaxed text-left text-foreground"
+                  className="text-sm sm:text-base md:text-body font-light leading-relaxed text-foreground"
                 >
                   {para}
                 </p>
               ))}
             </div>
+            {/* Image — Right */}
+            <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg">
+              <img
+                src="/photos/info.jpeg"
+                alt="Informative portrait"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* EDUCATION Section */}
-      <section id="education" className="py-24 px-4 scroll-mt-24">
+      {/* EDUCATION Section — image left, title+text right-aligned */}
+      <section id="education" className="py-16 md:py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-6" />
-          <div className="mb-6 text-left">
-            <h3 className="text-h2 font-semibold text-primary">
-              {t('aboutPage.sections.education')}
-            </h3>
-          </div>
-          <div className="flex flex-col md:flex-row items-center md:items-center gap-12">
-            <div className="w-full md:w-1/2 max-w-xl">
-              <div className="rounded-lg overflow-hidden border border-border shadow-lg">
-                <img
-                  src="/photos/uni.jpg"
-                  alt="Universidad de los Andes"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+          <div className="border-t border-border my-8" />
+          <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
+            {/* Image — Left */}
+            <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg">
+              <img
+                src="/photos/uni.jpg"
+                alt="Universidad de los Andes"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
-            <div className="flex-1 flex flex-col justify-center space-y-2 md:space-y-3 text-left">
-              <h3 className="text-h2 font-semibold">{'Universidad de los Andes, Bogotá'}</h3>
-              <p className="text-body font-light text-muted-foreground">
-                {t('aboutPage.education.years')}
+            {/* Text — Right, right-aligned */}
+            <div className="flex flex-col justify-center space-y-2 md:space-y-4 text-right">
+              <h3 className="text-[1.4rem] sm:text-h2 font-semibold text-primary">
+                {t('aboutPage.sections.education')}
+              </h3>
+              <p className="text-sm sm:text-base md:text-body font-light text-foreground">
+                {'Universidad de los Andes, Bogotá'}
               </p>
-              <p className="text-body font-light text-muted-foreground">
+              <p className="text-sm sm:text-base md:text-body font-light text-foreground">
                 {t('aboutPage.education.degree1')}
               </p>
-              <p className="text-body font-light text-muted-foreground">
+              <p className="text-sm sm:text-base md:text-body font-light text-foreground">
                 {t('aboutPage.education.degree2')}
+              </p>
+              <p className="text-sm sm:text-base md:text-body font-light text-muted-foreground">
+                {`(${t('aboutPage.education.years')})`}
               </p>
             </div>
           </div>
@@ -140,14 +128,12 @@ export const About = () => {
 
       {/* INSPIRATIONS Section (temporarily hidden) */}
       {showInspirations && (
-        <section id="inspirations" className="py-24 px-4 scroll-mt-24">
+        <section id="inspirations" className="py-16 md:py-24 px-4 scroll-mt-24">
           <div className="container mx-auto max-w-6xl">
-            <div className="border-t border-border mb-6" />
-            <div className="mb-6 text-left">
-              <h3 className="text-h2 font-semibold text-primary">
-                {t('aboutPage.sections.inspirations')}
-              </h3>
-            </div>
+            <div className="border-t border-border mb-8" />
+            <h3 className="text-h2 font-semibold text-primary mb-6 text-left">
+              {t('aboutPage.sections.inspirations')}
+            </h3>
             <p className="text-body font-light leading-relaxed text-left max-w-4xl">
               {t('aboutPage.inspirations.text')}
             </p>
@@ -157,14 +143,12 @@ export const About = () => {
 
       {/* HOBBIES Section (temporarily hidden) */}
       {showHobbies && (
-        <section id="hobbies" className="py-24 px-4 scroll-mt-24">
+        <section id="hobbies" className="py-16 md:py-24 px-4 scroll-mt-24">
           <div className="container mx-auto max-w-6xl">
-            <div className="border-t border-border mb-6" />
-            <div className="mb-6 text-left">
-              <h3 className="text-h2 font-semibold text-primary">
-                {t('aboutPage.sections.hobbies')}
-              </h3>
-            </div>
+            <div className="border-t border-border mb-8" />
+            <h3 className="text-h2 font-semibold text-primary mb-6 text-left">
+              {t('aboutPage.sections.hobbies')}
+            </h3>
             <p className="text-body font-light leading-relaxed text-left max-w-4xl">
               {t('aboutPage.hobbies.text')}
             </p>
@@ -172,14 +156,26 @@ export const About = () => {
         </section>
       )}
 
-      {/* FOCCUS (Focus) Section - reuse existing About content minus title */}
-      <section id="foccus" className="py-24 px-4 scroll-mt-24">
+      {/* FOCUS Section — title + text left, image right */}
+      <section id="foccus" className="py-16 md:py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mb-6" />
-          <div className="mb-6 text-left">
-            <h3 className="text-h2 font-semibold text-primary">{t('aboutPage.sections.foccus')}</h3>
+          <div className="border-t border-border my-8" />
+          <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center">
+            {/* Paragraphs — Left */}
+            <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-left">
+              <h3 className="text-h2 font-semibold text-primary mb-2">
+                {t('aboutPage.sections.foccus')}
+              </h3>
+              <p className="text-sm sm:text-base md:text-body font-light leading-relaxed text-left text-foreground">
+                {t('about.parragraph1')}
+              </p>
+              <p className="text-sm sm:text-base md:text-body font-light leading-relaxed text-left text-foreground">
+                {t('about.parragraph2')}
+              </p>
+            </div>
+            {/* Image placeholder — Right */}
+            <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg bg-muted/30 aspect-[4/3]" />
           </div>
-          <AboutSection hideTitle maxWidthClass="max-w-6xl" />
         </div>
       </section>
     </ProjectPageLayout>

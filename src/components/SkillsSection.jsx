@@ -92,7 +92,7 @@ export const SkillsSection = () => {
     <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-h1 font-bold mb-12 text-center text-primary">
-          {t('skills.title1')} {t('skills.title2')}
+          {'<'}{t('skills.title1')} {t('skills.title2')}{'>'}
         </h2>
 
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
@@ -100,11 +100,16 @@ export const SkillsSection = () => {
             <button
               key={key}
               onClick={() => setCategory(category.key)}
+              data-button-style={isLight ? 'default' : 'plain-filter'}
               className={cn(
-                'px-3 sm:px-5 py-1.5 sm:py-2 rounded-full transition-colors duration-300 capitalize text-[20px]',
-                activeCategory === category.key
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-secondary/70 text-foreground hover:bg-secondary'
+                'transition-all duration-300 capitalize text-[20px]',
+                isLight
+                  ? activeCategory === category.key
+                    ? 'px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-primary text-primary-foreground'
+                    : 'px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-card text-[#e2e2e2] hover:bg-card hover:text-[#df0139] hover:scale-105 hover:drop-shadow-[0_0_10px_rgba(223,1,57,0.45)]'
+                  : activeCategory === category.key
+                    ? 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[#d0ff00] font-semibold underline underline-offset-4 decoration-2'
+                    : 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[#fefffc] hover:text-[#d0ff00]'
               )}
             >
               {category.label}
@@ -112,14 +117,17 @@ export const SkillsSection = () => {
           ))}
         </div>
         {/* Mobile: square cards, 3 per row */}
-        <div className="grid grid-cols-3 gap-3 md:hidden">
+        <div className="grid grid-cols-3 gap-4 md:hidden">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="aspect-square bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center p-3"
+              className={cn(
+                'aspect-square border rounded-lg shadow-sm flex flex-col items-center justify-center p-4',
+                isLight ? 'bg-card border-border' : 'bg-[#8116e0] border-[#8116e0]'
+              )}
             >
               {skill.icon && (
-                <div className="w-12 h-12 mb-2 bg-white rounded-md flex items-center justify-center">
+                <div className="w-12 h-12 mb-2 bg-[#e2e2e2] rounded-md flex items-center justify-center">
                   <img
                     src={iconMap[skill.icon]}
                     alt={skill.name}
@@ -130,7 +138,7 @@ export const SkillsSection = () => {
               )}
               <span className="sr-only">{skill.name}</span>
               <span
-                className={cn('text-sm font-semibold', isLight ? 'text-gray-800' : 'text-gray-200')}
+                className={cn('text-sm font-semibold', isLight ? 'text-[#e2e2e2]' : 'text-gray-200')}
               >
                 {skill.level}%
               </span>
@@ -143,11 +151,14 @@ export const SkillsSection = () => {
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card border border-border shadow-lg p-4 md:p-6 rounded-lg card-hover flex flex-row items-center gap-3 md:gap-4"
+              className={cn(
+                'group border shadow-lg p-4 md:p-6 rounded-lg card-hover hover:scale-[1.08] hover:shadow-2xl flex flex-row items-center gap-4',
+                isLight ? 'bg-card border-border' : 'bg-[#8116e0] border-[#8116e0]'
+              )}
             >
               <div className="flex flex-col items-center w-20 md:w-28 flex-shrink-0">
                 {skill.icon && (
-                  <div className="w-12 h-12 md:w-16 md:h-16 mb-2 bg-white rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 mb-2 bg-[#e2e2e2] rounded-full flex items-center justify-center transition-colors duration-300 group-hover:bg-[#d0ff00]">
                     <img
                       src={iconMap[skill.icon]}
                       alt={skill.name}
@@ -156,17 +167,28 @@ export const SkillsSection = () => {
                     />
                   </div>
                 )}
-                <h3
-                  className="font-semibold heading-default text-foreground text-xs md:text-sm lg:text-base text-center truncate w-full overflow-hidden text-ellipsis"
+                <p
+                  className={cn(
+                    'font-semibold text-xs md:text-sm lg:text-base text-center truncate w-full overflow-hidden text-ellipsis transition-colors duration-300',
+                    isLight ? 'text-foreground' : 'text-[#fefffc] group-hover:text-[#d0ff00]'
+                  )}
                   title={skill.name}
                 >
                   {skill.name}
-                </h3>
+                </p>
               </div>
               <div className="flex-1 flex flex-col justify-center">
-                <div className="w-3/4 md:w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
+                <div
+                  className={cn(
+                    'w-3/4 md:w-full h-2 rounded-full overflow-hidden',
+                    isLight ? 'bg-secondary/50' : 'bg-[#5a0db8]'
+                  )}
+                >
                   <div
-                    className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
+                    className={cn(
+                      'h-2 rounded-full origin-left scale-x-100 group-hover:animate-[skill-bar-reload_0.8s_ease-out_forwards] transition-colors duration-300',
+                      isLight ? 'bg-primary' : 'bg-[#fefffc] group-hover:bg-[#d0ff00]'
+                    )}
                     style={{ width: skill.level + '%' }}
                   />
                 </div>
@@ -174,7 +196,7 @@ export const SkillsSection = () => {
                   <span
                     className={cn(
                       'text-base md:text-lg font-medium',
-                      isLight ? 'text-gray-700' : 'text-gray-300'
+                      isLight ? 'text-[#e2e2e2]' : 'text-gray-300'
                     )}
                   >
                     {skill.level}%

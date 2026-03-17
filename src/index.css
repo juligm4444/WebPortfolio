@@ -77,45 +77,42 @@
 
 @layer base {
   :root {
-    --background: 0, 0%, 5%;
-    --foreground: 0, 0%, 100%;
-    --border: 0, 0%, 20%;
-    --card: 0, 0%, 9%;
-    --primary: 0, 0%, 100%;
-    --primary-foreground: 0, 0%, 0%;
+    --background: 0, 0%, 0%;
+    --foreground: 80, 100%, 99%;
+    --border: 271, 82%, 48%;
+    --card: 0, 0%, 0%;
+    --primary: 271, 82%, 48%;
+    --primary-foreground: 80, 100%, 99%;
     --background-image: none;
-    --sidebar-from: #2b4242;
-    --sidebar-to: #6b8784;
-    --sidebar-inverted-from: #93a4ab;
-    --sidebar-inverted-to: #c3c6c3;
+    --sidebar-from: #000000;
+    --sidebar-to: #000000;
+    --sidebar-inverted-from: #8116e0;
+    --sidebar-inverted-to: #8116e0;
     /* New global gradient + navbar tokens (dark theme defaults) */
-    --bg-base: #0c0c0c;
-    --bg-gradient: linear-gradient(to bottom, #0c0c0c 0%, #0f0f0f 100%);
-    --navbar-bg: #171717;
+    --bg-base: #000000;
+    --bg-gradient: none;
+    --navbar-bg: rgba(0, 0, 0, 0.55);
+    --banana-yellow: #d0ff00;
     --contact-footer-min-h: 7rem;
   }
 
   .light {
-    --background: 0, 17%, 92%;
-    --foreground: 0, 0%, 20%;
-    --border: 0, 0%, 75%;
-    --card: 0, 0%, 85%;
-    --primary: 0, 0%, 0%;
-    --primary-foreground: 0, 0%, 100%;
+    --background: 0, 0%, 89%;
+    --foreground: 240, 13%, 14%;
+    --border: 280, 8%, 15%;
+    --card: 280, 8%, 15%;
+    --primary: 345, 99%, 44%;
+    --primary-foreground: 0, 0%, 89%;
     --background-image: none;
-    --sidebar-from: #dadada;
-    --sidebar-to: #fafafa;
-    --sidebar-inverted-from: #dadada;
-    --sidebar-inverted-to: #fafafa;
+    --sidebar-from: #28242a;
+    --sidebar-to: #28242a;
+    --sidebar-inverted-from: #e2e2e2;
+    --sidebar-inverted-to: #e2e2e2;
     /* New gradient + navbar tokens for light theme */
-    --bg-base: #f5f4f3;
-    --bg-gradient: radial-gradient(
-      circle at 40% 30%,
-      rgba(255, 255, 255, 0.7) 0%,
-      rgba(240, 239, 239, 0.6) 55%,
-      rgba(232, 231, 231, 0.9) 100%
-    );
-    --navbar-bg: #dadada;
+    --bg-base: #e2e2e2;
+    --bg-gradient: none;
+    --navbar-bg: rgba(40, 36, 42, 0.72);
+    --banana-yellow: #d0ff00;
     --contact-footer-min-h: 7rem;
   }
 
@@ -128,7 +125,9 @@
 
 body {
   @apply text-foreground transition-colors duration-300;
-  font-feature-settings: 'rlig' 1, 'calt' 1;
+  font-feature-settings:
+    'rlig' 1,
+    'calt' 1;
 }
 
 html {
@@ -152,6 +151,31 @@ html:not(.light) body {
   background-image: var(--bg-gradient);
   background-attachment: fixed;
   background-size: cover;
+  position: relative;
+}
+
+html:not(.light) body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(208, 255, 0, 0.12), transparent 38%),
+    radial-gradient(circle at 82% 24%, rgba(129, 22, 224, 0.22), transparent 42%),
+    radial-gradient(circle at 50% 82%, rgba(208, 255, 0, 0.08), transparent 36%);
+}
+
+html:not(.light) body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.07;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
 /* Typography System - 4 levels */
@@ -167,7 +191,14 @@ html:not(.light) body {
 
 /* Utility for title font (fallback to system fonts) */
 @utility font-title {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -205,7 +236,7 @@ html:not(.light) body {
 
 @utility text-glow {
   @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  text-shadow: 0 0 10px rgba(223, 1, 57, 0.45);
 }
 
 @utility card-hover {
@@ -228,7 +259,18 @@ h1 span,
 h2 span,
 h3 span,
 h4 span {
-  color: #60eba4 !important;
+  color: hsl(var(--primary)) !important;
+}
+
+html:not(.light) h1,
+html:not(.light) h2,
+html:not(.light) h3,
+html:not(.light) h4,
+html:not(.light) h1 span,
+html:not(.light) h2 span,
+html:not(.light) h3 span,
+html:not(.light) h4 span {
+  color: var(--banana-yellow) !important;
 }
 
 /* Add thin black stroke to titles in light mode for better contrast */
@@ -236,8 +278,8 @@ html.light h1,
 html.light h2,
 html.light h1 span,
 html.light h2 span {
-  -webkit-text-stroke: 0.5px #000;
-  text-stroke: 0.5px #000;
+  -webkit-text-stroke: 0.5px #1e1e27;
+  text-stroke: 0.5px #1e1e27;
 }
 
 /* Thinner stroke for subtitles */
@@ -245,8 +287,8 @@ html.light h3,
 html.light h4,
 html.light h3 span,
 html.light h4 span {
-  -webkit-text-stroke: 0.3px #000;
-  text-stroke: 0.3px #000;
+  -webkit-text-stroke: 0.3px #1e1e27;
+  text-stroke: 0.3px #1e1e27;
 }
 
 /* Utility to revert headings to default foreground color when needed */
@@ -255,8 +297,64 @@ html.light h4 span {
 }
 
 @utility general-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,165,0,0.5)]
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_12px_rgba(208,255,0,0.55)]
   hover:scale-105 active:scale-95;
+}
+
+html:not(.light) a:hover,
+html:not(.light) button:hover,
+html:not(.light) [role='button']:hover {
+  color: #d0ff00 !important;
+}
+
+html:not(.light) body,
+html:not(.light) p,
+html:not(.light) span,
+html:not(.light) li,
+html:not(.light) a,
+html:not(.light) label,
+html:not(.light) small {
+  color: #fefffc;
+}
+
+html:not(.light) [class*='text-gray-'],
+html:not(.light) [class*='text-white'],
+html:not(.light) [class*='text-muted-'] {
+  color: #fefffc !important;
+}
+
+html:not(.light) .general-button,
+html:not(.light) button:not(.skills-filter-plain),
+html:not(.light) .btn,
+html:not(.light) [role='button'] {
+  background-color: #8116e0;
+  color: #fefffc;
+  border-color: #8116e0;
+}
+
+html:not(.light) .general-button:hover,
+html:not(.light) button:not(.skills-filter-plain):hover,
+html:not(.light) .btn:hover,
+html:not(.light) [role='button']:hover {
+  background-color: var(--banana-yellow) !important;
+  border-color: var(--banana-yellow) !important;
+  color: #0a0a0a !important;
+  box-shadow: 0 0 14px rgba(208, 255, 0, 0.55);
+}
+
+h3::before,
+h4::before {
+  content: '<';
+}
+
+h3::after,
+h4::after {
+  content: '>';
+}
+
+.no-subtitle-brackets::before,
+.no-subtitle-brackets::after {
+  content: none !important;
 }
 
 .typewriter {
@@ -285,9 +383,34 @@ html.light h4 span {
   }
 }
 
+@keyframes skill-bar-reload {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 #root {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+@media (width >= 1024px) {
+  .lg\:ml-52 {
+    margin-left: 0 !important;
+  }
+}
+
+@media (width >= 1280px) {
+  .xl\:ml-64 {
+    margin-left: 0 !important;
+  }
+
+  .xl\:mr-64 {
+    margin-right: 0 !important;
+  }
 }
