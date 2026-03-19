@@ -1,32 +1,12 @@
 import { Download } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import React from 'react';
 import { cn } from '@/lib/utils';
 import { certifications } from '../data/certifications';
 
 const CertificationCard = ({ cert }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const { t } = useTranslation();
-  const [isLight, setIsLight] = useState(false);
-
-  // Check theme on mount and when it changes
-  React.useEffect(() => {
-    const checkTheme = () => {
-      setIsLight(document.documentElement.classList.contains('light'));
-    };
-
-    checkTheme();
-
-    // Listen for theme changes
-    const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   const handleInteraction = () => {
     // For mobile, toggle on click
@@ -67,10 +47,9 @@ const CertificationCard = ({ cert }) => {
         {/* Front of card - Badge Image, Name, Company, and Date */}
         <div
           className={cn(
-            'absolute inset-0 w-full h-full rounded-lg border shadow-lg flex flex-col items-center justify-center p-4 text-center space-y-2 sm:space-y-4',
-            isLight ? 'border-border bg-card' : 'border-[#8116e0] bg-[#8116e0]'
+            'absolute inset-0 w-full h-full rounded-lg shadow-lg flex flex-col items-center justify-center p-4 text-center space-y-2 sm:space-y-4'
           )}
-          style={{ backfaceVisibility: 'hidden' }}
+          style={{ backfaceVisibility: 'hidden', background: 'var(--cert-front-bg)' }}
         >
           <div className="h-20 sm:h-28 w-full flex items-center justify-center">
             <img
@@ -82,27 +61,14 @@ const CertificationCard = ({ cert }) => {
           </div>
           <div className="space-y-1">
             <p
-              className={cn(
-                'font-semibold text-lg leading-tight',
-                isLight ? 'text-foreground' : 'text-[#fefffc]'
-              )}
+              className={cn('font-semibold text-lg leading-tight', '!text-[var(--cert-name-text)]')}
             >
               {cert.name}
             </p>
-            <p
-              className={cn(
-                'text-base md:text-sm font-medium',
-                isLight ? 'text-[#e2e2e2]' : 'text-[#fefffc]'
-              )}
-            >
+            <p className={cn('text-base md:text-sm font-medium', '!text-[var(--color6)]')}>
               {cert.company}
             </p>
-            <p
-              className={cn(
-                'text-base md:text-sm font-medium',
-                isLight ? 'text-[#e2e2e2]' : 'text-[#fefffc]'
-              )}
-            >
+            <p className={cn('text-base md:text-sm font-medium', '!text-[var(--color6)]')}>
               {cert.date}
             </p>
           </div>
@@ -110,11 +76,14 @@ const CertificationCard = ({ cert }) => {
 
         {/* Back of card - Skills and Download */}
         <div
-          className="absolute inset-0 w-full h-full rounded-lg border border-border bg-card shadow-lg flex flex-col justify-between p-4 text-center"
-          style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+          className="absolute inset-0 w-full h-full rounded-lg bg-[var(--cert-back-bg)] shadow-lg flex flex-col justify-between p-4 text-center"
+          style={{
+            backfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)',
+          }}
         >
           <div className="space-y-2 flex-1 flex flex-col justify-center">
-            <h4 className="text-primary font-semibold text-sm no-subtitle-brackets">
+            <h4 className="!text-[var(--color4)] font-semibold text-sm no-subtitle-brackets">
               {t('certifications.skills')}
             </h4>
             <div className="flex flex-wrap gap-2 justify-center">
@@ -123,9 +92,7 @@ const CertificationCard = ({ cert }) => {
                   key={index}
                   className={cn(
                     'px-2 py-1 text-xs rounded inline-block font-medium transition-transform duration-200 hover:scale-110',
-                    isLight
-                      ? 'bg-[#e2e2e2] text-[#1e1e27] border border-[#28242a]'
-                      : 'bg-[#8116e0] text-[#fefffc] border border-[#a040f0]'
+                    'bg-[var(--cert-skill-bg)] !text-[var(--cert-skill-text)]'
                   )}
                 >
                   {t(`certifications.certSkills.${skill}`) || skill}
@@ -135,9 +102,7 @@ const CertificationCard = ({ cert }) => {
                 <span
                   className={cn(
                     'px-2 py-1 text-xs rounded inline-block font-medium transition-transform duration-200 hover:scale-110',
-                    isLight
-                      ? 'bg-[#df0139] text-[#e2e2e2] border border-[#df0139]'
-                      : 'bg-[#8116e0] text-[#fefffc] border border-[#a040f0]'
+                    'bg-[var(--cert-skill-bg)] !text-[var(--cert-skill-text)]'
                   )}
                 >
                   +{cert.skills.length - 4}
@@ -169,7 +134,9 @@ export const CertificationsSection = () => {
     <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30 mb-8">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-h1 font-bold mb-12 text-center text-primary">
-          {'<'}{t('certifications.title1')} {t('certifications.title2')}{'>'}
+          <span className="!text-[var(--color4)]">{'<'}</span>
+          {t('certifications.title1')} {t('certifications.title2')}
+          <span className="!text-[var(--color4)]">{'>'}</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 mb-8">

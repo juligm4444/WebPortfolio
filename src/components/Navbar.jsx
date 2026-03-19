@@ -81,7 +81,7 @@ export const Navbar = () => {
   const sidebarContent = (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className="p-4 lg:p-5 border-b border-white/70">
+      <div className="p-4 lg:p-5 border-b border-border/20">
         <Link to="/" className="flex flex-col items-center space-y-2 group">
           <img
             src="/assets/icons/LOGO.svg"
@@ -102,18 +102,14 @@ export const Navbar = () => {
                 className={cn(
                   'text-sm lg:text-base xl:text-[15px] font-medium uppercase tracking-wider text-left transition-all duration-300 cursor-pointer block',
                   location.pathname === group.categoryHref
-                    ? isLight
-                      ? 'text-[#df0139] font-bold translate-x-2 drop-shadow-[0_0_8px_rgba(223,1,57,0.45)]'
-                      : 'text-[#d0ff00] font-bold translate-x-2 underline underline-offset-4 decoration-2'
-                    : isLight
-                      ? 'text-[#e2e2e2] hover:text-[#df0139] hover:translate-x-1'
-                      : 'text-gray-300 hover:text-white hover:translate-x-1 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
+                    ? '!text-[var(--color4)] font-bold translate-x-2 selected-page-glow'
+                    : 'text-[var(--body-text-color)] hover:font-bold hover:translate-x-1'
                 )}
                 onClick={() => setIsOpen(false)}
               >
                 {t(`navbar.${group.title}`)}
               </Link>
-              <div className="pl-4 space-y-2 border-l border-white/70">
+              <div className={cn('pl-4 space-y-2 border-l', 'border-border/20')}>
                 {group.items.map((item) => (
                   <Link
                     key={item.key}
@@ -121,12 +117,8 @@ export const Navbar = () => {
                     className={cn(
                       'block py-2 text-sm lg:text-base xl:text-[15px] transition-all duration-300 text-left',
                       location.pathname === item.href
-                        ? isLight
-                          ? 'text-[#df0139] font-semibold translate-x-2 drop-shadow-[0_0_8px_rgba(223,1,57,0.45)]'
-                          : 'text-[#d0ff00] font-semibold translate-x-2 underline underline-offset-4 decoration-2'
-                        : isLight
-                          ? 'text-[#e2e2e2] hover:text-[#df0139] hover:translate-x-1'
-                          : 'text-gray-400 hover:text-white hover:translate-x-1 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
+                        ? '!text-[var(--color4)] font-bold translate-x-2 selected-page-glow'
+                        : 'text-[var(--body-text-color)] hover:font-bold hover:translate-x-1'
                     )}
                     onClick={() => setIsOpen(false)}
                   >
@@ -137,7 +129,7 @@ export const Navbar = () => {
             </div>
             {/* Additional separators after specific groups - positioned outside nav padding */}
             {(group.key === 'cv' || group.key === 'tech') && (
-              <div className="-mx-3 lg:-mx-4 border-t border-white/70" />
+              <div className={cn('-mx-3 lg:-mx-4 border-t', 'border-border/20')} />
             )}
           </React.Fragment>
         ))}
@@ -145,15 +137,13 @@ export const Navbar = () => {
 
       {/* Social Media - Follow me */}
       <div
-        className="p-4 border-t border-white/70 space-y-2 lg:space-y-4"
+        className={cn('p-4 border-t space-y-2 lg:space-y-4', 'border-border/20')}
         style={{ minHeight: 'var(--contact-footer-min-h)' }}
       >
         <h4
           className={cn(
             'text-sm lg:text-base xl:text-[15px] font-medium uppercase tracking-wider text-center transition-colors',
-            isLight
-              ? 'text-[#e2e2e2] hover:text-[#df0139]'
-              : 'text-gray-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
+            'text-[var(--body-text-color)] hover:font-bold'
           )}
         >
           {t('navbar.follow-me')}
@@ -163,12 +153,7 @@ export const Navbar = () => {
             href="https://www.linkedin.com/in/juligm4/"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(
-              'p-2 transition-colors',
-              isLight
-                ? 'text-[#e2e2e2] hover:text-[#df0139]'
-                : 'text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
-            )}
+            className={cn('social-button p-2 rounded-md')}
           >
             <Linkedin size={24} />
           </a>
@@ -176,12 +161,7 @@ export const Navbar = () => {
             href="https://www.instagram.com/juligm4/"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(
-              'p-2 transition-colors',
-              isLight
-                ? 'text-[#e2e2e2] hover:text-[#df0139]'
-                : 'text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
-            )}
+            className={cn('social-button p-2 rounded-md')}
           >
             <Instagram size={24} />
           </a>
@@ -189,12 +169,7 @@ export const Navbar = () => {
             href="https://x.com/Xx_juligm4_xX"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(
-              'p-2 transition-colors',
-              isLight
-                ? 'text-[#e2e2e2] hover:text-[#df0139]'
-                : 'text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
-            )}
+            className={cn('social-button p-2 rounded-md')}
           >
             <Twitter size={24} />
           </a>
@@ -202,12 +177,7 @@ export const Navbar = () => {
             href="https://www.youtube.com/@juligm4"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(
-              'p-2 transition-colors',
-              isLight
-                ? 'text-[#e2e2e2] hover:text-[#df0139]'
-                : 'text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
-            )}
+            className={cn('social-button p-2 rounded-md')}
           >
             <Youtube size={24} />
           </a>
@@ -220,7 +190,7 @@ export const Navbar = () => {
     <>
       {/* Desktop Top Navbar */}
       <header
-        className="hidden xl:flex fixed top-0 left-0 right-0 h-16 border-b border-white/70 z-50 backdrop-blur-xl"
+        className="hidden xl:flex fixed top-0 left-0 right-0 h-16 border-b border-border/20 z-50 backdrop-blur-xl"
         style={{
           backgroundColor: 'var(--navbar-bg)',
         }}
@@ -256,12 +226,8 @@ export const Navbar = () => {
                       className={cn(
                         'text-sm font-medium transition-colors duration-300',
                         isGroupActive
-                          ? isLight
-                            ? 'text-primary'
-                            : 'text-[#d0ff00] underline underline-offset-4 decoration-2'
-                          : isLight
-                            ? 'text-[#e2e2e2] hover:text-[#df0139]'
-                            : 'text-gray-300 hover:text-white'
+                          ? '!text-[var(--color4)] font-bold selected-page-glow'
+                          : 'text-[var(--color6)] hover:font-bold'
                       )}
                     >
                       {t(`navbar.${group.title}`)}
@@ -279,7 +245,7 @@ export const Navbar = () => {
                   {hasChildren && isOpenDesktop && (
                     <div className="absolute left-1/2 -translate-x-1/2 top-full pt-1 min-w-52">
                       <div
-                        className="rounded-md border border-white/70 p-2 shadow-md backdrop-blur-xl"
+                        className="rounded-md border border-border/20 p-2 shadow-md backdrop-blur-xl"
                         style={{
                           backgroundColor: 'var(--navbar-bg)',
                         }}
@@ -291,12 +257,8 @@ export const Navbar = () => {
                             className={cn(
                               'block px-4 py-2 rounded-md text-sm transition-colors',
                               location.pathname === item.href
-                                ? isLight
-                                  ? 'bg-primary/10 text-primary'
-                                  : 'bg-[#d0ff00]/10 text-[#d0ff00] underline underline-offset-4 decoration-2'
-                                : isLight
-                                  ? 'text-[#e2e2e2] hover:bg-[#df0139]/15 hover:text-[#df0139]'
-                                  : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                                ? 'bg-[var(--color4)]/10 !text-[var(--color4)] font-bold selected-page-glow'
+                                : 'text-[var(--color6)] hover:bg-[var(--color4)]/10 hover:font-bold'
                             )}
                           >
                             {t(`navbar.${item.key}`)}
@@ -328,7 +290,12 @@ export const Navbar = () => {
       {/* Mobile/Tablet Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="xl:hidden fixed top-4 left-4 z-50 p-2 bg-card border border-white/70 rounded-md shadow-md"
+        className="xl:hidden fixed top-4 left-4 z-50 p-2 border border-border/20 rounded-md shadow-md backdrop-blur-xl text-[var(--color1)]"
+        style={{
+          background: isLight ? 'var(--navbar-bg)' : 'var(--surface-gradient)',
+          color: isLight ? 'var(--color1)' : 'var(--button-text-color)',
+          borderColor: isLight ? 'rgb(var(--border) / 0.2)' : 'var(--color6)',
+        }}
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
       >
         {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -343,7 +310,7 @@ export const Navbar = () => {
           />
 
           <aside
-            className="xl:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-white/70 z-50 transform transition-transform duration-300"
+            className="xl:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-border/20 z-50 transform transition-transform duration-300 backdrop-blur-xl"
             style={{
               background: 'var(--navbar-bg)',
             }}

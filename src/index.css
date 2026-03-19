@@ -19,14 +19,14 @@
 */
 
 @theme {
-  --color-border: hsl(var(--border));
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+  --color-border: var(--color6);
+  --color-background: var(--color2);
+  --color-foreground: var(--color6);
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary: var(--color3);
+  --color-primary-foreground: var(--color3);
 
-  --color-card: hsl(var(--card));
+  --color-card: var(--color6);
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
@@ -70,50 +70,100 @@
       border-color: transparent;
     }
     50% {
-      border-color: hsl(var(--primary));
+      border-color: var(--color3);
     }
   }
 }
 
 @layer base {
   :root {
-    --background: 0, 0%, 0%;
-    --foreground: 80, 100%, 99%;
-    --border: 271, 82%, 48%;
-    --card: 0, 0%, 0%;
-    --primary: 271, 82%, 48%;
-    --primary-foreground: 80, 100%, 99%;
+    --background: 0, 0%, 9%;
+    --foreground: 0, 0%, 100%;
+    --border: 0, 0%, 100%;
+    --card: 0, 0%, 100%;
+    --primary: 68, 73%, 47%;
+    --primary-foreground: 68, 73%, 47%;
     --background-image: none;
     --sidebar-from: #000000;
-    --sidebar-to: #000000;
-    --sidebar-inverted-from: #8116e0;
-    --sidebar-inverted-to: #8116e0;
-    /* New global gradient + navbar tokens (dark theme defaults) */
-    --bg-base: #000000;
-    --bg-gradient: none;
-    --navbar-bg: rgba(0, 0, 0, 0.55);
-    --banana-yellow: #d0ff00;
+    --sidebar-to: #161616;
+    --sidebar-inverted-from: #e5e5e5;
+    --sidebar-inverted-to: #ffffff;
+    --color1: #000000;
+    --color2: #161616;
+    --color3: #49620c;
+    --color4: #e3ed0f;
+    --color5: #ffffff;
+    --color6: #e5e5e5;
+    --card-content-color: var(--color6);
+    --card-icon-hover-color: var(--color3);
+    --body-text-color: var(--color6);
+    --bg-gradient: linear-gradient(180deg, var(--color1) 0%, var(--color2) 100%);
+    --surface-gradient: linear-gradient(180deg, var(--color5) 0%, var(--color6) 100%);
+    --card-surface-gradient: linear-gradient(180deg, var(--color5) 0%, var(--color6) 100%);
+    --skill-card-gradient: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%);
+    --navbar-bg: rgba(22, 22, 22, 0.82);
     --contact-footer-min-h: 7rem;
+    --skill-text-color: var(--color1);
+    --skill-hover-text-color: var(--color6);
+    --skill-progress-color: var(--color6);
+    --skill-progress-hover-color: var(--color4);
+    --skill-icon-bg: #ffffff;
+    --skill-icon-border-gradient: linear-gradient(180deg, var(--color1) 0%, var(--color2) 100%);
+    --cert-front-bg: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%);
+    --cert-back-bg: var(--color3);
+    --cert-name-text: var(--color1);
+    --cert-info-text: var(--color2);
+    --cert-skill-bg: var(--color5);
+    --cert-skill-text: var(--color3);
+    --button-text-color: var(--color2);
+    --button-hover-fill: var(--color4);
+    --button-hover-text: var(--color2);
+    --button-hover-glow: var(--color3);
   }
 
   .light {
-    --background: 0, 0%, 89%;
-    --foreground: 240, 13%, 14%;
-    --border: 280, 8%, 15%;
-    --card: 280, 8%, 15%;
-    --primary: 345, 99%, 44%;
-    --primary-foreground: 0, 0%, 89%;
+    --background: 162, 24%, 88%;
+    --foreground: 204, 40%, 15%;
+    --border: 204, 40%, 15%;
+    --card: 204, 40%, 15%;
+    --primary: 47, 100%, 50%;
+    --primary-foreground: 47, 100%, 50%;
     --background-image: none;
-    --sidebar-from: #28242a;
-    --sidebar-to: #28242a;
-    --sidebar-inverted-from: #e2e2e2;
-    --sidebar-inverted-to: #e2e2e2;
-    /* New gradient + navbar tokens for light theme */
-    --bg-base: #e2e2e2;
-    --bg-gradient: none;
-    --navbar-bg: rgba(40, 36, 42, 0.72);
-    --banana-yellow: #d0ff00;
+    --sidebar-from: #f1f6f4;
+    --sidebar-to: #d9e8e2;
+    --sidebar-inverted-from: #114c5a;
+    --sidebar-inverted-to: #172b36;
+    --color1: #f1f6f4;
+    --color2: #d9e8e2;
+    --color3: #ffc801;
+    --color4: #ff9932;
+    --color5: #114c5a;
+    --color6: #172b36;
+    --card-content-color: var(--color1);
+    --card-icon-hover-color: var(--color3);
+    --body-text-color: var(--color6);
+    --bg-gradient: linear-gradient(180deg, var(--color1) 0%, var(--color2) 100%);
+    --surface-gradient: linear-gradient(180deg, var(--color5) 0%, var(--color6) 100%);
+    --card-surface-gradient: linear-gradient(180deg, var(--color5) 0%, var(--color6) 100%);
+    --skill-card-gradient: linear-gradient(180deg, var(--color5) 0%, var(--color6) 100%);
+    --navbar-bg: rgba(217, 232, 226, 0.82);
     --contact-footer-min-h: 7rem;
+    --skill-text-color: var(--color1);
+    --skill-hover-text-color: var(--color3);
+    --skill-progress-color: var(--color3);
+    --skill-progress-hover-color: var(--color4);
+    --skill-icon-bg: var(--color1);
+    --skill-icon-border-gradient: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
+    --cert-front-bg: var(--color5);
+    --cert-back-bg: var(--color6);
+    --cert-name-text: var(--color3);
+    --cert-info-text: var(--color1);
+    --cert-skill-bg: var(--color2);
+    --cert-skill-text: var(--color6);
+    --button-text-color: var(--color1);
+    --button-hover-fill: var(--color3);
+    --button-hover-text: var(--color6);
+    --button-hover-glow: var(--color4);
   }
 
   * {
@@ -141,41 +191,14 @@ html {
 
 /* Apply subtle gradient backgrounds per theme */
 html.light body {
-  background: var(--bg-base);
-  background-image: var(--bg-gradient);
+  background: var(--bg-gradient);
   background-attachment: fixed;
   background-size: cover;
 }
 html:not(.light) body {
-  background: var(--bg-base);
-  background-image: var(--bg-gradient);
+  background: var(--bg-gradient);
   background-attachment: fixed;
   background-size: cover;
-  position: relative;
-}
-
-html:not(.light) body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 18% 12%, rgba(208, 255, 0, 0.12), transparent 38%),
-    radial-gradient(circle at 82% 24%, rgba(129, 22, 224, 0.22), transparent 42%),
-    radial-gradient(circle at 50% 82%, rgba(208, 255, 0, 0.08), transparent 36%);
-}
-
-html:not(.light) body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.07;
-  background-image:
-    radial-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1px);
-  background-size: 22px 22px;
 }
 
 /* Typography System - 4 levels */
@@ -236,7 +259,12 @@ html:not(.light) body::after {
 
 @utility text-glow {
   @apply relative;
-  text-shadow: 0 0 10px rgba(223, 1, 57, 0.45);
+  text-shadow: 0 0 12px var(--color4);
+}
+
+@utility selected-page-glow {
+  @apply relative;
+  text-shadow: 0 0 12px var(--color3);
 }
 
 @utility card-hover {
@@ -245,66 +273,116 @@ html:not(.light) body::after {
 
 @utility gradient-border {
   @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+  background: var(--surface-gradient);
   background-clip: padding-box;
-  border: 1px solid transparent;
+  border: 1px solid var(--color6);
 }
 
-/* Title color override for both light and dark modes */
-h1,
-h2,
-h3,
-h4,
-h1 span,
-h2 span,
-h3 span,
-h4 span {
-  color: hsl(var(--primary)) !important;
+@utility surface-fill {
+  background: var(--card-surface-gradient);
+  border: 1px solid var(--color6);
+  color: var(--color3);
 }
 
-html:not(.light) h1,
-html:not(.light) h2,
-html:not(.light) h3,
-html:not(.light) h4,
-html:not(.light) h1 span,
-html:not(.light) h2 span,
-html:not(.light) h3 span,
-html:not(.light) h4 span {
-  color: var(--banana-yellow) !important;
-}
-
-/* Add thin black stroke to titles in light mode for better contrast */
+/* Titles and subtitles: gradient text for all characters and nested highlights */
+/* Titles and subtitles: gradient text — light mode only */
 html.light h1,
 html.light h2,
-html.light h1 span,
-html.light h2 span {
-  -webkit-text-stroke: 0.5px #1e1e27;
-  text-stroke: 0.5px #1e1e27;
+html.light h3,
+html.light h4 {
+  background: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
 }
 
-/* Thinner stroke for subtitles */
-html.light h3,
-html.light h4,
+html.light h1 span,
+html.light h2 span,
 html.light h3 span,
 html.light h4 span {
-  -webkit-text-stroke: 0.3px #1e1e27;
-  text-stroke: 0.3px #1e1e27;
+  background: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
 }
 
 /* Utility to revert headings to default foreground color when needed */
 .heading-default {
-  color: hsl(var(--foreground)) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor;
+  color: var(--color6) !important;
+}
+
+/* Dark mode: gradient text for all titles/subtitles */
+html:not(.light) h1,
+html:not(.light) h2,
+html:not(.light) h3,
+html:not(.light) h4 {
+  background: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  text-shadow: none !important;
+}
+html:not(.light) h1 span,
+html:not(.light) h2 span,
+html:not(.light) h3 span,
+html:not(.light) h4 span {
+  background: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  text-shadow: none !important;
+}
+html:not(.light) h3::before,
+html:not(.light) h3::after,
+html:not(.light) h4::before,
+html:not(.light) h4::after {
+  background: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+html:not(.light) .text-glow {
+  text-shadow: 0 0 12px var(--color3) !important;
 }
 
 @utility general-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_12px_rgba(208,255,0,0.55)]
+  @apply px-6 py-2 rounded-full font-medium transition-all duration-300
   hover:scale-105 active:scale-95;
+  background: var(--surface-gradient);
+  border: 1px solid var(--color6);
+  color: var(--button-text-color);
+  box-shadow: 0 0 0 transparent;
 }
 
-html:not(.light) a:hover,
-html:not(.light) button:hover,
+@utility social-button {
+  @apply transition-all duration-300 flex items-center justify-center;
+  background: var(--surface-gradient);
+  border: 1px solid var(--color6);
+  color: var(--button-text-color);
+  box-shadow: 0 0 0 transparent;
+}
+
+.social-button:hover {
+  background: var(--button-hover-fill) !important;
+  color: var(--button-hover-text) !important;
+  border-color: transparent !important;
+  box-shadow: 0 0 16px var(--button-hover-glow);
+}
+
+html:not(.light) button:not(.skills-filter-plain):hover,
 html:not(.light) [role='button']:hover {
-  color: #d0ff00 !important;
+  background: var(--color4) !important;
+  color: var(--color2) !important;
+  box-shadow: 0 0 16px var(--color3);
 }
 
 html:not(.light) body,
@@ -314,32 +392,109 @@ html:not(.light) li,
 html:not(.light) a,
 html:not(.light) label,
 html:not(.light) small {
-  color: #fefffc;
+  color: var(--body-text-color) !important;
 }
 
 html:not(.light) [class*='text-gray-'],
 html:not(.light) [class*='text-white'],
 html:not(.light) [class*='text-muted-'] {
-  color: #fefffc !important;
+  color: var(--body-text-color) !important;
 }
 
 html:not(.light) .general-button,
+html:not(.light) .social-button,
 html:not(.light) button:not(.skills-filter-plain),
 html:not(.light) .btn,
 html:not(.light) [role='button'] {
-  background-color: #8116e0;
-  color: #fefffc;
-  border-color: #8116e0;
+  background: var(--surface-gradient) !important;
+  color: var(--button-text-color) !important;
+  border-color: var(--color6) !important;
 }
 
 html:not(.light) .general-button:hover,
+html:not(.light) .social-button:hover,
 html:not(.light) button:not(.skills-filter-plain):hover,
 html:not(.light) .btn:hover,
 html:not(.light) [role='button']:hover {
-  background-color: var(--banana-yellow) !important;
-  border-color: var(--banana-yellow) !important;
-  color: #0a0a0a !important;
-  box-shadow: 0 0 14px rgba(208, 255, 0, 0.55);
+  background: var(--color4) !important;
+  border-color: transparent !important;
+  color: var(--color2) !important;
+  box-shadow: 0 0 16px var(--color3);
+}
+
+html:not(.light) .general-button:hover svg,
+html:not(.light) .social-button:hover svg,
+html:not(.light) button:not(.skills-filter-plain):hover svg,
+html:not(.light) .btn:hover svg,
+html:not(.light) [role='button']:hover svg {
+  color: var(--color2) !important;
+}
+
+html:not(.light) .social-button:hover,
+html:not(.light) .social-button:hover svg {
+  color: var(--color1) !important;
+}
+
+html:not(.light) .theme-toggle-button:hover,
+html:not(.light) .theme-toggle-button:hover svg {
+  color: var(--color1) !important;
+}
+
+html:not(.light) .social-icon-image {
+  filter: brightness(0) saturate(100%) invert(9%) !important;
+}
+
+html:not(.light) .social-button:hover .social-icon-image {
+  filter: brightness(0) saturate(100%) invert(0%) !important;
+}
+
+html.light body,
+html.light p,
+html.light span,
+html.light li,
+html.light a,
+html.light label,
+html.light small {
+  color: var(--color6);
+}
+
+html.light [class*='text-gray-'],
+html.light [class*='text-white'],
+html.light [class*='text-muted-'] {
+  color: var(--color6) !important;
+}
+
+html.light .general-button,
+html.light button:not(.skills-filter-plain),
+html.light .btn,
+html.light [role='button'] {
+  background: var(--surface-gradient);
+  color: var(--color1);
+  border-color: var(--color6);
+}
+
+html.light .general-button:hover,
+html.light button:not(.skills-filter-plain):hover,
+html.light .btn:hover,
+html.light [role='button']:hover {
+  background: var(--color3);
+  border-color: transparent !important;
+  color: var(--color6) !important;
+  box-shadow: 0 0 16px var(--color4);
+}
+
+html.light .general-button:hover svg,
+html.light button:not(.skills-filter-plain):hover svg,
+html.light .btn:hover svg,
+html.light [role='button']:hover svg {
+  color: var(--color6) !important;
+}
+
+html.light button:not(.skills-filter-plain):hover,
+html.light [role='button']:hover {
+  background: var(--color3) !important;
+  color: var(--color6) !important;
+  box-shadow: 0 0 16px var(--color4);
 }
 
 h3::before,
@@ -350,6 +505,25 @@ h4::before {
 h3::after,
 h4::after {
   content: '>';
+}
+
+/* Pseudo-element gradient styling — light mode only */
+html.light h3::before,
+html.light h4::before {
+  background: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+}
+
+html.light h3::after,
+html.light h4::after {
+  background: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
 }
 
 .no-subtitle-brackets::before,
@@ -363,23 +537,11 @@ h4::after {
   white-space: normal;
 }
 
-.typewriter::before {
-  content: '';
-  position: absolute;
-  top: -0.1em;
-  right: 0;
-  bottom: -0.2em;
-  left: 0;
-  background: hsl(var(--background));
-  animation: typewriter-reveal 3s steps(80, end) forwards;
-}
+@utility skill-card-hover {
+  background: var(--skill-card-gradient);
 
-@keyframes typewriter-reveal {
-  from {
-    left: 0;
-  }
-  to {
-    left: 100%;
+  &:hover {
+    background: var(--skill-card-gradient);
   }
 }
 
@@ -397,6 +559,24 @@ h4::after {
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+.min-h-screen.bg-background {
+  background-color: transparent !important;
+}
+
+.bg-card {
+  background: var(--surface-gradient) !important;
+  border-color: var(--color6) !important;
+}
+
+.bg-card .text-foreground,
+.bg-card .text-muted-foreground,
+.bg-card .text-primary,
+.bg-card [class*='text-foreground'],
+.bg-card [class*='text-muted-foreground'],
+.bg-card [class*='text-primary'] {
+  color: var(--color3) !important;
 }
 
 @media (width >= 1024px) {

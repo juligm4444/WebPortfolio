@@ -49,7 +49,7 @@ export const WebsiteSection = () => {
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-4 py-2 text-sm font-medium border rounded-full bg-primary/20 text-secondary-foreground"
+                      className="px-4 py-2 text-sm font-medium border rounded-full bg-primary/20 !text-[var(--card-content-color)]"
                     >
                       {tag}
                     </span>
@@ -59,21 +59,21 @@ export const WebsiteSection = () => {
                 <h3 className="text-2xl sm:text-3xl text-primary font-semibold mb-3 text-center sm:mt-0 mt-4">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
+                <p className="!text-[var(--card-content-color)] font-light text-base sm:text-lg mb-6 text-center max-w-3xl mx-auto">
                   {project.description}
                 </p>
                 <div className="flex justify-center items-center gap-8">
                   <a
                     href={project.demoUrl}
                     target="_blank"
-                    className="text-primary hover:text-primary  transition-colors duration-300"
+                    className="!text-[var(--card-content-color)] hover:!text-[var(--card-icon-hover-color)] transition-colors duration-300"
                   >
                     <ExternalLink size={20} />
                   </a>
                   <a
                     href={project.sourceProjectUrl}
                     target="_blank"
-                    className="text-primary hover:text-primary  transition-colors duration-300"
+                    className="!text-[var(--card-content-color)] hover:!text-[var(--card-icon-hover-color)] transition-colors duration-300"
                   >
                     <CodeSquareIcon size={20} />
                   </a>

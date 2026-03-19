@@ -46,6 +46,9 @@ export const SketchesPage = () => {
       <Navbar />
       <main className="lg:ml-52 xl:ml-64 flex-1 flex flex-col">
         <div className="pt-20 py-24 px-4 flex-1">
+          <div className="container mx-auto max-w-6xl">
+            <div className="border-t border-[var(--color3)] mb-8" />
+          </div>
           <CSSImageSlider
             images={sketchImages}
             title={t('navbar.sketches')}

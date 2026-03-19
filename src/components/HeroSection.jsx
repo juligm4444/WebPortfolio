@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowDown } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export const HeroSection = () => {
@@ -20,52 +20,41 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
+      className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 sm:px-8 md:px-12"
     >
-      {/* Desktop Spline 3D model - hidden on mobile and tablets */}
-      <div className="hidden lg:block absolute right-[-10%] top-[45%] transform -translate-y-1/2 w-[50%] h-[80%] z-10">
-        <spline-viewer
-          url="https://prod.spline.design/8M4AUjTdmnH8plii/scene.splinecode"
-          style={{ width: '100%', height: '100%', background: 'transparent' }}
-          events-target="global"
-        ></spline-viewer>
-      </div>
-
-      {/* Main Content - Left Aligned */}
-      <div className="flex flex-col items-start justify-center text-left space-y-8 sm:space-y-12 lg:space-y-16 max-w-6xl ml-4 sm:ml-8 md:ml-12 lg:ml-16 px-6 sm:px-8 md:px-12">
-        {/* Description Text - Main Quote (First, Bigger on mobile) */}
+      <div className="w-full max-w-5xl text-center">
         {showParagraph && (
-          <div className="w-full px-4 sm:px-6 md:px-8">
-            <h1 className="typewriter text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-muted-foreground leading-tight text-left">
-              {t('hero.description')}
-            </h1>
-          </div>
+          <h1 className="typewriter text-4xl sm:text-6xl md:text-7xl font-bold leading-tight">
+            <Trans
+              i18nKey="hero.description"
+              components={{
+                1: <span />,
+                2: <span />,
+              }}
+            />
+          </h1>
         )}
 
-        {/* Main Name/Title (Second, Smaller on mobile) */}
         {isTranslationReady && (
-          <div className="w-full px-4 sm:px-6 md:px-8">
-            <h2 className="heading-default text-foreground text-lg sm:text-h2 font-light tracking-tight leading-tight text-left">
-              {t('hero.greeting')}
-            </h2>
+          <p className="mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground max-w-4xl mx-auto">
+            {t('hero.greeting')}
+          </p>
+        )}
+
+        {showParagraph && (
+          <div className="mt-10">
+            <Link to="/projects" className="general-button">
+              {t('hero.button')}
+            </Link>
           </div>
         )}
       </div>
 
-      {/* CTA Button - below text */}
-      {showParagraph && (
-        <div className="w-full px-4 sm:px-6 md:px-8 mt-6">
-          <Link to="/projects" className="general-button">
-            {t('hero.button')}
-          </Link>
-        </div>
-      )}
-
-      <div className="hidden md:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 flex-col items-center animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce">
         <span className="text-sm text-muted-foreground mb-2">
           {t('hero.scroll', { defaultValue: 'Scroll Down' })}
         </span>
-        <ArrowDown className="h-5 w-5 text-primary" />
+        <ArrowDown className="h-5 w-5 text-[var(--color4)]" />
       </div>
     </section>
   );

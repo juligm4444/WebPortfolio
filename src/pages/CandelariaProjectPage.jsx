@@ -17,6 +17,7 @@ export const CandelariaProjectPage = () => {
             <h1 className="text-h1 font-bold mb-6 text-primary">
               {t('projects.candelaria.title')}
             </h1>
+            <div className="border-t border-[var(--color3)] mb-8" />
             <p className="text-lg font-light text-muted-foreground mb-16">
               {t('projects.candelaria.subtitle')}
             </p>

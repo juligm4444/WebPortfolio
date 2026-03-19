@@ -32,7 +32,7 @@ export const LanguageToggle = () => {
     <button
       onClick={handleToggle}
       className={cn(
-        'px-3 py-1.5 rounded-full transition-colors duration-300 focus:outline-none text-sm font-medium bg-card border border-border hover:bg-secondary/60'
+        'px-3 py-1.5 rounded-full text-[var(--button-text-color)] border border-[var(--color6)] transition-all duration-300 focus:outline-none text-sm font-medium hover:scale-105 hover:border-transparent active:scale-95'
       )}
       aria-label="Toggle language"
       title={current.label}

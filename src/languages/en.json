@@ -30,7 +30,7 @@
   },
   "hero": {
     "greeting": "Julián Galindo is a designer and developer of digital experiences that flow from structure to aesthetics, blending backend logic with the intuition of human-centered design. ",
-    "description": "Every line of code I write aims to unite functionality with creative expression.",
+    "description": "Every line of code I write aims to unite <1>functionality</1> with creative <2>expression</2>.",
     "button": "View my Work",
     "timeGreeting": {
       "morning": "Good Morning!",
@@ -399,29 +399,39 @@
         "description": "The visual design system was crafted to reflect my dual identity as both a developer and designer—balancing technical precision with creative expression. Every color, typeface, and spacing decision was made with intentionality to create a cohesive and memorable experience.",
         "colorSystem": {
           "title": "Color System",
-          "description": "The color palette supports both dark and light themes with semantic color tokens that adapt based on user preference. The accent color #60eba4 provides visual connection to the logo and maintains consistency across the entire site.",
+          "description": "The color palette is structured around six named tokens (Color 1 through Color 6) that adapt between dark and light themes. Backgrounds, surfaces, and accent tones are all driven by these tokens to ensure consistent behavior across every component and page.",
           "darkTheme": {
             "title": "Dark Theme",
             "colors": [
               {
                 "name": "Background",
-                "hex": "#0c0c0c",
-                "description": "Deep black canvas"
+                "hex": "#000000",
+                "description": "Pure black primary canvas"
               },
               {
-                "name": "Foreground",
-                "hex": "#ffffff",
-                "description": "White text"
+                "name": "Surface",
+                "hex": "#161616",
+                "description": "Dark near-black secondary layer"
               },
               {
-                "name": "Accent",
-                "hex": "#60eba4",
-                "description": "Mint green for titles and emphasis"
+                "name": "Primary Accent",
+                "hex": "#bece21",
+                "description": "Lime-green for titles and highlights"
               },
               {
-                "name": "Card",
-                "hex": "#171717",
-                "description": "Elevated surface elements"
+                "name": "Secondary Accent",
+                "hex": "#e3ed0f",
+                "description": "Bright yellow for glow and emphasis"
+              },
+              {
+                "name": "Deep Teal",
+                "hex": "#114c5a",
+                "description": "Dark teal for card fills and surfaces"
+              },
+              {
+                "name": "Dark Navy",
+                "hex": "#172b36",
+                "description": "Deep navy for card base and overlays"
               }
             ]
           },
@@ -430,23 +440,33 @@
             "colors": [
               {
                 "name": "Background",
-                "hex": "#ebebeb",
-                "description": "Light gray canvas"
+                "hex": "#f1f6f4",
+                "description": "Pale mint primary canvas"
               },
               {
-                "name": "Foreground",
-                "hex": "#333333",
-                "description": "Dark gray text"
+                "name": "Surface",
+                "hex": "#d9e8e2",
+                "description": "Soft teal-green secondary surface"
               },
               {
-                "name": "Accent",
-                "hex": "#60eba4",
-                "description": "Mint green with black stroke for contrast"
+                "name": "Primary Accent",
+                "hex": "#ffc801",
+                "description": "Warm amber for titles and highlights"
               },
               {
-                "name": "Card",
-                "hex": "#d9d9d9",
-                "description": "Subtle surface elements"
+                "name": "Secondary Accent",
+                "hex": "#ff9932",
+                "description": "Vivid orange for glow and emphasis"
+              },
+              {
+                "name": "Deep Teal",
+                "hex": "#114c5a",
+                "description": "Dark teal for card fills and surfaces"
+              },
+              {
+                "name": "Dark Navy",
+                "hex": "#172b36",
+                "description": "Deep navy for card base and overlays"
               }
             ]
           }

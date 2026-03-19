@@ -59,7 +59,7 @@ export const About = () => {
       </section>
 
       {/* INFORMATION Section — title top-left, text left, image right */}
-      <section id="information" className="pt-0 pb-16 md:pb-24 px-4 scroll-mt-24">
+      <section id="information" className="pt-0 pb-0 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
           <div className="border-t border-border my-0 mb-16" />
           <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center">
@@ -91,9 +91,9 @@ export const About = () => {
       </section>
 
       {/* EDUCATION Section — image left, title+text right-aligned */}
-      <section id="education" className="py-16 md:py-24 px-4 scroll-mt-24">
+      <section id="education" className="pt-0 pb-16 md:pb-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border my-8" />
+          <div className="border-t border-border mt-16 mb-16" />
           <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
             {/* Image — Left */}
             <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg">

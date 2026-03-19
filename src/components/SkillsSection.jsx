@@ -92,7 +92,9 @@ export const SkillsSection = () => {
     <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-h1 font-bold mb-12 text-center text-primary">
-          {'<'}{t('skills.title1')} {t('skills.title2')}{'>'}
+          <span className="!text-[var(--color4)]">{'<'}</span>
+          {t('skills.title1')} {t('skills.title2')}
+          <span className="!text-[var(--color4)]">{'>'}</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
@@ -105,11 +107,11 @@ export const SkillsSection = () => {
                 'transition-all duration-300 capitalize text-[20px]',
                 isLight
                   ? activeCategory === category.key
-                    ? 'px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-primary text-primary-foreground'
-                    : 'px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-card text-[#e2e2e2] hover:bg-card hover:text-[#df0139] hover:scale-105 hover:drop-shadow-[0_0_10px_rgba(223,1,57,0.45)]'
+                    ? 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--color4)] font-bold'
+                    : 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--body-text-color)] hover:font-bold'
                   : activeCategory === category.key
-                    ? 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[#d0ff00] font-semibold underline underline-offset-4 decoration-2'
-                    : 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[#fefffc] hover:text-[#d0ff00]'
+                    ? 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--color4)] font-bold'
+                    : 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--body-text-color)] hover:font-bold'
               )}
             >
               {category.label}
@@ -122,12 +124,11 @@ export const SkillsSection = () => {
             <div
               key={key}
               className={cn(
-                'aspect-square border rounded-lg shadow-sm flex flex-col items-center justify-center p-4',
-                isLight ? 'bg-card border-border' : 'bg-[#8116e0] border-[#8116e0]'
+                'group aspect-square rounded-lg skill-card-hover shadow-sm flex flex-col items-center justify-center p-4'
               )}
             >
               {skill.icon && (
-                <div className="w-12 h-12 mb-2 bg-[#e2e2e2] rounded-md flex items-center justify-center">
+                <div className="w-12 h-12 mb-2 bg-[var(--skill-icon-bg)] rounded-md flex items-center justify-center">
                   <img
                     src={iconMap[skill.icon]}
                     alt={skill.name}
@@ -138,7 +139,10 @@ export const SkillsSection = () => {
               )}
               <span className="sr-only">{skill.name}</span>
               <span
-                className={cn('text-sm font-semibold', isLight ? 'text-[#e2e2e2]' : 'text-gray-200')}
+                className={cn(
+                  'text-sm font-semibold transition-colors duration-300',
+                  '!text-[var(--skill-text-color)] group-hover:!text-[var(--skill-hover-text-color)]'
+                )}
               >
                 {skill.level}%
               </span>
@@ -152,25 +156,31 @@ export const SkillsSection = () => {
             <div
               key={key}
               className={cn(
-                'group border shadow-lg p-4 md:p-6 rounded-lg card-hover hover:scale-[1.08] hover:shadow-2xl flex flex-row items-center gap-4',
-                isLight ? 'bg-card border-border' : 'bg-[#8116e0] border-[#8116e0]'
+                'group skill-card-hover shadow-lg p-4 md:p-6 rounded-lg card-hover hover:scale-[1.08] hover:shadow-2xl flex flex-row items-center gap-4'
               )}
             >
               <div className="flex flex-col items-center w-20 md:w-28 flex-shrink-0">
                 {skill.icon && (
-                  <div className="w-12 h-12 md:w-16 md:h-16 mb-2 bg-[#e2e2e2] rounded-full flex items-center justify-center transition-colors duration-300 group-hover:bg-[#d0ff00]">
-                    <img
-                      src={iconMap[skill.icon]}
-                      alt={skill.name}
-                      loading="lazy"
-                      className="w-8 h-8 md:w-10 md:h-10 object-contain"
-                    />
+                  <div
+                    className="rounded-full p-[3px] mb-2 flex-shrink-0"
+                    style={{
+                      background: 'var(--skill-icon-border-gradient)',
+                    }}
+                  >
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-[var(--skill-icon-bg)] rounded-full flex items-center justify-center">
+                      <img
+                        src={iconMap[skill.icon]}
+                        alt={skill.name}
+                        loading="lazy"
+                        className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                      />
+                    </div>
                   </div>
                 )}
                 <p
                   className={cn(
                     'font-semibold text-xs md:text-sm lg:text-base text-center truncate w-full overflow-hidden text-ellipsis transition-colors duration-300',
-                    isLight ? 'text-foreground' : 'text-[#fefffc] group-hover:text-[#d0ff00]'
+                    '!text-[var(--skill-text-color)] group-hover:!text-[var(--skill-hover-text-color)]'
                   )}
                   title={skill.name}
                 >
@@ -181,13 +191,13 @@ export const SkillsSection = () => {
                 <div
                   className={cn(
                     'w-3/4 md:w-full h-2 rounded-full overflow-hidden',
-                    isLight ? 'bg-secondary/50' : 'bg-[#5a0db8]'
+                    'bg-[var(--color1)]'
                   )}
                 >
                   <div
                     className={cn(
                       'h-2 rounded-full origin-left scale-x-100 group-hover:animate-[skill-bar-reload_0.8s_ease-out_forwards] transition-colors duration-300',
-                      isLight ? 'bg-primary' : 'bg-[#fefffc] group-hover:bg-[#d0ff00]'
+                      'bg-[var(--skill-progress-color)] group-hover:bg-[var(--skill-progress-hover-color)]'
                     )}
                     style={{ width: skill.level + '%' }}
                   />
@@ -195,8 +205,8 @@ export const SkillsSection = () => {
                 <div className="text-center mt-1">
                   <span
                     className={cn(
-                      'text-base md:text-lg font-medium',
-                      isLight ? 'text-[#e2e2e2]' : 'text-gray-300'
+                      'text-base md:text-lg font-medium transition-colors duration-300',
+                      '!text-[var(--skill-text-color)] group-hover:!text-[var(--skill-hover-text-color)]'
                     )}
                   >
                     {skill.level}%

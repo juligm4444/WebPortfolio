@@ -14,6 +14,7 @@ export const DesignPage = () => {
             <h1 className="text-h1 font-bold mb-6 text-primary">
               <span className="text-primary">Design</span> Projects
             </h1>
+            <div className="border-t border-[var(--color3)] mb-8" />
             <p className="text-lg font-light text-muted-foreground mb-16">
               Creative designs, sketches, and artistic work - Coming soon!
             </p>

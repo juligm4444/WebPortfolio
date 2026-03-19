@@ -53,6 +53,9 @@ export const CreativeWorkPage = () => {
       <Navbar />
       <main className="lg:ml-52 xl:ml-64 flex-1">
         <div className="pt-20 pb-16 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <div className="border-t border-[var(--color3)] mb-8" />
+          </div>
           <CSSImageSlider
             images={creativeImages}
             title={t('navbar.creative-work')}
@@ -61,6 +64,9 @@ export const CreativeWorkPage = () => {
           />
         </div>
         <div className="pt-16 pb-24 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <div className="border-t border-[var(--color3)] mb-8" />
+          </div>
           <CSSImageSlider
             images={creativeHorizontalImages}
             title={t('navbar.creative-work')}

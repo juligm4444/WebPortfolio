@@ -5,8 +5,25 @@ import { Footer } from './Footer';
 
 export const ProjectPageLayout = ({ children, sections }) => {
   const [activeSection, setActiveSection] = useState('');
+  const [isLight, setIsLight] = useState(false);
 
   const observerRef = useRef(null);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsLight(document.documentElement.classList.contains('light'));
+    };
+
+    checkTheme();
+
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     // Use IntersectionObserver for smooth, low-cost section detection
@@ -17,8 +34,8 @@ export const ProjectPageLayout = ({ children, sections }) => {
     const options = {
       root: null,
       // Target top third of screen for better section detection
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+      rootMargin: '-12% 0px -50% 0px',
+      threshold: [0.15, 0.35, 0.6],
     };
 
     let currentActive = activeSection;
@@ -63,7 +80,7 @@ export const ProjectPageLayout = ({ children, sections }) => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const OFFSET = 120; // keep consistent with scroll spy
+      const OFFSET = 140; // keep consistent with scroll spy
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - OFFSET;
 
@@ -87,10 +104,14 @@ export const ProjectPageLayout = ({ children, sections }) => {
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
                 className={cn(
-                  'block w-full text-left text-[20px] py-2 transition-all duration-300',
-                  activeSection === section.id
-                    ? 'text-primary font-semibold -translate-x-4 brightness-125'
-                    : 'text-muted-foreground hover:text-primary hover:font-semibold hover:scale-105 hover:brightness-125'
+                  'skills-filter-plain block w-full text-left text-[20px] py-2 transition-all duration-300 bg-transparent',
+                  isLight
+                    ? activeSection === section.id
+                      ? 'text-[var(--color4)] font-bold -translate-x-2'
+                      : 'text-muted-foreground hover:font-bold hover:-translate-x-1'
+                    : activeSection === section.id
+                      ? 'text-[var(--color4)] font-bold -translate-x-2'
+                      : 'text-[var(--color6)] hover:font-bold hover:-translate-x-1'
                 )}
               >
                 {section.label}

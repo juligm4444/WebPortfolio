@@ -35,7 +35,7 @@
   },
   "hero": {
     "greeting": "Julián Galindo es un diseñador y desarrollador de experiencias digitales que fluyen desde la estructura hasta la estética, fusionando la lógica del backend con la intuición del diseño centrado en el usuario.",
-    "description": "Cada línea de código que escribo busca unir la funcionalidad con la expresión creativa.",
+    "description": "Cada línea de código que escribo busca unir la <1>funcionalidad</1> con la <2>expresión</2> creativa.",
     "button": "Ver mi Trabajo",
     "timeGreeting": {
       "morning": "¡Buenos Días!",
@@ -404,29 +404,39 @@
         "description": "El sistema de diseño visual fue creado para reflejar mi identidad dual como desarrollador y diseñador, equilibrando precisión técnica con expresión creativa. Cada color, tipografía y decisión de espaciado se tomó con intencionalidad para crear una experiencia cohesiva y memorable.",
         "colorSystem": {
           "title": "Sistema de Color",
-          "description": "La paleta de colores soporta temas oscuros y claros con tokens de color semánticos que se adaptan según la preferencia del usuario. El color de acento #60eba4 proporciona conexión visual con el logo y mantiene la consistencia en todo el sitio.",
+          "description": "La paleta de colores se estructura en seis tokens nombrados (Color 1 al Color 6) que se adaptan entre los temas oscuro y claro. Los fondos, superficies y acentos están definidos por estos tokens para garantizar un comportamiento consistente en cada componente y página.",
           "darkTheme": {
             "title": "Tema Oscuro",
             "colors": [
               {
                 "name": "Fondo",
-                "hex": "#0c0c0c",
-                "description": "Canvas negro profundo"
+                "hex": "#000000",
+                "description": "Canvas negro puro"
               },
               {
-                "name": "Texto",
-                "hex": "#ffffff",
-                "description": "Texto blanco"
+                "name": "Superficie",
+                "hex": "#161616",
+                "description": "Capa secundaria oscura casi negra"
               },
               {
-                "name": "Acento",
-                "hex": "#60eba4",
-                "description": "Verde menta para títulos y énfasis"
+                "name": "Acento Principal",
+                "hex": "#bece21",
+                "description": "Verde lima para títulos y destacados"
               },
               {
-                "name": "Tarjeta",
-                "hex": "#171717",
-                "description": "Elementos de superficie elevados"
+                "name": "Acento Secundario",
+                "hex": "#e3ed0f",
+                "description": "Amarillo brillante para brillo y énfasis"
+              },
+              {
+                "name": "Verde Azulado Profundo",
+                "hex": "#114c5a",
+                "description": "Verde azulado oscuro para rellenos y superficies de tarjetas"
+              },
+              {
+                "name": "Azul Marino Oscuro",
+                "hex": "#172b36",
+                "description": "Azul marino profundo para la base y superposiciones de tarjetas"
               }
             ]
           },
@@ -435,23 +445,33 @@
             "colors": [
               {
                 "name": "Fondo",
-                "hex": "#ebebeb",
-                "description": "Canvas gris claro"
+                "hex": "#f1f6f4",
+                "description": "Canvas menta pálida"
               },
               {
-                "name": "Texto",
-                "hex": "#333333",
-                "description": "Texto gris oscuro"
+                "name": "Superficie",
+                "hex": "#d9e8e2",
+                "description": "Superficie secundaria verde azulada suave"
               },
               {
-                "name": "Acento",
-                "hex": "#60eba4",
-                "description": "Verde menta con trazo negro para contraste"
+                "name": "Acento Principal",
+                "hex": "#ffc801",
+                "description": "Ámbar cálido para títulos y destacados"
               },
               {
-                "name": "Tarjeta",
-                "hex": "#d9d9d9",
-                "description": "Elementos de superficie sutiles"
+                "name": "Acento Secundario",
+                "hex": "#ff9932",
+                "description": "Naranja vívido para efectos de brillo y énfasis"
+              },
+              {
+                "name": "Verde Azulado Profundo",
+                "hex": "#114c5a",
+                "description": "Verde azulado oscuro para rellenos y superficies de tarjetas"
+              },
+              {
+                "name": "Azul Marino Oscuro",
+                "hex": "#172b36",
+                "description": "Azul marino profundo para la base y superposiciones de tarjetas"
               }
             ]
           }

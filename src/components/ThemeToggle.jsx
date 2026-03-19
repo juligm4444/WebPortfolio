@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Moon, Sun } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const ThemeToggle = () => {
@@ -23,24 +24,11 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        'p-2 rounded-full transition-all duration-300 hover:scale-105 hover:bg-secondary/60 hover:shadow-sm active:scale-95',
-        'focus:outline-none'
+        'theme-toggle-button group p-2 rounded-full border border-[var(--color6)] text-[var(--button-text-color)] transition-all duration-300 hover:scale-105 hover:border-transparent active:scale-95 focus:outline-none'
       )}
       aria-label="Toggle theme"
     >
-      {isLight ? (
-        <img
-          src="/assets/icons/moon.svg"
-          alt="Moon icon"
-          className="w-6 h-6 object-contain invert opacity-85"
-        />
-      ) : (
-        <img
-          src="/assets/icons/sun.svg"
-          alt="Sun icon"
-          className="w-6 h-6 object-contain brightness-0 invert transition duration-300 hover:invert-0"
-        />
-      )}
+      {isLight ? <Moon className="w-6 h-6" /> : <Sun className="w-6 h-6" />}
     </button>
   );
 };
