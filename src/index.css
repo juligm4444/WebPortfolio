@@ -112,9 +112,14 @@
     --cert-front-bg: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%);
     --cert-back-bg: var(--color3);
     --cert-name-text: var(--color1);
-    --cert-info-text: var(--color2);
+    --cert-info-text: var(--color6);
     --cert-skill-bg: var(--color5);
-    --cert-skill-text: var(--color3);
+    --cert-skill-text: var(--color1);
+    --project-card-overlay-gradient: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%);
+    --project-card-meta-text: var(--color6);
+    --project-card-icon: var(--color1);
+    --project-card-icon-hover: var(--color4);
+    --portfolio-step-gradient: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%);
     --button-text-color: var(--color2);
     --button-hover-fill: var(--color4);
     --button-hover-text: var(--color2);
@@ -160,6 +165,11 @@
     --cert-info-text: var(--color1);
     --cert-skill-bg: var(--color2);
     --cert-skill-text: var(--color6);
+    --project-card-overlay-gradient: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
+    --project-card-meta-text: var(--color1);
+    --project-card-icon: var(--color6);
+    --project-card-icon-hover: var(--color1);
+    --portfolio-step-gradient: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
     --button-text-color: var(--color1);
     --button-hover-fill: var(--color3);
     --button-hover-text: var(--color6);
@@ -291,6 +301,8 @@ html.light h2,
 html.light h3,
 html.light h4 {
   background: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -302,6 +314,8 @@ html.light h2 span,
 html.light h3 span,
 html.light h4 span {
   background: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -321,6 +335,8 @@ html:not(.light) h2,
 html:not(.light) h3,
 html:not(.light) h4 {
   background: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%) !important;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -332,17 +348,8 @@ html:not(.light) h2 span,
 html:not(.light) h3 span,
 html:not(.light) h4 span {
   background: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: transparent !important;
-  text-shadow: none !important;
-}
-html:not(.light) h3::before,
-html:not(.light) h3::after,
-html:not(.light) h4::before,
-html:not(.light) h4::after {
-  background: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%) !important;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -363,12 +370,25 @@ html:not(.light) .card-overlay-title {
   text-shadow: none !important;
 }
 
+html:not(.light) .cert-key-skills-label {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: var(--color4) !important;
+  color: var(--color4) !important;
+  text-shadow: none !important;
+}
+
+html:not(.light) .about-divider {
+  border-color: var(--color3) !important;
+}
+
 .light .card-overlay-title {
   background: none !important;
   -webkit-background-clip: unset !important;
   background-clip: unset !important;
-  -webkit-text-fill-color: var(--color2) !important;
-  color: var(--color2) !important;
+  -webkit-text-fill-color: var(--color6) !important;
+  color: var(--color6) !important;
 }
 
 @utility general-button {
@@ -515,37 +535,23 @@ html.light [role='button']:hover {
 }
 
 h3::before,
-h4::before {
-  content: '<';
-}
-
+h4::before,
 h3::after,
 h4::after {
-  content: '>';
-}
-
-/* Pseudo-element gradient styling — light mode only */
-html.light h3::before,
-html.light h4::before {
-  background: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent !important;
-}
-
-html.light h3::after,
-html.light h4::after {
-  background: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent !important;
+  content: none !important;
 }
 
 .no-subtitle-brackets::before,
 .no-subtitle-brackets::after {
   content: none !important;
+}
+
+.font-light {
+  font-weight: 400 !important;
+}
+
+.font-normal {
+  font-weight: 500 !important;
 }
 
 .typewriter {

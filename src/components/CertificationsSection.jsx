@@ -65,10 +65,16 @@ const CertificationCard = ({ cert }) => {
             >
               {cert.name}
             </p>
-            <p className={cn('text-base md:text-sm font-medium', '!text-[var(--color6)]')}>
+            <p
+              className="text-base md:text-sm font-medium"
+              style={{ color: 'var(--cert-info-text)' }}
+            >
               {cert.company}
             </p>
-            <p className={cn('text-base md:text-sm font-medium', '!text-[var(--color6)]')}>
+            <p
+              className="text-base md:text-sm font-medium"
+              style={{ color: 'var(--cert-info-text)' }}
+            >
               {cert.date}
             </p>
           </div>
@@ -83,7 +89,7 @@ const CertificationCard = ({ cert }) => {
           }}
         >
           <div className="space-y-2 flex-1 flex flex-col justify-center">
-            <h4 className="!text-[var(--color4)] font-semibold text-sm no-subtitle-brackets">
+            <h4 className="cert-key-skills-label !text-[var(--color4)] font-semibold text-sm no-subtitle-brackets">
               {t('certifications.skills')}
             </h4>
             <div className="flex flex-wrap gap-2 justify-center">
@@ -134,9 +140,7 @@ export const CertificationsSection = () => {
     <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30 mb-8">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-h1 font-bold mb-12 text-center text-primary">
-          <span className="!text-[var(--color4)]">{'<'}</span>
           {t('certifications.title1')} {t('certifications.title2')}
-          <span className="!text-[var(--color4)]">{'>'}</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 mb-8">

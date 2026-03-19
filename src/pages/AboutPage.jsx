@@ -31,7 +31,7 @@ export const About = () => {
       {/* ME Section — image left, identity text right, always 2-col */}
       <section id="me" className="py-16 md:py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
             {/* Image — Left */}
             <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg">
               <img
@@ -43,7 +43,7 @@ export const About = () => {
             </div>
 
             {/* Identity — Right */}
-            <div className="flex flex-col justify-center text-left space-y-4 md:space-y-6">
+            <div className="flex flex-col justify-center text-center md:text-left space-y-4 md:space-y-6">
               <p className="text-[2rem] sm:text-[3rem] md:text-[4.5rem] xl:text-[5.5rem] font-bold text-primary leading-none">
                 juligm4
               </p>
@@ -61,11 +61,11 @@ export const About = () => {
       {/* INFORMATION Section — title top-left, text left, image right */}
       <section id="information" className="pt-0 pb-0 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border my-0 mb-16" />
-          <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center">
+          <div className="about-divider border-t border-border my-0 mb-10 md:mb-16" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center">
             {/* Paragraphs — Left */}
             <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-left">
-              <h3 className="text-h2 font-semibold text-primary mb-2">
+              <h3 className="text-h2 font-semibold text-primary mb-2 text-center md:text-left">
                 {t('aboutPage.sections.information')}
               </h3>
               {t('aboutPage.information.paragraphs', { returnObjects: true }).map((para, idx) => (
@@ -87,16 +87,17 @@ export const About = () => {
               />
             </div>
           </div>
+          <div className="about-divider border-t border-border mt-10 md:hidden" />
         </div>
       </section>
 
       {/* EDUCATION Section — image left, title+text right-aligned */}
-      <section id="education" className="pt-0 pb-16 md:pb-24 px-4 scroll-mt-24">
+      <section id="education" className="pt-10 md:pt-0 pb-0 md:pb-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border mt-16 mb-16" />
-          <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
+          <div className="about-divider border-t border-border my-16 hidden md:block" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
             {/* Image — Left */}
-            <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg">
+            <div className="order-2 md:order-1 rounded-lg overflow-hidden border-2 border-border shadow-lg">
               <img
                 src="/photos/uni.jpg"
                 alt="Universidad de los Andes"
@@ -105,8 +106,8 @@ export const About = () => {
               />
             </div>
             {/* Text — Right, right-aligned */}
-            <div className="flex flex-col justify-center space-y-2 md:space-y-4 text-right">
-              <h3 className="text-[1.4rem] sm:text-h2 font-semibold text-primary">
+            <div className="order-1 md:order-2 flex flex-col justify-center space-y-4 md:space-y-4 text-left md:text-right">
+              <h3 className="text-h2 font-semibold text-primary mb-2 text-center md:text-right">
                 {t('aboutPage.sections.education')}
               </h3>
               <p className="text-sm sm:text-base md:text-body font-light text-foreground">
@@ -123,6 +124,7 @@ export const About = () => {
               </p>
             </div>
           </div>
+          <div className="about-divider border-t border-border mt-10 md:hidden" />
         </div>
       </section>
 
@@ -130,7 +132,7 @@ export const About = () => {
       {showInspirations && (
         <section id="inspirations" className="py-16 md:py-24 px-4 scroll-mt-24">
           <div className="container mx-auto max-w-6xl">
-            <div className="border-t border-border mb-8" />
+            <div className="about-divider border-t border-border mb-8" />
             <h3 className="text-h2 font-semibold text-primary mb-6 text-left">
               {t('aboutPage.sections.inspirations')}
             </h3>
@@ -145,7 +147,7 @@ export const About = () => {
       {showHobbies && (
         <section id="hobbies" className="py-16 md:py-24 px-4 scroll-mt-24">
           <div className="container mx-auto max-w-6xl">
-            <div className="border-t border-border mb-8" />
+            <div className="about-divider border-t border-border mb-8" />
             <h3 className="text-h2 font-semibold text-primary mb-6 text-left">
               {t('aboutPage.sections.hobbies')}
             </h3>
@@ -157,13 +159,13 @@ export const About = () => {
       )}
 
       {/* FOCUS Section — title + text left, image right */}
-      <section id="foccus" className="py-16 md:py-24 px-4 scroll-mt-24">
+      <section id="foccus" className="pt-10 pb-16 md:py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div className="border-t border-border my-8" />
-          <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center">
+          <div className="about-divider border-t border-border my-16 hidden md:block" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center">
             {/* Paragraphs — Left */}
-            <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-left">
-              <h3 className="text-h2 font-semibold text-primary mb-2">
+            <div className="flex flex-col justify-center space-y-4 md:space-y-6 text-left">
+              <h3 className="text-h2 font-semibold text-primary mb-2 text-center md:text-left">
                 {t('aboutPage.sections.foccus')}
               </h3>
               <p className="text-sm sm:text-base md:text-body font-light leading-relaxed text-left text-foreground">
@@ -176,6 +178,7 @@ export const About = () => {
             {/* Image placeholder — Right */}
             <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg bg-muted/30 aspect-[4/3]" />
           </div>
+          <div className="about-divider border-t border-border mt-10 md:hidden" />
         </div>
       </section>
     </ProjectPageLayout>

@@ -34,10 +34,8 @@ export const TechnologyPage = () => {
           <section id="technology" className="py-24 px-4">
             <div className="container mx-auto max-w-8xl">
               <h2 className="text-h1 font-bold mb-4 text-center text-primary">
-                <span className="!text-[var(--color4)]">{'<'}</span>
                 {t('projects.technology.title1')}{' '}
                 <span className="text-primary">{t('projects.technology.title2')}</span>
-                <span className="!text-[var(--color4)]">{'>'}</span>
               </h2>
 
               <p className="mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground max-w-4xl mx-auto text-center">

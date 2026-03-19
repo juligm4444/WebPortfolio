@@ -15,7 +15,7 @@ export const ProjectSquareCard = ({ project, onClickStop }) => {
       {/* Hover Overlay */}
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6"
-        style={{ background: 'linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%)' }}
+        style={{ background: 'var(--project-card-overlay-gradient)' }}
       >
         {/* Project Title */}
         <div className="flex-1 flex items-center justify-center">
@@ -33,11 +33,11 @@ export const ProjectSquareCard = ({ project, onClickStop }) => {
               project.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="text-sm font-light !text-[var(--color6)] uppercase tracking-wider"
+                  className="text-sm font-light !text-[var(--project-card-meta-text)] uppercase tracking-wider"
                 >
                   {tag}
                   {index < project.tags.length - 1 && (
-                    <span className="ml-2 !text-[var(--color6)]">/</span>
+                    <span className="ml-2 !text-[var(--project-card-meta-text)]">/</span>
                   )}
                 </span>
               ))}
@@ -51,7 +51,7 @@ export const ProjectSquareCard = ({ project, onClickStop }) => {
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="!text-[var(--color1)] hover:!text-[var(--color4)] transition-all duration-300"
+                  className="!text-[var(--project-card-icon)] hover:!text-[var(--project-card-icon-hover)] transition-all duration-300"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <ExternalLink size={20} />
@@ -62,7 +62,7 @@ export const ProjectSquareCard = ({ project, onClickStop }) => {
                   href={project.sourceProjectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="!text-[var(--color1)] hover:!text-[var(--color4)] transition-all duration-300"
+                  className="!text-[var(--project-card-icon)] hover:!text-[var(--project-card-icon-hover)] transition-all duration-300"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <Github size={20} />

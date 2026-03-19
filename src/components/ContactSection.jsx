@@ -54,9 +54,7 @@ export const ContactSection = () => {
     <section id="contact" className="py-16 sm:py-20 md:py-24 px-4">
       <div className="container mx-auto max-w-5xl text-center">
         <h2 className="text-h1 font-bold text-primary mb-4">
-          <span className="!text-[var(--color4)]">{'<'}</span>
           {t('contact.title1')} {t('contact.title2')}
-          <span className="!text-[var(--color4)]">{'>'}</span>
         </h2>
         <p className="text-sm sm:text-base md:text-body font-light text-muted-foreground max-w-3xl mx-auto mb-10 sm:mb-12">
           {t('contact.description')}

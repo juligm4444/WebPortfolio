@@ -92,9 +92,7 @@ export const SkillsSection = () => {
     <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-h1 font-bold mb-12 text-center text-primary">
-          <span className="!text-[var(--color4)]">{'<'}</span>
           {t('skills.title1')} {t('skills.title2')}
-          <span className="!text-[var(--color4)]">{'>'}</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">

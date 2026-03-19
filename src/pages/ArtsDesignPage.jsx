@@ -25,16 +25,16 @@ export const ArtsDesignPage = () => {
       <Navbar />
       <main className="lg:ml-52 xl:ml-64 flex-1">
         <div className="pt-20 py-24 px-4">
-          <div className="container mx-auto max-w-6xl">
+          <div className="container mx-auto max-w-8xl">
             <h1 className="text-h1 font-bold mb-6 text-center text-primary">
               {t('projects.artsDesign.title1')}{' '}
               <span className="text-primary">{t('projects.artsDesign.title2')}</span>
             </h1>
-            <p className="text-lg font-light text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+            <p className="mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground text-center mb-16 max-w-4xl mx-auto">
               {t('projects.artsDesign.description')}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-7xl mx-auto">
               {artsProjects.map((project, index) => (
                 <ProjectSquareCard key={index} project={project} />
               ))}

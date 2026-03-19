@@ -138,9 +138,7 @@ export const PortfolioProjectPage = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="border-t border-[var(--color3)] mb-12" />
           <h2 className="text-h2 font-semibold mb-8 text-center">
-            <span className="!text-[var(--color4)]">{'<'}</span>
             {t('projectDetails.sections.context')}
-            <span className="!text-[var(--color4)]">{'>'}</span>
           </h2>
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Image on the left */}
@@ -168,9 +166,7 @@ export const PortfolioProjectPage = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="border-t border-[var(--color3)] mb-12" />
           <h2 className="text-h2 font-semibold mb-8 text-center">
-            <span className="!text-[var(--color4)]">{'<'}</span>
             {t('projectDetails.sections.problem')}
-            <span className="!text-[var(--color4)]">{'>'}</span>
           </h2>
           <p className="text-body text-foreground font-light leading-relaxed text-left">
             {t('projectDetails.portfolio.problem')}
@@ -183,9 +179,7 @@ export const PortfolioProjectPage = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="border-t border-[var(--color3)] mb-12" />
           <h2 className="text-h2 font-semibold mb-8 text-center">
-            <span className="!text-[var(--color4)]">{'<'}</span>
             {t('projectDetails.sections.solutionProcess')}
-            <span className="!text-[var(--color4)]">{'>'}</span>
           </h2>
           <div className="space-y-10">
             {t('projectDetails.portfolio.solutionProcess.phases', { returnObjects: true }).map(
@@ -195,7 +189,7 @@ export const PortfolioProjectPage = () => {
                     <div
                       className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0"
                       style={{
-                        background: 'linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%)',
+                        background: 'var(--portfolio-step-gradient)',
                         color: 'var(--color2)',
                       }}
                     >
@@ -223,9 +217,7 @@ export const PortfolioProjectPage = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="border-t border-[var(--color3)] mb-12" />
           <h2 className="text-h2 font-semibold mb-8 text-center">
-            <span className="!text-[var(--color4)]">{'<'}</span>
             {t('projectDetails.sections.visualDesign')}
-            <span className="!text-[var(--color4)]">{'>'}</span>
           </h2>
           <p className="text-body text-foreground font-light leading-relaxed mb-10 text-left">
             {t('projectDetails.portfolio.visualDesign.description')}
@@ -292,9 +284,7 @@ export const PortfolioProjectPage = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="border-t border-[var(--color3)] mb-12" />
           <h2 className="text-h2 font-semibold mb-8 text-center">
-            <span className="!text-[var(--color4)]">{'<'}</span>
             {t('projectDetails.sections.finalDesign')}
-            <span className="!text-[var(--color4)]">{'>'}</span>
           </h2>
           <p className="text-body text-foreground font-light leading-relaxed mb-10 text-left">
             {t('projectDetails.portfolio.finalDesign.description')}
@@ -337,9 +327,7 @@ export const PortfolioProjectPage = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="border-t border-[var(--color3)] mb-12" />
           <h2 className="text-h2 font-semibold mb-8 text-center">
-            <span className="!text-[var(--color4)]">{'<'}</span>
             {t('projectDetails.sections.retrospective')}
-            <span className="!text-[var(--color4)]">{'>'}</span>
           </h2>
           <p className="text-body text-foreground font-light leading-relaxed text-left mb-10">
             {t('projectDetails.portfolio.retrospective.description')}
