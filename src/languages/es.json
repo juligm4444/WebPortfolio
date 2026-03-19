@@ -420,8 +420,8 @@
               },
               {
                 "name": "Acento Principal",
-                "hex": "#bece21",
-                "description": "Verde lima para títulos y destacados"
+                "hex": "#49620c",
+                "description": "Verde oliva para títulos y destacados"
               },
               {
                 "name": "Acento Secundario",
@@ -429,14 +429,14 @@
                 "description": "Amarillo brillante para brillo y énfasis"
               },
               {
-                "name": "Verde Azulado Profundo",
-                "hex": "#114c5a",
-                "description": "Verde azulado oscuro para rellenos y superficies de tarjetas"
+                "name": "Blanco",
+                "hex": "#ffffff",
+                "description": "Blanco para rellenos y superficies de tarjetas"
               },
               {
-                "name": "Azul Marino Oscuro",
-                "hex": "#172b36",
-                "description": "Azul marino profundo para la base y superposiciones de tarjetas"
+                "name": "Gris Claro",
+                "hex": "#e5e5e5",
+                "description": "Gris claro para la base de tarjetas y texto"
               }
             ]
           },

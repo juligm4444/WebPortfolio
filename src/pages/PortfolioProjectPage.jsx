@@ -106,7 +106,7 @@ export const PortfolioProjectPage = () => {
                   >
                     <div
                       className="w-16 h-16 rounded-full flex items-center justify-center p-3"
-                      style={{ backgroundColor: 'var(--color1)' }}
+                      style={{ backgroundColor: 'var(--color5)' }}
                     >
                       <img src={icon.src} alt={icon.alt} className="w-full h-full object-contain" />
                     </div>

@@ -354,6 +354,23 @@ html:not(.light) .text-glow {
   text-shadow: 0 0 12px var(--color3) !important;
 }
 
+html:not(.light) .card-overlay-title {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: var(--color2) !important;
+  color: var(--color2) !important;
+  text-shadow: none !important;
+}
+
+.light .card-overlay-title {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: var(--color2) !important;
+  color: var(--color2) !important;
+}
+
 @utility general-button {
   @apply px-6 py-2 rounded-full font-medium transition-all duration-300
   hover:scale-105 active:scale-95;

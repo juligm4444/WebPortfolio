@@ -134,55 +134,6 @@ export const Navbar = () => {
           </React.Fragment>
         ))}
       </nav>
-
-      {/* Social Media - Follow me */}
-      <div
-        className={cn('p-4 border-t space-y-2 lg:space-y-4', 'border-border/20')}
-        style={{ minHeight: 'var(--contact-footer-min-h)' }}
-      >
-        <h4
-          className={cn(
-            'text-sm lg:text-base xl:text-[15px] font-medium uppercase tracking-wider text-center transition-colors',
-            'text-[var(--body-text-color)] hover:font-bold'
-          )}
-        >
-          {t('navbar.follow-me')}
-        </h4>
-        <div className="flex space-x-4 justify-center">
-          <a
-            href="https://www.linkedin.com/in/juligm4/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn('social-button p-2 rounded-md')}
-          >
-            <Linkedin size={24} />
-          </a>
-          <a
-            href="https://www.instagram.com/juligm4/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn('social-button p-2 rounded-md')}
-          >
-            <Instagram size={24} />
-          </a>
-          <a
-            href="https://x.com/Xx_juligm4_xX"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn('social-button p-2 rounded-md')}
-          >
-            <Twitter size={24} />
-          </a>
-          <a
-            href="https://www.youtube.com/@juligm4"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn('social-button p-2 rounded-md')}
-          >
-            <Youtube size={24} />
-          </a>
-        </div>
-      </div>
     </div>
   );
 
@@ -290,12 +241,9 @@ export const Navbar = () => {
       {/* Mobile/Tablet Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="xl:hidden fixed top-4 left-4 z-50 p-2 border border-border/20 rounded-md shadow-md backdrop-blur-xl text-[var(--color1)]"
-        style={{
-          background: isLight ? 'var(--navbar-bg)' : 'var(--surface-gradient)',
-          color: isLight ? 'var(--color1)' : 'var(--button-text-color)',
-          borderColor: isLight ? 'rgb(var(--border) / 0.2)' : 'var(--color6)',
-        }}
+        className={cn(
+          'xl:hidden fixed top-4 left-4 z-50 p-2 rounded-full border border-[var(--color6)] text-[var(--button-text-color)] transition-all duration-300 hover:scale-105 hover:border-transparent active:scale-95 focus:outline-none'
+        )}
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
       >
         {isOpen ? <X size={20} /> : <Menu size={20} />}

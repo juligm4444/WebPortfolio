@@ -415,8 +415,8 @@
               },
               {
                 "name": "Primary Accent",
-                "hex": "#bece21",
-                "description": "Lime-green for titles and highlights"
+                "hex": "#49620c",
+                "description": "Olive-green for titles and highlights"
               },
               {
                 "name": "Secondary Accent",
@@ -424,14 +424,14 @@
                 "description": "Bright yellow for glow and emphasis"
               },
               {
-                "name": "Deep Teal",
-                "hex": "#114c5a",
-                "description": "Dark teal for card fills and surfaces"
+                "name": "White",
+                "hex": "#ffffff",
+                "description": "White for card fills and surfaces"
               },
               {
-                "name": "Dark Navy",
-                "hex": "#172b36",
-                "description": "Deep navy for card base and overlays"
+                "name": "Light Gray",
+                "hex": "#e5e5e5",
+                "description": "Light gray for card base and text"
               }
             ]
           },
