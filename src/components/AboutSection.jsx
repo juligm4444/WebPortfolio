@@ -1,18 +1,21 @@
 import { Briefcase, Code, User } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useInView } from '../hooks/useInView';
 
 export const AboutSection = ({ hideTitle = false, maxWidthClass = 'max-w-5xl' }) => {
   const { t } = useTranslation();
+  const titleRef = useInView('reveal--init');
+  const splitRef = useInView('reveal-split--init');
 
   return (
     <section id="about" className="py-24 px-4 relative">
       <div className={`container mx-auto ${maxWidthClass}`}>
         {!hideTitle && (
-          <h2 className="text-h1 font-bold mb-12 text-center text-primary">
+          <h2 ref={titleRef} className="text-h1 font-bold mb-12 text-center text-primary">
             {t('about.title1')} {t('about.title2')}
           </h2>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div ref={splitRef} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div className="space-y-6 text-left">
             {!hideTitle && (
               <h3 className="text-primary text-h2 font-semibold">{t('about.subtitle')}</h3>

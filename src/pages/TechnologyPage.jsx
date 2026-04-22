@@ -3,9 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { ProjectSquareCard } from '../components/ProjectSquareCard';
+import { useInView } from '../hooks/useInView';
 
 export const TechnologyPage = () => {
   const { t } = useTranslation();
+  const headerRef = useInView('reveal--init');
+  const gridRef = useInView();
 
   // Get all projects directly from JSON - completely data-driven
   const projects = t('projects.technology.projects', { returnObjects: true });
@@ -47,26 +50,28 @@ export const TechnologyPage = () => {
         <div className="pt-20">
           <section id="technology" className="py-24 px-4">
             <div className="container mx-auto max-w-8xl">
-              <h2 className="text-h1 font-bold mb-4 text-center text-primary">
-                {t('projects.technology.title1')}{' '}
-                <span className="text-primary">{t('projects.technology.title2')}</span>
-              </h2>
+              <div ref={headerRef}>
+                <h2 className="text-h1 font-bold mb-4 text-center text-primary">
+                  {t('projects.technology.title1')}{' '}
+                  <span className="text-primary">{t('projects.technology.title2')}</span>
+                </h2>
 
-              <p className="mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground max-w-4xl mx-auto text-center">
-                {t('projects.technology.description')}
-              </p>
+                <p className="mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground max-w-4xl mx-auto text-center">
+                  {t('projects.technology.description')}
+                </p>
 
-              <div className="text-center mt-12">
-                <a
-                  className="general-button w-fit flex items-center mx-auto gap-2"
-                  target="_blank"
-                  href="https://github.com/juligm4444"
-                >
-                  {t('projects.technology.button')} <ArrowBigRightDashIcon size={20} />
-                </a>
+                <div className="text-center mt-12">
+                  <a
+                    className="general-button w-fit flex items-center mx-auto gap-2"
+                    target="_blank"
+                    href="https://github.com/juligm4444"
+                  >
+                    {t('projects.technology.button')} <ArrowBigRightDashIcon size={20} />
+                  </a>
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-7xl mx-auto">
+              <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-7xl mx-auto">
                 {technologyProjects.map((project, key) => (
                   <ProjectSquareCard key={key} project={project} />
                 ))}

@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
-import { Menu, X, ChevronDown, Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
@@ -47,7 +47,25 @@ export const Navbar = () => {
   const [openDesktopGroup, setOpenDesktopGroup] = useState(null);
   const { t } = useTranslation();
   const [isLight, setIsLight] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
+
+  // Scroll progress bar
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const total = document.documentElement.scrollHeight - window.innerHeight;
+          setScrollProgress(total > 0 ? Math.min(window.scrollY / total, 1) : 0);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Check theme on mount and when it changes
   React.useEffect(() => {
@@ -142,10 +160,13 @@ export const Navbar = () => {
       {/* Desktop Top Navbar */}
       <header
         className="hidden xl:flex fixed top-0 left-0 right-0 h-16 border-b border-border/20 z-50 backdrop-blur-xl"
-        style={{
-          backgroundColor: 'var(--navbar-bg)',
-        }}
+        style={{ backgroundColor: 'var(--navbar-bg)' }}
       >
+        {/* Scroll progress indicator */}
+        <div
+          className="scroll-progress-bar"
+          style={{ transform: `scaleX(${scrollProgress})` }}
+        />
         <div className="w-full px-6 2xl:px-8 flex items-center justify-between gap-8">
           <Link to="/" className="shrink-0">
             <img
@@ -194,12 +215,10 @@ export const Navbar = () => {
                   </div>
 
                   {hasChildren && isOpenDesktop && (
-                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-1 min-w-52">
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-1 min-w-52 dropdown-enter">
                       <div
                         className="rounded-md border border-border/20 p-2 shadow-md backdrop-blur-xl"
-                        style={{
-                          backgroundColor: 'var(--navbar-bg)',
-                        }}
+                        style={{ backgroundColor: 'var(--navbar-bg)' }}
                       >
                         {group.items.map((item) => (
                           <Link
@@ -249,24 +268,28 @@ export const Navbar = () => {
         {isOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
 
-      {/* Mobile/Tablet Sidebar */}
-      {isOpen && (
-        <>
-          <div
-            className="xl:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
-            onClick={() => setIsOpen(false)}
-          />
-
-          <aside
-            className="xl:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-border/20 z-50 transform transition-transform duration-300 backdrop-blur-xl"
-            style={{
-              background: 'var(--navbar-bg)',
-            }}
-          >
-            {sidebarContent}
-          </aside>
-        </>
-      )}
+      {/* Mobile/Tablet Sidebar — always mounted, slides in/out with CSS */}
+      <div
+        className={cn(
+          'xl:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40',
+          'transition-opacity duration-300',
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        )}
+        onClick={() => setIsOpen(false)}
+      />
+      <aside
+        className={cn(
+          'xl:hidden fixed left-0 top-0 h-screen w-80 sm:w-72 border-r border-border/20 z-50',
+          'backdrop-blur-xl transition-transform duration-[380ms]',
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        )}
+        style={{
+          background: 'var(--navbar-bg)',
+          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        }}
+      >
+        {sidebarContent}
+      </aside>
     </>
   );
 };

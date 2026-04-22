@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
+import { useInView } from '../hooks/useInView';
 
 // Social links — lucide-compatible icons except X, GitHub, Behance which use custom SVGs
 const socialLinks = [
@@ -33,6 +34,8 @@ const socialLinks = [
 export const ContactSection = () => {
   const { t } = useTranslation();
   const [isLight, setIsLight] = useState(false);
+  const headerRef = useInView('reveal--init');
+  const iconsRef = useInView();
 
   useEffect(() => {
     const checkTheme = () => {
@@ -53,14 +56,16 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-16 sm:py-20 md:py-24 px-4">
       <div className="container mx-auto max-w-5xl text-center">
-        <h2 className="text-h1 font-bold text-primary mb-4">
-          {t('contact.title1')} {t('contact.title2')}
-        </h2>
-        <p className="text-sm sm:text-base md:text-body font-light text-muted-foreground max-w-3xl mx-auto mb-10 sm:mb-12">
-          {t('contact.description')}
-        </p>
+        <div ref={headerRef}>
+          <h2 className="text-h1 font-bold text-primary mb-4">
+            {t('contact.title1')} {t('contact.title2')}
+          </h2>
+          <p className="text-sm sm:text-base md:text-body font-light text-muted-foreground max-w-3xl mx-auto mb-10 sm:mb-12">
+            {t('contact.description')}
+          </p>
+        </div>
 
-        <div className="flex items-center justify-center gap-4 md:gap-8 flex-wrap">
+        <div ref={iconsRef} className="flex items-center justify-center gap-4 md:gap-8 flex-wrap">
           {socialLinks.map((social) => (
             <a
               key={social.key}

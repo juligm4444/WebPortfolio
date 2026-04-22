@@ -2,6 +2,7 @@ import { useState } from 'react';
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
+import { useInView } from '../hooks/useInView';
 
 const iconMap = {
   'React.svg': '/assets/icons/React.svg',
@@ -54,6 +55,10 @@ export const SkillsSection = () => {
   const [activeCategory, setCategory] = useState('all');
   const { t } = useTranslation();
   const [isLight, setIsLight] = useState(false);
+  const titleRef = useInView('reveal--init');
+  const filtersRef = useInView('reveal--init');
+  const mobileGridRef = useInView();
+  const desktopGridRef = useInView();
 
   // Check theme on mount and when it changes
   React.useEffect(() => {
@@ -91,11 +96,11 @@ export const SkillsSection = () => {
   return (
     <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-h1 font-bold mb-12 text-center text-primary">
+        <h2 ref={titleRef} className="text-h1 font-bold mb-12 text-center text-primary">
           {t('skills.title1')} {t('skills.title2')}
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
+        <div ref={filtersRef} className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
           {categories.map((category, key) => (
             <button
               key={key}
@@ -117,7 +122,7 @@ export const SkillsSection = () => {
           ))}
         </div>
         {/* Mobile: square cards, 3 per row */}
-        <div className="grid grid-cols-3 gap-4 md:hidden">
+        <div ref={mobileGridRef} className="grid grid-cols-3 gap-4 md:hidden">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
@@ -149,7 +154,7 @@ export const SkillsSection = () => {
         </div>
 
         {/* Desktop/Tablet: original layout */}
-        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
+        <div ref={desktopGridRef} className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}

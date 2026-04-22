@@ -2,9 +2,11 @@ import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { ProjectPageLayout } from '../components/ProjectPageLayout';
 import { useTranslation } from 'react-i18next';
+import { useInView } from '../hooks/useInView';
 
 export const PortfolioProjectPage = () => {
   const { t } = useTranslation();
+  const headerRef = useInView('reveal--init');
 
   // Match skills with the project card data used in /projects
   const portfolioProject =
@@ -25,7 +27,7 @@ export const PortfolioProjectPage = () => {
   return (
     <ProjectPageLayout sections={sections}>
       {/* Project Header */}
-      <div className="pt-12 pb-8 px-4">
+      <div ref={headerRef} className="pt-12 pb-8 px-4">
         <div className="container mx-auto max-w-5xl">
           <h1 className="text-5xl lg:text-6xl font-bold text-left text-foreground mb-6">
             {t('projectDetails.portfolio.title')}{' '}

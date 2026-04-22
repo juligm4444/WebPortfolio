@@ -23,8 +23,14 @@ export const HeroSection = () => {
       className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 sm:px-8 md:px-12"
     >
       <div className="w-full max-w-5xl text-center">
+        {isTranslationReady && (
+          <p className="hero-fade-in mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground max-w-4xl mx-auto">
+            {t('hero.greeting')}
+          </p>
+        )}
+
         {showParagraph && (
-          <h1 className="typewriter text-4xl sm:text-6xl md:text-7xl font-bold leading-tight">
+          <h1 className="hero-fade-in-d1 typewriter text-4xl sm:text-6xl md:text-7xl font-bold leading-tight mt-6">
             <Trans
               i18nKey="hero.description"
               components={{
@@ -35,14 +41,8 @@ export const HeroSection = () => {
           </h1>
         )}
 
-        {isTranslationReady && (
-          <p className="mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground max-w-4xl mx-auto">
-            {t('hero.greeting')}
-          </p>
-        )}
-
         {showParagraph && (
-          <div className="mt-10">
+          <div className="hero-fade-in-d2 mt-10">
             <Link to="/projects" className="general-button">
               {t('hero.button')}
             </Link>
@@ -50,7 +50,7 @@ export const HeroSection = () => {
         )}
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-scroll-hint">
         <span className="text-sm text-muted-foreground mb-2">
           {t('hero.scroll', { defaultValue: 'Scroll Down' })}
         </span>

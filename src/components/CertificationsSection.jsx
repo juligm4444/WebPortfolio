@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { certifications } from '../data/certifications';
+import { useInView } from '../hooks/useInView';
 
 const CertificationCard = ({ cert }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -135,15 +136,17 @@ const CertificationCard = ({ cert }) => {
 
 export const CertificationsSection = () => {
   const { t } = useTranslation();
+  const titleRef = useInView('reveal--init');
+  const gridRef = useInView();
 
   return (
     <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30 mb-8">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-h1 font-bold mb-12 text-center text-primary">
+        <h2 ref={titleRef} className="text-h1 font-bold mb-12 text-center text-primary">
           {t('certifications.title1')} {t('certifications.title2')}
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 mb-8">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 mb-8">
           {certifications
             .filter((cert) => cert.pdf)
             .map((cert, idx) => (

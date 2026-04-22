@@ -73,6 +73,56 @@
       border-color: var(--color3);
     }
   }
+
+  /* Entrance & reveal keyframes */
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes reveal-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes scroll-hint {
+    0%, 100% { transform: translateY(0);   opacity: 0.9; }
+    55%       { transform: translateY(7px); opacity: 0.45; }
+  }
 }
 
 @layer base {
@@ -280,7 +330,12 @@ html:not(.light) body {
 }
 
 @utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.18);
+  }
 }
 
 @utility gradient-border {
@@ -618,4 +673,152 @@ h4::after {
   .xl\:mr-64 {
     margin-right: 0 !important;
   }
+}
+
+/* ─── Scroll-reveal & stagger system ─────────────────────────────────────── */
+
+/*
+ * Progressive-enhancement pattern:
+ * JS (useInView hook) adds the *--init class to mark the element animation-ready,
+ * then adds .is-visible once it enters the viewport.
+ * If JS never runs, everything stays visible (no flash of invisible content).
+ *
+ * Classes:
+ *   stagger-grid--init  — grid/flex container; children cascade in one by one
+ *   reveal--init        — single element; fades + slides up
+ *   reveal-split--init  — 2-col grid; each column enters from its own side (desktop)
+ */
+
+/* ── Stagger grid ─────────────────────────────────── */
+.stagger-grid--init > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.stagger-grid--init.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cascade delays — up to 21 items; cap at 900 ms to keep it snappy */
+.stagger-grid--init.is-visible > *:nth-child(1)   { transition-delay:   0ms; }
+.stagger-grid--init.is-visible > *:nth-child(2)   { transition-delay:  55ms; }
+.stagger-grid--init.is-visible > *:nth-child(3)   { transition-delay: 110ms; }
+.stagger-grid--init.is-visible > *:nth-child(4)   { transition-delay: 165ms; }
+.stagger-grid--init.is-visible > *:nth-child(5)   { transition-delay: 220ms; }
+.stagger-grid--init.is-visible > *:nth-child(6)   { transition-delay: 275ms; }
+.stagger-grid--init.is-visible > *:nth-child(7)   { transition-delay: 330ms; }
+.stagger-grid--init.is-visible > *:nth-child(8)   { transition-delay: 385ms; }
+.stagger-grid--init.is-visible > *:nth-child(9)   { transition-delay: 440ms; }
+.stagger-grid--init.is-visible > *:nth-child(10)  { transition-delay: 495ms; }
+.stagger-grid--init.is-visible > *:nth-child(11)  { transition-delay: 550ms; }
+.stagger-grid--init.is-visible > *:nth-child(12)  { transition-delay: 605ms; }
+.stagger-grid--init.is-visible > *:nth-child(13)  { transition-delay: 660ms; }
+.stagger-grid--init.is-visible > *:nth-child(14)  { transition-delay: 715ms; }
+.stagger-grid--init.is-visible > *:nth-child(15)  { transition-delay: 770ms; }
+.stagger-grid--init.is-visible > *:nth-child(16)  { transition-delay: 825ms; }
+.stagger-grid--init.is-visible > *:nth-child(n+17){ transition-delay: 880ms; }
+
+/* ── Single-element reveal ────────────────────────── */
+.reveal--init {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal--init.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 2-column split reveal ────────────────────────── */
+/*  Mobile: both panels slide up staggered (safe — no horizontal overflow)
+    Desktop (md+): left panel from the left, right panel from the right      */
+
+.reveal-split--init > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-split--init > *:nth-child(2) {
+  transition-delay: 80ms;
+}
+.reveal-split--init.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-split--init.is-visible > *:nth-child(2) {
+  transition-delay: 80ms;
+}
+
+@media (min-width: 768px) {
+  .reveal-split--init > *:nth-child(1) {
+    transform: translateX(-32px);
+    transition-delay: 0ms;
+  }
+  .reveal-split--init > *:nth-child(2) {
+    transform: translateX(32px);
+    transition-delay: 0ms;
+  }
+  .reveal-split--init.is-visible > *:nth-child(1) {
+    transform: translateX(0);
+    transition-delay: 0ms;
+  }
+  .reveal-split--init.is-visible > *:nth-child(2) {
+    transform: translateX(0);
+    transition-delay: 0ms;
+  }
+}
+
+/* ─── Hero entrance animations ───────────────────────────────────────────── */
+
+.hero-fade-in {
+  animation: hero-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-fade-in-d1 {
+  animation: hero-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+.hero-fade-in-d2 {
+  animation: hero-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+/* ─── Missing ImageSlider animations (fix) ───────────────────────────────── */
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─── Scroll hint arrow ───────────────────────────────────────────────────── */
+
+.animate-scroll-hint {
+  animation: scroll-hint 2.2s ease-in-out infinite;
+}
+
+/* ─── Navbar dropdown entrance ───────────────────────────────────────────── */
+
+.dropdown-enter {
+  animation: reveal-up 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─── Scroll progress bar ────────────────────────────────────────────────── */
+
+.scroll-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: left;
+  background: var(--project-card-overlay-gradient);
+  transition: transform 80ms linear;
+  will-change: transform;
 }
