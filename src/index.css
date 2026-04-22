@@ -120,6 +120,7 @@
     --project-card-icon: var(--color1);
     --project-card-icon-hover: var(--color4);
     --portfolio-step-gradient: linear-gradient(180deg, var(--color4) 0%, var(--color3) 100%);
+    --candelaria-card-gradient: linear-gradient(180deg, #b793f0 0%, #BC56EB 100%);
     --button-text-color: var(--color2);
     --button-hover-fill: var(--color4);
     --button-hover-text: var(--color2);
@@ -170,6 +171,7 @@
     --project-card-icon: var(--color6);
     --project-card-icon-hover: var(--color1);
     --portfolio-step-gradient: linear-gradient(180deg, var(--color3) 0%, var(--color4) 100%);
+    --candelaria-card-gradient: linear-gradient(180deg, #A634DA 0%, #2D0E3F 100%);
     --button-text-color: var(--color1);
     --button-hover-fill: var(--color3);
     --button-hover-text: var(--color6);
@@ -365,8 +367,8 @@ html:not(.light) .card-overlay-title {
   background: none !important;
   -webkit-background-clip: unset !important;
   background-clip: unset !important;
-  -webkit-text-fill-color: var(--color2) !important;
-  color: var(--color2) !important;
+  -webkit-text-fill-color: var(--color6) !important;
+  color: var(--color6) !important;
   text-shadow: none !important;
 }
 

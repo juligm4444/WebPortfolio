@@ -181,15 +181,15 @@
         },
         {
           "id": "candelaria",
-          "name": "Candelaria Solar Car",
-          "description": "Aplicación móvil para el sistema de monitoreo y control del equipo Candelaria Solar Car con visualización de datos en tiempo real.",
-          "technologies": ["Flutter", "Móvil", "IoT", "Solar"],
-          "category": "Desarrollo Móvil",
-          "status": "Completado",
+          "name": "Candelaria Website",
+          "description": "Plataforma web full-stack para un equipo universitario de ingeniería de competición, con e-commerce, gamificación, gestión de miembros y soporte de pagos dual.",
+          "technologies": ["React 19", "Django 4.2", "PostgreSQL", "Tailwind CSS 4", "Figma"],
+          "category": "Desarrollo Web",
+          "status": "En Desarrollo",
           "link": "/projects/candelaria",
           "image": "/ProjectPreviews/candelaria-preview.png",
-          "demoUrl": "",
-          "sourceUrl": ""
+          "demoUrl": "https://www.candelaria.website/",
+          "sourceUrl": "https://github.com/juligm4444/CandelariaWebsite"
         },
         {
           "id": "licorimetro",
@@ -312,7 +312,11 @@
       "developmentFlow": "Flujo de Desarrollo",
       "visualDesign": "Diseño Visual",
       "finalDesign": "Diseño Final",
-      "retrospective": "Retrospectiva"
+      "retrospective": "Retrospectiva",
+      "developmentProcess": "Proceso de Desarrollo",
+      "keyFeatures": "Características Principales",
+      "performance": "Rendimiento y Seguridad",
+      "reflections": "Reflexiones"
     },
     "portfolio": {
       "title": "Portafolio",
@@ -533,6 +537,182 @@
             }
           ]
         }
+      }
+    },
+    "candelaria": {
+      "title": "Candelaria",
+      "titleHighlight": "Website",
+      "quote": "Diseñar, construir y desplegar la presencia digital completa de un equipo universitario de competición de alto rendimiento.",
+      "myRole": {
+        "title": "Mi Rol",
+        "description": "Ingeniería de Producto, Diseñadora UX/UI, Desarrolladora Full-stack"
+      },
+      "timeline": {
+        "title": "Cronología y Estado",
+        "duration": "2025 – 2026"
+      },
+      "status": {
+        "description": "En Desarrollo"
+      },
+      "description": {
+        "paragraph1": "Candelaria es la presencia digital completa de un equipo universitario de ingeniería de competición. El sitio va más allá de un portafolio estático: integra gestión de miembros, publicaciones, membresías, donaciones, tienda de merchandise y un sistema de gamificación para seguidores, todo bajo una identidad visual cinética y de alto contraste.",
+        "paragraph2": "El proyecto nació de la necesidad de centralizar la comunicación del equipo, facilitar el apoyo externo y ofrecer una experiencia de usuario a la altura del nivel técnico del equipo. Desde la arquitectura de base de datos hasta la paleta de color, cada decisión fue tomada con criterio de producto y de ingeniería."
+      },
+      "problem": {
+        "intro": "Los equipos universitarios de competición suelen quedarse con soluciones parciales: una cuenta de Instagram, un PDF con sus logros y un link de donaciones genérico. Candelaria necesitaba algo diferente:",
+        "bullets": [
+          "Una plataforma que refleje la identidad técnica y visual del equipo.",
+          "Un sistema que permita a seguidores externos apoyar económicamente con trazabilidad real.",
+          "Un panel interno donde los líderes puedan gestionar miembros, publicaciones y roles sin tocar código.",
+          "Soporte para dos mercados de pago: internacional (Stripe) y Colombia (PayU).",
+          "Un incentivo de largo plazo para que los seguidores sigan involucrados: gamificación."
+        ]
+      },
+      "developmentProcess": {
+        "phases": [
+          {
+            "title": "Investigación y Sistema de Diseño",
+            "description": "Definición del sistema visual 'Neon Velocity' en Figma: tipografía, paleta de color, componentes y grids. Diseño de 6 pantallas finales (Home, Vehicle, Team, Publications, Support, About) con enfoque mobile-first y scrolling vertical cinematográfico.",
+            "bullets": [
+              "Definición del sistema de diseño 'Neon Velocity' en Figma",
+              "Diseño de 6 pantallas finales con enfoque mobile-first y scrolling cinematográfico",
+              "Construcción del design system con Tailwind CSS 4 y Class Variance Authority (CVA)",
+              "Variantes de componentes y ritmo de layout para todas las vistas principales"
+            ]
+          },
+          {
+            "title": "Arquitectura y Backend",
+            "description": "Diseño del modelo de datos en PostgreSQL con Django 4.2 y Django REST Framework: 13+ modelos cubriendo equipos, miembros, publicaciones, pagos y tiers. Sistema de autenticación dual con djangorestframework-simplejwt para usuarios internos y externos.",
+            "bullets": [
+              "Esquema de 13+ modelos en PostgreSQL con Django 4.2 y DRF",
+              "Sistema de auth dual: usuarios internos del equipo y seguidores externos via JWT",
+              "Whitelist segura para asignación de roles de liderazgo con aprobación manual y audit logging",
+              "Integración con Supabase para sincronización de perfiles, almacenamiento de media y gamificación en PL/pgSQL"
+            ]
+          },
+          {
+            "title": "Frontend e Integraciones",
+            "description": "SPA en React 19 con React Router DOM 7 y Vite 7. Internacionalización completa (español/inglés) con i18next. Carrito de compras y flujo de checkout con Stripe y PayU, incluyendo webhook handlers con verificación HMAC-SHA256.",
+            "bullets": [
+              "SPA en React 19 con React Router DOM 7 y Vite 7",
+              "Internacionalización completa español/inglés con i18next",
+              "Carrito de compras y checkout con Stripe (internacional) y PayU (Colombia)",
+              "Verificación HMAC-SHA256 de webhooks y cálculo en tiempo real de tiers de seguidores"
+            ]
+          },
+          {
+            "title": "Rendimiento y Despliegue",
+            "description": "Optimización de queries con select_related(), prefetch_related() y .only() en Django ORM. Compresión de imágenes con vite-plugin-imagemin y servicio de media vía Supabase Storage. Despliegue monolítico en Vercel: frontend en / y backend Django en /api/*.",
+            "bullets": [
+              "Optimización de queries con select_related(), prefetch_related() y .only()",
+              "Compresión de imágenes con vite-plugin-imagemin",
+              "Servicio de media vía Supabase Storage",
+              "Despliegue monolítico en Vercel: frontend en /, backend en /api/*"
+            ]
+          }
+        ]
+      },
+      "visualDesign": {
+        "systemName": "Neon Velocity",
+        "description": "Una estética cinética, de alto contraste y narrativa editorial, inspirada en la telemetría de motorsport y el diseño técnico de alta precisión.",
+        "colorPalette": {
+          "title": "Paleta de Color",
+          "colors": [
+            { "name": "Deep Space Black", "hex": "#0A0A0A", "description": "Fondos principales" },
+            { "name": "Graphite Night", "hex": "#1A1A1A", "description": "Cards, Navbar, superficies elevadas" },
+            { "name": "Electric Violet", "hex": "#9B55F6", "description": "Acción primaria, acento de marca" },
+            { "name": "Plasma Cyan", "hex": "#00E5FF", "description": "Énfasis técnico, acciones secundarias" },
+            { "name": "Soft Light Gray", "hex": "#D1D5DB", "description": "Cuerpo de texto sobre fondos oscuros" },
+            { "name": "Signal White", "hex": "#F8FAFC", "description": "Titulares y métricas clave" },
+            { "name": "Success Neon Green", "hex": "#22C55E", "description": "Indicadores de estado positivo" }
+          ]
+        },
+        "typography": {
+          "title": "Tipografía",
+          "font": "Space Grotesk",
+          "description": "Geométrica sans-serif para toda la interfaz.",
+          "levels": [
+            { "name": "Titulares", "description": "Heavy, compacto, alto contraste" },
+            { "name": "Encabezados de Sección", "description": "Semi-bold, tracking ajustado" },
+            { "name": "Cuerpo de Texto", "description": "Regular/medium, line-height generoso" },
+            { "name": "Etiquetas de Datos", "description": "Medium, letter-spacing aumentado" }
+          ]
+        },
+        "components": {
+          "title": "Patrones de Componentes",
+          "patterns": [
+            { "name": "Botones", "description": "Pill / rounded rect, relleno violeta, hover con transición confiada" },
+            { "name": "Cards", "description": "Bordes suavemente redondeados, fondo grafito, sutil glow" },
+            { "name": "Formularios", "description": "Campos oscuros rellenos, focus rings violeta/cian" },
+            { "name": "Layout", "description": "Scrolling vertical largo, ritmo fuerte de secciones, grandes espacios en hero y CTAs" }
+          ]
+        }
+      },
+      "keyFeatures": {
+        "auth": {
+          "title": "Autenticación y Gestión de Usuarios",
+          "description": "Sistema de doble perfil: usuarios internos (miembros del equipo) con whitelist y roles de liderazgo, y usuarios externos (seguidores y compradores). Flujo completo de registro, login, recuperación de contraseña y gestión de perfil."
+        },
+        "ecommerce": {
+          "title": "E-Commerce y Pagos",
+          "description": "Tienda de merchandise (hoodie, gorra, botella), membresías en 3 niveles ($5 / $10 / $25 USD), donaciones libres en COP/USD. Carrito persistente, checkout con Stripe (internacional) y PayU (Colombia), historial de compras por usuario."
+        },
+        "gamification": {
+          "title": "Gamificación: Tiers de Seguidores",
+          "description": "El score se calcula como: total donado (COP) + meses de membresía × 5.000 COP. Calculado en PL/pgSQL en Supabase y expuesto vía API REST.",
+          "tierLabel": "Tier",
+          "scoreLabel": "Puntuación Mínima",
+          "tiers": [
+            { "tier": "Visitor", "score": "0" },
+            { "tier": "Supporter", "score": "1+ COP" },
+            { "tier": "Bronze", "score": "20.000 COP" },
+            { "tier": "Silver", "score": "60.000 COP" },
+            { "tier": "Gold", "score": "150.000 COP" },
+            { "tier": "Core", "score": "300.000 COP" }
+          ]
+        },
+        "dashboard": {
+          "title": "Panel Interno",
+          "description": "Panel exclusivo para miembros del equipo: gestión de integrantes, asignación de roles, publicación de artículos con PDFs, administración de whitelist de líderes y revisión de transacciones."
+        },
+        "multilingual": {
+          "title": "Soporte Multilingüe",
+          "description": "Soporte completo en español e inglés con i18next. Todos los modelos del backend almacenan campos en ambos idiomas (_en / _es) y la API responde según el parámetro de idioma."
+        }
+      },
+      "performance": {
+        "title": "Resultados de Rendimiento",
+        "tableHeaders": {
+          "metric": "Métrica",
+          "before": "Antes",
+          "after": "Después",
+          "improvement": "Mejora"
+        },
+        "metrics": [
+          { "label": "Carga de Lista de Publicaciones", "before": "2.5 s", "after": "0.8 s", "improvement": "68% más rápido" },
+          { "label": "Carga de Página del Equipo", "before": "1.8 s", "after": "0.5 s", "improvement": "72% más rápido" },
+          { "label": "Queries de API de Miembros", "before": "50", "after": "8", "improvement": "84% menos queries" },
+          { "label": "Queries de API de Publicaciones", "before": "40", "after": "10", "improvement": "75% menos queries" }
+        ],
+        "security": {
+          "title": "Seguridad",
+          "items": [
+            "Hashing con bcrypt (12 rondas)",
+            "Rate limiting en endpoints de auth (10 req/min) y brute-force protection (8 intentos / 15 min)",
+            "Verificación de webhooks con HMAC-SHA256 y tolerancia de timestamp (5 min)",
+            "Procesamiento idempotente de pagos para evitar doble contabilización",
+            "Audit logging de todas las acciones administrativas",
+            "Middleware de seguridad: CSRF, CORS configurado, headers de seguridad"
+          ]
+        }
+      },
+      "buttons": {
+        "viewLive": "Ver Sitio en Vivo",
+        "viewCode": "Ver Código"
+      },
+      "reflections": {
+        "description": "Candelaria fue el proyecto que me obligó a pensar como product engineer, no solo como desarrolladora. Tomar decisiones de arquitectura — cuándo usar Django vs Supabase, cómo modelar el sistema de tiers, cómo abstraer dos proveedores de pago — requirió razonar sobre trade-offs reales, no solo implementar features.",
+        "keyLearning": "El mayor aprendizaje fue diseñar para dos audiencias con necesidades completamente distintas: un seguidor externo que quiere apoyar con un clic, y un líder de equipo que necesita administrar personas y publicar contenido. Construir una sola plataforma que sirva a ambos sin que ninguno sienta que la interfaz no fue pensada para él fue el reto de diseño más interesante del proyecto."
       }
     }
   }

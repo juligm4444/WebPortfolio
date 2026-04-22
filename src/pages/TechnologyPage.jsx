@@ -10,6 +10,18 @@ export const TechnologyPage = () => {
   // Get all projects directly from JSON - completely data-driven
   const projects = t('projects.technology.projects', { returnObjects: true });
 
+  // Per-project visual config (logo and card gradient)
+  const projectExtras = {
+    portfolio: {
+      logoSrc: '/ProjectPreviews/LOGO.png',
+      cardGradient: 'var(--project-card-overlay-gradient)',
+    },
+    candelaria: {
+      logoSrc: '/ProjectPreviews/CandelariaLogo.png',
+      cardGradient: 'var(--candelaria-card-gradient)',
+    },
+  };
+
   const technologyProjects = projects.map((project, index) => ({
     id: index + 1,
     title: project.name,
@@ -21,6 +33,8 @@ export const TechnologyPage = () => {
     sourceProjectUrl: project.sourceUrl || '',
     category: project.category,
     status: project.status,
+    logoSrc: projectExtras[project.id]?.logoSrc || null,
+    cardGradient: projectExtras[project.id]?.cardGradient || 'var(--project-card-overlay-gradient)',
   }));
 
   return (

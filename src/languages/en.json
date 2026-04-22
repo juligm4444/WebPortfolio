@@ -211,15 +211,15 @@
         },
         {
           "id": "candelaria",
-          "name": "Candelaria Solar Car",
-          "description": "Mobile application for the Candelaria Solar Car team monitoring and control system with real-time data visualization.",
-          "technologies": ["Flutter", "Mobile", "IoT", "Solar"],
-          "category": "Mobile Development",
-          "status": "Completed",
+          "name": "Candelaria Website",
+          "description": "Full-stack web platform for a university engineering competition team, featuring e-commerce, gamification, member management, and dual payment support.",
+          "technologies": ["React 19", "Django 4.2", "PostgreSQL", "Tailwind CSS 4", "Figma"],
+          "category": "Web Development",
+          "status": "In Development",
           "link": "/projects/candelaria",
           "image": "/ProjectPreviews/candelaria-preview.png",
-          "demoUrl": "",
-          "sourceUrl": ""
+          "demoUrl": "https://www.candelaria.website/",
+          "sourceUrl": "https://github.com/juligm4444/CandelariaWebsite"
         },
         {
           "id": "licorimetro",
@@ -307,7 +307,11 @@
       "developmentFlow": "Development Flow",
       "visualDesign": "Visual Design",
       "finalDesign": "Final Design",
-      "retrospective": "Retrospective"
+      "retrospective": "Retrospective",
+      "developmentProcess": "Development Process",
+      "keyFeatures": "Key Features",
+      "performance": "Performance & Security",
+      "reflections": "Reflections"
     },
     "portfolio": {
       "title": "Digital",
@@ -528,6 +532,182 @@
             }
           ]
         }
+      }
+    },
+    "candelaria": {
+      "title": "Candelaria",
+      "titleHighlight": "Website",
+      "quote": "Design, build, and deploy the complete digital presence of a high-performance university competition team.",
+      "myRole": {
+        "title": "My Role",
+        "description": "Product Engineer, UX/UI Designer, Full-stack Developer"
+      },
+      "timeline": {
+        "title": "Timeline & Status",
+        "duration": "2025 – 2026"
+      },
+      "status": {
+        "description": "In Development"
+      },
+      "description": {
+        "paragraph1": "Candelaria is the complete digital presence of a university engineering competition team. The site goes beyond a static portfolio: it integrates member management, publications, memberships, donations, a merchandise store, and a gamification system for followers, all under a kinetic, high-contrast visual identity.",
+        "paragraph2": "The project was born from the need to centralize team communication, facilitate external support, and offer a user experience that matches the technical level of the team. From database architecture to color palette, every decision was made with product and engineering judgment."
+      },
+      "problem": {
+        "intro": "University competition teams usually end up with partial solutions: an Instagram account, a PDF with their achievements, and a generic donation link. Candelaria needed something different:",
+        "bullets": [
+          "A platform that reflects the team's technical and visual identity.",
+          "A system that allows external supporters to contribute financially with real traceability.",
+          "An internal panel where leaders can manage members, publications, and roles without touching code.",
+          "Support for two payment markets: international (Stripe) and Colombia (PayU).",
+          "A long-term incentive to keep followers engaged: gamification."
+        ]
+      },
+      "developmentProcess": {
+        "phases": [
+          {
+            "title": "Research & Design System",
+            "description": "Definition of the 'Neon Velocity' visual system in Figma, covering typography, color palette, components, and grids. Designed 6 final screens (Home, Vehicle, Team, Publications, Support, About) with a mobile-first approach and cinematic vertical scrolling.",
+            "bullets": [
+              "Defined 'Neon Velocity' design system in Figma",
+              "Designed 6 final screens with a mobile-first, cinematic scrolling approach",
+              "Built design system with Tailwind CSS 4 and Class Variance Authority (CVA)",
+              "Established component variants and layout rhythm for all main views"
+            ]
+          },
+          {
+            "title": "Architecture & Backend",
+            "description": "Designed the data model in PostgreSQL with Django 4.2 and Django REST Framework: 13+ models covering teams, members, publications, payments, and tiers. Dual authentication system with djangorestframework-simplejwt for internal and external users.",
+            "bullets": [
+              "Designed 13+ model schema in PostgreSQL with Django 4.2 and DRF",
+              "Dual auth system: internal team users and external supporters via JWT",
+              "Secure whitelist for leadership role assignment with manual approval and audit logging",
+              "Supabase integration for profile sync, media storage, and PL/pgSQL gamification"
+            ]
+          },
+          {
+            "title": "Frontend & Integrations",
+            "description": "Single-page application in React 19 with React Router DOM 7 and Vite 7. Full internationalization (Spanish/English) with i18next. Shopping cart and checkout flow with Stripe and PayU, including HMAC-SHA256 verified webhook handlers.",
+            "bullets": [
+              "SPA in React 19 with React Router DOM 7 and Vite 7",
+              "Full Spanish/English internationalization with i18next",
+              "Shopping cart and checkout with Stripe (international) and PayU (Colombia)",
+              "HMAC-SHA256 webhook verification and real-time supporter tier calculation"
+            ]
+          },
+          {
+            "title": "Performance & Deployment",
+            "description": "Query optimization using Django ORM's select_related(), prefetch_related(), and .only(). Image compression with vite-plugin-imagemin and media served via Supabase Storage. Monolithic deployment on Vercel with frontend on / and Django backend on /api/*.",
+            "bullets": [
+              "Query optimization with select_related(), prefetch_related(), and .only()",
+              "Image compression with vite-plugin-imagemin",
+              "Media served via Supabase Storage",
+              "Monolithic deployment on Vercel: frontend on /, backend on /api/*"
+            ]
+          }
+        ]
+      },
+      "visualDesign": {
+        "systemName": "Neon Velocity",
+        "description": "A kinetic, high-contrast, editorial aesthetic inspired by motorsport telemetry and high-precision technical design.",
+        "colorPalette": {
+          "title": "Color Palette",
+          "colors": [
+            { "name": "Deep Space Black", "hex": "#0A0A0A", "description": "Primary backgrounds" },
+            { "name": "Graphite Night", "hex": "#1A1A1A", "description": "Cards, Navbar, elevated surfaces" },
+            { "name": "Electric Violet", "hex": "#9B55F6", "description": "Primary action, brand accent" },
+            { "name": "Plasma Cyan", "hex": "#00E5FF", "description": "Technical emphasis, secondary actions" },
+            { "name": "Soft Light Gray", "hex": "#D1D5DB", "description": "Body text on dark backgrounds" },
+            { "name": "Signal White", "hex": "#F8FAFC", "description": "Headlines and key metrics" },
+            { "name": "Success Neon Green", "hex": "#22C55E", "description": "Positive status indicators" }
+          ]
+        },
+        "typography": {
+          "title": "Typography",
+          "font": "Space Grotesk",
+          "description": "Geometric sans-serif for the entire interface.",
+          "levels": [
+            { "name": "Headlines", "description": "Heavy, compact, high contrast" },
+            { "name": "Section Headings", "description": "Semi-bold, adjusted tracking" },
+            { "name": "Body Text", "description": "Regular/medium, generous line-height" },
+            { "name": "Data Labels", "description": "Medium, increased letter-spacing" }
+          ]
+        },
+        "components": {
+          "title": "Component Patterns",
+          "patterns": [
+            { "name": "Buttons", "description": "Pill / rounded rect, violet fill, confident hover transition" },
+            { "name": "Cards", "description": "Gently rounded borders, graphite background, subtle glow" },
+            { "name": "Forms", "description": "Dark filled fields, violet/cyan focus rings" },
+            { "name": "Layout", "description": "Long vertical scrolling, strong section rhythm, large hero and CTA spaces" }
+          ]
+        }
+      },
+      "keyFeatures": {
+        "auth": {
+          "title": "Authentication & User Management",
+          "description": "Dual profile system: internal users (team members) with whitelist and leadership roles, and external users (supporters and buyers). Complete registration, login, password recovery, and profile management flow."
+        },
+        "ecommerce": {
+          "title": "E-Commerce & Payments",
+          "description": "Merchandise store (hoodie, cap, bottle), memberships at 3 levels ($5 / $10 / $25 USD), and free donations in COP/USD. Persistent cart, checkout with Stripe (international) and PayU (Colombia), purchase history per user."
+        },
+        "gamification": {
+          "title": "Gamification: Supporter Tiers",
+          "description": "Score is calculated as: total donated (COP) + months of membership × 5,000 COP. Calculated in PL/pgSQL on Supabase and exposed via REST API.",
+          "tierLabel": "Tier",
+          "scoreLabel": "Minimum Score",
+          "tiers": [
+            { "tier": "Visitor", "score": "0" },
+            { "tier": "Supporter", "score": "1+ COP" },
+            { "tier": "Bronze", "score": "20,000 COP" },
+            { "tier": "Silver", "score": "60,000 COP" },
+            { "tier": "Gold", "score": "150,000 COP" },
+            { "tier": "Core", "score": "300,000 COP" }
+          ]
+        },
+        "dashboard": {
+          "title": "Internal Dashboard",
+          "description": "Exclusive panel for team members: member management, role assignment, article publishing with PDFs, leader whitelist administration, and transaction review."
+        },
+        "multilingual": {
+          "title": "Multilingual Support",
+          "description": "Full Spanish/English support with i18next. All backend models store fields in both languages (_en / _es) and the API responds based on the language parameter."
+        }
+      },
+      "performance": {
+        "title": "Performance Results",
+        "tableHeaders": {
+          "metric": "Metric",
+          "before": "Before",
+          "after": "After",
+          "improvement": "Improvement"
+        },
+        "metrics": [
+          { "label": "Publications List Load", "before": "2.5 s", "after": "0.8 s", "improvement": "68% faster" },
+          { "label": "Team Page Load", "before": "1.8 s", "after": "0.5 s", "improvement": "72% faster" },
+          { "label": "Members API Queries", "before": "50", "after": "8", "improvement": "84% fewer queries" },
+          { "label": "Publications API Queries", "before": "40", "after": "10", "improvement": "75% fewer queries" }
+        ],
+        "security": {
+          "title": "Security",
+          "items": [
+            "bcrypt hashing (12 rounds)",
+            "Rate limiting on auth endpoints (10 req/min) and brute-force protection (8 attempts / 15 min)",
+            "HMAC-SHA256 webhook verification with timestamp tolerance (5 min)",
+            "Idempotent payment processing to avoid double-counting",
+            "Audit logging of all administrative actions",
+            "Security middleware: CSRF, configured CORS, security headers"
+          ]
+        }
+      },
+      "buttons": {
+        "viewLive": "View Live Site",
+        "viewCode": "View Code"
+      },
+      "reflections": {
+        "description": "Candelaria was the project that forced me to think like a product engineer, not just a developer. Making architecture decisions — when to use Django vs Supabase, how to model the tier system, how to abstract two payment providers — required reasoning about real trade-offs, not just implementing features.",
+        "keyLearning": "The biggest learning was designing for two audiences with completely different needs: an external supporter who wants to contribute with one click, and a team leader who needs to manage people and publish content. Building a single platform that serves both without either feeling the interface wasn't designed for them was the most interesting design challenge of the project."
       }
     }
   }

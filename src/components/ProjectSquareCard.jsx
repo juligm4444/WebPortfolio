@@ -1,23 +1,35 @@
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 
-export const ProjectSquareCard = ({ project, onClickStop }) => {
+export const ProjectSquareCard = ({ project }) => {
+  const gradient = project.cardGradient || 'var(--project-card-overlay-gradient)';
+
   return (
     <Link
       to={project.path}
       className="group relative aspect-square overflow-hidden rounded-lg cursor-pointer"
+      style={{ background: gradient }}
     >
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+      {/* Resting layer — logo or fallback title, slides upward on hover */}
+      <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+        {project.logoSrc ? (
+          <div className="w-2/5 h-2/5 flex items-center justify-center">
+            <img
+              src={project.logoSrc}
+              alt={project.title}
+              className="w-full h-full object-contain drop-shadow-lg"
+            />
+          </div>
+        ) : (
+          <p className="text-2xl font-bold text-center px-4 card-overlay-title no-subtitle-brackets">
+            {project.title}
+          </p>
+        )}
       </div>
 
-      {/* Hover Overlay */}
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6"
-        style={{ background: 'var(--project-card-overlay-gradient)' }}
-      >
-        {/* Project Title */}
+      {/* Info layer — slides up from below on hover (liquid / paint effect) */}
+      <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out flex flex-col justify-between p-6">
+        {/* Title centered */}
         <div className="flex-1 flex items-center justify-center">
           <h3 className="text-2xl font-bold text-center no-subtitle-brackets card-overlay-title">
             {project.title}
@@ -25,33 +37,33 @@ export const ProjectSquareCard = ({ project, onClickStop }) => {
           </h3>
         </div>
 
-        {/* Categories/Tags with accent line */}
+        {/* Tags + action icons */}
         <div className="space-y-4">
-          <div className="h-1 w-12" style={{ backgroundColor: 'var(--color5)' }}></div>
+          <div className="h-[2px] w-12" style={{ backgroundColor: 'var(--color6)' }} />
+
           <div className="flex flex-wrap gap-2">
             {project.tags &&
               project.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="text-sm font-light !text-[var(--project-card-meta-text)] uppercase tracking-wider"
+                  className="text-sm font-light uppercase tracking-wider"
                 >
                   {tag}
                   {index < project.tags.length - 1 && (
-                    <span className="ml-2 !text-[var(--project-card-meta-text)]">/</span>
+                    <span className="ml-2">/</span>
                   )}
                 </span>
               ))}
           </div>
 
-          {/* Action Icons (if available) */}
           {(project.demoUrl || project.sourceProjectUrl) && (
-            <div className="flex gap-4 pt-2">
+            <div className="flex gap-4 pt-1">
               {project.demoUrl && (
                 <a
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="!text-[var(--project-card-icon)] hover:!text-[var(--project-card-icon-hover)] transition-all duration-300"
+                  className="hover:opacity-60 transition-opacity duration-200"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <ExternalLink size={20} />
@@ -62,7 +74,7 @@ export const ProjectSquareCard = ({ project, onClickStop }) => {
                   href={project.sourceProjectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="!text-[var(--project-card-icon)] hover:!text-[var(--project-card-icon-hover)] transition-all duration-300"
+                  className="hover:opacity-60 transition-opacity duration-200"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <Github size={20} />
