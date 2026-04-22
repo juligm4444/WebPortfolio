@@ -187,7 +187,10 @@ export const CandelariaProjectPage = () => {
           <h2 className="text-h2 font-semibold mb-4 text-center">
             {t('projectDetails.sections.visualDesign')}
           </h2>
-          <p className="text-body font-semibold text-center mb-4" style={{ color: 'var(--color3)' }}>
+          <p
+            className="text-body font-semibold text-center mb-4"
+            style={{ color: 'var(--color3)' }}
+          >
             &ldquo;{t('projectDetails.candelaria.visualDesign.systemName')}&rdquo;
           </p>
           <p className="text-body text-foreground font-light leading-relaxed mb-10 text-left">
@@ -384,8 +387,12 @@ export const CandelariaProjectPage = () => {
                 }).map((metric, index) => (
                   <tr key={index} className="hover:bg-secondary/30 transition-colors">
                     <td className="p-3 border border-border text-foreground">{metric.label}</td>
-                    <td className="p-3 border border-border text-muted-foreground">{metric.before}</td>
-                    <td className="p-3 border border-border text-muted-foreground">{metric.after}</td>
+                    <td className="p-3 border border-border text-muted-foreground">
+                      {metric.before}
+                    </td>
+                    <td className="p-3 border border-border text-muted-foreground">
+                      {metric.after}
+                    </td>
                     <td
                       className="p-3 border border-border font-semibold"
                       style={{ color: 'var(--color3)' }}
