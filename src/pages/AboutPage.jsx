@@ -38,7 +38,10 @@ export const About = () => {
       {/* ME Section — image left, identity text right, always 2-col */}
       <section id="me" className="py-16 md:py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
-          <div ref={meSplitRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
+          <div
+            ref={meSplitRef}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center"
+          >
             {/* Image — Left */}
             <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg">
               <img
@@ -69,7 +72,10 @@ export const About = () => {
       <section id="information" className="pt-0 pb-0 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
           <div className="about-divider border-t border-border my-0 mb-10 md:mb-16" />
-          <div ref={infoSplitRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center">
+          <div
+            ref={infoSplitRef}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center"
+          >
             {/* Paragraphs — Left */}
             <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-left">
               <h3 className="text-h2 font-semibold text-primary mb-2 text-center md:text-left">
@@ -102,7 +108,10 @@ export const About = () => {
       <section id="education" className="pt-10 md:pt-0 pb-0 md:pb-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
           <div className="about-divider border-t border-border my-16 hidden md:block" />
-          <div ref={eduSplitRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
+          <div
+            ref={eduSplitRef}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center"
+          >
             {/* Image — Left */}
             <div className="order-2 md:order-1 rounded-lg overflow-hidden border-2 border-border shadow-lg">
               <img
@@ -169,7 +178,10 @@ export const About = () => {
       <section id="foccus" className="pt-10 pb-16 md:py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
           <div className="about-divider border-t border-border my-16 hidden md:block" />
-          <div ref={focusSplitRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center">
+          <div
+            ref={focusSplitRef}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-12 items-center"
+          >
             {/* Paragraphs — Left */}
             <div className="flex flex-col justify-center space-y-4 md:space-y-6 text-left">
               <h3 className="text-h2 font-semibold text-primary mb-2 text-center md:text-left">
