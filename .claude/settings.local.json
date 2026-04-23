@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(node -e \"require\\('/c/Users/julia/Documents/GitHub/WebPortfolio/src/languages/en.json'\\); console.log\\('en.json: valid'\\)\")",
+      "Bash(node -e \"require\\('/c/Users/julia/Documents/GitHub/WebPortfolio/src/languages/es.json'\\); console.log\\('es.json: valid'\\)\")",
+      "Bash(node -e \"require\\('./src/languages/en.json'\\); console.log\\('en.json: valid'\\)\")",
+      "Bash(node -e \"require\\('./src/languages/es.json'\\); console.log\\('es.json: valid'\\)\")",
+      "Bash(node -e \"const p = require\\('./package.json'\\); ['lucide-react','react-router-dom','react-i18next'].forEach\\(d => console.log\\(d, p.dependencies[d] || p.devDependencies[d] || 'MISSING'\\)\\)\")",
+      "Bash(python3 -c \"import json; json.load\\(open\\('src/languages/en.json'\\)\\); print\\('en.json: valid'\\)\")",
+      "Bash(python3 -c \"import json; json.load\\(open\\('src/languages/es.json'\\)\\); print\\('es.json: valid'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('src/languages/en.json','utf8'\\)\\); console.log\\('en.json: valid'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('src/languages/es.json','utf8'\\)\\); console.log\\('es.json: valid'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('C:/Users/julia/Documents/GitHub/WebPortfolio/src/languages/en.json','utf8'\\)\\); console.log\\('en.json: valid'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('C:/Users/julia/Documents/GitHub/WebPortfolio/src/languages/es.json','utf8'\\)\\); console.log\\('es.json: valid'\\)\")"
+    ]
+  }
+}
