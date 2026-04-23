@@ -20,8 +20,8 @@ export const AboutSection = ({ hideTitle = false, maxWidthClass = 'max-w-5xl' })
             {!hideTitle && (
               <h3 className="text-primary text-h2 font-semibold">{t('about.subtitle')}</h3>
             )}
-            <p className="text-body font-light text-muted-foreground">{t('about.parragraph1')}</p>
-            <p className="text-body font-light text-muted-foreground">{t('about.parragraph2')}</p>
+            <p className="text-body font-light text-muted-foreground">{t('about.paragraph1')}</p>
+            <p className="text-body font-light text-muted-foreground">{t('about.paragraph2')}</p>
           </div>
           <div className="grid grid-cols-1 gap-4">
             <div className="gradient-border border border-border shadow-lg p-4 card-hover flex flex-col items-center text-center">

@@ -198,10 +198,10 @@ export const About = () => {
                 {t('aboutPage.sections.foccus')}
               </h3>
               <p className="text-sm sm:text-base md:text-body font-light leading-relaxed text-left text-foreground">
-                {t('about.parragraph1')}
+                {t('about.paragraph1')}
               </p>
               <p className="text-sm sm:text-base md:text-body font-light leading-relaxed text-left text-foreground">
-                {t('about.parragraph2')}
+                {t('about.paragraph2')}
               </p>
             </div>
             <div className="rounded-lg overflow-hidden border-2 border-border shadow-lg bg-muted/30 aspect-[4/3]" />
