@@ -47,6 +47,41 @@
       "months": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
     }
   },
+  "featuredWork": {
+    "title1": "Trabajo",
+    "title2": "Destacado",
+    "subtitle": "Proyectos recientes en la intersección del diseño y la ingeniería.",
+    "viewAll": "Ver todos los proyectos",
+    "projects": [
+      {
+        "id": "portfolio",
+        "category": "Desarrollo Web",
+        "title": "Portafolio Digital",
+        "description": "Un portafolio con sólido sentido del diseño, construido con React y Tailwind CSS, explorando la intersección entre ingeniería y oficio visual.",
+        "link": "/projects/portfolio",
+        "image": "/ProjectPreviews/web-portfolio.png",
+        "tech": ["React", "Tailwind CSS", "Figma"]
+      },
+      {
+        "id": "candelaria",
+        "category": "Plataforma Full-Stack",
+        "title": "Sitio Web Candelaria",
+        "description": "Plataforma digital completa para un equipo universitario de autos solares — e-commerce, gamificación y soporte de pagos dual.",
+        "link": "/projects/candelaria",
+        "image": "",
+        "tech": ["React 19", "Django", "PostgreSQL"]
+      },
+      {
+        "id": "creative",
+        "category": "Diseño y Arte",
+        "title": "Trabajo Creativo",
+        "description": "Diseño visual experimental e ilustración: dibujos digitales, bocetos y proyectos conceptuales.",
+        "link": "/arts-design",
+        "image": "/ProjectPreviews/TCV1.jpg",
+        "tech": ["Figma", "Photoshop", "Illustrator"]
+      }
+    ]
+  },
   "about": {
     "title1": "Acerca",
     "title2": "de Mí",
@@ -69,7 +104,10 @@
       "education": "Educación",
       "inspirations": "Inspiraciones",
       "hobbies": "Pasatiempos",
-      "foccus": "Enfoque"
+      "foccus": "Enfoque",
+      "capabilities": "Capacidades",
+      "techStack": "Tecnologías",
+      "certifications": "Certificaciones"
     },
     "subtitles": {
       "me": "Identidad y Presencia",
@@ -97,6 +135,32 @@
       "years": "2021-2028",
       "degree1": "Pregrado en Diseño - Tesis de Grado",
       "degree2": "Opción en Computación Visual"
+    },
+    "capabilities": {
+      "items": [
+        {
+          "title": "Frontend y UI",
+          "description": "Construyendo interfaces pixel-perfect con React y Tailwind CSS, informadas por prototipos en Figma y un fuerte criterio visual.",
+          "tools": ["React.svg", "Tailwind CSS.svg", "Figma.svg"]
+        },
+        {
+          "title": "Ingeniería Full-Stack",
+          "description": "Arquitectura backend con Python y Django — APIs REST, bases de datos PostgreSQL, autenticación e integración de pagos.",
+          "tools": ["Python.svg", "Django.svg", "SQL Developer.svg"]
+        },
+        {
+          "title": "Mobile y Creativo",
+          "description": "Desarrollo móvil multiplataforma con Flutter, y experiencias 3D interactivas con Unity y Unreal Engine.",
+          "tools": ["Flutter.svg", "Unity.svg", "Unreal Engine.svg"]
+        }
+      ]
+    },
+    "techStack": {
+      "description": "Kit completo de herramientas: frontend, backend, mobile, diseño y herramientas."
+    },
+    "collapsible": {
+      "expand": "Mostrar",
+      "collapse": "Ocultar"
     }
   },
   "projects": {

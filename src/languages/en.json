@@ -42,6 +42,41 @@
       "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     }
   },
+  "featuredWork": {
+    "title1": "Featured",
+    "title2": "Work",
+    "subtitle": "Recent projects at the intersection of design and engineering.",
+    "viewAll": "View all projects",
+    "projects": [
+      {
+        "id": "portfolio",
+        "category": "Web Development",
+        "title": "Portfolio Website",
+        "description": "A design-forward portfolio built with React and Tailwind CSS, exploring the intersection of engineering and visual craft.",
+        "link": "/projects/portfolio",
+        "image": "/ProjectPreviews/web-portfolio.png",
+        "tech": ["React", "Tailwind CSS", "Figma"]
+      },
+      {
+        "id": "candelaria",
+        "category": "Full-Stack Platform",
+        "title": "Candelaria Website",
+        "description": "Complete digital platform for a university solar car competition team — e-commerce, gamification, and dual payment support.",
+        "link": "/projects/candelaria",
+        "image": "",
+        "tech": ["React 19", "Django", "PostgreSQL"]
+      },
+      {
+        "id": "creative",
+        "category": "Design & Art",
+        "title": "Creative Work",
+        "description": "Experimental visual design and illustration spanning digital drawings, sketches, and conceptual projects.",
+        "link": "/arts-design",
+        "image": "/ProjectPreviews/TCV1.jpg",
+        "tech": ["Figma", "Photoshop", "Illustrator"]
+      }
+    ]
+  },
   "about": {
     "title1": "About",
     "title2": "Me",
@@ -64,7 +99,10 @@
       "education": "Education",
       "inspirations": "Inspirations",
       "hobbies": "Hobbies",
-      "foccus": "Focus"
+      "foccus": "Focus",
+      "capabilities": "Capabilities",
+      "techStack": "Tech Stack",
+      "certifications": "Certifications"
     },
     "subtitles": {
       "me": "Identity & Presence",
@@ -92,6 +130,32 @@
       "years": "2021-2028",
       "degree1": "Bachelor’s Degree in Design - Undergraduate Thesis",
       "degree2": "Minor Degree in Visual Computation"
+    },
+    "capabilities": {
+      "items": [
+        {
+          "title": "Frontend & UI",
+          "description": "Building pixel-perfect interfaces with React and Tailwind CSS, informed by strong Figma prototyping and a keen eye for visual detail.",
+          "tools": ["React.svg", "Tailwind CSS.svg", "Figma.svg"]
+        },
+        {
+          "title": "Full-Stack Engineering",
+          "description": "Backend architecture with Python and Django — REST APIs, PostgreSQL databases, authentication, and payment integrations.",
+          "tools": ["Python.svg", "Django.svg", "SQL Developer.svg"]
+        },
+        {
+          "title": "Mobile & Creative",
+          "description": "Cross-platform mobile development with Flutter, and interactive 3D experiences with Unity and Unreal Engine.",
+          "tools": ["Flutter.svg", "Unity.svg", "Unreal Engine.svg"]
+        }
+      ]
+    },
+    "techStack": {
+      "description": "Complete toolkit across frontend, backend, mobile, design, and tooling."
+    },
+    "collapsible": {
+      "expand": "Show",
+      "collapse": "Hide"
     }
   },
   "skills": {
