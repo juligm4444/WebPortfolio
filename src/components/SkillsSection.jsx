@@ -51,7 +51,7 @@ const skills = [
   { name: 'Django', level: 60, category: 'Frontend', icon: 'Django.svg' },
 ];
 
-export const SkillsSection = () => {
+export const SkillsSection = ({ embedded = false }) => {
   const [activeCategory, setCategory] = useState('all');
   const { t } = useTranslation();
   const [isLight, setIsLight] = useState(false);
@@ -93,133 +93,141 @@ export const SkillsSection = () => {
     .sort((a, b) => b.level - a.level)
     .filter((skill) => activeCategory === 'all' || skill.category === activeCategory);
 
-  return (
-    <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
-      <div className="container mx-auto max-w-5xl">
+  const inner = (
+    <div className="container mx-auto max-w-5xl">
+      {!embedded && (
         <h2 ref={titleRef} className="text-h1 font-bold mb-12 text-center text-primary">
           {t('skills.title1')} {t('skills.title2')}
         </h2>
+      )}
 
-        <div ref={filtersRef} className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
-          {categories.map((category, key) => (
-            <button
-              key={key}
-              onClick={() => setCategory(category.key)}
-              data-button-style={isLight ? 'default' : 'plain-filter'}
+      <div ref={filtersRef} className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
+        {categories.map((category, key) => (
+          <button
+            key={key}
+            onClick={() => setCategory(category.key)}
+            data-button-style={isLight ? 'default' : 'plain-filter'}
+            className={cn(
+              'transition-all duration-300 capitalize text-[20px]',
+              isLight
+                ? activeCategory === category.key
+                  ? 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--color4)] font-bold'
+                  : 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--body-text-color)] hover:font-bold'
+                : activeCategory === category.key
+                  ? 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--color4)] font-bold'
+                  : 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--body-text-color)] hover:font-bold'
+            )}
+          >
+            {category.label}
+          </button>
+        ))}
+      </div>
+      {/* Mobile: square cards, 3 per row */}
+      <div ref={mobileGridRef} className="grid grid-cols-3 gap-4 md:hidden">
+        {filteredSkills.map((skill, key) => (
+          <div
+            key={key}
+            className={cn(
+              'group aspect-square rounded-lg skill-card-hover shadow-sm flex flex-col items-center justify-center p-4'
+            )}
+          >
+            {skill.icon && (
+              <div className="w-12 h-12 mb-2 bg-[var(--skill-icon-bg)] rounded-md flex items-center justify-center">
+                <img
+                  src={iconMap[skill.icon]}
+                  alt={skill.name}
+                  loading="lazy"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+            )}
+            <span className="sr-only">{skill.name}</span>
+            <span
               className={cn(
-                'transition-all duration-300 capitalize text-[20px]',
-                isLight
-                  ? activeCategory === category.key
-                    ? 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--color4)] font-bold'
-                    : 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--body-text-color)] hover:font-bold'
-                  : activeCategory === category.key
-                    ? 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--color4)] font-bold'
-                    : 'skills-filter-plain px-0 sm:px-0 py-0 bg-transparent text-[var(--body-text-color)] hover:font-bold'
+                'text-sm font-semibold transition-colors duration-300',
+                '!text-[var(--skill-text-color)] group-hover:!text-[var(--skill-hover-text-color)]'
               )}
             >
-              {category.label}
-            </button>
-          ))}
-        </div>
-        {/* Mobile: square cards, 3 per row */}
-        <div ref={mobileGridRef} className="grid grid-cols-3 gap-4 md:hidden">
-          {filteredSkills.map((skill, key) => (
-            <div
-              key={key}
-              className={cn(
-                'group aspect-square rounded-lg skill-card-hover shadow-sm flex flex-col items-center justify-center p-4'
-              )}
-            >
+              {skill.level}%
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop/Tablet: original layout */}
+      <div ref={desktopGridRef} className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
+        {filteredSkills.map((skill, key) => (
+          <div
+            key={key}
+            className={cn(
+              'group skill-card-hover shadow-lg p-4 md:p-6 rounded-lg card-hover hover:scale-[1.08] hover:shadow-2xl flex flex-row items-center gap-4'
+            )}
+          >
+            <div className="flex flex-col items-center w-20 md:w-28 flex-shrink-0">
               {skill.icon && (
-                <div className="w-12 h-12 mb-2 bg-[var(--skill-icon-bg)] rounded-md flex items-center justify-center">
-                  <img
-                    src={iconMap[skill.icon]}
-                    alt={skill.name}
-                    loading="lazy"
-                    className="w-8 h-8 object-contain"
-                  />
+                <div
+                  className="rounded-full p-[3px] mb-2 flex-shrink-0"
+                  style={{
+                    background: 'var(--skill-icon-border-gradient)',
+                  }}
+                >
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-[var(--skill-icon-bg)] rounded-full flex items-center justify-center">
+                    <img
+                      src={iconMap[skill.icon]}
+                      alt={skill.name}
+                      loading="lazy"
+                      className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                    />
+                  </div>
                 </div>
               )}
-              <span className="sr-only">{skill.name}</span>
-              <span
+              <p
                 className={cn(
-                  'text-sm font-semibold transition-colors duration-300',
+                  'font-semibold text-xs md:text-sm lg:text-base text-center truncate w-full overflow-hidden text-ellipsis transition-colors duration-300',
                   '!text-[var(--skill-text-color)] group-hover:!text-[var(--skill-hover-text-color)]'
                 )}
+                title={skill.name}
               >
-                {skill.level}%
-              </span>
+                {skill.name}
+              </p>
             </div>
-          ))}
-        </div>
-
-        {/* Desktop/Tablet: original layout */}
-        <div ref={desktopGridRef} className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
-          {filteredSkills.map((skill, key) => (
-            <div
-              key={key}
-              className={cn(
-                'group skill-card-hover shadow-lg p-4 md:p-6 rounded-lg card-hover hover:scale-[1.08] hover:shadow-2xl flex flex-row items-center gap-4'
-              )}
-            >
-              <div className="flex flex-col items-center w-20 md:w-28 flex-shrink-0">
-                {skill.icon && (
-                  <div
-                    className="rounded-full p-[3px] mb-2 flex-shrink-0"
-                    style={{
-                      background: 'var(--skill-icon-border-gradient)',
-                    }}
-                  >
-                    <div className="w-12 h-12 md:w-16 md:h-16 bg-[var(--skill-icon-bg)] rounded-full flex items-center justify-center">
-                      <img
-                        src={iconMap[skill.icon]}
-                        alt={skill.name}
-                        loading="lazy"
-                        className="w-8 h-8 md:w-10 md:h-10 object-contain"
-                      />
-                    </div>
-                  </div>
+            <div className="flex-1 flex flex-col justify-center">
+              <div
+                className={cn(
+                  'w-3/4 md:w-full h-2 rounded-full overflow-hidden',
+                  'bg-[var(--color1)]'
                 )}
-                <p
-                  className={cn(
-                    'font-semibold text-xs md:text-sm lg:text-base text-center truncate w-full overflow-hidden text-ellipsis transition-colors duration-300',
-                    '!text-[var(--skill-text-color)] group-hover:!text-[var(--skill-hover-text-color)]'
-                  )}
-                  title={skill.name}
-                >
-                  {skill.name}
-                </p>
-              </div>
-              <div className="flex-1 flex flex-col justify-center">
+              >
                 <div
                   className={cn(
-                    'w-3/4 md:w-full h-2 rounded-full overflow-hidden',
-                    'bg-[var(--color1)]'
+                    'h-2 rounded-full origin-left scale-x-100 group-hover:animate-[skill-bar-reload_0.8s_ease-out_forwards] transition-colors duration-300',
+                    'bg-[var(--skill-progress-color)] group-hover:bg-[var(--skill-progress-hover-color)]'
+                  )}
+                  style={{ width: skill.level + '%' }}
+                />
+              </div>
+              <div className="text-center mt-1">
+                <span
+                  className={cn(
+                    'text-base md:text-lg font-medium transition-colors duration-300',
+                    '!text-[var(--skill-text-color)] group-hover:!text-[var(--skill-hover-text-color)]'
                   )}
                 >
-                  <div
-                    className={cn(
-                      'h-2 rounded-full origin-left scale-x-100 group-hover:animate-[skill-bar-reload_0.8s_ease-out_forwards] transition-colors duration-300',
-                      'bg-[var(--skill-progress-color)] group-hover:bg-[var(--skill-progress-hover-color)]'
-                    )}
-                    style={{ width: skill.level + '%' }}
-                  />
-                </div>
-                <div className="text-center mt-1">
-                  <span
-                    className={cn(
-                      'text-base md:text-lg font-medium transition-colors duration-300',
-                      '!text-[var(--skill-text-color)] group-hover:!text-[var(--skill-hover-text-color)]'
-                    )}
-                  >
-                    {skill.level}%
-                  </span>
-                </div>
+                  {skill.level}%
+                </span>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+    </div>
+  );
+
+  if (embedded) return inner;
+
+  return (
+    <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/30">
+      {inner}
     </section>
   );
 };

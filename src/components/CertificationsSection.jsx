@@ -134,26 +134,33 @@ const CertificationCard = ({ cert }) => {
   );
 };
 
-export const CertificationsSection = () => {
+export const CertificationsSection = ({ embedded = false }) => {
   const { t } = useTranslation();
   const titleRef = useInView('reveal--init');
   const gridRef = useInView();
 
-  return (
-    <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30 mb-8">
-      <div className="container mx-auto max-w-6xl">
+  const inner = (
+    <div className="container mx-auto max-w-6xl">
+      {!embedded && (
         <h2 ref={titleRef} className="text-h1 font-bold mb-12 text-center text-primary">
           {t('certifications.title1')} {t('certifications.title2')}
         </h2>
-
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 mb-8">
-          {certifications
-            .filter((cert) => cert.pdf)
-            .map((cert, idx) => (
-              <CertificationCard key={cert.id || idx} cert={cert} />
-            ))}
-        </div>
+      )}
+      <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 mb-8">
+        {certifications
+          .filter((cert) => cert.pdf)
+          .map((cert, idx) => (
+            <CertificationCard key={cert.id || idx} cert={cert} />
+          ))}
       </div>
+    </div>
+  );
+
+  if (embedded) return inner;
+
+  return (
+    <section id="certifications" className="py-12 sm:py-16 md:py-24 px-4 bg-secondary/30 mb-8">
+      {inner}
     </section>
   );
 };
