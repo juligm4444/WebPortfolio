@@ -402,7 +402,7 @@
         "viewCode": "View Code"
       },
       "context": "Nowadays, potential employers and clients expect to see working examples of a candidate's skills. Then, the creation of a digital portfolio becomes essential to effectively demonstrate one's abilities.",
-      "problem": "Usually, designers and developers create very different portfolios for showcasing their work, making it hard to find a balance between design and development skills. Many portfolios focus solely on visual appeal or technical prowess, neglecting the importance of integrating both aspects seamlessly. This project aims to solve that problem by creating a unified platform that highlights my dual expertise in design and development.",
+      "problem": "Usually, designers and developers create very different portfolios for showcasing their work, making it hard to find a balance between design and development skills. Many portfolios focus solely on visual appeal or technical prowess, neglecting the importance of integrating both aspects in a unified way. This project aims to solve that problem by creating a unified platform that highlights my dual expertise in design and development.",
       "solutionProcess": {
         "phases": [
           {
@@ -440,7 +440,7 @@
             "description": "Built the site using React, Vite, and Tailwind CSS, prioritizing clean code, component reusability, and optimal performance from the start.",
             "bullets": [
               "Implemented component-based architecture with React 19",
-              "Integrated i18next for seamless bilingual support",
+              "Integrated i18next for full bilingual support",
               "Incorporated interactive Spline 3D models for engaging visual experiences",
               "Created custom animations using Tailwind and CSS",
               "Optimized images and assets for fast loading times",
@@ -461,7 +461,7 @@
         ]
       },
       "developmentFlow": {
-        "description": "The technical architecture was designed with scalability, maintainability, and performance in mind. Here's how the different pieces work together to create a seamless user experience:"
+        "description": "The technical architecture was designed with scalability, maintainability, and performance in mind. Here's how the different pieces work together to create a coherent user experience:"
       },
       "visualDesign": {
         "description": "The visual design system was crafted to reflect my dual identity as both a developer and designer—balancing technical precision with creative expression. Every color, typeface, and spacing decision was made with intentionality to create a cohesive and memorable experience.",
