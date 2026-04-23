@@ -104,7 +104,7 @@
       "education": "Educación",
       "inspirations": "Inspiraciones",
       "hobbies": "Pasatiempos",
-      "foccus": "Enfoque",
+      "focus": "Enfoque",
       "capabilities": "Capacidades",
       "techStack": "Tecnologías",
       "certifications": "Certificaciones"
@@ -115,7 +115,7 @@
       "education": "Formación Académica",
       "inspirations": "Motores Creativos",
       "hobbies": "Prácticas Personales",
-      "foccus": "Enfoque Profesional"
+      "focus": "Enfoque Profesional"
     },
     "information": {
       "text": "Diseño, ingeniería y pensamiento de producto convergen en mi práctica diaria—creando experiencias estructuradas y expresivas.",

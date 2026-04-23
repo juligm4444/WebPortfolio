@@ -34,7 +34,7 @@ export const About = () => {
       { id: 'me', label: t('aboutPage.sections.me') },
       { id: 'information', label: t('aboutPage.sections.information') },
       { id: 'education', label: t('aboutPage.sections.education') },
-      { id: 'foccus', label: t('aboutPage.sections.foccus') },
+      { id: 'focus', label: t('aboutPage.sections.focus') },
       { id: 'capabilities', label: t('aboutPage.sections.capabilities') },
       { id: 'tech-stack', label: t('aboutPage.sections.techStack') },
       { id: 'certifications-about', label: t('aboutPage.sections.certifications') },
@@ -186,7 +186,7 @@ export const About = () => {
       )}
 
       {/* FOCUS Section */}
-      <section id="foccus" className="pt-10 pb-16 md:py-24 px-4 scroll-mt-24">
+      <section id="focus" className="pt-10 pb-16 md:py-24 px-4 scroll-mt-24">
         <div className="container mx-auto max-w-6xl">
           <div className="about-divider border-t border-border my-16 hidden md:block" />
           <div
@@ -195,7 +195,7 @@ export const About = () => {
           >
             <div className="flex flex-col justify-center space-y-4 md:space-y-6 text-left">
               <h3 className="text-h2 font-semibold text-primary mb-2 text-center md:text-left">
-                {t('aboutPage.sections.foccus')}
+                {t('aboutPage.sections.focus')}
               </h3>
               <p className="text-sm sm:text-base md:text-body font-light leading-relaxed text-left text-foreground">
                 {t('about.paragraph1')}

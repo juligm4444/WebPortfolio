@@ -99,7 +99,7 @@
       "education": "Education",
       "inspirations": "Inspirations",
       "hobbies": "Hobbies",
-      "foccus": "Focus",
+      "focus": "Focus",
       "capabilities": "Capabilities",
       "techStack": "Tech Stack",
       "certifications": "Certifications"
@@ -110,7 +110,7 @@
       "education": "Academic Formation",
       "inspirations": "Creative Drivers",
       "hobbies": "Personal Practices",
-      "foccus": "Professional Focus"
+      "focus": "Professional Focus"
     },
     "information": {
       "text": "Design, engineering, and product thinking converge in my daily practice—building expressive, structured experiences.",
