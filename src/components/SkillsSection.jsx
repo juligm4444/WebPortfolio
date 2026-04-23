@@ -23,8 +23,8 @@ const iconMap = {
   'Unity.svg': '/assets/icons/Unity.svg',
   'Adobe Photoshop.svg': '/assets/icons/Adobe Photoshop.svg',
   'Adobe Illustrator.svg': '/assets/icons/Adobe Illustrator.svg',
-  'Angular.svg': 'assets/icons/Angular.svg',
-  'Django.svg': 'assets/icons/Django.svg',
+  'Angular.svg': '/assets/icons/Angular.svg',
+  'Django.svg': '/assets/icons/Django.svg',
 };
 
 const skills = [

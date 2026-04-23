@@ -11,7 +11,7 @@ const iconMap = {
   'Tailwind CSS.svg': '/assets/icons/Tailwind CSS.svg',
   'Figma.svg': '/assets/icons/Figma.svg',
   'Python.svg': '/assets/icons/Python.svg',
-  'Django.svg': 'assets/icons/Django.svg',
+  'Django.svg': '/assets/icons/Django.svg',
   'SQL Developer.svg': '/assets/icons/SQL Developer.svg',
   'Flutter.svg': '/assets/icons/Flutter.svg',
   'Unity.svg': '/assets/icons/Unity.svg',
